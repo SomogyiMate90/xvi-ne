@@ -1,0 +1,14 @@
+@use '../components/mixinsAndPlaholders' as mix;
+
+.page-about-us{
+
+ol{
+    @include mix.listTypse(lower-alpha);
+    
+    li::marker{
+       font-weight: bolder; 
+    }
+
+}
+
+}

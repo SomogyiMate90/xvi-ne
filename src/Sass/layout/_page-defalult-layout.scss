@@ -1,0 +1,142 @@
+@use '../components/mixinsAndPlaholders' as mix;
+@use '../base/indexBase' as base;
+
+
+@font-face {
+    font-family: Noto;
+    src: url('/public/assets/fonts/Noto.ttf');
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: Noto,Roboto, sans-serif !important;
+}
+
+:root {
+    --animate-duration: 2.5s;
+    --animate-delay: 1s;
+    --animate-repeat: 1;
+
+  
+
+
+}
+
+.page-defalult-layout.light{
+
+    --outlet-bg-color: #{base.$light-outlet-bg};
+    color: base.$light-color;
+
+}
+
+.page-defalult-layout.dark{
+
+    --outlet-bg-color: #{base.$dark-outlet-bg};
+    color: base.$dark-color;
+
+    background-color: black;
+    background-blend-mode:overlay;
+
+   
+    
+
+}
+
+.page-defalult-layout.akadaly{
+
+    --outlet-bg-color: #{base.$akadaly-outlet-bg};
+
+   
+
+    background-color: black;
+    background-blend-mode: multiply;
+
+   h1,h2,h3,h4,h5,h6,p,strong,mark,li, table tr td,table tr th {
+    background-color: initial;
+    color: base.$akadaly-color;
+    // letter-spacing: 3px;
+    text-align: initial;
+    line-height: 2.2;
+
+    &:nth-of-type(even){
+        color:  base.$akadaly-secondary-color;
+        & * {
+            color:  base.$akadaly-secondary-color;
+        }
+
+        button{
+            color: initial;
+        }
+        a.nav-link{
+            color: base.$akadaly-color;
+        }
+    }
+
+  }
+
+
+  table tr th{
+    text-decoration: underline 2px solid red;
+  }
+
+  
+
+  .hero-img{
+    h2{
+        background-color:  var(--outlet-bg-color);
+    }
+  }
+
+  p,li{
+    font-size: 1.4em;
+  }
+
+
+
+  
+
+}
+
+
+
+.page-defalult-layout{
+
+
+    
+    h1{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    p{
+        text-align: justify;
+        text-indent: 1rem;
+    }
+
+
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    min-height: 100vh;
+    
+  
+    background-image: url('/public/assets/img/NOE_BG.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    
+    .outlet-component{
+        background-color: var(--outlet-bg-color);
+        padding: 1rem;
+        
+        overflow: hidden; // a sliderPanel efektjei miatt "nem ugrál fel" x-tengely csuszka
+        
+        @include mix.toAfterMaxwidth(800px){
+            
+            border-radius: 2rem;
+            box-shadow: 2px 2px 10px black;
+
+        }
+
+    }
+}

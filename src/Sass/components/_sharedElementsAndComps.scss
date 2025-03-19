@@ -1,0 +1,56 @@
+@use '../components/mixinsAndPlaholders' as mix;
+@use '../base/indexBase' as base;
+
+.static-loading-field{
+
+    position: fixed;      /* Fixálva a viewporthoz */
+    top: 50%;             /* 50% a viewport tetejétől */
+    left: 50%;            /* 50% a viewport bal szélétől */
+    transform: translate(-50%, -50%); /* Középre tolás a saját szélességének és magasságának felével */
+    // background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 1rem;
+    width: 55vw;
+    height: 45vh;
+    z-index: 500;
+
+    padding: 1rem;
+
+    display: grid;
+    grid-template-rows: min-content min-content auto;
+
+    @include mix.toAfterMaxwidth(600px){
+        width: 25vw;
+        height: 25vh;
+        background-color: red;
+    }
+    &.light{
+        background-color: base.$nav-light-bg;
+    }
+
+    &.dark{
+        background-color: base.$nav-dark-bg;
+        color: white;
+    }
+
+    &.akadaly{
+        background-color: base.$nav-akadaly-bg;
+    }
+
+    h1,p{
+        text-align: center;
+    }
+
+    .loading-gif{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            max-width: 50px;
+            max-height: 50px;
+        }
+        
+    }
+}
+

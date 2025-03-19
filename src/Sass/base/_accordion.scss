@@ -1,0 +1,32 @@
+@use './variants' as var;
+
+
+.accordion {
+    
+    &.dark{
+        
+        --bs-body-bg : #{var.$dark-accordion};
+        --bs-body-color:#{var.$dark-color};
+        --bs-accordion-active-bg: #{rgba(var.$nav-dark-bg,0.45)};
+        --bs-accordion-active-color: white;
+
+        --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #{rgba(var.$nav-dark-bg,0.45)};
+
+    }
+
+    &.akadaly{
+        --bs-body-bg : #{var.$akadaly-accordion};
+        --bs-body-color:#{var.$akadaly-color};
+        --bs-accordion-active-bg: #{rgba(var.$nav-akadaly-bg,0.45)};
+        --bs-accordion-active-color: rgb(29, 252, 0);
+
+        --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #{rgba(var.$nav-akadaly-bg,0.45)};
+
+        button{
+            letter-spacing: 2px;
+            font-size: 0.8em;
+        }
+    }
+
+}    
+

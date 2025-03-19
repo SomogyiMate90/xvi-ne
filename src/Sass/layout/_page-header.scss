@@ -1,0 +1,160 @@
+@use '../components/mixinsAndPlaholders' as mix;
+@use '../base/indexBase' as base;
+
+
+
+header{
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  &.light{
+    background-color: base.$nav-light-bg;
+  }
+
+  &.dark,&.akadaly{
+    background-color: base.$nav-dark-bg;
+  }
+
+  &.dark{
+    a.nav-link.active{
+      color: white !important;
+    }
+  }
+
+  &.akadaly{
+    background-color: base.$nav-akadaly-bg;
+    a{
+      color: base.$akadaly-color;
+    }
+    a.nav-link.active{
+      color: rgba(base.$akadaly-color,0.7) !important;
+      text-shadow: 2px 2px 3px black;
+      
+    }
+  }
+
+    nav{
+
+        div.container-fluid{
+            img{
+                max-width: 270px;
+               
+            }
+        }
+
+
+        .nav-item{
+        
+        &.admin{
+            background-color: rgb(253, 249, 6);
+
+            a.nav-link.active{
+                color: blue;
+            }
+        }    
+       
+            
+            a{
+                display: inline-block;
+                flex-grow: 0;
+            }
+
+            font-size: 1.3rem;
+            padding: 0 .5rem;
+
+            &:not(:last-of-type){
+                @include mix.toAfterMaxwidth(992px){
+                    border-right: 1px solid black;
+                }
+            }
+
+            
+            .nav-link:hover{
+                text-shadow: 1px 1px black;
+            }
+
+            .nav-link.active{
+                text-decoration: underline black;
+                color: #0d6efd;
+                font-weight: 600;
+                // background-color: rgba($nav-bg,1);
+            }
+
+            
+        }
+    }
+
+    // label.night-light-label{
+    //     rotate: 90deg;
+    // }
+
+    .night-light-label #night-light-checkbox {
+        
+        position: absolute;
+        visibility: hidden;
+      }
+      
+      .night-light-label {
+        display: block;
+        margin: 20px 0;
+        height: 31px;
+        width: 60px;
+        border: 2px solid #4672fe;
+        border-radius: 30px;
+        position: relative;
+        cursor: pointer;
+      }
+      
+      .night-light-label .night-light-ball {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 1px;
+        left: 1px;
+        border-radius: 50%;
+        background: #4672fe;
+        z-index: 99;
+        transition: 300ms;
+      }
+      
+      .night-light-label #night-light-checkbox:checked + .night-light-ball {
+        transform: translateX(28px);
+      }
+
+
+      .moon-svg,
+      .sun-svg {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      .moon-svg {
+        right: 5px;
+      }
+      
+      .sun-svg {
+        left: 5px;
+      }
+ 
+      
+    
+      
+    
+      
+ 
+      
+
+      
+      
+      
+
+      
+
+
+}

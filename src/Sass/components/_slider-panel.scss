@@ -1,0 +1,41 @@
+@use '../components/mixinsAndPlaholders' as mix;
+
+.slider-panel{
+    height: 450px;
+    border-radius: 2rem;
+
+    background-color: hwb(190 5% 6% / 0.151);
+    
+    display: flex;
+    align-items: center;
+
+   
+    
+    div{
+        margin: auto;
+    
+        img{
+            width: 100%;
+
+
+
+            object-fit: contain;
+            overflow: hidden;
+        };
+
+        @include mix.toAfterMaxwidth(450px){
+            img{
+                height: 150px;
+            }
+        }
+
+        @include mix.toAfterMaxwidth(768px){
+            img{
+                height: 100%;
+            }
+        }
+    }
+
+
+
+}

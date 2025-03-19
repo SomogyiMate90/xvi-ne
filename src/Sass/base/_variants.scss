@@ -1,0 +1,46 @@
+// nav háttérszín
+
+$nav-light-bg : hsl(44, 80%, 59%);
+$nav-dark-bg : hsl(44, 80%, 32%);
+$nav-akadaly-bg : hsl(44, 80%, 32%);
+
+
+
+// Outlet bg
+
+$light-outlet-bg:rgba(255, 255, 255, 0.5);
+
+$dark-outlet-bg:rgb(48, 48, 48);
+
+$akadaly-outlet-bg:rgba(2, 2, 2, 0.7);
+
+// color 
+
+
+$light-color: rgb(17, 17, 17);
+
+$dark-color: rgb(200, 200, 200); // Szöveg szín sötét témához (jobb kontraszt)
+
+$akadaly-color: rgb(255, 255, 0);
+$akadaly-secondary-color: rgb(230, 155, 25);
+
+$dark-bg-nav: rgb(60, 60, 60); // Sötét navigációs sávhoz, hogy elváljon a fő háttértől
+$dark-bg-headers: rgba(243, 91, 91, 0.541);
+
+// Programok háttér
+    // Páratlan:
+        $light-Event-paratlan-Article-background-color: rgba(255, 250, 240, 0.9);
+
+        $dark-Event-paratlan-Article-background-color:  hsl(0, 0%, 25%);    
+        // páros
+        $light-Event-paros-Article-background-color:  rgba(240, 248, 255, 0.9);
+
+        $dark-Event-paros-Article-background-color: hsl(0, 0%, 15%);
+
+// accordion háttér
+
+$dark-accordion : rgb(68, 68, 68);
+
+$akadaly-accordion: $dark-outlet-bg;
+
+$test: rgb(13, 110, 253, 0.25)

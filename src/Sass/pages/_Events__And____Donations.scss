@@ -1,0 +1,98 @@
+@use '../components/mixinsAndPlaholders' as mix;
+@use '../base/indexBase' as base;
+
+
+
+
+.page-events, .page-donations{
+
+    &.light{
+        article,section{
+            background-color: base.$light-Event-paratlan-Article-background-color;
+
+            &:nth-child(even){
+                background-color: base.$light-Event-paros-Article-background-color;
+            };
+        }
+    }
+
+    &.dark, &.akadaly{
+        article,section{
+            background-color: base.$dark-Event-paratlan-Article-background-color;
+
+            &:nth-child(even){
+                background-color: base.$dark-Event-paros-Article-background-color;
+            };
+        }
+    }
+
+    &.akadaly{
+        article,section{
+            margin-top: 2rem;
+            border: 2px solid rgba(255, 255, 0, 0.5);
+        }
+    }
+
+    article,section{
+        border-top: 2px solid black;
+
+        
+
+
+        h2{
+            text-align: center;
+        }
+
+        @include mix.toAfterMaxwidth(600px){
+
+            h2{
+                text-align: left;
+            }
+
+            &:nth-child(even){
+                h2{
+                    text-align: right;
+                }
+            }
+
+        }
+        
+        figure{
+            margin: 0 1rem 1rem;
+
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+}
+
+.page-donations{
+
+    figure{
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    
+    section{
+        padding: 1rem;
+    }
+    @include mix.toAfterMaxwidth(680px){
+
+        section:nth-of-type(even){
+            .content{
+                display: flex;
+            flex-direction: row;
+            }
+        }
+        section:nth-of-type(odd){
+            .content{
+                display: flex;
+                flex-direction: row-reverse;
+            }
+        }
+
+    }
+}

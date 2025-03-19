@@ -1,0 +1,44 @@
+@use '../components/mixinsAndPlaholders' as mix;
+
+.page-footer{
+
+    // padding-top: 1rem;
+
+
+    @include mix.toAfterMaxwidth(992px){
+        // max-height: 350px;
+        
+        // box-sizing: border-box;
+
+        
+    }
+
+}
+
+footer{
+    
+    padding-top: 1rem;
+
+
+    h4,p{
+        text-align: center !important;
+    }
+
+    .contact{
+        p{
+            text-align: center;
+        }
+    }
+
+    margin: 0;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+
+    iframe{
+
+        
+
+        width: 100%;
+    }
+}

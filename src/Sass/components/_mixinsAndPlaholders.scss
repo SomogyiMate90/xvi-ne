@@ -1,0 +1,16 @@
+
+
+@mixin toAfterMaxwidth($widt-Arg){
+    @media screen and (min-width:$widt-Arg) {
+        
+        @content
+        
+    }
+};
+
+@mixin listTypse($type){
+    @content;
+    li{
+        list-style-type: $type;
+    };
+};

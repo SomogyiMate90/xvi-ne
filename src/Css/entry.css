@@ -1,0 +1,439 @@
+@charset "UTF-8";
+main.blur {
+  filter: blur(5px) invert(80%);
+}
+
+.accordion.dark {
+  --bs-body-bg: rgb(68, 68, 68);
+  --bs-body-color:rgb(200, 200, 200);
+  --bs-accordion-active-bg: rgba(146.88, 112.064, 16.32, 0.45);
+  --bs-accordion-active-color: white;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(146.88, 112.064, 16.32, 0.45);
+}
+.accordion.akadaly {
+  --bs-body-bg: rgb(48, 48, 48);
+  --bs-body-color:rgb(255, 255, 0);
+  --bs-accordion-active-bg: rgba(146.88, 112.064, 16.32, 0.45);
+  --bs-accordion-active-color: rgb(29, 252, 0);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(146.88, 112.064, 16.32, 0.45);
+}
+.accordion.akadaly button {
+  letter-spacing: 2px;
+  font-size: 0.8em;
+}
+
+@font-face {
+  font-family: Noto;
+  src: url("/public/assets/fonts/Noto.ttf");
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Noto, Roboto, sans-serif !important;
+}
+
+:root {
+  --animate-duration: 2.5s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+.page-defalult-layout.light {
+  --outlet-bg-color: rgba(255, 255, 255, 0.5);
+  color: rgb(17, 17, 17);
+}
+
+.page-defalult-layout.dark {
+  --outlet-bg-color: rgb(48, 48, 48);
+  color: rgb(200, 200, 200);
+  background-color: black;
+  background-blend-mode: overlay;
+}
+
+.page-defalult-layout.akadaly {
+  --outlet-bg-color: rgba(2, 2, 2, 0.7);
+  background-color: black;
+  background-blend-mode: multiply;
+}
+.page-defalult-layout.akadaly h1, .page-defalult-layout.akadaly h2, .page-defalult-layout.akadaly h3, .page-defalult-layout.akadaly h4, .page-defalult-layout.akadaly h5, .page-defalult-layout.akadaly h6, .page-defalult-layout.akadaly p, .page-defalult-layout.akadaly strong, .page-defalult-layout.akadaly mark, .page-defalult-layout.akadaly li, .page-defalult-layout.akadaly table tr td, .page-defalult-layout.akadaly table tr th {
+  background-color: initial;
+  color: rgb(255, 255, 0);
+  text-align: initial;
+  line-height: 2.2;
+}
+.page-defalult-layout.akadaly h1:nth-of-type(even), .page-defalult-layout.akadaly h2:nth-of-type(even), .page-defalult-layout.akadaly h3:nth-of-type(even), .page-defalult-layout.akadaly h4:nth-of-type(even), .page-defalult-layout.akadaly h5:nth-of-type(even), .page-defalult-layout.akadaly h6:nth-of-type(even), .page-defalult-layout.akadaly p:nth-of-type(even), .page-defalult-layout.akadaly strong:nth-of-type(even), .page-defalult-layout.akadaly mark:nth-of-type(even), .page-defalult-layout.akadaly li:nth-of-type(even), .page-defalult-layout.akadaly table tr td:nth-of-type(even), .page-defalult-layout.akadaly table tr th:nth-of-type(even) {
+  color: rgb(230, 155, 25);
+}
+.page-defalult-layout.akadaly h1:nth-of-type(even) *, .page-defalult-layout.akadaly h2:nth-of-type(even) *, .page-defalult-layout.akadaly h3:nth-of-type(even) *, .page-defalult-layout.akadaly h4:nth-of-type(even) *, .page-defalult-layout.akadaly h5:nth-of-type(even) *, .page-defalult-layout.akadaly h6:nth-of-type(even) *, .page-defalult-layout.akadaly p:nth-of-type(even) *, .page-defalult-layout.akadaly strong:nth-of-type(even) *, .page-defalult-layout.akadaly mark:nth-of-type(even) *, .page-defalult-layout.akadaly li:nth-of-type(even) *, .page-defalult-layout.akadaly table tr td:nth-of-type(even) *, .page-defalult-layout.akadaly table tr th:nth-of-type(even) * {
+  color: rgb(230, 155, 25);
+}
+.page-defalult-layout.akadaly h1:nth-of-type(even) button, .page-defalult-layout.akadaly h2:nth-of-type(even) button, .page-defalult-layout.akadaly h3:nth-of-type(even) button, .page-defalult-layout.akadaly h4:nth-of-type(even) button, .page-defalult-layout.akadaly h5:nth-of-type(even) button, .page-defalult-layout.akadaly h6:nth-of-type(even) button, .page-defalult-layout.akadaly p:nth-of-type(even) button, .page-defalult-layout.akadaly strong:nth-of-type(even) button, .page-defalult-layout.akadaly mark:nth-of-type(even) button, .page-defalult-layout.akadaly li:nth-of-type(even) button, .page-defalult-layout.akadaly table tr td:nth-of-type(even) button, .page-defalult-layout.akadaly table tr th:nth-of-type(even) button {
+  color: initial;
+}
+.page-defalult-layout.akadaly h1:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly h2:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly h3:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly h4:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly h5:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly h6:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly p:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly strong:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly mark:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly li:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly table tr td:nth-of-type(even) a.nav-link, .page-defalult-layout.akadaly table tr th:nth-of-type(even) a.nav-link {
+  color: rgb(255, 255, 0);
+}
+.page-defalult-layout.akadaly table tr th {
+  text-decoration: underline 2px solid red;
+}
+.page-defalult-layout.akadaly .hero-img h2 {
+  background-color: var(--outlet-bg-color);
+}
+.page-defalult-layout.akadaly p, .page-defalult-layout.akadaly li {
+  font-size: 1.4em;
+}
+
+.page-defalult-layout {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  min-height: 100vh;
+  background-image: url("/public/assets/img/NOE_BG.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.page-defalult-layout h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.page-defalult-layout p {
+  text-align: justify;
+  text-indent: 1rem;
+}
+.page-defalult-layout .outlet-component {
+  background-color: var(--outlet-bg-color);
+  padding: 1rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 800px) {
+  .page-defalult-layout .outlet-component {
+    border-radius: 2rem;
+    box-shadow: 2px 2px 10px black;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header.light {
+  background-color: hsl(44, 80%, 59%);
+}
+header.dark, header.akadaly {
+  background-color: hsl(44, 80%, 32%);
+}
+header.dark a.nav-link.active {
+  color: white !important;
+}
+header.akadaly {
+  background-color: hsl(44, 80%, 32%);
+}
+header.akadaly a {
+  color: rgb(255, 255, 0);
+}
+header.akadaly a.nav-link.active {
+  color: rgba(255, 255, 0, 0.7) !important;
+  text-shadow: 2px 2px 3px black;
+}
+header nav div.container-fluid img {
+  max-width: 270px;
+}
+header nav .nav-item {
+  font-size: 1.3rem;
+  padding: 0 0.5rem;
+}
+header nav .nav-item.admin {
+  background-color: rgb(253, 249, 6);
+}
+header nav .nav-item.admin a.nav-link.active {
+  color: blue;
+}
+header nav .nav-item a {
+  display: inline-block;
+  flex-grow: 0;
+}
+@media screen and (min-width: 992px) {
+  header nav .nav-item:not(:last-of-type) {
+    border-right: 1px solid black;
+  }
+}
+header nav .nav-item .nav-link:hover {
+  text-shadow: 1px 1px black;
+}
+header nav .nav-item .nav-link.active {
+  text-decoration: underline black;
+  color: #0d6efd;
+  font-weight: 600;
+}
+header .night-light-label #night-light-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+header .night-light-label {
+  display: block;
+  margin: 20px 0;
+  height: 31px;
+  width: 60px;
+  border: 2px solid #4672fe;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+header .night-light-label .night-light-ball {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  background: #4672fe;
+  z-index: 99;
+  transition: 300ms;
+}
+header .night-light-label #night-light-checkbox:checked + .night-light-ball {
+  transform: translateX(28px);
+}
+header .moon-svg,
+header .sun-svg {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .moon-svg {
+  right: 5px;
+}
+header .sun-svg {
+  left: 5px;
+}
+
+footer {
+  padding-top: 1rem;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+footer h4, footer p {
+  text-align: center !important;
+}
+footer .contact p {
+  text-align: center;
+}
+footer iframe {
+  width: 100%;
+}
+
+.page-about-us ol li {
+  list-style-type: lower-alpha;
+}
+.page-about-us ol li::marker {
+  font-weight: bolder;
+}
+
+.page-events.light article, .page-events.light section, .page-donations.light article, .page-donations.light section {
+  background-color: rgba(255, 250, 240, 0.9);
+}
+.page-events.light article:nth-child(even), .page-events.light section:nth-child(even), .page-donations.light article:nth-child(even), .page-donations.light section:nth-child(even) {
+  background-color: rgba(240, 248, 255, 0.9);
+}
+.page-events.dark article, .page-events.dark section, .page-events.akadaly article, .page-events.akadaly section, .page-donations.dark article, .page-donations.dark section, .page-donations.akadaly article, .page-donations.akadaly section {
+  background-color: hsl(0, 0%, 25%);
+}
+.page-events.dark article:nth-child(even), .page-events.dark section:nth-child(even), .page-events.akadaly article:nth-child(even), .page-events.akadaly section:nth-child(even), .page-donations.dark article:nth-child(even), .page-donations.dark section:nth-child(even), .page-donations.akadaly article:nth-child(even), .page-donations.akadaly section:nth-child(even) {
+  background-color: hsl(0, 0%, 15%);
+}
+.page-events.akadaly article, .page-events.akadaly section, .page-donations.akadaly article, .page-donations.akadaly section {
+  margin-top: 2rem;
+  border: 2px solid rgba(255, 255, 0, 0.5);
+}
+.page-events article, .page-events section, .page-donations article, .page-donations section {
+  border-top: 2px solid black;
+}
+.page-events article h2, .page-events section h2, .page-donations article h2, .page-donations section h2 {
+  text-align: center;
+}
+@media screen and (min-width: 600px) {
+  .page-events article h2, .page-events section h2, .page-donations article h2, .page-donations section h2 {
+    text-align: left;
+  }
+  .page-events article:nth-child(even) h2, .page-events section:nth-child(even) h2, .page-donations article:nth-child(even) h2, .page-donations section:nth-child(even) h2 {
+    text-align: right;
+  }
+}
+.page-events article figure, .page-events section figure, .page-donations article figure, .page-donations section figure {
+  margin: 0 1rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.page-donations figure img {
+  width: 100%;
+  object-fit: contain;
+}
+.page-donations section {
+  padding: 1rem;
+}
+@media screen and (min-width: 680px) {
+  .page-donations section:nth-of-type(even) .content {
+    display: flex;
+    flex-direction: row;
+  }
+  .page-donations section:nth-of-type(odd) .content {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.page-home .famiy-hero-img {
+  background-image: url("/public/assets/img/family-hero-img-2.jpg");
+  background-color: hsl(45, 7%, 65%);
+  color: white;
+  background-position: top;
+  background-blend-mode: multiply;
+}
+@media screen and (min-width: 1200px) {
+  .page-home .famiy-hero-img {
+    background-position-y: 30%;
+  }
+}
+.page-home .hands-hero {
+  background-image: url("/public/assets/img/hands-hero-img.jpg");
+  background-position: center;
+  background-color: hsl(210, 70%, 40%);
+  color: black;
+  background-blend-mode: multiply;
+  color: white;
+}
+@media screen and (min-width: 1200px) {
+  .page-home .hands-hero {
+    background-position-y: 60%;
+  }
+}
+.page-home .crowd-hero-img {
+  background-image: url("/public/assets/img/crowd.jpg");
+  background-position: bottom;
+  color: white;
+}
+.page-home .hero-img {
+  margin-top: 3rem;
+  height: 320px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.page-home .hero-img h2 {
+  letter-spacing: 4px;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
+.page-home section ul li {
+  margin-top: 1rem;
+  list-style: url("/public/assets/icons/suit-heart-fill.svg");
+}
+
+.static-loading-field {
+  position: fixed; /* Fixálva a viewporthoz */
+  top: 50%; /* 50% a viewport tetejétől */
+  left: 50%; /* 50% a viewport bal szélétől */
+  transform: translate(-50%, -50%); /* Középre tolás a saját szélességének és magasságának felével */
+  border: 2px solid black;
+  border-radius: 1rem;
+  width: 55vw;
+  height: 45vh;
+  z-index: 500;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: min-content min-content auto;
+}
+@media screen and (min-width: 600px) {
+  .static-loading-field {
+    width: 25vw;
+    height: 25vh;
+    background-color: red;
+  }
+}
+.static-loading-field.light {
+  background-color: hsl(44, 80%, 59%);
+}
+.static-loading-field.dark {
+  background-color: hsl(44, 80%, 32%);
+  color: white;
+}
+.static-loading-field.akadaly {
+  background-color: hsl(44, 80%, 32%);
+}
+.static-loading-field h1, .static-loading-field p {
+  text-align: center;
+}
+.static-loading-field .loading-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.static-loading-field .loading-gif img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.alert-panel-of-first-use {
+  width: 95vw;
+  height: 95vh;
+  background-color: rgb(0, 0, 0);
+  z-index: 2000;
+  position: fixed;
+  top: 2.5%;
+  left: 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 500px) and (min-height: 700px) {
+  .alert-panel-of-first-use {
+    width: 60vw;
+    height: 80vh;
+    top: 10%;
+    left: 20%;
+  }
+}
+.alert-panel-of-first-use h1, .alert-panel-of-first-use p {
+  font-size: 2em;
+  color: yellow;
+  text-shadow: 1px 1px white;
+}
+.alert-panel-of-first-use p {
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.slider-panel {
+  height: 450px;
+  border-radius: 2rem;
+  background-color: hsla(190, 89.898989899%, 49.5%, 0.151);
+  display: flex;
+  align-items: center;
+}
+.slider-panel div {
+  margin: auto;
+}
+.slider-panel div img {
+  width: 100%;
+  object-fit: contain;
+  overflow: hidden;
+}
+@media screen and (min-width: 450px) {
+  .slider-panel div img {
+    height: 150px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .slider-panel div img {
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=entry.css.map */

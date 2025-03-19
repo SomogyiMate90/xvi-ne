@@ -1,0 +1,73 @@
+@use '../components/mixinsAndPlaholders' as mix;
+
+
+.page-home{
+
+    .famiy-hero-img{
+        background-image: url('/public/assets/img/family-hero-img-2.jpg');
+        background-color: hsl(45, 7%, 65%);
+        color: white;
+        background-position: top;
+        background-blend-mode: multiply;
+        // align-items: flex-end;
+        @include mix.toAfterMaxwidth(1200px){
+            background-position-y: 30%;
+        }
+     
+    }
+    
+    .hands-hero{
+        // background-image: url('public/assets/img/hands-hero-img.jpg');
+
+        background-image: url('/public/assets/img/hands-hero-img.jpg');
+        background-position: center;
+        background-color: hsl(210, 70%, 40%);
+        color: black;
+        background-blend-mode: multiply;
+        color: white;
+        @include mix.toAfterMaxwidth(1200px){
+            background-position-y: 60%;
+        }
+
+    }
+
+    .crowd-hero-img{
+        background-image: url('/public/assets/img/crowd.jpg');
+        background-position: bottom;  
+        color: white;
+
+    }
+
+  
+
+    
+    .hero-img{
+
+        margin-top: 3rem;
+
+        height: 320px;       
+        display: flex;
+        align-items: flex-end;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        h2{
+            letter-spacing: 4px;
+            margin-left: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+    }
+
+
+    section{
+        ul{
+            li{
+                margin-top: 1rem;
+                list-style: url('/public/assets/icons/suit-heart-fill.svg') ;
+            }
+        }
+    }
+
+
+}
