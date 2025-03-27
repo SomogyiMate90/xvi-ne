@@ -1,18 +1,26 @@
 
+import { useContext } from "react";
 import LinkBTN from "../Components/LinkBTN";
-import { faceBookIcon } from "../Functions/themes/icons";
+import { faceBookIcon, youTubeIcon } from "../Functions/themes/icons";
+import Theme from "../Functions/themes/ThemeContext";
 
 const PageFooter = () => {
+
+  const theme = useContext(Theme)
+
   return (
-    <div className="page-footer">
+    <div className={`page-footer ${theme}`}>
         <footer className="row m-0">
-            <h4>Elérhetőségek</h4>
+            <h3>Elérhetőségek</h3>
           <div className="col-12 col-lg-4 d-lg-flex flex-column justify-content-evenly  contact">
-            <p>Telephely: 1165 Budapest, Veres Péter út 157. </p>
-            <p>Székhely: 1165 Budapest Íjász utca 17/B</p>
-            <p>Email: nagycsaladosok16@gmail.com</p>
+            <address>
+              <p>Telephely: 1165 Budapest, Veres Péter út 157. </p>
+              <p>Székhely: 1165 Budapest Íjász utca 17/B</p>
+              <p>Email: nagycsaladosok16@gmail.com</p>
             <p><LinkBTN text='Kapcsolati űrlap' url='/Csatlakozz'/></p>
-            <p>Facebook: <a href="https://www.facebook.com/NE16ker" target="_blank" rel="noopener noreferrer" >{faceBookIcon}</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/NE16ker" target="_blank" rel="noopener noreferrer" aria-label='Tovább navigálás a Nagycsaládosok Egyesületének Facebook oldalára' >{faceBookIcon}</a></p>
+            <p>Youtube: <a href="http://www.youtube.com/@xvi.keruletinagycsaladosok8334" target="_blank" rel="noopener noreferrer" aria-label='Tovább navigálás a Nagycsaládosok Egyesületének Youtube Csatronájára'>{youTubeIcon}</a></p>
+            </address>
           </div>
           <div className="col-12 col-lg-8">
             <iframe

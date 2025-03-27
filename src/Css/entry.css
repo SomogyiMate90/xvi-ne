@@ -162,7 +162,7 @@ header nav .nav-item .nav-link:hover {
 }
 header nav .nav-item .nav-link.active {
   text-decoration: underline black;
-  color: #0d6efd;
+  color: #0400fd;
   font-weight: 600;
 }
 header .night-light-label #night-light-checkbox {
@@ -174,7 +174,7 @@ header .night-light-label {
   margin: 20px 0;
   height: 31px;
   width: 60px;
-  border: 2px solid #4672fe;
+  border: 2px solid #0400fd;
   border-radius: 30px;
   position: relative;
   cursor: pointer;
@@ -186,7 +186,7 @@ header .night-light-label .night-light-ball {
   top: 1px;
   left: 1px;
   border-radius: 50%;
-  background: #4672fe;
+  background: #0400fd;
   z-index: 99;
   transition: 300ms;
 }
@@ -208,27 +208,88 @@ header .sun-svg {
   left: 5px;
 }
 
-footer {
-  padding-top: 1rem;
+.page-footer {
   margin: 0;
   background-color: rgba(0, 0, 0, 0.8);
+}
+.page-footer.light {
   color: white;
 }
-footer h4, footer p {
+.page-footer.dark {
+  color: rgb(200, 200, 200);
+}
+.page-footer.akadaly {
+  color: rgb(255, 255, 0);
+}
+.page-footer footer {
+  padding-top: 1rem;
+}
+.page-footer footer h3,
+.page-footer footer p {
   text-align: center !important;
 }
-footer .contact p {
+.page-footer footer .contact p {
   text-align: center;
 }
-footer iframe {
+.page-footer footer iframe {
   width: 100%;
+  height: 100%;
+  min-height: 250px;
 }
 
+.page-about-us .about-us-img {
+  background-image: url("/public/assets/img/hero/csoport_kep.jpg");
+  background-position: 30%;
+  background-size: 250%;
+  position: relative;
+}
+.page-about-us .about-us-img h1 {
+  border-radius: 1rem;
+  padding: 0.3rem 0.5rem;
+  background-color: rgba(0, 152, 253, 0.6352941176);
+  text-shadow: 0px 0px 25px red;
+}
+.page-about-us .about-us-img h1.light, .page-about-us .about-us-img h1.dark {
+  color: white;
+}
+.page-about-us .about-us-img h1.akadaly {
+  color: rgb(255, 255, 0);
+}
+@media screen and (min-width: 500px) {
+  .page-about-us .about-us-img {
+    background-size: 150%;
+    background-position: 30%;
+    background-position-y: 40%;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-about-us .about-us-img {
+    background-size: cover;
+    background-position-y: 40%;
+  }
+}
 .page-about-us ol li {
   list-style-type: lower-alpha;
 }
 .page-about-us ol li::marker {
   font-weight: bolder;
+}
+
+.page-document .document-hero-img {
+  background-image: url("/public/assets/img/hero/documents-hero-img.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-blend-mode: multiply;
+  color: white;
+}
+
+.page-discounts .percent-hero-img {
+  background-image: url("/public/assets/img/hero/percent-hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: hsl(122, 39%, 22%);
+  background-blend-mode: overlay;
+  color: white;
 }
 
 .page-events.light article, .page-events.light section, .page-donations.light article, .page-donations.light section {
@@ -267,26 +328,113 @@ footer iframe {
   justify-content: center;
 }
 
-.page-donations figure img {
-  width: 100%;
-  object-fit: contain;
+.page-events .firendship-hero-img {
+  background-size: cover;
+  background-image: url("/public/assets/img/hero/firendship-hero-img.jpg");
+  background-position-y: center;
+  color: white;
+}
+
+.page-donations .donation-hero-img {
+  background-image: url("/public/assets/img/hero/donation-hero-img.jpg");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 45%;
+  background-color: rgba(207, 0, 0, 0.363);
+  background-blend-mode: multiply;
+  color: white;
 }
 .page-donations section {
   padding: 1rem;
+}
+.page-donations section .content {
+  gap: 1rem;
+}
+.page-donations section .content figure {
+  margin: 0 auto;
+  max-width: 400px;
+}
+.page-donations section .content figure img {
+  width: 100%;
+  object-fit: cover;
 }
 @media screen and (min-width: 680px) {
   .page-donations section:nth-of-type(even) .content {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   .page-donations section:nth-of-type(odd) .content {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
   }
 }
 
+.join-us-page .puzzle-hero-img {
+  background-image: url("/public/assets/img/hero/puzzle-hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.join-us-page .puzzle-hero-img h1 {
+  color: black;
+}
+
+.page-gallery .camera-hero-img {
+  background-image: url("/public/assets/img/hero/camera_hero-img.jpg");
+  background-size: cover;
+  background-color: rgba(187, 187, 187, 0.842);
+  background-blend-mode: multiply;
+  color: white;
+  background-position-y: 35%;
+  background-position-x: center;
+}
+.page-gallery .foto-side {
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.page-gallery .foto-side .card {
+  min-width: 300px;
+  min-height: 400px;
+  box-sizing: border-box;
+}
+.page-gallery .foto-side .card:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.5s;
+  z-index: 1;
+  border: 2px solid red;
+  cursor: pointer;
+}
+.page-gallery .foto-side .card .picture-count-icon {
+  background-color: rgba(4, 0, 253, 0.768627451);
+  border-radius: 30%;
+  padding: 2px 0.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  translate: -10px -10px;
+  display: flex;
+  gap: 0.5rem;
+  color: white;
+  z-index: 2;
+}
+.page-gallery .foto-side.akadaly .card {
+  min-width: 400px;
+  min-height: 600px;
+}
+.page-gallery .foto-side .card-img-overlay *:not(button) {
+  padding: 0 0.3rem;
+  text-shadow: 0px 0px 3px black;
+  background-color: rgba(128, 128, 128, 0.5);
+  overflow: hidden;
+}
+
 .page-home .famiy-hero-img {
-  background-image: url("/public/assets/img/family-hero-img-2.jpg");
+  background-image: url("/public/assets/img/hero/family-hero-img-2.jpg");
+  background-size: cover;
   background-color: hsl(45, 7%, 65%);
   color: white;
   background-position: top;
@@ -298,7 +446,8 @@ footer iframe {
   }
 }
 .page-home .hands-hero {
-  background-image: url("/public/assets/img/hands-hero-img.jpg");
+  background-image: url("/public/assets/img/hero/hands-hero-img.jpg");
+  background-size: cover;
   background-position: center;
   background-color: hsl(210, 70%, 40%);
   color: black;
@@ -311,28 +460,48 @@ footer iframe {
   }
 }
 .page-home .crowd-hero-img {
-  background-image: url("/public/assets/img/crowd.jpg");
+  background-image: url("/public/assets/img/hero/crowd.jpg");
+  background-size: cover;
   background-position: bottom;
   color: white;
 }
-.page-home .hero-img {
-  margin-top: 3rem;
-  height: 320px;
+.page-home section ul li {
+  margin-top: 1rem;
+}
+.page-home section ul li.light {
+  list-style: url("/public/assets/icons/suit-heart-fill.svg");
+}
+.page-home section ul li.dark, .page-home section ul li.akadaly {
+  list-style: url("/public/assets/icons/white-hearth.svg");
+}
+
+.hero-img {
+  margin-bottom: 1rem;
   display: flex;
   align-items: flex-end;
-  background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+  height: 200px;
 }
-.page-home .hero-img h2 {
+.hero-img h2.alt-position, .hero-img h1.alt-position {
   letter-spacing: 4px;
   margin-left: 3rem;
   margin-bottom: 3rem;
 }
-.page-home section ul li {
-  margin-top: 1rem;
-  list-style: url("/public/assets/icons/suit-heart-fill.svg");
+.hero-img h1.poz-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0%;
+  align-self: center;
 }
 
+@media screen and (min-width: 600px) {
+  .hero-img {
+    max-height: none;
+    height: 320px;
+  }
+}
 .static-loading-field {
   position: fixed; /* Fixálva a viewporthoz */
   top: 50%; /* 50% a viewport tetejétől */

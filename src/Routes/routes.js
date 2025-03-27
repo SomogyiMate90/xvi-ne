@@ -10,6 +10,8 @@ import NotFound from "../Components/NotFound";
 import Admin from "../Pages/Admin/Admin";
 import Donations from "../Pages/Donations/Donations";
 import Discounts from "../Pages/Kedvezmenyek/Discounts";
+import DocumentsPage from "../Pages/Dokumentumok/DocumentsPage";
+import GalleryPage from "../Pages/Gallery/GalleryPage";
 
 
 const route = createBrowserRouter([
@@ -45,6 +47,14 @@ const route = createBrowserRouter([
             {
                 path: '/Kedvezmények',
                 element: <Discounts/>
+            },
+            {
+                path: '/Galéria',
+                element: <GalleryPage/>
+            },
+            {
+                path: '/Dokumentumok',
+                element: <DocumentsPage/>
             },
             {
                 path: '/Adminisztrátor',

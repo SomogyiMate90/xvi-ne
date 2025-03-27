@@ -6,7 +6,10 @@ import toNavigateTop from "./toNavigateTop";
  * @param {Event} event 
  */
 function closeNavBarNavElement(event){
-    if(event.target instanceof HTMLAnchorElement){
+
+    const logoEl = document.getElementById('logo-img');
+
+    if(event.target instanceof HTMLAnchorElement || event.target === logoEl){
         document.getElementById('navbarSupportedContent').classList.remove('show');
         document.getElementById('navbarBtn').ariaExpanded = false;
         addActiveStyleToNavItem(event.target);

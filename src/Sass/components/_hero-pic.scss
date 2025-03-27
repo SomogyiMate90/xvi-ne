@@ -1,0 +1,39 @@
+@use '../components/mixinsAndPlaholders' as mix;
+
+    
+    .hero-img{
+
+        // margin-top: 3rem;
+        margin-bottom: 1rem;
+
+        
+        display: flex;
+        align-items: flex-end;
+        // background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+
+        height: 200px;
+
+        h2.alt-position,h1.alt-position{
+            letter-spacing: 4px;
+            margin-left: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        h1.poz-center{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0%;
+            align-self: center;
+        }
+   
+    }
+
+    @include mix.toAfterMaxwidth(600px){
+            .hero-img{
+                max-height: none;
+                height: 320px;       
+            }
+    }

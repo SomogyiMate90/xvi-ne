@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import SliderPanel from "../../Components/SliderPanel";
 import Theme from "../../Functions/themes/ThemeContext";
+import PageHelmet from "../../Components/PageHelmet";
+import metaAndOpengraphTag from "../../Functions/helm/metaAndOpengraphTag";
 
 const WelcomePage = () => {
 
@@ -9,10 +11,12 @@ const actualTheme = useContext(Theme);
   
 
   return (
+    <>
+    <PageHelmet helmetObj={metaAndOpengraphTag.homepage}/>
     <div className="page-home">
 
     {
-      actualTheme === 'akadaly' ?  <span></span> :  <SliderPanel />
+      actualTheme === 'akadaly' ?  <></> :  <SliderPanel />
     }
 
 
@@ -25,7 +29,7 @@ const actualTheme = useContext(Theme);
       
           <section>
           <div className="hero-img famiy-hero-img">
-            <h2>Mit csinál Egyesületünk?</h2>
+            <h2 className="alt-position">Mit csinál Egyesületünk?</h2>
             </div>
             <p className="mt-3">              
                 Egyesületünk, mely 2003 óta működik, valódi közösséget épít a
@@ -55,24 +59,24 @@ const actualTheme = useContext(Theme);
     
       <section >
         <div className="hero-img hands-hero">
-          <h2>Fő programjaink:</h2>
+          <h2 className="alt-position">Fő programjaink:</h2>
           </div>
         <ul>
-          <li>
+          <li className={actualTheme}>
      
               <mark>Hagyományőrzés:</mark> Ünnepeink és rendezvényeink során átadjuk a
               fiataloknak az élet örömeit, miközben megőrizzük a családi
               hagyományokat. [Részletek →]
      
           </li>
-          <li>
+          <li className={actualTheme}>
        
               <mark>Ifjúsági kezdeményezések:</mark> Ifjúsági csoportunk aktívan várja a
               jelentkezőket, akik így akár a kötelező 50 óra közszolgálatukat is
               teljesíthetik. [Jelentkezés →]
         
           </li>
-          <li>
+          <li className={actualTheme}>
     
               <mark>Élelmiszer- és ruhaadomány-gyűjtés:</mark> Hetente élelmiszert osztunk, és
               minden kedden ruha-, könyv- és játékadományokat fogadunk, hogy a
@@ -80,7 +84,7 @@ const actualTheme = useContext(Theme);
               erőforrások. [További információ →]
        
           </li>
-          <li>
+          <li className={actualTheme}>
         
               <mark>Családi rendezvények egész évben:</mark> Tagcsaládjaink számára
               folyamatosan szervezünk zárt és nyitott eseményeket – közös
@@ -89,7 +93,7 @@ const actualTheme = useContext(Theme);
               [Programok →]
         
           </li>
-          <li>
+          <li className={actualTheme}>
       
               <mark>Kulturális programok és kedvezmények:</mark> Országos együttműködéseink
               révén kulturális eseményeket, színházi belépőket és
@@ -102,7 +106,7 @@ const actualTheme = useContext(Theme);
 
       <section>
         <div className="hero-img crowd-hero-img">
-        <h2>Évről évre egyre többen...</h2>
+        <h2 className="alt-position">Évről évre egyre többen...</h2>
         </div>
         <p  className="mt-3">
    
@@ -113,6 +117,7 @@ const actualTheme = useContext(Theme);
       </section>
 
     </div>
+    </>
   );
 };
 

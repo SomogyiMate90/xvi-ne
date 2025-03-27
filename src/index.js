@@ -5,6 +5,7 @@ import route from './Routes/routes';
 import './Css/entry.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'animate.css';
 
 
 

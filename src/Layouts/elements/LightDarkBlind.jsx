@@ -8,7 +8,6 @@ const LightDarkBlind = ({ setTheme }) => {
   // Betöltjük az értéket a localStorage-ból
   useEffect(() => {
     const savedTheme = localStorage.getItem("XviNeActualTheme");
-    console.log(savedTheme)
     if (savedTheme) {
       setTheme(savedTheme);
     }
@@ -57,7 +56,7 @@ const LightDarkBlind = ({ setTheme }) => {
         {sun}
         {moon}
       </label>
-    <button id="btn-akadaly" className="btn" onClick={handleAkadaly}>
+    <button id="btn-akadaly" aria-label='kontrasztos nézet mód be/ki kapcsolása'  className="btn" onClick={handleAkadaly}>
       {akadalymentesIkon}
     </button>
     </div>

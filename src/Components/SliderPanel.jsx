@@ -22,7 +22,7 @@ const SliderPanel = () =>{
 
 
     return(
-        <div id="slider-panel" className="slider-panel">
+        <aside id="slider-panel" className="slider-panel">
                 
             {
                 loremPics.map((item,index)=>{
@@ -30,7 +30,7 @@ const SliderPanel = () =>{
                         <div  key={index} className="d-none px-1 d-flex flex-column flex-md-row align-items-center gap-1 animate__animated">
                             <img   src={item} alt="" />
                             <section>
-                                <h3>Programok oldalra felötlött hír </h3>
+                                <h3>Programok oldalra feltöltött hír </h3>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi atque quia voluptatibus nihil mollitia sequi tempora adipisci? Rerum, ab nesciunt? </p>
                             <LinkBTN text="Tovább a cikkhez"/> 
                             </section>
@@ -40,7 +40,7 @@ const SliderPanel = () =>{
             }
             
 
-        </div>
+        </aside>
     )
 }
 

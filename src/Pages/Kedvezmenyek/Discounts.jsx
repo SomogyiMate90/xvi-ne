@@ -1,10 +1,16 @@
 import LinkOutTargetBlank from "../../Components/LinkOutTargetBlank";
+import PageHelmet from "../../Components/PageHelmet";
+import metaAndOpengraphTag from "../../Functions/helm/metaAndOpengraphTag";
 import XVIKeruletiKedv from "./elements/XVIKeruletiKedv";
 
 const Discounts = () => {
   return (
-    <div>
-      <h1>Tagkártya kedvezmény</h1>
+    <>
+    <PageHelmet helmetObj ={metaAndOpengraphTag.discounts}/>
+    <div className="page-discounts">
+      <div className="hero-img percent-hero-img">
+        <h1 className="poz-center">Tagkártya kedvezmény</h1>
+      </div>
       <p>
         Egyesületünk kártyájával többféle kedvezményt tud biztosítani
         tagcsaládjai számára a mindennapi vásárlásaik során.
@@ -20,6 +26,7 @@ const Discounts = () => {
 
 
     </div>
+    </>
   );
 };
 

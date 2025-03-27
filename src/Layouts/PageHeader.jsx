@@ -15,8 +15,11 @@ const PageHeader = ({setTheme}) => {
         <div className="container-fluid">
           <Link to="/">
             <img
+              id='logo-img'
               src="/assets/img/logo_with_text.png"
               alt="XVI kerületi Nagycsaládosok Egyesület"
+              width="270"
+              height="auto"
             />
           </Link>
 

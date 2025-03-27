@@ -1,6 +1,7 @@
 import LinkBTN from "../../../Components/LinkBTN";
 
 
+
 const Section2 = () =>{
     return(
         <section>
@@ -21,6 +22,14 @@ const Section2 = () =>{
             <p>
             Főbb bevételi forrásunk a befizetett éves tagdíjakból áll (2018-ban 8000 forint), melyet rászoruló tagjaink csak részben, vagy egyáltalán nem tudnak kifizetni, ezért a rendezvényeinkre tárgyi adományokat gyűjtünk és pályázatokat írunk a költségek fedezésére. Költségeink a telefon és postaköltségből, adományszállításból, rendezvényszervezésből adódnak.  
             </p>
+
+            <div>
+                <p>2019-ben új székhelyünk lett mely a1165 Budapest, Veres Péter út 157 alatt található</p>
+                <p>Az átadó ünnepségről videó is készült</p>
+                <div className="my-4 d-flex justify-content-center">      
+                    <iframe style={{maxWidth: '680px', width:'100%',  aspectRatio: '16/9'}} className="youtube-video"  src="https://www.youtube-nocookie.com/embed/c_8aNDKJRCc?si=EqfEoc4ByBWDlTKj" title="Az átadó ünnepségről készült videó, interjú" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div>
+            </div>
 
             <p>
             Működtetjük az „öltözz ingyen programot”. A behozott ruhaadományt az önkénteseink szétválogatják, így a családok már csak azzal találkoznak, ami használható állapotban van. A tagjaink számára ez heti rendszerességgel nyitva áll és időnként kinyitjuk a kapukat a kerület minden családjának.  

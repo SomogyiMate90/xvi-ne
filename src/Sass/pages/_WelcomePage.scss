@@ -4,7 +4,8 @@
 .page-home{
 
     .famiy-hero-img{
-        background-image: url('/public/assets/img/family-hero-img-2.jpg');
+        background-image: url('/public/assets/img/hero/family-hero-img-2.jpg');
+        background-size: cover;
         background-color: hsl(45, 7%, 65%);
         color: white;
         background-position: top;
@@ -19,7 +20,8 @@
     .hands-hero{
         // background-image: url('public/assets/img/hands-hero-img.jpg');
 
-        background-image: url('/public/assets/img/hands-hero-img.jpg');
+        background-image: url('/public/assets/img/hero/hands-hero-img.jpg');
+        background-size: cover;
         background-position: center;
         background-color: hsl(210, 70%, 40%);
         color: black;
@@ -32,7 +34,8 @@
     }
 
     .crowd-hero-img{
-        background-image: url('/public/assets/img/crowd.jpg');
+        background-image: url('/public/assets/img/hero/crowd.jpg');
+        background-size: cover;
         background-position: bottom;  
         color: white;
 
@@ -40,31 +43,19 @@
 
   
 
-    
-    .hero-img{
-
-        margin-top: 3rem;
-
-        height: 320px;       
-        display: flex;
-        align-items: flex-end;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        h2{
-            letter-spacing: 4px;
-            margin-left: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-    }
 
 
     section{
         ul{
             li{
                 margin-top: 1rem;
+            }
+            li.light{
                 list-style: url('/public/assets/icons/suit-heart-fill.svg') ;
+            }
+
+            li.dark, li.akadaly{
+                list-style: url('/public/assets/icons/white-hearth.svg') ;
             }
         }
     }
