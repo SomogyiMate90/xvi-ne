@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import SliderPanel from "../../Components/SliderPanel";
 import CardFolder from "./element/CardFolder";
 import events from "./element/testEvcents";
 import Theme from "../../Functions/themes/ThemeContext";

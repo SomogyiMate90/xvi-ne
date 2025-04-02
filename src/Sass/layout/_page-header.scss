@@ -12,6 +12,13 @@ header{
 
   &.light{
     background-color: base.$nav-light-bg;
+
+    .navbar-toggler{
+      --bs-navbar-color : #{base.$night-light-ball-color};
+      --bs-navbar-toggler-border-color :#{base.$night-light-ball-color};
+      background-color: base.$night-light-ball-bg-color-alt;
+    }
+
   }
 
   &.dark,&.akadaly{
@@ -22,6 +29,24 @@ header{
     a.nav-link.active{
       color: white !important;
     }
+
+    .navbar-toggler{
+      --bs-navbar-color : #{base.$dark-outlet-bg};
+      --bs-navbar-toggler-border-color :#{base.$dark-outlet-bg};
+      background-color: #{base.$dark-color};
+    }
+
+    .night-light-label{
+      border-color: #{base.$dark-outlet-bg};
+      background-color: #{base.$dark-color};
+
+       .night-light-ball{
+        background: #{base.$dark-outlet-bg};
+      }
+    }
+
+
+
   }
 
   &.akadaly{
@@ -34,6 +59,13 @@ header{
       text-shadow: 2px 2px 3px black;
       
     }
+
+    .navbar-toggler{
+      // --bs-navbar-color : #{base.$dark-outlet-bg};
+      // --bs-navbar-toggler-border-color :#{base.$dark-outlet-bg};
+      background-color: #{base.$akadaly-color};
+    }
+
   }
 
     nav{
@@ -44,6 +76,8 @@ header{
                
             }
         }
+
+
 
 
         .nav-item{
@@ -78,7 +112,7 @@ header{
 
             .nav-link.active{
                 text-decoration: underline black;
-                color: #0400fd;
+                color: base.$night-light-ball-color;
                 font-weight: 600;
                 // background-color: rgba($nav-bg,1);
             }
@@ -102,7 +136,7 @@ header{
         margin: 20px 0;
         height: 31px;
         width: 60px;
-        border: 2px solid #0400fd;
+        border: 2px solid base.$night-light-ball-color;
         border-radius: 30px;
         position: relative;
         cursor: pointer;
@@ -115,7 +149,7 @@ header{
         top: 1px;
         left: 1px;
         border-radius: 50%;
-        background: #0400fd;
+        background: base.$night-light-ball-color;
         z-index: 99;
         transition: 300ms;
       }
@@ -142,19 +176,4 @@ header{
         left: 5px;
       }
  
-      
-    
-      
-    
-      
- 
-      
-
-      
-      
-      
-
-      
-
-
 }

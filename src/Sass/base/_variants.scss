@@ -2,7 +2,7 @@
 
 $nav-light-bg : hsl(44, 80%, 59%);
 $nav-dark-bg : hsl(44, 80%, 32%);
-$nav-akadaly-bg : hsl(44, 80%, 32%);
+$nav-akadaly-bg : hsl(44, 80%, 22%);
 
 
 
@@ -42,5 +42,10 @@ $dark-bg-headers: rgba(243, 91, 91, 0.541);
 $dark-accordion : rgb(68, 68, 68);
 
 $akadaly-accordion: $dark-outlet-bg;
+
+// UTILS
+
+$night-light-ball-color: #0400ff;
+$night-light-ball-bg-color-alt: hsl(241, 100%, 85%);
 
 $test: rgb(13, 110, 253, 0.25)

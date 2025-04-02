@@ -1,0 +1,41 @@
+@use '../base/indexBase' as base;
+
+.page-admin{
+    
+    .btn-info{
+        --bs-btn-bg: hsl(300, 80%, 50%);
+        --bs-btn-color: white;
+        --bs-btn-hover-bg: hsl(300, 80%, 35%);
+       
+        --bs-btn-hover-color: white;
+        --bs-btn-border-color: magenta;
+    }
+    input.text-success{
+        font-weight: bolder;
+        letter-spacing: 3px;
+        word-spacing: 3px;
+    }
+    input.text-success::placeholder{
+        font-weight: initial;
+        letter-spacing: initial;
+    }
+ 
+    h2{
+        color: base.$night-light-ball-color;
+    }
+
+    .doc-window{
+
+        padding: .5rem 1rem;
+        border-bottom: 1px solid black;
+        background-color:  base.$light-Event-paros-Article-background-color;
+        
+        &:nth-of-type(even){
+            
+            background-color: base.$light-Event-paratlan-Article-background-color;
+        }
+
+
+    }
+
+}

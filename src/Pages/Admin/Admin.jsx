@@ -1,5 +1,6 @@
 
 import { useIsLog } from "../../Functions/contexts/isLogConTexr";
+import EditingForm from "./elements/EditingForm";
 import LoginForm from "./elements/LoginForm";
 
 
@@ -15,13 +16,13 @@ const Admin = () =>{
         seletedComp = <LoginForm/>
     }
     else{
-        seletedComp = <h1>Sikeres Bejelentkezés</h1>
+        seletedComp = <EditingForm/>
     }
 
 
 
     return(
-        <div>
+        <div className="page-admin">
    
             {
                 seletedComp
