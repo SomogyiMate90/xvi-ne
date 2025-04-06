@@ -9,7 +9,7 @@ function startFirstWelcomePanel(){
     if(myCookie !== "name=firstRun"){
 
         // console.log('isRanedScript Belépett az if blokba')
-        document.cookie="name=firstRun; SameSite=Strict; max-age=300";  // Óránkénti figyelmezető üzenet
+        document.cookie="name=firstRun; SameSite=Strict; max-age=3600";  // Óránkénti figyelmezető üzenet
     
         const bodyEl = document.getElementById('body-element');
         

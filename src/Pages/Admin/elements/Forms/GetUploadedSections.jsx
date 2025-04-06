@@ -3,7 +3,7 @@ import ListDocContent from "../../../../shared/ListDocContent"
 
 const GetUploadedSections = ({setInputValues, eventModify,collectionName,docs}) =>{
 
-    console.log(docs)
+    // console.log(docs)
 
     // const {docId , data } = docs  // Ezt még érdemes lehet visszahozni
 
@@ -12,7 +12,7 @@ const GetUploadedSections = ({setInputValues, eventModify,collectionName,docs}) 
     return(
 
         <section>
-            <h3 className="">A feltöltött elemek</h3>
+            <h3 className="text-info">Adatbázisban szereplő tételek</h3>
             {
                 docs.map((item,index)=>{
                     // console.log(item)

@@ -1,4 +1,5 @@
 import Kedvezmenyek from "../Views/Kedvezmenyek";
+import Programs from "../Views/Programs";
 
 
 const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
@@ -13,7 +14,7 @@ const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
         break;
         case 'kedvezmenyek' : component = <Kedvezmenyek eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
-        case 'programok' : component = <span>PROGRAMOK</span>
+        case 'programok' : component = <Programs eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
 
         default: <h3>Valami hiba keletkezett</h3>

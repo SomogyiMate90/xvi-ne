@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import animateSliderPanel from "../Functions/animateSliderPanel";
-import LinkBTN from "./LinkBTN";
+import LinkBTN from "../shared/LinkBTN";
+
 
 const SliderPanel = () =>{
 

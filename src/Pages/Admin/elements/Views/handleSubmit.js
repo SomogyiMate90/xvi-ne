@@ -13,7 +13,6 @@ export default async function submitFunction(event,collectionName) {
             
             try{
                 const formValues = getNewFormObj(event);
-    
                 
                 if(!hasDocId){
                     resp = await creatNewDoc(formValues,collectionName);

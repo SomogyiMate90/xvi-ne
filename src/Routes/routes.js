@@ -12,6 +12,8 @@ import Donations from "../Pages/Donations/Donations";
 import Discounts from "../Pages/Kedvezmenyek/Discounts";
 import DocumentsPage from "../Pages/Dokumentumok/DocumentsPage";
 import GalleryPage from "../Pages/Gallery/GalleryPage";
+import ErrorElement from "../Components/ErrorElement";
+import { getFIRESOTER_content } from "../Functions/firebase/getFIRESOTER_content";
 
 
 const route = createBrowserRouter([
@@ -30,11 +32,10 @@ const route = createBrowserRouter([
             {
                 path: '/Programok',
                 element: <Events/>,
-                loader: ()=>getJsonFormPublic('/json/testArticles.json'),                
+                // loader: ()=>getJsonFormPublic('/json/testArticles.json'),                
+                loader: ()=>getFIRESOTER_content('programok'),                
                 hydrateFallbackElement: <LoadingTime text={{title: 'Töltés', content: 'Lekéri a szervertől'}}/>,
-                
-                // hydrateFallbackElement: <h2>Töltés...</h2>,
-                errorElement: <h1>Error...</h1>
+                errorElement: <ErrorElement/>
             },
             {
                 path: '/Csatlakozz',

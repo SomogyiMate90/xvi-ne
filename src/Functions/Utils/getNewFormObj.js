@@ -22,6 +22,9 @@ export default function getNewFormObj(event){
                 const phoneNum = validPhonNum(value);
                 acc[key] = phoneNum
             }
+            else if(key === "picture"){
+                return acc;
+            }
             else{
                 acc[key] = value
             }

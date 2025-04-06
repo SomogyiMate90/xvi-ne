@@ -1,5 +1,6 @@
-import LinkBTN from "../../../Components/LinkBTN";
+
 import { pictureIcon } from "../../../Functions/themes/icons";
+import LinkBTN from "../../../shared/LinkBTN";
 
 const CardFolder = ({LoremId,text}) => {
 

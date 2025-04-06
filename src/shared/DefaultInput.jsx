@@ -2,8 +2,12 @@
 const DefaultInput = ({
     labelText,
     inputProps,
-    defaultValue = null
+    defaultValue = null,
+    fun = {}
 })=>{
+
+
+
 
 
     return(
@@ -13,7 +17,7 @@ const DefaultInput = ({
                 name={inputProps.id} 
                 {...{className: 'form-control ',type:'text', ...inputProps}}
                 defaultValue={defaultValue ?? '' }                
-             
+                {...fun}
             />
         </div>
     )

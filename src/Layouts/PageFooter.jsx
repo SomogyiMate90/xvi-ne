@@ -1,8 +1,7 @@
-
 import { useContext } from "react";
-import LinkBTN from "../Components/LinkBTN";
 import { faceBookIcon, youTubeIcon } from "../Functions/themes/icons";
 import Theme from "../Functions/themes/ThemeContext";
+import LinkBTN from "../shared/LinkBTN";
 
 const PageFooter = () => {
 

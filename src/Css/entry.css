@@ -1,6 +1,6 @@
 @charset "UTF-8";
 main.blur {
-  filter: blur(5px) invert(80%);
+  filter: blur(5px);
 }
 
 .accordion.dark {
@@ -359,6 +359,9 @@ header .sun-svg {
 .page-events article, .page-events section, .page-donations article, .page-donations section {
   border-top: 2px solid black;
 }
+.page-events article img, .page-events section img, .page-donations article img, .page-donations section img {
+  max-width: 400px;
+}
 .page-events article h2, .page-events section h2, .page-donations article h2, .page-donations section h2 {
   text-align: center;
 }
@@ -373,7 +376,8 @@ header .sun-svg {
 .page-events article figure, .page-events section figure, .page-donations article figure, .page-donations section figure {
   margin: 0 1rem 1rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-events .firendship-hero-img {
@@ -566,8 +570,8 @@ header .sun-svg {
 }
 @media screen and (min-width: 600px) {
   .static-loading-field {
-    width: 25vw;
-    height: 25vh;
+    width: 35vw;
+    height: 35vh;
     background-color: red;
   }
 }

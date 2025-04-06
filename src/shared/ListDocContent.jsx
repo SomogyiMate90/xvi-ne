@@ -1,4 +1,6 @@
 import deleteFirestoreDoc from "../Functions/firebase/deleteFirestoreDoc";
+import toConverStringAny from "../Functions/Utils/toConverStringAny";
+import BtnGroup from "../Pages/Admin/elements/Forms/BtnGroup";
 
 /**
  *
@@ -27,22 +29,37 @@ const ListDocContent = ({setInputValues, eventModify, collectionName,item }) => 
   return (
     <div className=" doc-window">
       {keyList.map((it, ind) => {
-        return (    
+        
+        if(it === 'base64Url'){
+          return(
             <pre key={ind}>
-                {/* // Kiszervezni külön függvényben az "it" -et mert fasz tudja mikor mit fog vossza adni */}
-                {it} : {Array.isArray(data[it]) ? data[it].join(", ") : data[it]}  
+              Kép:
+              <img  src={data[it]} width='200px' alt="" />
             </pre>
-        );
+          )
+        }
+        else{
+          const convertedElement = toConverStringAny(data[it]);
+
+          return (    
+              <pre key={ind}>
+                  {`${it} : ${convertedElement}`}
+              </pre>
+          );
+        }
+
+
       })}
 
       <pre>
         docId : {docId}
       </pre>
 
-      <div className="d-flex justify-content-evenly">
-          <button onClick={setDefaultValues} className="btn btn-info">Javítás</button>
-          <button onClick={handleDelete} className="btn btn-danger">Törlés</button>
-      </div>
+      <BtnGroup btn={
+            [{inputProps :{onClick : setDefaultValues},className : "btn btn-info",text: 'Javítás'},
+              {inputProps :{onClick : handleDelete},className : "btn btn-danger",text: 'Törlés'}
+
+            ]}/>
     </div>
   );
 };

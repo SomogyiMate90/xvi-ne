@@ -1,4 +1,5 @@
-import LinkBTN from "../../../Components/LinkBTN";
+import LinkBTN from "../../../shared/LinkBTN";
+
 
 
 

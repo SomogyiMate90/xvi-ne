@@ -20,8 +20,8 @@
     grid-template-rows: min-content min-content auto;
 
     @include mix.toAfterMaxwidth(600px){
-        width: 25vw;
-        height: 25vh;
+        width: 35vw;
+        height: 35vh;
         background-color: red;
     }
     &.light{
