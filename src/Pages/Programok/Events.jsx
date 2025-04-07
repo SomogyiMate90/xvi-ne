@@ -1,74 +1,50 @@
-import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
-import Theme from "../../Functions/themes/ThemeContext";
-import PageHelmet from "../../Components/PageHelmet";
-import metaAndOpengraphTag from "../../Functions/helm/metaAndOpengraphTag";
-import LinkBTN from "../../shared/LinkBTN";
-import DefaultFigure from "../../shared/DefaultFigure";
-import getShortedText from "../../Functions/Utils/getShortedText";
+import { useContext, useEffect, useState } from "react";
+import FireStoreContext from "../../Functions/contexts/fireSroreContext";
+import LoadingTime from "../../Components/LoadingTime";
+import ErrorElement from "../../Components/ErrorElement";
+import EventsComp from "./elements/EventsComp";
 
 const Events = () => {
-  /**
-   * @type {Array<{ id: number, "article-img": string, "article-title": string, "article-paragraph": string[] }>}
-   */
-  const eventObj = useLoaderData();
 
-  const actualTheme = useContext(Theme);
+  
 
-  return (
+   const eventObj = useContext(FireStoreContext);
+   const [seletecComp, setSelectedComp] = useState(<LoadingTime text={{title: 'Töltés', content: 'Lekéri a szervertől'}}/>)
+
+   useEffect(()=>{
+      let timeoutId;
+      if(eventObj.programok){
+
+        if(eventObj.programok.length > 0) {
+          setSelectedComp(<EventsComp expandedEvents={eventObj.programok}/>)
+        }
+        else{
+          setSelectedComp(<ErrorElement/>)
+        }
+      }
+      else{
+        timeoutId = setTimeout(() => {
+          setSelectedComp(<ErrorElement />);
+        }, 4000);
+      }
+      return () => clearTimeout(timeoutId);
+   },[eventObj])
+
+   return(
     <>
-      <PageHelmet helmetObj={metaAndOpengraphTag.programs}/>
-      <div className={`page-events ${actualTheme}`}>
-        <div className="hero-img firendship-hero-img">
-          <h1 className="poz-center">Közelgő események, Hírek</h1>
-        </div>
-
-        {eventObj?.programok.map(({docId, data}, index) => {
-
-          /**
-           * @type {Array}
-           */
-          const splitedDescription = data?.description.split('\n');
-
-          const descriptionParagraps = splitedDescription.filter(item=> item !== '');
-
-          const shortedDescription = getShortedText(descriptionParagraps,320)
-
-          return(
-            <article className="py-1 px-3" key={docId}>
-         
-              <h2 className="mb-4 px-1">{data?.title}</h2>
-              <div
-                className={
-                  index % 2 === 0
-                    ? "d-md-flex flex-md-row justify-content-evenly"
-                    : "d-md-flex flex-md-row-reverse justify-content-evenly"
-                }
-              >
-              <div className="d-flex flex-column justify-content-evenly">
-              {
-               shortedDescription.map((i,n)=>(<p key={n}>{i}</p>))
-              }
-              <LinkBTN text="Tovább olvasom" url={`/programok/${data?.titleUrl}`}/>
-              </div>
-     
-                 {data?.base64Url && ( <DefaultFigure props={{imgSrc : data?.base64Url , imgAlt : data?.picAlt  }}/> )}    
-              </div>
-            </article>
-          )}
-        )}
-       </div>
+    {seletecComp}
     </>
-  );
+   )
+
 };
 
 export default Events;
 
 
-     {/* <CalendarBTN event={{title: data?.title , location: data?.address, startTime : data?.startTime, endTime : data?.endTime, description : data?.description }}/> */}
+     {/* <CalendarBTN event={{title: data?.title , location: data?.address, startTime : data?.startTime, endTime : data?.endTime, description : data?.description }}/> 
       
-{/*  eredeti jsonos */}
-{/* 
+  eredeti jsonos 
+
         {eventObj.map((item, index) => {
           return (
             <article className="p-1" key={item.id}>

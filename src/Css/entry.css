@@ -359,9 +359,6 @@ header .sun-svg {
 .page-events article, .page-events section, .page-donations article, .page-donations section {
   border-top: 2px solid black;
 }
-.page-events article img, .page-events section img, .page-donations article img, .page-donations section img {
-  max-width: 400px;
-}
 .page-events article h2, .page-events section h2, .page-donations article h2, .page-donations section h2 {
   text-align: center;
 }

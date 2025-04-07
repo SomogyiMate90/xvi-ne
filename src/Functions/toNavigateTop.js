@@ -1,5 +1,6 @@
 
-export default function toNavigateTop(){
+export default function toNavigateTop(parms = {behavior : 'instant'}){
     const topEl = document.getElementById('page-defalult-layout');
-    topEl.scrollIntoView({behavior : 'instant'})
+
+    topEl.scrollIntoView(parms)
 }
