@@ -178,7 +178,7 @@ header{
 
       // Elforgatott kijelző esetén
 
-       @media screen and (max-height:550px) {
+       @media screen and (orientation: landscape) {
 
               
         #navbarSupportedContent>ul{

@@ -45,7 +45,7 @@ const Kedvezmenyek = ( {eventModify, collectionName , docs }) =>{
 
                 <BtnGroup btn={[
                     {text : 'Adatfeltöltés / Módosítása' , type : "submit" , className: "btn btn-success"},
-                    {text : 'Új űrlap', inputProps: {onclick : ()=>{setFormKey(formKey+1);setInputValues({})} } , className: "btn btn-warning"}
+                    {text : 'Új űrlap', inputProps: {onClick : ()=>{setFormKey(formKey+1);setInputValues({})} } , className: "btn btn-warning"}
                 ]}/>
             </form>
             <hr />

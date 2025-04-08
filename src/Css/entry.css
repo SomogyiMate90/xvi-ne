@@ -228,7 +228,7 @@ header .moon-svg {
 header .sun-svg {
   left: 5px;
 }
-@media screen and (max-height: 550px) {
+@media screen and (orientation: landscape) {
   header #navbarSupportedContent > ul {
     display: flex;
     flex-direction: row;
@@ -692,23 +692,45 @@ header .sun-svg {
   background-color: hsla(190, 89.898989899%, 49.5%, 0.151);
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+.slider-panel .loading-gif {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .slider-panel div {
-  margin: auto;
+  margin: 1rem 0rem;
 }
 .slider-panel div img {
   width: 100%;
-  object-fit: contain;
+  max-height: 130px;
+  object-fit: cover;
   overflow: hidden;
+  border-radius: 0.5rem;
+  border: 3px solid green;
 }
 @media screen and (min-width: 450px) {
   .slider-panel div img {
-    height: 150px;
+    max-width: 500px;
+    max-height: 200px;
   }
 }
 @media screen and (min-width: 768px) {
   .slider-panel div img {
-    height: 100%;
+    max-height: 430px;
+    max-width: 100%;
+  }
+}
+.slider-panel a {
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 300px) {
+  .slider-panel.not-reverse-mobil {
+    display: none !important;
   }
 }
 
