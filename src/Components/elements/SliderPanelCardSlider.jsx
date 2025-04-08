@@ -33,7 +33,7 @@ const SliderPanelCardSlider = ({receivedArray}) =>{
                           data?.base64Url && (<div className="d-flex col-xl-5 justify-content-center"><img   src={data?.base64Url} alt={data?.picAlt} /></div>)
                         }
                         <section className="col-xl-7 flex flex-column justify-content-evenly">
-                            <h3 className="mb-0 text-center">{data?.title} </h3>
+                            <h3 className="mb-0 mt-2 text-center">{data?.title} </h3>
                             <div className="description">
                             {
                                 shortedDescription.map((i,n)=>(<p className="mb-0" key={n}>{i}</p>))

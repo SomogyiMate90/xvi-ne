@@ -44,7 +44,7 @@ const EventsComp = ({expandedEvents}) => {
                 {
                  shortedDescription.map((i,n)=>(<p key={n}>{i}</p>))
                 }
-                <LinkBTN text="Tovább olvasom" url={`/programok/${data?.titleUrl}`}/>
+                <LinkBTN anStyle={index % 2 === 0 ? 'text-start' : 'text-end'} text="Tovább olvasom" url={`/programok/${data?.titleUrl}`}/>
                 </div>
        
                    {data?.base64Url && ( <DefaultFigure props={{imgSrc : data?.base64Url , imgAlt : data?.picAlt  }}/> )}    

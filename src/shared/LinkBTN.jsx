@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import toNavigateTop from "../Functions/toNavigateTop";
 
-const LinkBTN = ({ text, url, classStyle = "btn btn-info" }) => {
+const LinkBTN = ({ text, url, btnStyle = 'btn btn-info', anStyle = 'text-center' }) => {
   return (
-    <Link
-      to={url}
-      onClick={() => toNavigateTop({ behavior: "auto" })}
-      className={classStyle}
-    >
-      {text}
+    <Link className={anStyle} to={url}>
+      <button  onClick={()=>toNavigateTop({behavior : 'auto'})} type="button" className={btnStyle} >
+        {text}
+      </button>
     </Link>
   );
 };
