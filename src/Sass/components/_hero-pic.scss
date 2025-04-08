@@ -28,6 +28,13 @@
             bottom: 0%;
             align-self: center;
         }
+        h1.poz-center.top{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -50%;
+            align-self: center;
+        }
    
     }
 

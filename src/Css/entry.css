@@ -564,6 +564,17 @@ header .sun-svg {
   list-style: url("/public/assets/icons/white-hearth.svg");
 }
 
+.empty-swing-hero-img {
+  min-height: 60vh !important;
+  background-image: url("/public/assets/img/hero/empty-swing-hero-img.webp");
+  background-size: cover;
+  background-color: rgba(73, 78, 82, 0.6);
+  background-blend-mode: multiply;
+  color: white;
+  background-position-y: 80%;
+  background-position-x: 60%;
+}
+
 .hero-img {
   margin-bottom: 1rem;
   display: flex;
@@ -582,6 +593,13 @@ header .sun-svg {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0%;
+  align-self: center;
+}
+.hero-img h1.poz-center.top {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -50%;
   align-self: center;
 }
 

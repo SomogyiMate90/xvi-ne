@@ -10,22 +10,23 @@ const Events = () => {
 
    const eventObj = useContext(FireStoreContext);
    const [seletecComp, setSelectedComp] = useState(<LoadingTime text={{title: 'Töltés', content: 'Lekéri a szervertől'}}/>)
-
+  console.log(eventObj.programok)
    useEffect(()=>{
       let timeoutId;
       if(eventObj.programok){
+        console.log('Belépett az if blokba')
 
         if(eventObj.programok.length > 0) {
           setSelectedComp(<EventsComp expandedEvents={eventObj.programok}/>)
         }
         else{
-          setSelectedComp(<ErrorElement/>)
+          setSelectedComp(<h1>Nincs adat feltöltve</h1>)
         }
       }
       else{
         timeoutId = setTimeout(() => {
           setSelectedComp(<ErrorElement />);
-        }, 4000);
+        }, 10000);
       }
       return () => clearTimeout(timeoutId);
    },[eventObj])
