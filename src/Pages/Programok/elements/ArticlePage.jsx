@@ -29,7 +29,7 @@ const ArticlePage = () => {
 
         setSelectedComp(
 // KI szervezni külön függvénybe!!
-          <div key={foundedObj[0].docId}>
+          <div key={foundedObj[0].docId} className="page-article d-flex flex-column align-items-center">
             <h1>{title}</h1>
             <DefaultFigure props={{ imgSrc: base64Url, imgAlt: picAlt }} />
             <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>

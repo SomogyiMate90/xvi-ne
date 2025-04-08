@@ -23,39 +23,39 @@ const route = createBrowserRouter([
                 element: <WelcomePage/>
             },
             {
-                path: '/Rólunk',
+                path: '/rólunk',
                 element: <AboutUs/>
             },
             {
-                path: '/Programok',
+                path: '/programok',
                 element: <Events/>,
             },
             {
-                path: '/Programok/*',
+                path: '/programok/*',
                 element: <ArticlePage/>,
             },
             {
-                path: '/Csatlakozz',
+                path: '/csatlakozz',
                 element: <JoinUs/>
             },
             {
-                path: '/Adományok',
+                path: '/adományok',
                 element: <Donations/>
             },
             {
-                path: '/Kedvezmények',
+                path: '/kedvezmények',
                 element: <Discounts/>
             },
             {
-                path: '/Galéria',
+                path: '/galéria',
                 element: <GalleryPage/>
             },
             {
-                path: '/Dokumentumok',
+                path: '/dokumentumok',
                 element: <DocumentsPage/>
             },
             {
-                path: '/Adminisztrátor',
+                path: '/adminisztrátor',
                 element: <Admin/>
             },
             {

@@ -32,7 +32,7 @@ const EventsComp = ({expandedEvents}) => {
             return(
               <article className="py-1 px-3" key={docId}>
            
-                <h2 className="mb-4 px-1">{data?.title}</h2>
+                <h2 className="mb-4 mt-2 px-1">{data?.title}</h2>
                 <div
                   className={
                     index % 2 === 0

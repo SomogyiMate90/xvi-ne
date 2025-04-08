@@ -70,15 +70,28 @@ header{
 
     nav{
 
+      // #navbarSupportedContent.collapse.show,#navbarSupportedContent.collapsing,#navbarSupportedContent.collapsing.show {
+      //   display: flex;
+
+      // }
+
+      // #navbarSupportedContent>div{
+      //   padding: 2rem 0rem 0rem;
+      // }
+      // @include mix.toAfterMaxwidth(992px){
+        
+      //   #navbarSupportedContent>div.theme-btn-group{
+      //     margin: auto auto;  
+      //     padding: 0rem;
+      //   }
+      // }
+
         div.container-fluid{
             img{
                 max-width: 270px;
                
             }
         }
-
-
-
 
         .nav-item{
         
@@ -133,7 +146,7 @@ header{
       
       .night-light-label {
         display: block;
-        margin: 20px 0;
+        margin: 10px auto;
         height: 31px;
         width: 60px;
         border: 2px solid base.$night-light-ball-color;
@@ -174,6 +187,23 @@ header{
       
       .sun-svg {
         left: 5px;
+      }
+
+      // Elforgatott kijelző esetén
+
+      @media screen and (max-height:550px) {
+
+              
+        #navbarSupportedContent>ul{
+          display: flex;
+          flex-direction: row;
+        }
+
+        //   label.night-light-label{
+        // rotate: 90deg;
+        // }
+
+        
       }
  
 }

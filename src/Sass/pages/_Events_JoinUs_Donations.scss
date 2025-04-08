@@ -22,7 +22,7 @@
 
             &:nth-child(even){
                 background-color: base.$dark-Event-paros-Article-background-color;
-            };
+            }
         }
     }
 
@@ -36,14 +36,24 @@
     article,section{
         border-top: 2px solid black;
 
-        img{
-            // max-width: 400px;
-        }
-
+       
 
         h2{
             text-align: center;
         }
+            figure{
+            margin: 0rem;
+         
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img{
+                    max-width: 300px;
+                }
+        }
+    
+
 
         @include mix.toAfterMaxwidth(600px){
 
@@ -57,19 +67,21 @@
                 }
             }
 
+            figure{
+                margin: 0rem 1rem 1rem; 
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img{
+                        max-width: 400px;
+                     
+                    }
+            
+            }         
+
         }
-        
-        figure{
-            margin: 0 1rem 1rem;
 
-
-         
-                display: flex;
-                flex-direction: column;
-                align-items: center
-          
-
-        }
 
     }
 }
@@ -146,6 +158,39 @@
 
     }
 }
+
+.page-article{
+    figure{
+        margin: 0rem 0rem 1rem;
+     
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img{
+                max-width: 300px;
+            }
+    }
+    
+    @include mix.toAfterMaxwidth(450px){
+    
+       
+            figure{
+            margin: 0rem 0rem 1rem;
+         
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                img{
+                    max-width: 400px;
+                }
+            }
+        }
+
+}
+
+
 
 .join-us-page{
 

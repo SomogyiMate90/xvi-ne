@@ -14,13 +14,13 @@ const NavListLinks = () =>{
 
     const listLinks = [
         {text : 'Kezdőoldal', uri : '/'},
-        {text : 'Rólunk', uri : '/Rólunk'},
-        {text : 'Programok', uri : '/Programok'},
-        {text : 'Csatlakozz', uri : '/Csatlakozz'},
-        {text : 'Adományok', uri : '/Adományok'},
-        {text : 'Kedvezmények', uri : '/Kedvezmények'},
-        {text : 'Galéria', uri : '/Galéria'},
-        {text : 'Dokumentumok', uri : '/Dokumentumok'},
+        {text : 'Rólunk', uri : '/rólunk'},
+        {text : 'Programok', uri : '/programok'},
+        {text : 'Csatlakozz', uri : '/csatlakozz'},
+        {text : 'Adományok', uri : '/adományok'},
+        {text : 'Kedvezmények', uri : '/kedvezmények'},
+        {text : 'Galéria', uri : '/galéria'},
+        {text : 'Dokumentumok', uri : '/dokumentumok'},
         // {text : 'Admin (id)', uri : '/adminisztrátor'},
     ]
 
