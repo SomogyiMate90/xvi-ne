@@ -20,7 +20,10 @@ const ListDocContent = ({setInputValues, eventModify, collectionName,item }) => 
   }
 
   const setDefaultValues = () =>{
-        setInputValues({data, docId})
+    setInputValues({data, docId})
+    
+    const h1El = document.getElementById("h1-in-form");
+    h1El.scrollIntoView({ behavior: 'smooth' })
   }
 
 

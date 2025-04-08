@@ -1,5 +1,7 @@
-import Kedvezmenyek from "../Views/Kedvezmenyek";
-import Programs from "../Views/Programs";
+import FormView from "../Views/FormView";
+// import Kedvezmenyek from "../Views/Kedvezmenyek";
+// import Partners from "../Views/Partners";
+// import Programs from "../Views/Programs";
 
 
 const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
@@ -12,11 +14,14 @@ const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
         break;
         case 'galeria' : component = <span>GALÉRIA</span>
         break;
-        case 'kedvezmenyek' : component = <Kedvezmenyek eventModify={eventModify} collectionName={collectionName} docs={docs}/>
+        case 'kedvezmenyek' : component = <FormView  key='B' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
-        case 'programok' : component = <Programs eventModify={eventModify} collectionName={collectionName} docs={docs}/>
+        case 'partnerek' : component = <FormView key='C' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
-
+        case 'programok' : component = <FormView key='D' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
+        break;
+        // case 'programok' : component = <Programs eventModify={eventModify} collectionName={collectionName} docs={docs}/>
+        // break;
         default: <h3>Valami hiba keletkezett</h3>
     }
 

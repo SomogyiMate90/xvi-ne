@@ -1,10 +1,13 @@
-const DefaultTextArea = ({ labelText, inputProps, defaultValue = null }) => {
+const DefaultTextArea = ({ givenLabelText, inputProps, defaultValue = null }) => {
+
+  const {labelText, ...other} = inputProps
+
   return (
     <div className="mb-3 form-control">
-      <label className="mb-3" htmlFor={inputProps.id}>{labelText}</label>
+      <label className="mb-3" htmlFor={inputProps.id}>{labelText || givenLabelText}</label>
       <textarea
         name={inputProps.id}
-        {...{ className: "form-control ", type: "text",rows : 10, ...inputProps }}
+        {...{ className: "form-control ", type: "text",rows : 10, ...other }}
         defaultValue={defaultValue ?? ""}
       ></textarea>
     </div>

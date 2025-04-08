@@ -104,4 +104,4 @@ const getNewPicUrl = async (event) =>{
   );
 };
 
-export default Programs;
+// export default Programs;

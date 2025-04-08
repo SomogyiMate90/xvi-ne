@@ -35,7 +35,7 @@ const EditingForm  = () =>{
 
     return(
         <div className="outlet">
-            <h1>Sikeres bejelentkezés!</h1>
+            <h1 id="h1-in-form">Sikeres bejelentkezés!</h1>
 
 
             <section>

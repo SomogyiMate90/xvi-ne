@@ -4,9 +4,6 @@
  */
 export default function getEnglishUrl(text){
 
-
-    console.log(text)
-
     if(typeof text !== 'string') return;
 
     const lowerText = text.toLowerCase();
@@ -36,9 +33,7 @@ export default function getEnglishUrl(text){
             break;
             default: caracter = item;
         }
-
-        console.log(caracter)
-
+        
         acc += caracter;
         return acc;
     },"")

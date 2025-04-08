@@ -318,7 +318,7 @@ header .sun-svg {
   font-weight: initial;
   letter-spacing: initial;
 }
-.page-admin h2 {
+.page-admin h2, .page-admin h3 {
   color: #0400ff;
 }
 .page-admin .doc-window {
