@@ -51,16 +51,15 @@ const LightDarkBlind = ({ setTheme }) => {
 
     <div className="ps-3 d-flex   justify-content-lg-center gap-2 gap-lg-0">
       <label htmlFor="night-light-checkbox" className="night-light-label">
-        <input onChange={(event)=>setLightDarkTheme(event)} type="checkbox" id="night-light-checkbox" />
+        <input onChange={(event)=>setLightDarkTheme(event)} type="checkbox" checked={actualTheme === 'dark' ? true : false } id="night-light-checkbox" />
         <span className="night-light-ball"></span>
         {sun}
         {moon}
       </label>
-    <button id="btn-akadaly" aria-label='kontrasztos nézet mód be/ki kapcsolása'  className="btn" onClick={handleAkadaly}>
+    <button id="btn-akadaly" aria-label='kontrasztos nézet mód be/ki kapcsolása'  className={actualTheme === 'akadaly' ? 'btn btn-primary' : 'btn'} onClick={handleAkadaly}>
       {akadalymentesIkon}
     </button>
     </div>
-
 
 
   );
