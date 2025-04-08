@@ -3,6 +3,7 @@ import DefaultFigure from "../../../shared/DefaultFigure";
 import FireStoreContext from "../../../Functions/contexts/fireSroreContext";
 import LoadingTime from "../../../Components/LoadingTime";
 import ErrorElement from "../../../Components/ErrorElement";
+import CalendarBTN from "../../../shared/CalendarBTN";
 
 const ArticlePage = () => {
   const [selectedComp, setSelectedComp] = useState(<LoadingTime text={{ title: "Töltés", content: "Lekéri a szervertől" }} />);
@@ -21,18 +22,24 @@ const ArticlePage = () => {
       );
       if (foundedObj.length > 0) {
         const foundedDoc = foundedObj[0].data;
-        const { address, base64Url, picAlt, description, title } = foundedDoc;
+        
+        const { address, base64Url, picAlt, description, title, startTime , endTime  } = foundedDoc;
+
+        console.log(foundedDoc)
 
         const splitedDescription = description.split('\n');
   
         const descriptionParagraps = splitedDescription.filter(item=> item !== '');
-
         setSelectedComp(
 // KI szervezni külön függvénybe!!
           <div key={foundedObj[0].docId} className="page-article d-flex flex-column align-items-center">
+            <CalendarBTN classStyle='calendar align-self-end text-primary' event={foundedDoc} />
             <h1>{title}</h1>
-            <DefaultFigure props={{ imgSrc: base64Url, imgAlt: picAlt }} />
-            <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>
+            <div className="clearfix">
+              <DefaultFigure classStyle='p-2 ps-4 float-md-end mb-0' props={{ imgSrc: base64Url, imgAlt: picAlt }} />
+              <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>
+            </div>
+            <div className="clear-fix"></div>
             <div className="artilce-elemets">
               <p>Térkép: <span>{address}</span></p>
             </div>

@@ -1,9 +1,9 @@
-const DefaultFigure = ({props}) => {
+const DefaultFigure = ({props, classStyle}) => {
 
    const {imgSrc, imgAlt } = props
 
   return (
-    <figure>
+    <figure className={classStyle}>
         <img
           src={imgSrc}
           alt={imgAlt ?? "Az eseményhez kapcsolodó kép"}

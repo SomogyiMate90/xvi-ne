@@ -653,6 +653,11 @@ header .sun-svg {
   max-height: 50px;
 }
 
+.calendar {
+  border-radius: 50% 50% 0.5rem 0.5rem;
+  background-color: yellow;
+}
+
 .alert-panel-of-first-use {
   width: 95vw;
   height: 95vh;

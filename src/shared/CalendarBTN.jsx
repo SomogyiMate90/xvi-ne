@@ -3,22 +3,20 @@
 import { calendarIcon } from '../Functions/themes/icons';
 import formatDateForGoogleCalendar from '../Functions/Utils/formatDateForGoogleCalendar';
 
-const CalendarBTN = ({event}) => {
+const CalendarBTN = ({classStyle,event}) => {
 
+  console.log(event)
 
     const now = Date.now();
 
     const actualISOTime = new Date(now).toISOString();
 
-    console.log(now);
-
-    console.log(actualISOTime)
 
      const {
         title = undefined,
         startTime = undefined,
         endTime = undefined,
-        location = undefined,
+        address = undefined,
         description = undefined
       } = event;
 
@@ -28,17 +26,17 @@ const CalendarBTN = ({event}) => {
       if (description) params.push(`details=${encodeURIComponent(description)}`);
       if (startTime && endTime)
         params.push(`dates=${formatDateForGoogleCalendar(startTime)}/${formatDateForGoogleCalendar(endTime)}`);
-      if (location) params.push(`location=${encodeURIComponent(location)}`);
+      if (address) params.push(`location=${encodeURIComponent(address)}`);
       
       const googleCalendarUrl = `https://calendar.google.com/calendar/r/eventedit?${params.join('&')}`;
       
-      console.log(googleCalendarUrl)
+   
 
  
 
   return (
-    <div className="calendar float-end pe-3 pt-2">
-      <a className='text-danger' href={googleCalendarUrl} rel="noopener noreferrer" target="_blank" aria-label='Esemény hozzáadása a naptárhoz'>{calendarIcon}</a>
+    <div className={classStyle || "text-danger"}>
+      <a className='' href={googleCalendarUrl} rel="noopener noreferrer" target="_blank" aria-label='Esemény hozzáadása a naptárhoz'>{calendarIcon}</a>
     </div>
   );
 };

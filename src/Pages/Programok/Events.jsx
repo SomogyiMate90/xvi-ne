@@ -10,11 +10,11 @@ const Events = () => {
 
    const fireBaseContent = useContext(FireStoreContext);
    const [seletecComp, setSelectedComp] = useState(<LoadingTime text={{title: 'Töltés', content: 'Lekéri a szervertől'}}/>)
-  console.log(fireBaseContent.programok)
+  // console.log(fireBaseContent.programok)
    useEffect(()=>{
       let timeoutId;
       if(fireBaseContent.programok){
-        console.log('Belépett az if blokba')
+        // console.log('Belépett az if blokba')
 
         if(fireBaseContent.programok.length > 0) {
           setSelectedComp(<EventsComp expandedEvents={fireBaseContent.programok}/>)
