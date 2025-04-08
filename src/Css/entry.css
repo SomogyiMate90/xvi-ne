@@ -191,13 +191,14 @@ header .night-light-label #night-light-checkbox {
 }
 header .night-light-label {
   display: block;
-  margin: 20px 0;
+  margin: 5px 5px;
   height: 31px;
   width: 60px;
   border: 2px solid #0400ff;
   border-radius: 30px;
   position: relative;
   cursor: pointer;
+  align-self: center;
 }
 header .night-light-label .night-light-ball {
   position: absolute;
@@ -226,6 +227,12 @@ header .moon-svg {
 }
 header .sun-svg {
   left: 5px;
+}
+@media screen and (max-height: 550px) {
+  header #navbarSupportedContent > ul {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .page-footer {
@@ -362,6 +369,15 @@ header .sun-svg {
 .page-events article h2, .page-events section h2, .page-donations article h2, .page-donations section h2 {
   text-align: center;
 }
+.page-events article figure, .page-events section figure, .page-donations article figure, .page-donations section figure {
+  margin: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-events article figure img, .page-events section figure img, .page-donations article figure img, .page-donations section figure img {
+  max-width: 300px;
+}
 @media screen and (min-width: 600px) {
   .page-events article h2, .page-events section h2, .page-donations article h2, .page-donations section h2 {
     text-align: left;
@@ -369,12 +385,15 @@ header .sun-svg {
   .page-events article:nth-child(even) h2, .page-events section:nth-child(even) h2, .page-donations article:nth-child(even) h2, .page-donations section:nth-child(even) h2 {
     text-align: right;
   }
-}
-.page-events article figure, .page-events section figure, .page-donations article figure, .page-donations section figure {
-  margin: 0 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .page-events article figure, .page-events section figure, .page-donations article figure, .page-donations section figure {
+    margin: 0rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page-events article figure img, .page-events section figure img, .page-donations article figure img, .page-donations section figure img {
+    max-width: 400px;
+  }
 }
 
 .page-events .firendship-hero-img {
@@ -417,6 +436,27 @@ header .sun-svg {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+  }
+}
+
+.page-article figure {
+  margin: 0rem 0rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-article figure img {
+  max-width: 300px;
+}
+@media screen and (min-width: 450px) {
+  .page-article figure {
+    margin: 0rem 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page-article figure img {
+    max-width: 400px;
   }
 }
 

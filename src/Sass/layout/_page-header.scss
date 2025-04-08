@@ -70,21 +70,6 @@ header{
 
     nav{
 
-      // #navbarSupportedContent.collapse.show,#navbarSupportedContent.collapsing,#navbarSupportedContent.collapsing.show {
-      //   display: flex;
-
-      // }
-
-      // #navbarSupportedContent>div{
-      //   padding: 2rem 0rem 0rem;
-      // }
-      // @include mix.toAfterMaxwidth(992px){
-        
-      //   #navbarSupportedContent>div.theme-btn-group{
-      //     margin: auto auto;  
-      //     padding: 0rem;
-      //   }
-      // }
 
         div.container-fluid{
             img{
@@ -146,13 +131,15 @@ header{
       
       .night-light-label {
         display: block;
-        margin: 10px auto;
+        margin: 5px 5px;
         height: 31px;
         width: 60px;
         border: 2px solid base.$night-light-ball-color;
         border-radius: 30px;
         position: relative;
         cursor: pointer;
+
+        align-self: center;
       }
       
       .night-light-label .night-light-ball {
@@ -191,7 +178,7 @@ header{
 
       // Elforgatott kijelző esetén
 
-      @media screen and (max-height:550px) {
+       @media screen and (max-height:550px) {
 
               
         #navbarSupportedContent>ul{
@@ -205,5 +192,6 @@ header{
 
         
       }
+
  
 }
