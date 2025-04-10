@@ -14,7 +14,7 @@ const SliderPanel = ({ classStyle, displayList }) => {
   }, [elements]);
 
   return (
-    <aside id="slider-panel" className={`slider-panel p-1 ${classStyle}`}>
+    <aside id="slider-panel" className={`slider-panel ${classStyle}`}>
       {elements && elements.length > 0 ? (
         <SliderPanelCardSlider receivedArray={elements} />
       ) : (

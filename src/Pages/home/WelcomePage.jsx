@@ -16,7 +16,7 @@ const actualTheme = useContext(Theme);
     <div className="page-home">
 
     {
-      actualTheme === 'akadaly' ?  <></> :  <SliderPanel classStyle='not-reverse-mobil' displayList='programok' />
+      actualTheme === 'akadaly' ?  <></> :  <SliderPanel classStyle='not-reverse-mobil h470' displayList='programok' />
     }
 
 
