@@ -12,6 +12,11 @@
 
         --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #{rgba(var.$nav-dark-bg,0.45)};
 
+        $darkArrow: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27none%27 stroke=%27#{rgb(200, 200, 200)}%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpath d=%27M2 5L8 11L14 5%27/%3e%3c/svg%3e');
+
+        --bs-accordion-btn-icon: #{$darkArrow};
+        --bs-accordion-btn-active-icon: #{$darkArrow};
+
     }
 
     &.akadaly{
@@ -21,6 +26,14 @@
         --bs-accordion-active-color: rgb(29, 252, 0);
 
         --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #{rgba(var.$nav-akadaly-bg,0.45)};
+
+        // --bs-accordion-btn-icon-width: 
+        $akadalyArrow: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27none%27 stroke=%27%23FFFF00%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpath d=%27M2 5L8 11L14 5%27/%3e%3c/svg%3e');
+
+        --bs-accordion-btn-icon: #{$akadalyArrow};
+        --bs-accordion-btn-active-icon: #{$akadalyArrow};
+      
+    
 
         button{
             letter-spacing: 2px;

@@ -19,15 +19,25 @@ header{
       background-color: base.$night-light-ball-bg-color-alt;
     }
 
+    .nav-item>a.nav-link.transform-line::after{
+      background-color: base.$night-light-ball-color ;
+    }
   }
+
 
   &.dark,&.akadaly{
     background-color: base.$nav-dark-bg;
   }
 
   &.dark{
+
+    a.nav-link:hover{
+      color:#{base.$dark-color};
+    }
+
     a.nav-link.active{
       color: white !important;
+      text-decoration-color: white !important;
     }
 
     .navbar-toggler{
@@ -52,17 +62,19 @@ header{
   &.akadaly{
     background-color: base.$nav-akadaly-bg;
     a{
-      color: base.$akadaly-color;
+      color: base.$akadaly-color !important;
     }
+
+    a.nav-link:hover{
+      color: white !important;
+    }
+  
     a.nav-link.active{
       color: rgba(base.$akadaly-color,0.7) !important;
       text-shadow: 2px 2px 3px black;
-      
     }
 
     .navbar-toggler{
-      // --bs-navbar-color : #{base.$dark-outlet-bg};
-      // --bs-navbar-toggler-border-color :#{base.$dark-outlet-bg};
       background-color: #{base.$akadaly-color};
     }
 
@@ -79,6 +91,26 @@ header{
         }
 
         .nav-item{
+          
+          .nav-link{
+            position: relative;
+          }
+          a.nav-link.transform-line::after{
+            content: "";
+            position: absolute;
+            bottom: 10px; /* A link alján helyezkedik el */
+            left: 50%; /* Kezdje a link közepétől */
+            transform: translateX(-50%) scaleX(0); /* Kezdetben 0 hosszúságú, középre igazítva */
+            transform-origin: center; /* Az animáció a középpontból indul */
+            width: 100%;  /* A link teljes szélessége */
+            height: 2px;  /* Vonal magassága (állítsd igény szerint) */
+            background-color: currentColor; /* A vonal ugyanaz a szín, mint a link */
+            transition: transform 0.3s ease-in-out; /* Finom animációs átmenet */
+          }
+
+          a.nav-link.transform-line:hover::after{
+            transform: translateX(-50%) scaleX(1); /* Hover állapotban a vonal teljes szélességű */
+          }
         
         &.admin{
             background-color: rgb(253, 249, 6);

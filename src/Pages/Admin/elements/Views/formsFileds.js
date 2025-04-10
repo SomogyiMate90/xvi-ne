@@ -45,7 +45,6 @@ const kedvezmenyek = {
 
   phoneNumber: {
     id: "phoneNumber",
-    // placeholder: "",
     className: "form-control text-success",
     minLength: 10,
     labelText: 'Telefonszám',

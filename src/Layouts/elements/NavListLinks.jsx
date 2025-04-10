@@ -35,7 +35,7 @@ return(
                 return(
                     <li key={index} className='nav-item'>
                         <Link to={listItem?.uri}
-                              className={firstRenderingPathName ===  listItem?.uri ? 'nav-link active' : 'nav-link'}
+                              className={firstRenderingPathName ===  listItem?.uri ? 'nav-link active' : 'nav-link transform-line'}
                         >
                             {listItem?.text}
                         </Link>

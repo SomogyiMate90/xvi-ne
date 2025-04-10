@@ -4,6 +4,7 @@ import FireStoreContext from "../../../Functions/contexts/fireSroreContext";
 import LoadingTime from "../../../Components/LoadingTime";
 import ErrorElement from "../../../Components/ErrorElement";
 import CalendarBTN from "../../../shared/CalendarBTN";
+import NotFound from "../../../Components/NotFound";
 
 const ArticlePage = () => {
   const [selectedComp, setSelectedComp] = useState(<LoadingTime text={{ title: "Töltés", content: "Lekéri a szervertől" }} />);
@@ -36,7 +37,7 @@ const ArticlePage = () => {
             <CalendarBTN classStyle='calendar align-self-end text-primary' event={foundedDoc} />
             <h1>{title}</h1>
             <div className="clearfix">
-              <DefaultFigure classStyle='p-2 ps-4 float-md-end mb-0' props={{ imgSrc: base64Url, imgAlt: picAlt }} />
+              <DefaultFigure classStyle='p-0 p-lg-2 ps-xl-4 float-xl-end mb-0' props={{ imgSrc: base64Url, imgAlt: picAlt }} />
               <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>
             </div>
             <div className="clear-fix"></div>
@@ -47,7 +48,7 @@ const ArticlePage = () => {
         );
       } else {
         // Ha nem található program, esetleg hibát jelezhetsz itt
-        setSelectedComp(<ErrorElement />);
+        setSelectedComp(<NotFound />);
       }
     } else {
       // Ha az adatok még nem jöttek meg, várunk 4 másodpercet, majd hibát mutatunk

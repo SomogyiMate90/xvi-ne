@@ -3,7 +3,7 @@
  * @param {File} value 
  * @returns 
  */
-export default async function getPictureSrcBase64(value) {
+export default async function getPictureSrcBase64(value,maxWidth = 400) {
     if (!value) throw new Error("Nincs fájl kiválasztva!");
 
     if (!value.type.startsWith('image/')) return;
@@ -36,15 +36,13 @@ export default async function getPictureSrcBase64(value) {
     console.log("Eredeti magasság:", newImg.height);
 */
     // Új méretek beállítása (példa: max. 400px szélesség)
-    const maxWidth = 400;
     const scaleFactor = maxWidth / newImg.width;
     const newWidth = maxWidth;
     const newHeight = newImg.height * scaleFactor;
 
-    /*
+    
     console.log("Új szélesség:", newWidth);
     console.log("Új magasság:", newHeight);
-*/
     // Canvas létrehozása és rajzolás
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
@@ -55,7 +53,9 @@ export default async function getPictureSrcBase64(value) {
     ctx.drawImage(newImg, 0, 0, newWidth, newHeight);
 
     // A módosított kép Base64 formátumban
-    const compressedBase64 = canvas.toDataURL("image/jpeg",1); // 80%-os minőség
+    const compressedBase64 = canvas.toDataURL("image/jpeg",1); // 100%-os minőség
+
+    
 /*
     console.log("Tömörített Base64 URL:", compressedBase64);
 */

@@ -61,3 +61,44 @@
 
 }
 
+a.link-out{
+
+    text-decoration: none;
+    position: relative;
+
+    &.light{
+        font-weight: 600;
+        
+        color: base.$light-ancor;
+
+    }
+
+    &.dark{
+        color: base.$dark-ancor;
+    }
+
+    &.akadaly{
+        color: rgba( base.$akadaly-ancor, 0.7) !important;
+        &:hover{
+            color: rgba( base.$akadaly-ancor, 1) !important;
+            transform: scale(1.4) !important;
+        }
+    }
+}
+
+a.transform-line::after {
+    content: "";
+    position: absolute;
+    bottom: 2px; /* A link alján helyezkedik el */
+    left: 50%; /* Kezdje a link közepétől */
+    transform: translateX(-50%) scaleX(0); /* Kezdetben 0 hosszúságú, középre igazítva */
+    transform-origin: left; /* Az animáció a középpontból indul */
+    width: 100%;  /* A link teljes szélessége */
+    height: 2px;  /* Vonal magassága (állítsd igény szerint) */
+    background-color: currentColor; /* A vonal ugyanaz a szín, mint a link */
+    transition: transform 0.3s ease-in-out; /* Finom animációs átmenet */
+  }
+  
+  a.transform-line:hover::after {
+    transform: translateX(-50%) scaleX(1); /* Hover állapotban a vonal teljes szélességű */
+  }

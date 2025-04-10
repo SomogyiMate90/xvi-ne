@@ -57,7 +57,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       alert("Képet tölts fel! Ellenőrizd a fájl típusát.");
       return;
     } else {
-      const compresedPicBase64Url = await getPictureSrcBase64(file);
+      const compresedPicBase64Url = await getPictureSrcBase64(file,600);
 
       // console.log(compresedPicBase64Url)
       setPictureBase64Url(compresedPicBase64Url);

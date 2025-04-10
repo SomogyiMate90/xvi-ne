@@ -1,4 +1,4 @@
-import LinkOutTargetBlank from "../../Components/LinkOutTargetBlank";
+import LinkOutTargetBlank from "../../shared/LinkOutTargetBlank";
 import PageHelmet from "../../Components/PageHelmet";
 import metaAndOpengraphTag from "../../Functions/helm/metaAndOpengraphTag";
 import XVIKeruletiKedv from "./elements/XVIKeruletiKedv";

@@ -27,6 +27,14 @@ $akadaly-secondary-color: rgb(230, 155, 25);
 $dark-bg-nav: rgb(60, 60, 60); // Sötét navigációs sávhoz, hogy elváljon a fő háttértől
 $dark-bg-headers: rgba(243, 91, 91, 0.541);
 
+// link
+$light-ancor: #0400ff;
+
+$dark-ancor: #87CEFA; // Szöveg szín sötét témához (jobb kontraszt)
+
+$akadaly-ancor: rgb(255, 0, 0);
+
+
 // Programok háttér
     // Páratlan:
         $light-Event-paratlan-Article-background-color: rgba(255, 250, 240, 0.9);

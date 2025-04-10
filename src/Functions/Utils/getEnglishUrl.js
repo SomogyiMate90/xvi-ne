@@ -6,13 +6,17 @@ export default function getEnglishUrl(text){
 
     if(typeof text !== 'string') return;
 
-    const lowerText = text.toLowerCase();
-
+    const lowerText = text.trim().toLowerCase();
     const spltedText = lowerText.split("");
 
-    const formatedText = spltedText.reduce((acc,item)=>{
+    const formatedText = spltedText.reduce((acc,item,index)=>{
+
+        if (!/[a-záéíóöőúüű\s]/.test(item)) return acc;
+        if(acc[index-1] === '-') return acc;
+
 
         let caracter;
+
 
         switch(item){
             case 'á' : caracter = 'a';
