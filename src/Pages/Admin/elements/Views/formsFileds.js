@@ -72,7 +72,7 @@ const programok = {
   address: {
     id: "address",
     labelText: 'Cím',
-    placeholder: "irányítószám, Város, és (ha szükséges) utca házszám",
+    placeholder: "irányítószám, Város, és (ha szükséges) utca házszám. Esetlen GPS koordináta",
     className: "form-control text-success",
   },
 

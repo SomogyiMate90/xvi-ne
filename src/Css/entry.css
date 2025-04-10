@@ -331,7 +331,7 @@ header .sun-svg {
 }
 
 .page-document .document-hero-img {
-  background-image: url("/public/assets/img/hero/documents-hero-img.jpg");
+  background-image: url("/public/assets/img/hero/documents-hero-img.webp");
   background-size: cover;
   background-position: bottom;
   background-blend-mode: multiply;
@@ -339,7 +339,7 @@ header .sun-svg {
 }
 
 .page-discounts .percent-hero-img {
-  background-image: url("/public/assets/img/hero/percent-hero-img.jpg");
+  background-image: url("/public/assets/img/hero/percent-hero-img.webp");
   background-size: cover;
   background-position: center;
   background-color: hsl(122, 39%, 22%);
@@ -398,7 +398,7 @@ header .sun-svg {
 
 .page-events .firendship-hero-img {
   background-size: cover;
-  background-image: url("/public/assets/img/hero/firendship-hero-img.jpg");
+  background-image: url("/public/assets/img/hero/firendship-hero-img.webp");
   background-position-y: center;
   color: white;
 }
@@ -461,7 +461,7 @@ header .sun-svg {
 }
 
 .join-us-page .puzzle-hero-img {
-  background-image: url("/public/assets/img/hero/puzzle-hero-img.jpg");
+  background-image: url("/public/assets/img/hero/puzzle-hero-img.webp");
   background-size: cover;
   background-position: center;
 }
@@ -470,7 +470,7 @@ header .sun-svg {
 }
 
 .page-gallery .camera-hero-img {
-  background-image: url("/public/assets/img/hero/camera_hero-img.jpg");
+  background-image: url("/public/assets/img/hero/camera_hero-img.webp");
   background-size: cover;
   background-color: rgba(187, 187, 187, 0.842);
   background-blend-mode: multiply;
@@ -522,7 +522,7 @@ header .sun-svg {
 }
 
 .page-home .famiy-hero-img {
-  background-image: url("/public/assets/img/hero/family-hero-img-2.jpg");
+  background-image: url("/public/assets/img/hero/family-hero-img-2.webp");
   background-size: cover;
   background-color: hsl(45, 7%, 65%);
   color: white;
@@ -535,7 +535,7 @@ header .sun-svg {
   }
 }
 .page-home .hands-hero {
-  background-image: url("/public/assets/img/hero/hands-hero-img.jpg");
+  background-image: url("/public/assets/img/hero/hands-hero-img.webp");
   background-size: cover;
   background-position: center;
   background-color: hsl(210, 70%, 40%);
@@ -549,7 +549,7 @@ header .sun-svg {
   }
 }
 .page-home .crowd-hero-img {
-  background-image: url("/public/assets/img/hero/crowd.jpg");
+  background-image: url("/public/assets/img/hero/crowd.webp");
   background-size: cover;
   background-position: bottom;
   color: white;

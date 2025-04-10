@@ -14,7 +14,7 @@ function animateSliderPanel(){
 
     if(i=== 1){
         setTimeout(()=>{
-            const selectedPicindex = getRandumNum(countOfSliderPanelChild-1,0);
+            const selectedPicindex = 0;
             const selectedPic =  sliderPanelEl.children[selectedPicindex];
             const getIndexForStyleIn = getRandumNum(stlyesMax-1,0)
             const getIndexForStyleOut = getRandumNum(stlyesMax-1,0)
@@ -27,7 +27,7 @@ function animateSliderPanel(){
             setTimeout(()=>{
                 selectedPic.classList.remove(stlyesArray[getIndexForStyleIn][0]);
                 selectedPic.classList.add(stlyesArray[getIndexForStyleOut][1])
-            },8300)
+            },8900)
     
             setTimeout(()=>{
             selectedPic.classList.remove(stlyesArray[getIndexForStyleOut][1]);
@@ -38,13 +38,18 @@ function animateSliderPanel(){
           i++;
     }
 
-   
+    let index = 1;
         setInterval(()=>{
-    
-            const selectedPicindex = getRandumNum(countOfSliderPanelChild-1,0);
-            const selectedPic =  sliderPanelEl.children[selectedPicindex];
+            
+            if(index >= countOfSliderPanelChild){
+                index = 0;
+            }
+            // const selectedPicindex = getRandumNum(countOfSliderPanelChild-1,0); // véltelten beállítás
+            const selectedPic =  sliderPanelEl.children[index];
             const getIndexForStyleIn = getRandumNum(stlyesMax-1,0)
             const getIndexForStyleOut = getRandumNum(stlyesMax-1,0)
+
+            index++;
     
             setTimeout(()=>{    
                 selectedPic.classList.remove('d-none');
@@ -54,7 +59,7 @@ function animateSliderPanel(){
             setTimeout(()=>{
                 selectedPic.classList.remove(stlyesArray[getIndexForStyleIn][0]);
                 selectedPic.classList.add(stlyesArray[getIndexForStyleOut][1])
-            },6300)
+            },8900)
     
             setTimeout(()=>{
             selectedPic.classList.remove(stlyesArray[getIndexForStyleOut][1]);
