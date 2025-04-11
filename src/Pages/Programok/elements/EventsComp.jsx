@@ -6,7 +6,7 @@ import PageHelmet from "../../../Components/PageHelmet";
 import LinkBTN from "../../../shared/LinkBTN";
 import DefaultFigure from "../../../shared/DefaultFigure";
 
-const EventsComp = ({expandedEvents}) => {
+const EventsComp = ({children,expandedEvents=[]}) => {
 
     const actualTheme = useContext(Theme);
 
@@ -17,7 +17,7 @@ const EventsComp = ({expandedEvents}) => {
           <div className="hero-img firendship-hero-img">
             <h1 className="poz-center">Közelgő események, Hírek</h1>
           </div>
-  
+          {children}
           {expandedEvents.map(({docId, data}, index) => {
   
             /**

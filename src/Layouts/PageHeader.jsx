@@ -16,7 +16,7 @@ const PageHeader = ({setTheme}) => {
           <Link to="/">
             <img
               id='logo-img'
-              src="/assets/img/logo_with_text.png"
+              src="/assets/img/logo_with_text.webp"
               alt="XVI kerületi Nagycsaládosok Egyesület"
               width="270"
               height="auto"

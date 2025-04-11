@@ -4,7 +4,7 @@ import LinkBTN from "../shared/LinkBTN";
 const ErrorElement = () =>{
     return(
         <div className="error-elment">
-            <h1>Sajnáljuk! Valami hiba történt</h1>
+            <h2>Sajnáljuk! Valami hiba történt</h2>
 
 
             <LinkBTN text='Vissza a főoldalra' url= '/' />
