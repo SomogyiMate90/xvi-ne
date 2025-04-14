@@ -8,6 +8,8 @@ const AccordionItem2 = () => {
 
 
 
+
+
   return (
     <div className="accordion-item">
         <h2 className="accordion-header">

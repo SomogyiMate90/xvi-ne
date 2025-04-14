@@ -23,7 +23,7 @@ const AccordionKedvezmenyItem = ({doc}) =>{
               data-bs-toggle="collapse"
               data-bs-target={`#${docId}`}
               aria-expanded="false"
-              aria-controls="collapseOne"
+              aria-controls={`#${docId}`}
             >
               {title}
             </button>
@@ -31,7 +31,7 @@ const AccordionKedvezmenyItem = ({doc}) =>{
           <div
             id={`${docId}`}
             className="accordion-collapse collapse"
-            data-bs-parent="#kedzvezmenyek-accordion"
+            data-bs-parent={`#${docId}`}
           >
             <div className="accordion-body">
               <p>
