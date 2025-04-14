@@ -1,0 +1,25 @@
+
+ul.hearth{
+    li{
+        margin-top: 1rem;
+    }
+    &.light{
+        li{
+            list-style: url('/public/assets/icons/suit-heart-fill.svg') ;
+        }
+    }
+
+    &.dark, &.akadaly{
+        li{
+            list-style: url('/public/assets/icons/white-hearth.svg') ;
+        }
+    }
+
+    &.akadaly{
+        li{
+            mark{
+                text-decoration: underline red;
+            }
+        }
+    }
+}

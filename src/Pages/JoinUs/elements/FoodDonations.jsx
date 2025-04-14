@@ -16,7 +16,7 @@ const FoodDonations = () =>{
                     </p>
                 </div>
                 <figure>
-                    <img src="/assets/img/elelmiszer-adomany.jpg" alt="Karton dobozban tartós élelmiszerek" />
+                    <img src="/assets/img/elelmiszer-adomany.webp" alt="Karton dobozban tartós élelmiszerek" />
                 </figure>
 
             </div>

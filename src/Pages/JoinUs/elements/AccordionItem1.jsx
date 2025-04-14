@@ -6,7 +6,7 @@ const AccordionItem1 = () =>{
             Ki lehet tagja az egyesületnek?
           </button>
         </h2>
-        <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#about-us-accordion">
           <div className="accordion-body">
             <h2>Kedves Nagycsaládos!</h2>
 

@@ -14,7 +14,7 @@ const OnePercentage = () => {
             kattintva.
           </p>
           <figure>
-            <img src="/assets/img/1szazalek1.png" alt="1%" />
+            <img src="/assets/img/1szazalek1.webp" alt="1%" />
           </figure>
       </div>
     </section>

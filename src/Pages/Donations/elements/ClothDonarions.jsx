@@ -1,31 +1,33 @@
 const ClothDonarions = () => {
   return (
     <section>
-      <h2>Ruhaadomány</h2>
+      <h2>Ruha és játék adomány</h2>
       <div className="content">
           <div>
               <p>
                 Kinőtte a gyereked a ruháját? Méretváltás volt a felnőtt ruhákban? Nem
-                tudod hová adhatnád?{" "}
+                tudod hová adhatnád le megunt de még használható játékát?
               </p>
               <p>
-                Amennyiben olyan az állapota amit te is szívesen hazavinnél, hozd el
-                nekünk.{" "}
+                <strong>
+                  Amennyiben olyan az állapota amit te is szívesen hazavinnél, hozd el
+                  nekünk.
+                </strong>
               </p>
               <p>
-                <b>Mi történik a leadott ruhával?</b>{" "}
+                <u>Mi történik a leadott tárgyakkal?</u>
               </p>
               <p>
                 Az önkénteseink kivállogatják, szortírozzák és szépen összehajtogatva
-                polcokra kerül a tagcsaládok aikik igénylik heti rendszerességgel
-                eljönnek és kiválogatják amit használni tudnak évente minimum 3x
+                polcokra kerül. A tagcsaládok aikik igénylik heti rendszerességgel
+                eljönnek és kiválogatják amit használni tudnak. Évente minimum 3x
                 meghirdetjük az "Öltözz ingyen" programunkat minden XVI. kerületi
-                családnak Amikor már nem férünk el, hátrányos helyzetű településekre
-                juttatjuk el a ruhákat és kezdük elölről.{" "}
+                családnak. Amikor már nem férünk el, hátrányos helyzetű településekre
+                juttatjuk el a ruhákat, játékokat és kezdük elölről.{" "}
               </p>
           </div>
           <figure>
-            <img src="/assets/img/ruha-adomany.jpg" alt="Használt ruhák egy karoton dobozban és mellette" />
+            <img src="/assets/img/ruha-adomany.webp" alt="Használt ruhák egy karoton dobozban és mellette" />
           </figure>
       </div>
     </section>

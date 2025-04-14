@@ -1,0 +1,30 @@
+details summary {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .chevron {
+    transition: transform 0.2s ease;
+    margin-left: 2rem;
+    transform: scale(1.2);
+  }
+  
+  details[open] .chevron {
+    transform: scale(2.2);
+   
+  }
+
+  details[open] summary{
+        
+    font-style: initial;
+  }
+
+  details[open]{
+        
+    font-style: italic;
+    p{
+        text-align: inherit;
+    }
+  }

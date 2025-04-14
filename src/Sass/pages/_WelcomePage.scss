@@ -18,47 +18,27 @@
     }
     
     .hands-hero{
-        // background-image: url('public/assets/img/hands-hero-img.jpg');
-
         background-image: url('/public/assets/img/hero/hands-hero-img.webp');
         background-size: cover;
         background-position: center;
-        background-color: hsl(210, 70%, 40%);
+        background-color: hsl(210, 70%, 42%);
         color: black;
         background-blend-mode: multiply;
         color: white;
         @include mix.toAfterMaxwidth(1200px){
             background-position-y: 60%;
         }
-
     }
 
-    .crowd-hero-img{
-        background-image: url('/public/assets/img/hero/crowd.webp');
+    .kids-hero-img{
+        background-image: url('/public/assets/img/hero/kids-hero-img.webp');
         background-size: cover;
-        background-position: bottom;  
+        background-color: #00695C;
+        background-blend-mode: overlay;
+        background-position-y: top;  
         color: white;
-
-    }
-
-  
-
-
-
-    section{
-        ul{
-            li{
-                margin-top: 1rem;
-            }
-            li.light{
-                list-style: url('/public/assets/icons/suit-heart-fill.svg') ;
-            }
-
-            li.dark, li.akadaly{
-                list-style: url('/public/assets/icons/white-hearth.svg') ;
-            }
+        @include mix.toAfterMaxwidth(1100px){
+            background-position-y: 18%;;
         }
     }
-
-
 }

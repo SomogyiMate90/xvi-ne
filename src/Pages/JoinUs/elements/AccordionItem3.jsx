@@ -8,7 +8,7 @@ const AccordionItem3 = () =>{
         Belépési nyilatkozat
           </button>
         </h2>
-        <div id="flush-collapse3" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div id="flush-collapse3" className="accordion-collapse collapse" data-bs-parent="#about-us-accordion">
           <div className="accordion-body">
             <p>Az egyesületbe rendes tagnak,pártoló tagnak és tiszteletbeli tagnak jelentkezni az alábbi nyilatkozat kitöltésével lehet!</p>
 

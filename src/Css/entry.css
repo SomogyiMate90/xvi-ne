@@ -1,4 +1,32 @@
 @charset "UTF-8";
+details summary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+  margin-left: 2rem;
+  transform: scale(1.2);
+}
+
+details[open] .chevron {
+  transform: scale(2.2);
+}
+
+details[open] summary {
+  font-style: initial;
+}
+
+details[open] {
+  font-style: italic;
+}
+details[open] p {
+  text-align: inherit;
+}
+
 main.blur {
   filter: blur(5px);
 }
@@ -115,7 +143,7 @@ body, html {
   }
 }
 
-@media screen and (min-width: 768px) and (orientation: landscape) {
+@media screen and (max-width: 768px) and (orientation: landscape) {
   .not-reverse-mobil {
     display: none;
   }
@@ -460,7 +488,7 @@ header .sun-svg {
   max-width: 400px;
 }
 .page-donations section .content figure img {
-  width: 100%;
+  width: 300px;
   object-fit: cover;
 }
 @media screen and (min-width: 680px) {
@@ -575,7 +603,7 @@ header .sun-svg {
   background-image: url("/public/assets/img/hero/hands-hero-img.webp");
   background-size: cover;
   background-position: center;
-  background-color: hsl(210, 70%, 40%);
+  background-color: hsl(210, 70%, 42%);
   color: black;
   background-blend-mode: multiply;
   color: white;
@@ -585,20 +613,18 @@ header .sun-svg {
     background-position-y: 60%;
   }
 }
-.page-home .crowd-hero-img {
-  background-image: url("/public/assets/img/hero/crowd.webp");
+.page-home .kids-hero-img {
+  background-image: url("/public/assets/img/hero/kids-hero-img.webp");
   background-size: cover;
-  background-position: bottom;
+  background-color: #00695C;
+  background-blend-mode: overlay;
+  background-position-y: top;
   color: white;
 }
-.page-home section ul li {
-  margin-top: 1rem;
-}
-.page-home section ul li.light {
-  list-style: url("/public/assets/icons/suit-heart-fill.svg");
-}
-.page-home section ul li.dark, .page-home section ul li.akadaly {
-  list-style: url("/public/assets/icons/white-hearth.svg");
+@media screen and (min-width: 1100px) {
+  .page-home .kids-hero-img {
+    background-position-y: 18%;
+  }
 }
 
 .empty-swing-hero-img {
@@ -646,6 +672,19 @@ header .sun-svg {
     height: 320px;
   }
 }
+ul.hearth li {
+  margin-top: 1rem;
+}
+ul.hearth.light li {
+  list-style: url("/public/assets/icons/suit-heart-fill.svg");
+}
+ul.hearth.dark li, ul.hearth.akadaly li {
+  list-style: url("/public/assets/icons/white-hearth.svg");
+}
+ul.hearth.akadaly li mark {
+  text-decoration: underline red;
+}
+
 .static-loading-field {
   position: fixed; /* Fixálva a viewporthoz */
   top: 50%; /* 50% a viewport tetejétől */

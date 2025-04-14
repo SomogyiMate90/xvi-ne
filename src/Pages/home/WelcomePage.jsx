@@ -61,22 +61,22 @@ const actualTheme = useContext(Theme);
         <div className="hero-img hands-hero">
           <h2 className="alt-position">Fő programjaink:</h2>
           </div>
-        <ul>
-          <li className={actualTheme}>
+        <ul className={`hearth ${actualTheme}`}>
+          <li>
      
               <mark>Hagyományőrzés:</mark> Ünnepeink és rendezvényeink során átadjuk a
               fiataloknak az élet örömeit, miközben megőrizzük a családi
               hagyományokat. [Részletek →]
      
           </li>
-          <li className={actualTheme}>
+          <li>
        
               <mark>Ifjúsági kezdeményezések:</mark> Ifjúsági csoportunk aktívan várja a
               jelentkezőket, akik így akár a kötelező 50 óra közszolgálatukat is
               teljesíthetik. [Jelentkezés →]
         
           </li>
-          <li className={actualTheme}>
+          <li>
     
               <mark>Élelmiszer- és ruhaadomány-gyűjtés:</mark> Hetente élelmiszert osztunk, és
               minden kedden ruha-, könyv- és játékadományokat fogadunk, hogy a
@@ -84,7 +84,7 @@ const actualTheme = useContext(Theme);
               erőforrások. [További információ →]
        
           </li>
-          <li className={actualTheme}>
+          <li>
         
               <mark>Családi rendezvények egész évben:</mark> Tagcsaládjaink számára
               folyamatosan szervezünk zárt és nyitott eseményeket – közös
@@ -93,7 +93,7 @@ const actualTheme = useContext(Theme);
               [Programok →]
         
           </li>
-          <li className={actualTheme}>
+          <li>
       
               <mark>Kulturális programok és kedvezmények:</mark> Országos együttműködéseink
               révén kulturális eseményeket, színházi belépőket és
@@ -105,7 +105,7 @@ const actualTheme = useContext(Theme);
       </section>
 
       <section>
-        <div className="hero-img crowd-hero-img">
+        <div className="hero-img kids-hero-img">
         <h2 className="alt-position">Évről évre egyre többen...</h2>
         </div>
         <p  className="mt-3">
