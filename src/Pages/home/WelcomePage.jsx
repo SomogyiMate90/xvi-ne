@@ -3,6 +3,8 @@ import SliderPanel from "../../Components/SliderPanel";
 import Theme from "../../Functions/themes/ThemeContext";
 import PageHelmet from "../../Components/PageHelmet";
 import metaAndOpengraphTag from "../../Functions/helm/metaAndOpengraphTag";
+import InlineLink from "../../shared/InlineLink";
+import LinkOutTargetBlank from "../../shared/LinkOutTargetBlank";
 
 const WelcomePage = () => {
 
@@ -66,22 +68,22 @@ const actualTheme = useContext(Theme);
      
               <mark>Hagyományőrzés:</mark> Ünnepeink és rendezvényeink során átadjuk a
               fiataloknak az élet örömeit, miközben megőrizzük a családi
-              hagyományokat. [Részletek →]
+              hagyományokat.
      
           </li>
           <li>
        
               <mark>Ifjúsági kezdeményezések:</mark> Ifjúsági csoportunk aktívan várja a
               jelentkezőket, akik így akár a kötelező 50 óra közszolgálatukat is
-              teljesíthetik. [Jelentkezés →]
+              teljesíthetik. [Jelentkezés  ??? →]
         
           </li>
           <li>
     
-              <mark>Élelmiszer- és ruhaadomány-gyűjtés:</mark> Hetente élelmiszert osztunk, és
-              minden kedden ruha-, könyv- és játékadományokat fogadunk, hogy a
+              <mark>Élelmiszer- és ruhaadomány-gyűjtés:</mark> Hetente <InlineLink to='/csatlakozz#food-distribution'>élelmiszert osztunk,</InlineLink> és
+              minden kedden  <InlineLink to='/adományok'> ruha-, könyv- és játékadományokat fogadunk </InlineLink>, hogy a
               közösség minden tagja számára elérhetőek legyenek a szükséges
-              erőforrások. [További információ →]
+              erőforrások.
        
           </li>
           <li>
@@ -89,16 +91,16 @@ const actualTheme = useContext(Theme);
               <mark>Családi rendezvények egész évben:</mark> Tagcsaládjaink számára
               folyamatosan szervezünk zárt és nyitott eseményeket – közös
               kirándulásokat, ünnepi összejöveteleket és tematikus programokat,
-              hogy a család minden generációja értékes időt tölthessen együtt.
-              [Programok →]
+              hogy a család minden generációja értékes időt tölthessen együtt. 
+              <InlineLink to='/programok'>[ programok 🔗]</InlineLink>
         
           </li>
           <li>
       
               <mark>Kulturális programok és kedvezmények:</mark> Országos együttműködéseink
               révén kulturális eseményeket, színházi belépőket és
-              tagkedvezményeket biztosítunk, így minden nagycsalád élménydús,
-              gazdag életet élhet. [Részletek →]
+              tagkedvezményeket biztosítunk, így minden tagcsalád élménydús,
+              gazdag életet élhet. <LinkOutTargetBlank link={{href: 'https://noe.hu/feliratkozas-hirlevelre/', text: '[részletek. 🔗]'}}/>
           
           </li>
         </ul>
@@ -110,7 +112,7 @@ const actualTheme = useContext(Theme);
         </div>
         <p  className="mt-3">
    
-        Az egyesületünk évről évre gyarapodik, és minden új programmal még több lehetőséget kínál a családok számára a közösségi összetartásra, az élmények megosztására és a hagyományok ápolására. Ha szeretnél többet megtudni rólunk, illetve aktívan részt venni ebben az izgalmas, folyamatosan fejlődő közösségben, nézd meg részletes információinkat a tagfelvételi oldalon, és tudj meg mindent arról, hogyan válhatsz taggá! [Csatlakozás →]
+        Az egyesületünk évről évre gyarapodik, és minden új programmal még több lehetőséget kínál a családok számára a közösségi összetartásra, az élmények megosztására és a hagyományok ápolására. Ha szeretnél többet megtudni rólunk, illetve aktívan részt venni ebben az izgalmas, folyamatosan fejlődő közösségben, nézd meg részletes információinkat a tagfelvételi oldalon, és tudj meg mindent arról, hogyan válhatsz taggá!   <InlineLink to='/csatlakozz'>[ Csatlakozás 🔗]</InlineLink>
         
         </p>
         

@@ -6,7 +6,7 @@ const DefaultInput = ({
     fun = {}
 })=>{
 
- const {labelText, ...other} = inputProps
+ const {labelText, require="false", ...other} = inputProps
 
 
 
@@ -15,7 +15,7 @@ const DefaultInput = ({
             <label htmlFor={inputProps.id}>{labelText || givenLabelText}</label>
             <input 
                 name={inputProps.id} 
-                {...{className: 'form-control ',type:'text', ...other}}
+                {...{className: 'form-control ',type:'text', require , ...other}}
                 defaultValue={defaultValue ?? '' }                
                 {...fun}
             />

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Theme from "../../../Functions/themes/ThemeContext";
 import { infoIcon } from "../../../Functions/themes/icons";
 import InlineLink from "../../../shared/InlineLink";
+import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
 
 const AccordionItem2 = () => {
   const theme = useContext(Theme);
@@ -36,7 +37,7 @@ const AccordionItem2 = () => {
 
           <ul className={`hearth ${theme}`}>
             <li>
-              <details>
+              <details id='food-distribution'>
                 <summary>Heti rendszerességű élelmiszerosztás
                 {infoIcon}
                 </summary>
@@ -44,10 +45,10 @@ const AccordionItem2 = () => {
                     Egyesületünk heti rendszerességgel osztja a tagjainak a Magyar Élemiszerbank Egyesület által megmentett élelmiszereket. Zömében pékárú, de néha egyéb meglepetést is kapunk.
                     </p>
                 </details></li>
-            <li>Ingyenes vagy kedvezményes belépők rendezvényeinkre</li>
-            <li>Ruhatámogatási program – „Öltözz ingyen” akciók</li>
+            <li>Ingyenes vagy kedvezményes rendezvény belépőkért <LinkOutTargetBlank link={{href: 'https://noe.hu/feliratkozas-hirlevelre/', text: 'iratkozz fel a NOE hirlevélre.'}} /></li>
+            <li><InlineLink to='/adományok#cloth-donations'>Ruhatámogatási program</InlineLink> – „Öltözz ingyen” akciók</li>
             <li>Ingyenes tanácsadások (pl. jogi, pályázati, nevelési)</li>
-            <li>Tagi kedvezmények partnereinknél</li>
+            <li>Tagi kedvezmények <InlineLink to='/kedvezmények'>partnereinknél</InlineLink></li>
             <li>Közösségi eseményeken való részvétel lehetősége <InlineLink to='/programok'>programok</InlineLink> oldalon</li>
           </ul>
         </div>

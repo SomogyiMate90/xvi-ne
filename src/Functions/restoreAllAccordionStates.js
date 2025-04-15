@@ -8,7 +8,7 @@ export function restoreAllAccordionStates(accordionParentId) {
 
   const buttons = parent.querySelectorAll('button.accordion-button');
 
-  console.log('helyreállítás');
+ 
   
   buttons.forEach(btn => {
     const target = btn.getAttribute('data-bs-target');
@@ -21,7 +21,6 @@ export function restoreAllAccordionStates(accordionParentId) {
     try {
       const stateObj = JSON.parse(saved);
 
-      console.log(stateObj)
 
       // Állítsuk be a gomb classList-ét
       btn.className = stateObj.buttonStyles.split('|').join(' ');
@@ -31,13 +30,11 @@ export function restoreAllAccordionStates(accordionParentId) {
 
       // Keressük meg a hozzá tartozó accordion collapse elemet
       const contentEl = parent.querySelector(target);
-      console.log(contentEl)
+  
       if (contentEl) {
         // Állítsuk be a megfelelő osztályokat a nyitott vagy csukott állapot szerint
         if (stateObj.expanded) {
 
-          console.log('nyitva')
-          console.log(contentEl)
           // Győződjünk meg róla, hogy a tartalom elemen van "show"
           // contentEl.classList.remove('collapse'); // Ide nem feltétlenül szükséges, mert alapból "collapse" van
           contentEl.classList.add('accordion-collapse','collapse','show');

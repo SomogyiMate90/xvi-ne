@@ -1,6 +1,6 @@
-const ClothDonarions = () => {
+const ClothDonations = () => {
   return (
-    <section>
+    <section id="cloth-donations">
       <h2>Ruha és játék adomány</h2>
       <div className="content">
           <div>
@@ -34,4 +34,4 @@ const ClothDonarions = () => {
   );
 };
 
-export default ClothDonarions;
+export default ClothDonations;

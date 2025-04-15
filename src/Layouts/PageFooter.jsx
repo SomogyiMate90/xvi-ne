@@ -16,7 +16,7 @@ const PageFooter = () => {
               <p>Telephely: 1165 Budapest, Veres Péter út 157. </p>
               <p>Székhely: 1165 Budapest Íjász utca 17/B</p>
               <p>Email: nagycsaladosok16@gmail.com</p>
-            <p><LinkBTN text='Kapcsolati űrlap' url='/Csatlakozz'/></p>
+            <p><LinkBTN text='Csatlakozási lehetőség' url='/Csatlakozz'/></p>
             <p>Facebook: <a href="https://www.facebook.com/NE16ker" target="_blank" rel="noopener noreferrer" aria-label='Tovább navigálás a Nagycsaládosok Egyesületének Facebook oldalára' >{faceBookIcon}</a></p>
             <p>Youtube: <a href="http://www.youtube.com/@xvi.keruletinagycsaladosok8334" target="_blank" rel="noopener noreferrer" aria-label='Tovább navigálás a Nagycsaládosok Egyesületének Youtube Csatronájára'>{youTubeIcon}</a></p>
             </address>

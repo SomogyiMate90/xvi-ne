@@ -130,6 +130,51 @@ const partnerek = {
     readOnly: true,
     placeholder: "Nincs feltöltésre váró kép",
   },
+  photoWidth: {
+    photoWidth : 200
+  }
 };
 
-export { docId, dinamicUrl, kedvezmenyek, programok, partnerek };
+const elnokseg = {
+  name: {
+    id: "name",
+    required: true,
+    className: "form-control text-success",
+    labelText: 'Név'
+  },
+  beosztas: {
+    id: "beosztas",
+    required: true,
+    placeholder: "elnök, elnökhelyettes",
+    className: "form-control text-success",
+    labelText: 'Tisztség'
+  },
+    phoneNumber: {
+    id: "phoneNumber",
+    className: "form-control text-success",
+    labelText: 'telefonszam'
+  },
+  email: {
+    id: "email",
+    placeholder: "example@valami.com",
+    className: "form-control text-success",
+    labelText: 'email'
+  },
+  base64Url: {
+    id: "base64Url",
+    readOnly: true,
+    placeholder: "Nincs feltöltésre váró kép",
+  },
+  photoWidth: {
+    photoWidth : 200
+  },
+  rendezes: {
+    id: 'rendezes',
+    require: true,
+    type: 'number',
+    labelText: 'Sorrend'
+
+  }
+};
+
+export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg };

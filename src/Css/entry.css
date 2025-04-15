@@ -735,6 +735,7 @@ ul.hearth.akadaly li mark {
 }
 
 a.link-out {
+  margin-left: 6px;
   text-decoration: none;
   position: relative;
 }

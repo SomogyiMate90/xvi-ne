@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import PageHelmet from "../../Components/PageHelmet";
 import metaAndOpengraphTag from "../../Functions/helm/metaAndOpengraphTag";
-import ClothDonarions from "./elements/ClothDonarions";
+import ClothDonations from "./elements/ClothDonations";
 
 import MoneyDonations from "./elements/MoneyDonations";
 import OnePercentage from "./elements/OnePercentage";
@@ -22,7 +22,7 @@ const Donations = () => {
 
     <OnePercentage/>
     {/* <FoodDonations/> */}
-    <ClothDonarions/>
+    <ClothDonations/>
     <MoneyDonations/>
 
     </div>

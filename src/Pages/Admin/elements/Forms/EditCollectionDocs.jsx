@@ -20,6 +20,8 @@ const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
         break;
         case 'programok' : component = <FormView key='D' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
+        case 'elnokseg' : component = <FormView key='E' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
+        break;
         // case 'programok' : component = <Programs eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         // break;
         default: <h3>Valami hiba keletkezett</h3>

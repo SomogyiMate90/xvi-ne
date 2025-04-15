@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useImmer } from "use-immer";
 import submitFunction from "./handleSubmit";
 import * as formField from './formsFileds.js';
@@ -17,6 +17,10 @@ const FormView = ({ eventModify, collectionName, docs }) => {
   const [defaultValues, setDefaultValues] = useImmer({}); // korábban felöltött elem kiválasztása
   const [pictureBase64Url, setPictureBase64Url] = useState(null); // Átalakított kép src tárolása
   const [englishUrl, setEnglishUrl] = useState(null); // helyes URL elkészítéséhez, hogy ne legyen tele "%" és szám karakterekkel a link
+  const [defFotoWidth, setPhotoWidth] = useState(600)
+
+
+
 
  const {docId , data} = defaultValues;
 
@@ -25,6 +29,12 @@ const FormView = ({ eventModify, collectionName, docs }) => {
    */
   const formFields = formField[collectionName];
   const formFieldsElemets = Object.keys(formFields)
+
+  useEffect(()=>{
+    if(formFields.photoWidth){
+      setPhotoWidth(formFields.photoWidth.photoWidth)
+    }
+  },[formFields.photoWidth])
 
   // adatfelötlés módosítás
   const handleSubmit = async (event) => {
@@ -57,7 +67,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       alert("Képet tölts fel! Ellenőrizd a fájl típusát.");
       return;
     } else {
-      const compresedPicBase64Url = await getPictureSrcBase64(file,600);
+      const compresedPicBase64Url = await getPictureSrcBase64(file,defFotoWidth);
 
       // console.log(compresedPicBase64Url)
       setPictureBase64Url(compresedPicBase64Url);
@@ -107,7 +117,8 @@ const FormView = ({ eventModify, collectionName, docs }) => {
                                                           style={{ maxWidth: '100%', margin: '10px' }} />)}
                                                 </div>);
                 else if( item === 'description') return <DefaultTextArea key={index} defaultValue={data?.description ?? ''}  inputProps={formFields[item]} />
-                else if( item === 'titleUrl') return <DefaultInput key={index} defaultValue={data?.titleUrl ?? ""}  inputProps={formFields[item]}/>
+                else if( item === 'titleUrl') return <DefaultInput key={index} defaultValue={data?.titleUrl ?? ""}  inputProps={formFields[item]}/>;
+                else if( item === 'photoWidth') return null;
                 else{
                    return <DefaultInput defaultValue={data?.[item] ?? ""} key={index} inputProps={formFields[item]}/>
                 }  
