@@ -64,7 +64,7 @@ body, html {
   font-family: Noto, Roboto, sans-serif !important;
 }
 
-:root {
+:global(:root) {
   --animate-duration: 2.5s;
   --animate-delay: 1s;
   --animate-repeat: 1;
@@ -146,6 +146,11 @@ body, html {
 @media screen and (max-width: 768px) and (orientation: landscape) {
   .not-reverse-mobil {
     display: none;
+  }
+}
+@media (min-width: 992px) {
+  .offcanvas.w-lg-75 {
+    --bs-offcanvas-width: 75%;
   }
 }
 header {
@@ -683,6 +688,11 @@ ul.hearth.dark li, ul.hearth.akadaly li {
 }
 ul.hearth.akadaly li mark {
   text-decoration: underline red;
+}
+
+.offcanvas {
+  background-image: url("/public/assets/img/NOE_BG.webp");
+  background-size: cover;
 }
 
 .static-loading-field {

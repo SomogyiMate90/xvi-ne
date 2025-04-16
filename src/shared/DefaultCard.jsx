@@ -1,16 +1,19 @@
+import LinkOutTargetBlank from "./LinkOutTargetBlank";
+
 const DefaultCard = ({tag}) => {
 
-    const {name, base64Url, picAlt } = tag;
+    const {name, base64Url, picAlt, beosztas, phoneNumber, email } = tag;
 
   return (
     <div className="card flex-grow-0" style={{width: "18rem", height: "22rem"}}>
       <img src={base64Url} className="card-img-top" alt={`${picAlt} fotója`} />
       <div className="card-body">
-        <h4>{name}</h4>
+        <h4 className="text-center">{name}</h4>
+        <p className="text-uppercase text-end fw-bold">{beosztas}</p>
+        <p className="card-text">   
+        {phoneNumber && (<span><LinkOutTargetBlank link={{href: phoneNumber, text: phoneNumber }}/></span>)}
+        {email  && (<span >{email}</span>)}
 
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
         </p>
       </div>
     </div>

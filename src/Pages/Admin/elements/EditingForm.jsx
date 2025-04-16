@@ -8,6 +8,8 @@ import LoadingTime from "../../../Components/LoadingTime";
 
 
 
+
+
 const EditingForm  = () =>{
     const [d, setD] = useImmer([])
     const [collection , setCollection] = useState(false);
@@ -15,6 +17,9 @@ const EditingForm  = () =>{
     const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
+
+        import('bootstrap/js/dist/modal.js');
+
         const fetchData = async () => {
             const obj = await getFIRESOTER_content(collection);
             setTimeout(()=>{

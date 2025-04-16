@@ -1,5 +1,5 @@
 import LinkBTN from "../../../shared/LinkBTN";
-import Vezetoseg from "./Vezetoseg";
+import Vezetoseg from "../../../Components/Vezetoseg";
 
 const Section2 = () => {
   return (

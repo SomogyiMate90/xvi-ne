@@ -4,6 +4,7 @@ import AccordionKedvezmenyItem from "./AccordionKedvezmenyItem";
 import saveAllAccordionStates from "../../../Functions/saveAllAccordionStates";
 import { restoreAllAccordionStates } from "../../../Functions/restoreAllAccordionStates";
 
+
 const MobilViewKedvezmenyek = ({ kedv }) => {
   const theme = useContext(Theme);
 

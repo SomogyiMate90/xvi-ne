@@ -1,3 +1,4 @@
+import 'animate.css';
 import { useContext, useEffect } from "react";
 import animateSliderPanel from "../Functions/animateSliderPanel";
 import FireStoreContext from "../Functions/contexts/fireSroreContext";

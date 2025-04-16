@@ -13,14 +13,10 @@ body, html{
     font-family: Noto,Roboto, sans-serif !important;
 }
 
-:root {
+:global(:root) {
     --animate-duration: 2.5s;
     --animate-delay: 1s;
     --animate-repeat: 1;
-
-  
-
-
 }
 
 .page-defalult-layout.light{
@@ -141,4 +137,10 @@ body, html{
         display: none;
     }
 }
+
+@media (min-width: 992px) {
+    .offcanvas.w-lg-75 {
+      --bs-offcanvas-width: 75%;
+    }
+  }
 

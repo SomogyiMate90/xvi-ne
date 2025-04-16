@@ -4,8 +4,24 @@ import { RouterProvider } from 'react-router-dom';
 import route from './Routes/routes';
 import './Css/entry.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+/*
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import 'animate.css';
+
+//  csak a szükséges filok vannak immportálva
+
+import 'bootstrap/js/dist/carousel.js'; // Jó lesz a fényképnézegetéshez
+import 'bootstrap/js/dist/modal.js'; // Default Modal komponshez vagy formhoz
+
+import 'bootstrap/js/dist/button.js'; // Ez valószínleg sehova nem kerül felhasználásra
+
+*/
+
+import 'bootstrap/js/dist/collapse.js';
+
+
+
+
 
 
 
@@ -16,8 +32,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   
-   // <React.StrictMode>
+   <React.StrictMode>
       <RouterProvider router={route}/>
-   // </React.StrictMode> 
+   </React.StrictMode> 
 
 );
