@@ -23,9 +23,8 @@ const SliderPanelCardSlider = ({receivedArray}) =>{
                 return(
 
                     <div  key={docId} className="d-none article-slider animate__animated">
-                    {
-                      data?.base64Url && (<div className=""><img   src={data?.base64Url} alt={data?.picAlt} /></div>)
-                    }
+                   <div className=""><img src={data?.base64Url || '/assets/img/no-img.png'} alt={data?.picAlt || 'nincs kép feltöltve'} /></div>
+                   
                     <section className="">
                         <h3 className="">{data?.title} </h3>
                         <div className="description">

@@ -42,6 +42,13 @@ const kedvezmenyek = {
     className: "form-control text-success",
     labelText: 'Egyszerű leírás',
   },
+  description: {
+    id: "description",
+    labelText: 'Nyitvatartás',
+    placeholder: "Enter billentyűvel válaszd el a bekedéseket egymástól...",
+    className: "form-control text-success",
+    required: true,
+  },
 
   phoneNumber: {
     id: "phoneNumber",

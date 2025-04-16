@@ -1,8 +1,19 @@
 @use '../components/mixinsAndPlaholders' as mix;
 
+
+
 .page-gallery{
+    
+    
 
-
+    @media screen and (max-width:1198px){
+        
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        height: 70vh;
+    }
+  
+    
     .camera-hero-img{
         background-image: url('/public/assets/img/hero/camera_hero-img.webp');
         background-size: cover;
@@ -11,12 +22,16 @@
         color: white;
         background-position-y: 35%;
         background-position-x: center;
+        scroll-snap-align: start;
         
     }
 
     .foto-side{
 
-        // background-color: black;
+        margin-bottom: 30px;
+
+
+
         padding: 2rem 1rem 1rem;
 
         display: flex;
@@ -26,13 +41,20 @@
         gap: 5rem;
 
         .card{
+
+            scroll-snap-align: center;
+
+            &:last-of-type{
+                scroll-snap-align: end;
+            }
+
             min-width: 300px;
             min-height: 400px;
 
             box-sizing: border-box;
 
-            &:hover{
-                transform: scale(1.05);
+                 &:hover{
+                transform: scale(1.1);
                 transition: ease-in-out 0.5s;
                 z-index: 1;
                 border: 2px solid red;

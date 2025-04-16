@@ -5,8 +5,14 @@ import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
 const AccordionKedvezmenyItem = ({doc}) =>{
     const {
         docId,
-        data: { title, address, phoneNumber, link, text },
+        data: { title, address, phoneNumber, link, text, description },
       } = doc;
+
+      console.log(description)
+
+      const splitedDescription = description?.split('\n');
+  
+      const descriptionParagraps = splitedDescription.filter(item=> item !== '');
   
       let ancorPhoneNum = null;
           if(phoneNumber !== 'Nincs telefonszám') {
@@ -34,19 +40,22 @@ const AccordionKedvezmenyItem = ({doc}) =>{
             data-bs-parent={`#${docId}`}
           >
             <div className="accordion-body">
-              <p>
+              <p className="text-indent-no">
                 <strong>Cím:</strong> {address}
               </p>
-              <p>
+              <p className="text-indent-no">
                 <strong>Leírás:</strong> {text}
               </p>
-              <p>
+              <p className="text-indent-no">
+                <strong>Nyitvatartás:</strong> {descriptionParagraps.map((i,n)=>(<span className="d-block ms-5" key={n}>{i}</span>))}
+              </p>
+              <p className="text-indent-no">
                 <strong>Telefonszám:</strong>  {
                   phoneNumber !== 'Nincs telefonszám' ? <LinkOutTargetBlank link={{ href: ancorPhoneNum, text: phoneNumber }} /> : "Nincs"
                   
                   }
               </p>
-              <p>
+              <p className="text-indent-no">
                 <strong>Weboldal címe:</strong>{" "}
                 {link ? (
                   <LinkOutTargetBlank link={{text : link, href : link}}/>

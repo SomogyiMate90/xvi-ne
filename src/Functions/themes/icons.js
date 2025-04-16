@@ -4,7 +4,6 @@ const downMark2 = (
     width="24"
     height="24"
     fill="currentColor"
-    className="bi bi-box-arrow-in-down"
     viewBox="0 0 16 16"
   >
     <path
@@ -99,11 +98,28 @@ const pictureIcon = (
 )
 
 const calendarIcon = (
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-calendar-day" viewBox="0 0 16 16">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  viewBox="0 0 16 16">
   <path d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a2 2 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43m.094 5.093h.672V7.418h-.672z"/>
   <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
 </svg>
 )
+/*
+const mapIcon = (
+  <svg width="32px" height="32px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+  <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
+  
+  <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
+  
+  <g id="SVGRepo_iconCarrier"> <path  d="M12 6H12.01M9 20L3 17V4L5 5M9 20L15 17M9 20V14M15 17L21 20V7L19 6M15 17V14M15 6.2C15 7.96731 13.5 9.4 12 11C10.5 9.4 9 7.96731 9 6.2C9 4.43269 10.3431 3 12 3C13.6569 3 15 4.43269 15 6.2Z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/> </g>
+  
+  </svg>
+)
+*/
+const mapIcon = (
+  <svg width="32" height="32" viewBox="0 0 1024 1024" className="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M640 213.333333L384 128 128 213.333333v682.666667l256-85.333333 256 85.333333 256-85.333333V128z" fill="#FFECB3" /><path d="M384 128v682.666667l256 85.333333V213.333333z" fill="#FFE082" /><path d="M640 320c-82.496 0-149.333333 70.250667-149.333333 156.821333S640 768 640 768s149.333333-204.629333 149.333333-291.178667S722.496 320 640 320z" fill="#F44336" /><path d="M640 469.333333m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#FFEBEE" /></svg>
+)
+
 
 const infoIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="chevron" viewBox="0 0 16 16">
@@ -113,4 +129,4 @@ const infoIcon = (
 )  
 
 
-export { downMark, downMark2, faceBookIcon,youTubeIcon, akadalymentesIkon, moon, sun, pictureIcon, calendarIcon, infoIcon };
+export { downMark, downMark2, faceBookIcon,youTubeIcon, akadalymentesIkon, moon, sun, pictureIcon, calendarIcon, infoIcon, mapIcon };

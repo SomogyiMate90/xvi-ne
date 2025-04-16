@@ -1,6 +1,8 @@
 const DefaultFigure = ({props, classStyle}) => {
 
-   const {imgSrc, imgAlt } = props
+   const {imgSrc, imgAlt } = props;
+
+   if(!imgSrc) return;
 
   return (
     <figure className={classStyle}>
@@ -8,7 +10,7 @@ const DefaultFigure = ({props, classStyle}) => {
           src={imgSrc}
           alt={imgAlt ?? "Az eseményhez kapcsolodó kép"}
         />
-      <figcaption className="text-center">{imgAlt ?? ""}</figcaption>
+      <figcaption className="text-center fst-italic fw-light">{imgAlt ?? ""}</figcaption>
     </figure>
   );
 };

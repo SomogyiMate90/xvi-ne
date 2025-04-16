@@ -5,6 +5,8 @@ import LoadingTime from "../../../Components/LoadingTime";
 import ErrorElement from "../../../Components/ErrorElement";
 import CalendarBTN from "../../../shared/CalendarBTN";
 import NotFound from "../../../Components/NotFound";
+import MapBtn from "../../../shared/MapBtn";
+import ArticleElements from "./ArticleElements";
 
 const ArticlePage = () => {
   const [selectedComp, setSelectedComp] = useState(<LoadingTime text={{ title: "Töltés", content: "Lekéri a szervertől" }} />);
@@ -24,9 +26,7 @@ const ArticlePage = () => {
       if (foundedObj.length > 0) {
         const foundedDoc = foundedObj[0].data;
         
-        const { address, base64Url, picAlt, description, title, startTime , endTime  } = foundedDoc;
-
-        console.log(foundedDoc)
+        const { address, base64Url, picAlt, description, title  } = foundedDoc;
 
         const splitedDescription = description.split('\n');
   
@@ -34,16 +34,18 @@ const ArticlePage = () => {
         setSelectedComp(
 // KI szervezni külön függvénybe!!
           <div key={foundedObj[0].docId} className="page-article d-flex flex-column align-items-center">
-            <CalendarBTN classStyle='calendar align-self-end text-primary' event={foundedDoc} />
+            <div className="icon-box d-flex align-self-end gap-2">
+            <CalendarBTN  event={foundedDoc} />
+            <MapBtn address={address}/>
+            </div>
+
             <h1>{title}</h1>
             <div className="clearfix">
               <DefaultFigure classStyle='p-0 p-lg-2 ps-xl-4 float-xl-end mb-0' props={{ imgSrc: base64Url, imgAlt: picAlt }} />
               <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>
             </div>
             <div className="clear-fix"></div>
-            <div className="artilce-elemets">
-              <p>Térkép: <span>{address}</span></p>
-            </div>
+            <ArticleElements docContent={foundedDoc} />
           </div>
         );
       } else {

@@ -7,6 +7,7 @@
     src: url('/public/assets/fonts/Noto.ttf');
 }
 
+
 body, html{
     margin: 0;
     padding: 0;
@@ -117,6 +118,10 @@ body, html{
 
     
     .outlet-component{
+
+
+        min-height: 600px;
+
         background-color: var(--outlet-bg-color);
         padding: 1rem;
         

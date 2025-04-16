@@ -1,5 +1,6 @@
 import LinkBTN from "../../../shared/LinkBTN";
 import Vezetoseg from "../../../Components/Vezetoseg";
+import InlineLink from "../../../shared/InlineLink";
 
 const Section2 = () => {
   return (
@@ -20,10 +21,16 @@ const Section2 = () => {
         <li>
           a nagycsaládok egymást ismerő és segítő közösségekké szervezése.
         </li>
+        <li>
+          az idősebb korosztály segítése
+        </li>
+        <li>
+          az ifjúság segítése és számukra célzottporgramok szervezése
+        </li>
       </ol>
 
       <p>
-        Egyesületünk 7 tagú elnöksége és 2 tagú ellenőrző bizottsága
+        Egyesületünk 7 tagú elnöksége és 3 tagú ellenőrző bizottsága
         önkéntesekből áll, akik szabadidejükben, de nagy lelkesedéssel dolgoznak
         az egyesület közösségéért. Időnként szervezünk olyan megmozdulásokat is,
         melyek nyitottak a kerület családjai részére, pl. hagyományos ünnepekhez
@@ -33,20 +40,24 @@ const Section2 = () => {
         támogatva, kiegészítve több eredményt érhetünk el.
       </p>
 
-    <Vezetoseg/>
+    <div className="d-flex justify-content-end mx-5"><Vezetoseg/></div>
 
       <p>
-        Főbb bevételi forrásunk a befizetett éves tagdíjakból áll (2018-ban 8000
-        forint), melyet rászoruló tagjaink csak részben, vagy egyáltalán nem
-        tudnak kifizetni, ezért a rendezvényeinkre tárgyi adományokat gyűjtünk
-        és pályázatokat írunk a költségek fedezésére. Költségeink a telefon és
-        postaköltségből, adományszállításból, rendezvényszervezésből adódnak.
+        Főbb bevételi forrásunk a befizetett éves tagdíjakból áll (2024-ben 12 000
+        forint). A tagdíj mérséklését, részletfizetését lehet kérni.
+      </p>
+      <p>
+        Állandó költségeink: helyiségünk bérleti díja és rezsije, telefon számla, könyvelési díj, bankköltség, postaköltség, rendezvények költségei.
+        Rendezvényeinkre tárgyi adományokat gyűjtünk
+        és pályázatokat írunk a költségek fedezésére.
       </p>
 
       <div>
         <p>
-          2019-ben új székhelyünk lett mely a1165 Budapest, Veres Péter út 157
-          alatt található
+          <b>
+            2019-ben új székhelyünk lett mely a 1165 Budapest, Veres Péter út 157
+            alatt található
+          </b>
         </p>
         <p>Az átadó ünnepségről videó is készült</p>
         <div className="my-4 d-flex justify-content-center">
@@ -63,21 +74,17 @@ const Section2 = () => {
       </div>
 
       <p>
-        Működtetjük az „öltözz ingyen programot”. A behozott ruhaadományt az
+        Működtetjük az <InlineLink to='/programok/oltozz-ingyen'>„öltözz ingyen programot”.</InlineLink> A behozott ruhaadományt az
         önkénteseink szétválogatják, így a családok már csak azzal találkoznak,
         ami használható állapotban van. A tagjaink számára ez heti
         rendszerességgel nyitva áll és időnként kinyitjuk a kapukat a kerület
         minden családjának.
       </p>
 
-      <p>
-        Az egyesület gyerekei hetente díjmentes korrepetáláson vehetnek részt
-        több tantárgyból.
-      </p>
 
       <p>
         Hetente kétszer a MÉB segítségével élelmiszert mentünk. Pillanatnyilag
-        110 tagcsaládunk részesül heti rendszerességgel élelmiszeradományból.
+        115 tagcsaládunk részesül heti rendszerességgel élelmiszeradományból.
       </p>
 
       <p>
@@ -87,7 +94,7 @@ const Section2 = () => {
         önkéntes csapatot.
       </p>
 
-      <div className="d-flex justify-content-end">
+      <div className="d-flex justify-content-end mx-5">
         <LinkBTN text="Csatlakozz" url="/Csatlakozz" />
       </div>
     </section>

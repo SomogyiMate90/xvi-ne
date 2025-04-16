@@ -132,6 +132,7 @@ body, html {
   text-indent: 1rem;
 }
 .page-defalult-layout .outlet-component {
+  min-height: 600px;
   background-color: var(--outlet-bg-color);
   padding: 1rem;
   overflow: hidden;
@@ -539,6 +540,13 @@ header .sun-svg {
   color: black;
 }
 
+@media screen and (max-width: 1198px) {
+  .page-gallery {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 70vh;
+  }
+}
 .page-gallery .camera-hero-img {
   background-image: url("/public/assets/img/hero/camera_hero-img.webp");
   background-size: cover;
@@ -547,8 +555,10 @@ header .sun-svg {
   color: white;
   background-position-y: 35%;
   background-position-x: center;
+  scroll-snap-align: start;
 }
 .page-gallery .foto-side {
+  margin-bottom: 30px;
   padding: 2rem 1rem 1rem;
   display: flex;
   justify-content: space-evenly;
@@ -556,12 +566,16 @@ header .sun-svg {
   gap: 5rem;
 }
 .page-gallery .foto-side .card {
+  scroll-snap-align: center;
   min-width: 300px;
   min-height: 400px;
   box-sizing: border-box;
 }
+.page-gallery .foto-side .card:last-of-type {
+  scroll-snap-align: end;
+}
 .page-gallery .foto-side .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   transition: ease-in-out 0.5s;
   z-index: 1;
   border: 2px solid red;
@@ -739,9 +753,19 @@ ul.hearth.akadaly li mark {
   max-height: 50px;
 }
 
-.calendar {
-  border-radius: 50% 50% 0.5rem 0.5rem;
-  background-color: yellow;
+div.icon-box {
+  background-color: rgba(9, 248, 248, 0.39);
+  padding: 2px 5px;
+  border-radius: 8%;
+}
+div.icon-box svg {
+  width: 40px;
+  height: 40px;
+  color: rgb(108, 1, 179) !important;
+}
+
+.text-indent-no {
+  text-indent: 0 !important;
 }
 
 a.link-out {

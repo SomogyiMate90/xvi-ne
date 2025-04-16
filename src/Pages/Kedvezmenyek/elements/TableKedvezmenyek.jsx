@@ -21,6 +21,7 @@ const TableKedvezmenyek = ({ kedv }) => {
           <th className="text-center">Név</th>
           <th className="text-center">Cím</th>
           <th className="text-center">Leírás</th>
+          <th className="text-center">Nyitvatartás</th>
           <th className="text-center">Telefonszám</th>
           <th className="text-center">Link</th>
         </tr>
@@ -36,22 +37,23 @@ const TableKedvezmenyek = ({ kedv }) => {
 
           return (
             <tr key={docId}>
-              <td className="text-center">{data?.title}</td>
-              <td className="text-center">{data?.address}</td>
-              <td>{data?.text}</td>
-              <td style={{minWidth: "10rem"}} className="text-center">
+              <td className="text-center align-middle">{data?.title}</td>
+              <td className="text-center align-middle">{data?.address}</td>
+              <td className="text-justify align-middle">{data?.text}</td>
+              <td className="text-center align-middle">{data?.description}</td>
+              <td style={{minWidth: "10rem"}} className="text-center align-middle">
                 {
                   data?.phoneNumber !== 'Nincs telefonszám' ? <LinkOutTargetBlank link={{ href: ancorPhoneNum, text: data.phoneNumber }} /> : "Nincs"
                   
                   }
               </td>
-              <td className="text-center">
+              <td className="text-center align-middle">
                 {data?.link ? (
                   <LinkOutTargetBlank
                     link={{ href: data?.link, text: data?.link }}
                   />
                 ) : (
-                  "nincs megadva"
+                  <span>nincs megadva</span>
                 )}
               </td>
             </tr>
