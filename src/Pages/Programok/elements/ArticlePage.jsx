@@ -7,6 +7,7 @@ import CalendarBTN from "../../../shared/CalendarBTN";
 import NotFound from "../../../Components/NotFound";
 import MapBtn from "../../../shared/MapBtn";
 import ArticleElements from "./ArticleElements";
+import PageHelmet from "../../../Components/PageHelmet";
 
 const ArticlePage = () => {
   const [selectedComp, setSelectedComp] = useState(<LoadingTime text={{ title: "Töltés", content: "Lekéri a szervertől" }} />);
@@ -28,11 +29,22 @@ const ArticlePage = () => {
         
         const { address, base64Url, picAlt, description, title  } = foundedDoc;
 
+        console.log(description.slice(0,154))
+
         const splitedDescription = description.split('\n');
   
         const descriptionParagraps = splitedDescription.filter(item=> item !== '');
+
+        const helmetObj = {metaNameObj: { title: `NOE XVI. - ${title}`,
+          description: `${description.slice(0,154).replaceAll('\n',' ')}`,
+          keywords: ` noe, program, ${title || ''}, ${address || 'xvi. kerület'}, foglalkozás, foglalkozások, előadás, előadások, hír, hírek, nagycsaládosok, családbarát, közösség, budapest`,
+          robots: "index,follow"
+      }}
+
         setSelectedComp(
 // KI szervezni külön függvénybe!!
+          <>
+          <PageHelmet helmetObj={helmetObj}/>
           <div key={foundedObj[0].docId} className="page-article d-flex flex-column align-items-center">
             <div className="icon-box d-flex align-self-end gap-2">
             <CalendarBTN  event={foundedDoc} />
@@ -47,6 +59,7 @@ const ArticlePage = () => {
             <div className="clear-fix"></div>
             <ArticleElements docContent={foundedDoc} />
           </div>
+          </>
         );
       } else {
         // Ha nem található program, esetleg hibát jelezhetsz itt

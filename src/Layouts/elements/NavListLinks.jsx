@@ -13,7 +13,7 @@ const NavListLinks = () =>{
 
 
     const listLinks = [
-        {text : 'Kezdőoldal', uri : '/'},
+        // {text : 'Kezdőoldal', uri : '/'},
         {text : 'Rólunk', uri : '/rólunk'},
         {text : 'Programok', uri : '/programok'},
         {text : 'Csatlakozz', uri : '/csatlakozz'},

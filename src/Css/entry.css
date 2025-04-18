@@ -34,9 +34,9 @@ main.blur {
 .accordion.dark {
   --bs-body-bg: rgb(68, 68, 68);
   --bs-body-color:rgb(200, 200, 200);
-  --bs-accordion-active-bg: rgba(146.88, 112.064, 16.32, 0.45);
+  --bs-accordion-active-bg: rgba(147, 112, 16, 0.45);
   --bs-accordion-active-color: white;
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(146.88, 112.064, 16.32, 0.45);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(147, 112, 16, 0.45);
   --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27none%27 stroke=%27rgb(200, 200, 200)%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpath d=%27M2 5L8 11L14 5%27/%3e%3c/svg%3e");
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27none%27 stroke=%27rgb(200, 200, 200)%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpath d=%27M2 5L8 11L14 5%27/%3e%3c/svg%3e");
 }
@@ -160,7 +160,7 @@ header {
   z-index: 1000;
 }
 header.light {
-  background-color: hsl(44, 80%, 59%);
+  background-color: rgb(234, 189, 67);
 }
 header.light .navbar-toggler {
   --bs-navbar-color: #0400ff;
@@ -171,7 +171,7 @@ header.light .nav-item > a.nav-link.transform-line::after {
   background-color: #0400ff;
 }
 header.dark, header.akadaly {
-  background-color: hsl(44, 80%, 32%);
+  background-color: rgb(147, 112, 16);
 }
 header.dark a.nav-link:hover {
   color: rgb(200, 200, 200);
@@ -540,13 +540,6 @@ header .sun-svg {
   color: black;
 }
 
-@media screen and (max-width: 1198px) {
-  .page-gallery {
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    height: 70vh;
-  }
-}
 .page-gallery .camera-hero-img {
   background-image: url("/public/assets/img/hero/camera_hero-img.webp");
   background-size: cover;
@@ -558,30 +551,25 @@ header .sun-svg {
   scroll-snap-align: start;
 }
 .page-gallery .foto-side {
-  margin-bottom: 30px;
-  padding: 2rem 1rem 1rem;
+  padding: 2rem 0rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 5rem;
 }
-.page-gallery .foto-side .card {
-  scroll-snap-align: center;
+.page-gallery .foto-side div.card {
   min-width: 300px;
   min-height: 400px;
   box-sizing: border-box;
 }
-.page-gallery .foto-side .card:last-of-type {
-  scroll-snap-align: end;
-}
-.page-gallery .foto-side .card:hover {
+.page-gallery .foto-side div.card:hover {
   transform: scale(1.1);
   transition: ease-in-out 0.5s;
   z-index: 1;
   border: 2px solid red;
   cursor: pointer;
 }
-.page-gallery .foto-side .card .picture-count-icon {
+.page-gallery .foto-side div.card .picture-count-icon {
   background-color: rgba(4, 0, 253, 0.768627451);
   border-radius: 30%;
   padding: 2px 0.5rem;
@@ -595,10 +583,33 @@ header .sun-svg {
   z-index: 2;
 }
 .page-gallery .foto-side.akadaly .card {
-  min-width: 400px;
-  min-height: 600px;
+  height: 70vh;
+  width: 90vw;
 }
-.page-gallery .foto-side .card-img-overlay *:not(button) {
+.page-gallery .foto-side.akadaly .card img {
+  height: 100%;
+  object-fit: cover;
+}
+.page-gallery .foto-side.akadaly .card .card-img-overlay {
+  height: 100%;
+  padding: 1rem 0rem 0rem;
+}
+@media screen and (min-width: 450px) {
+  .page-gallery .foto-side.akadaly .card {
+    width: 400px;
+    height: 550px;
+    box-sizing: border-box;
+  }
+  .page-gallery .foto-side.akadaly .card img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .page-gallery .foto-side.akadaly .card .card-img-overlay {
+    height: 100%;
+    padding: 1rem 0rem 0rem;
+  }
+}
+.page-gallery .foto-side.akadaly .card-img-overlay *:not(button) {
   padding: 0 0.3rem;
   text-shadow: 0px 0px 3px black;
   background-color: rgba(128, 128, 128, 0.5);
@@ -731,10 +742,10 @@ ul.hearth.akadaly li mark {
   }
 }
 .static-loading-field.light {
-  background-color: hsl(44, 80%, 59%);
+  background-color: rgb(234, 189, 67);
 }
 .static-loading-field.dark {
-  background-color: hsl(44, 80%, 32%);
+  background-color: rgb(147, 112, 16);
   color: white;
 }
 .static-loading-field.akadaly {
