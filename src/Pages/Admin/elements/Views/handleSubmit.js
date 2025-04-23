@@ -10,23 +10,26 @@ export default async function submitFunction(event,collectionName) {
             
             console.log(hasDocId)
             let resp;
+            let actualDocId;
             
             try{
                 const formValues = getNewFormObj(event);
                 
                 if(!hasDocId){
                     resp = await creatNewDoc(formValues,collectionName);
+                    actualDocId = resp;
                 }
                 else if(hasDocId){
                    
-                    resp = await setCurrentDoc(formValues,collectionName,docId)
+                    resp = await setCurrentDoc(formValues,collectionName,docId);
+                    actualDocId = docId;
                 }
 
                 if (resp === "hiba") {
                     throw new Error("Szerver hiba történt.");
                 }
         
-                return "Sikeres feltöltés"; // Ha minden jól ment, ezt adjuk vissza
+                return actualDocId; 
             } catch (e) {
                 console.error("Hiba történt:", e);
                 return "Hiba történt"; // Ha hiba történt, egyértelmű választ adunk vissza

@@ -22,7 +22,7 @@ export default function getNewFormObj(event){
                 const phoneNum = validPhonNum(value);
                 acc[key] = phoneNum
             }
-            else if(key === "picture"){
+            else if(key === "picture" || key === 'fireStorePic'){
                 return acc;
             }
             else{

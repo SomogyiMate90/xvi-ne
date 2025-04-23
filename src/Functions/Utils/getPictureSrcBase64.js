@@ -10,7 +10,7 @@ export default async function getPictureSrcBase64(value,maxWidth = 400) {
     // console.log(value);
 
     const fileSizeMb = Math.floor(value.size / 1024 / 1024);
-    console.log('A fájl mérete: ' + fileSizeMb + ' MB');
+    // console.log('A fájl mérete: ' + fileSizeMb + ' MB');
 
     // FileReader Promise-ba csomagolva, így `await`-tel várható
     const result = await new Promise((resolve, reject) => {
@@ -41,8 +41,8 @@ export default async function getPictureSrcBase64(value,maxWidth = 400) {
     const newHeight = newImg.height * scaleFactor;
 
     
-    console.log("Új szélesség:", newWidth);
-    console.log("Új magasság:", newHeight);
+    // console.log("Új szélesség:", newWidth);
+    // console.log("Új magasság:", newHeight);
     // Canvas létrehozása és rajzolás
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");

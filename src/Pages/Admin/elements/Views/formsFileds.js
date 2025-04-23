@@ -173,7 +173,7 @@ const elnokseg = {
     placeholder: "Nincs feltöltésre váró kép",
   },
   photoWidth: {
-    photoWidth : 200
+    photoWidth : 300
   },
   rendezes: {
     id: 'rendezes',
@@ -184,4 +184,38 @@ const elnokseg = {
   }
 };
 
-export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg };
+const galeria = {
+  title: {
+    id: "title",
+    labelText: 'Cím',
+    placeholder: "Kirándulás/esemény neve",
+    className: "form-control text-success",
+    required: true,
+  },
+  base64Url: {
+    title : 'Borító kép (1 db)',
+    id: "base64Url",
+    readOnly: true,
+    placeholder: "Nincs feltöltésre váró kép",
+  },
+  address: {
+    id: "address",
+    labelText: 'Helyszín (hol volt?)',
+    placeholder: "[opcionális] pontos cím vagy GPS koordináta",
+    className: "form-control text-success",
+  },
+  description: {
+    id: "description",
+    labelText: 'Esemény bemutatása',
+    placeholder: "Enter billentyűvel válaszd el a bekedéseket egymástól...",
+    className: "form-control text-success",
+    required: true,
+  },
+  fireStorage : {
+    id: 'fireStorage',
+    labelText : 'Képek feltöltése',
+    className: "form-control text-danger",
+  }
+}
+
+export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria };

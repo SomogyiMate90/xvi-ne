@@ -12,7 +12,7 @@ const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
     switch (collectionName) {
         case 'dokumentumok' : component = <span>DOKUMENTUMOK</span>
         break;
-        case 'galeria' : component = <span>GALÉRIA</span>
+        case 'galeria' : component = <FormView  key='A' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
         case 'kedvezmenyek' : component = <FormView  key='B' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
@@ -22,8 +22,6 @@ const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
         break;
         case 'elnokseg' : component = <FormView key='E' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
-        // case 'programok' : component = <Programs eventModify={eventModify} collectionName={collectionName} docs={docs}/>
-        // break;
         default: <h3>Valami hiba keletkezett</h3>
     }
 

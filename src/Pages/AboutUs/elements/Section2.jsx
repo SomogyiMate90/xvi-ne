@@ -54,12 +54,16 @@ const Section2 = () => {
       </p>
 
       <div>
+        <div className="d-flex"> 
+
         <p>
           <b>
             2019-ben új székhelyünk lett mely a 1165 Budapest, Veres Péter út 157
-            alatt található. <MapBtn className='d-inline' address='1165 Budapest, Veres Péter út 157' />
+            alatt található. 
           </b>
         </p>
+        <MapBtn className='d-inline' address='1165 Budapest, Veres Péter út 157' />
+        </div>
         <p>Az átadó ünnepségről videó is készült</p>
         <div className="my-4 d-flex justify-content-center">
           <iframe

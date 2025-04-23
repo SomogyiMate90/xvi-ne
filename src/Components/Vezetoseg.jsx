@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DefaultCard from "../shared/DefaultCard";
 import { useImmer } from "use-immer";
 import { getFIRESOTER_content } from "../Functions/firebase/getFIRESOTER_content";
+import Theme from "../Functions/themes/ThemeContext";
 
 
 const Vezetoseg = ({btnTitle='Elnökség'}) =>{
   const [cardDatas, setCardDatas] = useImmer([]);
-  const [openBtn, eventOpenBtn] = useState(null)
+  const [openBtn, eventOpenBtn] = useState(null);
+
+  const theme = useContext(Theme);
 
   useEffect(()=>{
 
@@ -48,12 +51,12 @@ const Vezetoseg = ({btnTitle='Elnökség'}) =>{
         {btnTitle}
         </button>
 
-<div className="offcanvas offcanvas-start w-lg-75" data-bs-backdrop="static" tabIndex="-1" id="elnoksegCanvas" aria-labelledby="staticBackdropLabel">
+<div className={`offcanvas offcanvas-start w-lg-75 ${theme}`}  data-bs-backdrop="static" tabIndex="-1" id="elnoksegCanvas" aria-labelledby="staticBackdropLabel">
   <div className="offcanvas-header">
     <h3 className="offcanvas-title" id="staticBackdropLabel">Elnökség</h3>
-    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" className="btn btn-close red" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div className="offcanvas-body d-flex gap-2 ">
+  <div className="offcanvas-body d-flex gap-2 flex-wrap justify-content-evenly">
     
         {
           cardDatas.length === 0 ? (<img style={{width: '30px', height: '30px' }} src="/assets/img/loadingGIF.gif" alt="Kép töltésről"/>) : 

@@ -3,13 +3,10 @@
     
     .hero-img{
 
-        // margin-top: 3rem;
         margin-bottom: 1rem;
-
         
         display: flex;
         align-items: flex-end;
-        // background-size: cover;
         background-repeat: no-repeat;
         position: relative;
 
@@ -35,7 +32,6 @@
             top: -50%;
             align-self: center;
         }
-   
     }
 
     @include mix.toAfterMaxwidth(600px){

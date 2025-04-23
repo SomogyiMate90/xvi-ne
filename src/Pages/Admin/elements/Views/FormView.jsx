@@ -9,6 +9,9 @@ import GetUploadedSections from "../Forms/GetUploadedSections.jsx";
 import DefaultInputImg from "../../../../shared/DefaultInputImg.jsx";
 import DefaultTextArea from "../../../../shared/DefaultTextArea.jsx";
 import BtnGroup from "../Forms/BtnGroup.jsx";
+import EditFireStorage from "./EditFireStorage.jsx";
+import upLoadFireStorage from "../../../../Functions/firebase/fireStorage/upLoadFireStorage.js";
+import LoadingTime from "../../../../Components/LoadingTime.jsx";
 
 
 const FormView = ({ eventModify, collectionName, docs }) => {
@@ -17,7 +20,12 @@ const FormView = ({ eventModify, collectionName, docs }) => {
   const [defaultValues, setDefaultValues] = useImmer({}); // korábban felöltött elem kiválasztása
   const [pictureBase64Url, setPictureBase64Url] = useState(null); // Átalakított kép src tárolása
   const [englishUrl, setEnglishUrl] = useState(null); // helyes URL elkészítéséhez, hogy ne legyen tele "%" és szám karakterekkel a link
-  const [defFotoWidth, setPhotoWidth] = useState(600)
+  const [defFotoWidth, setPhotoWidth] = useState(600);
+  const [uploading, setUploading] = useState(null)
+
+  const [bigFiles, setBigFiles] = useImmer([]);
+
+
 
 
 
@@ -39,19 +47,39 @@ const FormView = ({ eventModify, collectionName, docs }) => {
   // adatfelötlés módosítás
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const resp = await submitFunction(event, collectionName);
+    setUploading(true)
 
-    if (resp === "Sikeres feltöltés") {
-      
-      setChangedEvent(!changedEvent);
-      setDefaultValues({});
-      setFormKey(formKey + 1);
-      setPictureBase64Url(null);
-      setEnglishUrl(null);
+    try{
+      const docIdResp = await submitFunction(event, collectionName);
+      if (docIdResp !== 'Hiba történt') {
+        
+        const resp = await upLoadFireStorage(bigFiles,`/${collectionName}/${docIdResp}`)
+        
+        if(resp === 'Kész'){
+          setChangedEvent(!changedEvent);
+          setDefaultValues({});
+          setFormKey(formKey + 1);
+          setPictureBase64Url(null);
+          setEnglishUrl(null);
+          setUploading(null);
 
-    } else {
-      alert("A felötltés során hiba keletkezett, probáld meg ismét");
+        }
+        else{
+          handleNewForm()
+          throw new Error('A képfeltöltés nem sikerült')
+        }
+      }
+      else{
+        throw new Error('A feltötlés már az elején sikertelen')
+      }
     }
+    catch(e){
+      alert(e);
+    }
+    finally{
+      setUploading(false);
+    }
+
   };
 
 
@@ -68,8 +96,6 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       return;
     } else {
       const compresedPicBase64Url = await getPictureSrcBase64(file,defFotoWidth);
-
-      // console.log(compresedPicBase64Url)
       setPictureBase64Url(compresedPicBase64Url);
     }
   };
@@ -89,14 +115,14 @@ const FormView = ({ eventModify, collectionName, docs }) => {
 
     setFormKey(formKey+1);
     setDefaultValues({});
-    setPictureBase64Url(null);setEnglishUrl(null);    
+    setPictureBase64Url(null);setEnglishUrl(null);setBigFiles([]);
 }
 
 
   return (
     <div className="form-view-admin">
       <h3 className="text-center">Tölts ki az adatlapot</h3>
-      <DefaultInput key={formField.docId.docId ?? "ABC"} defaultValue={docId ?? ""} givenLabelText="Dokumentum azonosító" inputProps={formField.docId.docId}/>
+      <DefaultInput defaultValue={docId ?? ""} givenLabelText="Dokumentum azonosító" inputProps={formField.docId.docId}/>
       <form key={formKey} onSubmit={handleSubmit} className="mb-3">
       <DefaultInput defaultValue={englishUrl ?? data?.titleUrl ?? ''} givenLabelText='Dinamikus URL' inputProps={formField.dinamicUrl.titleUrl}/>
         {
@@ -107,7 +133,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
                                                         fun={{onChange: (event)=>handleSetEnglisCharacters(event)}} 
                                                         inputProps={formFields[item]}/>
                 if(item === 'base64Url') return (<div key={index}>
-                                                    <DefaultInputImg key={`${index}}-B`} handleFun={getNewPicUrl}/>
+                                                    <DefaultInputImg title={formFields[item].title} key={`${index}}-B`} handleFun={getNewPicUrl}/>
                                                     <DefaultInput key={`${index}}-A`} defaultValue={pictureBase64Url ?? data?.base64Url} 
                                                                   givenLabelText='Átkonvertált kép' 
                                                                   inputProps={formFields[item]}/>   
@@ -119,6 +145,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
                 else if( item === 'description') return <DefaultTextArea key={index} defaultValue={data?.description ?? ''}  inputProps={formFields[item]} />
                 else if( item === 'titleUrl') return <DefaultInput key={index} defaultValue={data?.titleUrl ?? ""}  inputProps={formFields[item]}/>;
                 else if( item === 'photoWidth') return null;
+                else if( item === 'fireStorage') return <EditFireStorage docId={docId} files={{bigFiles, setBigFiles}}/>
                 else{
                    return <DefaultInput defaultValue={data?.[item] ?? ""} key={index} inputProps={formFields[item]}/>
                 }  
@@ -138,6 +165,13 @@ const FormView = ({ eventModify, collectionName, docs }) => {
         collectionName={collectionName}
         docs={docs}
       />
+      {
+        uploading && (<LoadingTime 
+          text={{title : 'Feltöltés', 
+                  content: ['Várj türelmessen!',
+                            'Amig nem tűnik el ez az ablak, addig ne navigálj el!']}}/>)
+
+      }
     </div>
     
   );

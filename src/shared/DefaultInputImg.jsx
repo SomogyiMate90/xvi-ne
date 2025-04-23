@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DefaultInput from "./DefaultInput";
 
-const DefaultInputImg = ({handleFun}) =>{
+const DefaultInputImg = ({title,handleFun}) =>{
 
     const [mustAltImg, setAltImg] = useState(false);
 
@@ -28,7 +28,7 @@ const DefaultInputImg = ({handleFun}) =>{
     return(
             <fieldset className="border border-1 border-danger rounded-2 p-2">
         <div className="mb-3">
-            <label htmlFor="picture">Fényképfeltöltés max 1 db</label>
+            <label htmlFor="picture">{title || 'Fényképfeltöltés max 1 db'}</label>
             <input 
 
                 id="picture"

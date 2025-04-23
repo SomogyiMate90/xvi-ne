@@ -30,8 +30,6 @@ const DefaultLayout = () => {
         const fetchObj = async () =>{
         const fireStoreContent = await getFIRESOTER_content();
         setFireStoreDate(fireStoreContent)
-        console.log('ismét lefutott a kérés');
-        console.log(fireStoreContent);
       }
            
         fetchObj();

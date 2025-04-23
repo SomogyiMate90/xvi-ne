@@ -38,4 +38,11 @@
 
     }
 
+    img.uploaded-img{
+        width: 350px;
+        object-fit: contain;
+        
+        filter: grayscale(70%);
+    }
+
 }

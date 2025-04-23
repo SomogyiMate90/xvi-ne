@@ -8,7 +8,9 @@ export async function creatNewDoc(obj,collectionName) {
     
     try{
         const resp =  await addDoc(collectionRef,obj)
-        return resp;
+        const newDocId = resp.id;
+        console.log(newDocId)
+        return newDocId;
     }
     catch(e){
         console.error(e);
