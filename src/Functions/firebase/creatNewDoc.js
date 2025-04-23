@@ -1,5 +1,6 @@
 import { addDoc, collection } from "firebase/firestore";
-import getFireStoreDB from "./getFireStoreDB";
+import getFireStoreDB from "./firestore/getFireStoreDB";
+
 
 export async function creatNewDoc(obj,collectionName) {
     const db = getFireStoreDB();

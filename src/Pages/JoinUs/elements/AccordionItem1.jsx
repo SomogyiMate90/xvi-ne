@@ -1,3 +1,5 @@
+import DownLoadBTN from "../../../Components/DownLoadBTN";
+
 const AccordionItem1 = () =>{
     return(
         <div className="accordion-item ">
@@ -34,7 +36,15 @@ const AccordionItem1 = () =>{
             <p>A tagokról, jogaikról és kötelezettségeiről, tagság megszüntetéséről részletes információkat Alapszabályunk 4.,5.,6.,7. paragrafusaiban olvashatsz.</p>
 
             <section>
-                Szabályzati???
+                <h2>Alapaszabályzat</h2>
+                <DownLoadBTN 
+                     text='Mindenkori hatályos alapszabályzat'
+                     classNameText='btn btn-info order-5'
+                     funcionArgs={{
+                             eleresiUt : 'alapszabályzat/XVI. ker. NE alapszabályzat.pdf',
+                             addfileName: 'XVI. ker. NE alapszabályzat.pdf',
+                             read : true
+                         }}/>
             </section>
 
           </div>

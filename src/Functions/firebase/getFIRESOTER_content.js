@@ -1,6 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
-import getFireStoreDB from "./getFireStoreDB"
-import collectionsList from "./collectionsList";
+import getFireStoreDB from "./firestore/getFireStoreDB"
+import partOfCollections from "./firestore/partOfColletcionList";
 
 
 export async function getFIRESOTER_content(collectionName=false) {
@@ -18,7 +18,7 @@ export async function getFIRESOTER_content(collectionName=false) {
     let shortedCollections;
 
     if(!collectionName){
-        shortedCollections = collectionsList;
+        shortedCollections = partOfCollections;
     }
     else{
         shortedCollections = [collectionName]

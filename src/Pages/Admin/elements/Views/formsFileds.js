@@ -177,7 +177,7 @@ const elnokseg = {
   },
   rendezes: {
     id: 'rendezes',
-    require: true,
+    required: true,
     type: 'number',
     labelText: 'Sorrend'
 

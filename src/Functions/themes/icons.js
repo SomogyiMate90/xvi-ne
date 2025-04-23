@@ -103,21 +103,9 @@ const calendarIcon = (
   <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
 </svg>
 )
-/*
-const mapIcon = (
-  <svg width="32px" height="32px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 
-  <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
-  
-  <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
-  
-  <g id="SVGRepo_iconCarrier"> <path  d="M12 6H12.01M9 20L3 17V4L5 5M9 20L15 17M9 20V14M15 17L21 20V7L19 6M15 17V14M15 6.2C15 7.96731 13.5 9.4 12 11C10.5 9.4 9 7.96731 9 6.2C9 4.43269 10.3431 3 12 3C13.6569 3 15 4.43269 15 6.2Z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/> </g>
-  
-  </svg>
-)
-*/
 const mapIcon = (
-  <svg width="32" height="32" viewBox="0 0 1024 1024" className="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M640 213.333333L384 128 128 213.333333v682.666667l256-85.333333 256 85.333333 256-85.333333V128z" fill="#FFECB3" /><path d="M384 128v682.666667l256 85.333333V213.333333z" fill="#FFE082" /><path d="M640 320c-82.496 0-149.333333 70.250667-149.333333 156.821333S640 768 640 768s149.333333-204.629333 149.333333-291.178667S722.496 320 640 320z" fill="#F44336" /><path d="M640 469.333333m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#FFEBEE" /></svg>
+  <svg width="36" height="36" viewBox="0 0 1024 1024" className="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M640 213.333333L384 128 128 213.333333v682.666667l256-85.333333 256 85.333333 256-85.333333V128z" fill="#FFECB3" /><path d="M384 128v682.666667l256 85.333333V213.333333z" fill="#FFE082" /><path d="M640 320c-82.496 0-149.333333 70.250667-149.333333 156.821333S640 768 640 768s149.333333-204.629333 149.333333-291.178667S722.496 320 640 320z" fill="#F44336" /><path d="M640 469.333333m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#FFEBEE" /></svg>
 )
 
 
@@ -128,5 +116,10 @@ const infoIcon = (
 </svg>
 )  
 
+const eyeIcon = (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+</svg>)
 
-export { downMark, downMark2, faceBookIcon,youTubeIcon, akadalymentesIkon, moon, sun, pictureIcon, calendarIcon, infoIcon, mapIcon };
+
+export { downMark, downMark2, faceBookIcon,youTubeIcon, akadalymentesIkon, moon, sun, pictureIcon, calendarIcon, infoIcon, mapIcon,eyeIcon };

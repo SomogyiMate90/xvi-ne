@@ -1,6 +1,6 @@
 import { mapIcon } from "../Functions/themes/icons";
 
-const MapBtn = ({address}) =>{
+const MapBtn = ({className, address}) =>{
 
     if((typeof address !== 'string')) return;
 
@@ -8,8 +8,8 @@ const MapBtn = ({address}) =>{
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
     return(
-    <div>
-      <a href={googleMapsUrl} rel="noopener noreferrer" target="_blank" aria-label='Esemény hozzáadása a naptárhoz'>{mapIcon}</a>
+    <div className={className}>
+      <a href={googleMapsUrl} rel="noopener noreferrer" target="_blank" aria-label='Navigálás a Google térképre'>{mapIcon}</a>
     </div>
     )
 }

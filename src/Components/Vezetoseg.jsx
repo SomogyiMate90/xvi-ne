@@ -1,33 +1,52 @@
-import { useContext, useEffect } from "react";
-import FireStoreContext from "../Functions/contexts/fireSroreContext";
+import { useEffect, useState } from "react";
 import DefaultCard from "../shared/DefaultCard";
+import { useImmer } from "use-immer";
+import { getFIRESOTER_content } from "../Functions/firebase/getFIRESOTER_content";
 
 
-const Vezetoseg = () =>{
+const Vezetoseg = ({btnTitle='Elnökség'}) =>{
+  const [cardDatas, setCardDatas] = useImmer([]);
+  const [openBtn, eventOpenBtn] = useState(null)
 
   useEffect(()=>{
 
     import('bootstrap/js/dist/offcanvas.js');
 
-  },[])
+    if(openBtn){
 
-    
-    const fireBaseContent = useContext(FireStoreContext);
-    /**
-     * @type {Array}
-     */
-    const elnokseg = fireBaseContent.elnokseg;
+      async function fetchElnokseg(){
+        console.log('Belépett a blokba')
+        try{
+          const fireBaseContent = await getFIRESOTER_content('elnokseg');
 
-    const shortedElnokseg = elnokseg?.sort((a,b)=>{
-      return  Number(a?.data?.rendezes)-Number(b?.data?.rendezes)
-    })
+          /**
+           * @type {Array}
+           */
+          const elnokseg = fireBaseContent.elnokseg;
 
+          if(elnokseg.length < 1 || elnokseg === undefined) throw new Error();
+      
+          const shortedElnokseg = elnokseg?.sort((a,b)=>{
+            return  Number(a?.data?.rendezes)-Number(b?.data?.rendezes)
+          })
+          console.log(shortedElnokseg)
+            setCardDatas(shortedElnokseg)
+        } 
+        catch{
+          eventOpenBtn(null);
+          setCardDatas([{ docId: 'a', data: { name: 'HIBA' } }]);
+        }
+        }
+      
+      fetchElnokseg()
+    }
+  },[openBtn])
 
     return(
         <>
-        <button className="btn btn-info mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#elnoksegCanvas" aria-controls="elnoksegCanvas">
-        Elnökség
-</button>
+        <button className="btn btn-info mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#elnoksegCanvas" aria-controls="elnoksegCanvas" onClick={()=>eventOpenBtn(true)}>
+        {btnTitle}
+        </button>
 
 <div className="offcanvas offcanvas-start w-lg-75" data-bs-backdrop="static" tabIndex="-1" id="elnoksegCanvas" aria-labelledby="staticBackdropLabel">
   <div className="offcanvas-header">
@@ -37,14 +56,13 @@ const Vezetoseg = () =>{
   <div className="offcanvas-body d-flex gap-2 ">
     
         {
-          shortedElnokseg?.map((item,index)=>{
+          cardDatas.length === 0 ? (<img style={{width: '30px', height: '30px' }} src="/assets/img/loadingGIF.gif" alt="Kép töltésről"/>) : 
+           cardDatas.map((item)=>{
                 const {data, docId} = item;
-
                 console.log('Lefutott a kártya készítés')
-                return(
-                <DefaultCard key={docId} tag={data} />
-            )
-        })
+                return(<DefaultCard key={docId} tag={data}/>)
+                }
+          )
         }
    
   </div>

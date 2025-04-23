@@ -1,6 +1,6 @@
 
 import { getFirestore } from "firebase/firestore";
-import getFireBaseApp from "./getFireBaseApp";
+import getFireBaseApp from "../getFireBaseApp";
 
 
 

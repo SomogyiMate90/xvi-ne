@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getFIRESOTER_content } from "../../../Functions/firebase/getFIRESOTER_content";
 import { useImmer } from "use-immer";
 import EditCollectionDocs from "./Forms/EditCollectionDocs";
-import collectionsList from "../../../Functions/firebase/collectionsList";
+import collectionsList from "../../../Functions/firebase/firestore/collectionsList.js";
 import LoadingTime from "../../../Components/LoadingTime";
 
 

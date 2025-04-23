@@ -1,5 +1,6 @@
 import { doc, setDoc } from "firebase/firestore";
-import getFireStoreDB from "./getFireStoreDB";
+import getFireStoreDB from "./firestore/getFireStoreDB";
+
 
 export default async function setCurrentDoc(obj,collectionName,docId) {
     const db = getFireStoreDB();

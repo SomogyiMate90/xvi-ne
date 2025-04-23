@@ -1,4 +1,5 @@
 import DownLoadBTN from "../../../Components/DownLoadBTN";
+import NyilatkozatokBTNGroup from "../../../Components/NyilatkozatokBTNGroup";
 
 const AccordionItem3 = () =>{
     return(
@@ -12,18 +13,8 @@ const AccordionItem3 = () =>{
           <div className="accordion-body">
             <p>Az egyesületbe rendes tagnak,pártoló tagnak és tiszteletbeli tagnak jelentkezni az alábbi nyilatkozat kitöltésével lehet!</p>
 
-            <p><b>Dokumentumok letöltése:</b> <br /><br />
-            
-            <DownLoadBTN
-                    text='Belépési nyilatkozat'
-                    classNameText='btn btn-primary item-aligin-right'
-                    funcionArgs={{
-                            eleresiUt : '/documents/belepesi-nyilatkozat.doc',
-                            addfileName: 'belépési-nyilatkozat.docx'
-                        }}
-                />     
-            
-           </p>
+            <p><b>Dokumentumok letöltése:</b></p>
+            <NyilatkozatokBTNGroup/>
 
           </div>
         </div>

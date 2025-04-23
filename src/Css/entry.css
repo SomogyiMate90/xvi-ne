@@ -329,11 +329,6 @@ header .sun-svg {
 .page-footer footer .contact p {
   text-align: center;
 }
-.page-footer footer iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 250px;
-}
 
 .page-about-us .about-us-img {
   background-image: url("/public/assets/img/hero/csoport_kep.jpg");

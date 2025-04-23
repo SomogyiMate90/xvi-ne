@@ -1,6 +1,7 @@
 import LinkBTN from "../../../shared/LinkBTN";
 import Vezetoseg from "../../../Components/Vezetoseg";
 import InlineLink from "../../../shared/InlineLink";
+import MapBtn from "../../../shared/MapBtn";
 
 const Section2 = () => {
   return (
@@ -56,7 +57,7 @@ const Section2 = () => {
         <p>
           <b>
             2019-ben új székhelyünk lett mely a 1165 Budapest, Veres Péter út 157
-            alatt található
+            alatt található. <MapBtn className='d-inline' address='1165 Budapest, Veres Péter út 157' />
           </b>
         </p>
         <p>Az átadó ünnepségről videó is készült</p>
