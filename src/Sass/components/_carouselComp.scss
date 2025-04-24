@@ -1,0 +1,43 @@
+.my-carousel-css {
+
+    position: fixed !important;    /* absolute helyett fixed, hogy a viewporthoz igazodjon */
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;      /* teljes magasság */
+    z-index: 1000;
+
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+
+
+    button.btn-close{
+
+        position: fixed !important;
+
+        top: 2%;
+        right: 2%;
+        background-size: 100% 100%;
+        height: 35px;
+        width: 35px;
+
+        z-index: 9999;
+    }
+
+
+     .carousel-item img {
+        margin: 5vh auto;
+        width: 90%;
+        height: 90%;     
+        object-fit: contain; 
+      }
+
+  }
+  
+  .my-carousel-css .carousel-inner,
+  .my-carousel-css .carousel-item {
+    height: 100%;      
+  }
+  

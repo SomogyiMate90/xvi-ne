@@ -3,8 +3,9 @@ import PhotoBook from "../../../shared/PhotoBook";
 
 const GalleryEventArticle = ({article}) =>{
 
-    console.log(article);
-/**
+/** 
+ * @type {{ docId: string, data: ArticleData }}
+ * 
  * @typedef {Object} ArticleData
  * @property {string} description
  * @property {string} title
@@ -14,8 +15,6 @@ const GalleryEventArticle = ({article}) =>{
  * @property {number} fileSzam
  * @property {string} picAlt
  */
-
-/** @type {{ docId: string, data: ArticleData }} */
     const { docId, data : { address , base64Url, description,  picAlt, title }  } = article
     
     const splitedDescription = description.split('\n');
@@ -39,10 +38,10 @@ const GalleryEventArticle = ({article}) =>{
                 }
                 <div className="paragraps">{paragraphs.map((i,n)=>(<p key={n}>{i}</p>))}</div>
             </div>
-            <div class="clearfix">
+            <div className="clearfix">
                 {address &&  (<div className="d-flex gap-2"><p className="d-inline-block"><b>Helyszín: {address}</b></p> <MapBtn address={address}/></div>)} 
             </div>
-            <PhotoBook docId={docId} />    
+            <PhotoBook folderPath={`galeria/${docId}`} />    
         </>
     )
 
