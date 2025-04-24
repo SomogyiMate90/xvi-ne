@@ -1,10 +1,10 @@
 .my-carousel-css {
 
-    position: fixed !important;    /* absolute helyett fixed, hogy a viewporthoz igazodjon */
+    position: fixed !important;  
     top: 0%;
     left: 0%;
     width: 100vw;
-    height: 100vh;      /* teljes magasság */
+    height: 100vh;      
     z-index: 1000;
 
     box-sizing: border-box;
@@ -27,7 +27,22 @@
     }
 
 
-     .carousel-item img {
+
+
+
+
+    .carousel-control-next, .carousel-control-prev{
+      height: 55%;
+      align-items: flex-end
+    }
+
+
+
+
+
+
+
+     .carousel-item img, .carousel-item video, .carousel-item audio {
         margin: 5vh auto;
         width: 90%;
         height: 90%;     

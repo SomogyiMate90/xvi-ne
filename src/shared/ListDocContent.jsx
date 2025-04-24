@@ -23,11 +23,14 @@ const ListDocContent = ({setInputValues, eventModify, collectionName,item }) => 
       await deleteFirestoreDoc(collectionName,docId)
 
       const respStorageList = await getStorageFileList(`galeria/${docId}`);
-      const length = respStorageList.fullPath.length;
+
+    console.log(respStorageList)
+
+      const length = respStorageList.length;
 
       if(length > 0){
         for (let i = 0; i < length; i++) {
-          const filePath = respStorageList.fullPath[i];
+          const filePath = respStorageList[i].fullPath;
           await deleteFile(filePath)
         }
 

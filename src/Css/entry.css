@@ -399,6 +399,13 @@ header .sun-svg {
   width: 350px;
   object-fit: contain;
 }
+.page-admin .file-list-in-data-base ol li {
+  border: 3px solid black;
+  background-color: rgba(0, 255, 191, 0.4);
+}
+.page-admin .file-list-in-data-base ol li:nth-of-type(even) {
+  background-color: rgba(16, 113, 240, 0.3);
+}
 
 .page-document .document-hero-img {
   background-image: url("/public/assets/img/hero/documents-hero-img.webp");
@@ -671,11 +678,11 @@ header .sun-svg {
 }
 
 .my-carousel-css {
-  position: fixed !important; /* absolute helyett fixed, hogy a viewporthoz igazodjon */
+  position: fixed !important;
   top: 0%;
   left: 0%;
   width: 100vw;
-  height: 100vh; /* teljes magasság */
+  height: 100vh;
   z-index: 1000;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.8);
@@ -689,7 +696,11 @@ header .sun-svg {
   width: 35px;
   z-index: 9999;
 }
-.my-carousel-css .carousel-item img {
+.my-carousel-css .carousel-control-next, .my-carousel-css .carousel-control-prev {
+  height: 55%;
+  align-items: flex-end;
+}
+.my-carousel-css .carousel-item img, .my-carousel-css .carousel-item video, .my-carousel-css .carousel-item audio {
   margin: 5vh auto;
   width: 90%;
   height: 90%;

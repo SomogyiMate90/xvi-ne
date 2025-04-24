@@ -44,4 +44,15 @@
    
     }
 
+    .file-list-in-data-base ol li{
+
+        border: 3px solid black;
+
+        background-color: rgba(0, 255, 191, 0.4);
+
+        &:nth-of-type(even){
+            background-color: rgba(16, 113, 240, 0.3);
+        }
+    }
+
 }

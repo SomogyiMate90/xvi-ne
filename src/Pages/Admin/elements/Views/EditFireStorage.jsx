@@ -27,16 +27,15 @@ const EditFireStorage = ({docId,files}) =>{
             const getFiles = async () => {
                 console.log(docId)
                 const fileList = await getStorageFileList(`galeria/${docId}/`);
-                const length = fileList.fullPath.length; // Ekkor biztos lehetsz benne, hogy tömb a fullPath és name
-                console.log(length)
+                const length = fileList.length; // Ekkor biztos lehetsz benne, hogy tömb a fullPath és name
                 storageCount(length)
       
                     for (let i = 0; i < length; i++) {
                         
-                        const filePath = fileList.fullPath[i];
+                        const filePath = fileList[i].fullPath;
                         const url = await downloadFile(filePath);
                         setList(draft => {
-                            draft.push({ url: url, filePath : filePath,  name: fileList.name[i] });
+                            draft.push({ url: url, filePath : filePath,  name: fileList[i].name, contentType : fileList[i].contentType  });
                           });
             }}
             getFiles();
@@ -65,7 +64,7 @@ return(
             className='form-control' 
             onChange={(e)=>handleCahnge(e)}
             type="file"
-            accept="image/*"
+            // accept="image/*"
             multiple
             />
         <PreViewreIMG selectedFiles={bigFiles} />
@@ -73,21 +72,53 @@ return(
         
     </div>
     <hr />
-    <div className="">
-        <h5>Adatbázisban szereplő feltöltött képek</h5>
+    <div className="file-list-in-data-base">
+        <h5>Adatbázisban szereplő feltöltött fileok</h5>
         <ol className="list-unstyled d-flex flex-wrap gap-2 justify-content-center">
             {
                 listPics.map((i,n)=>{
+                      let CompType = <span>Nem megjeleníthető</span>
+
+                    switch(i.contentType){
+                        case 'image/jpeg' : CompType = () =>{
+                            return(
+                                                 
+                                <img className="uploaded-img" src={i.url} alt="" />
+                              
+               
+                            )
+                        };
+                        break;
+                        case 'video/mp4' : CompType = () =>{
+                            return(
+                                <video controls width={'400px'}>
+                                    <source src={i.url} type={i.contentType}/>
+                                </video>
+                            )
+                        }
+                        break;
+                        case 'audio/mpeg' : CompType = () =>{
+                            return(
+                                <audio controls style={{display: 'block', margin : 'auto'  }} >
+                                    <source src={i.url} type={i.contentType}/>
+                                </audio>
+                            )
+                        }
+                        break;
+                        default : CompType = <span>Nem támogatott formátum switch blokban írd át</span>;
+                    }
+
                     return(
                         <li id={i.filePath} key={n}>
-                            <figure className="position-relative">
-                                <button 
+                               <figure style={{width: "400px"}} className="position-relative">
+                               <button 
                                     className="z-3 btn btn-close red position-absolute bg-body opacity-100 end-0" type="button"
                                     onClick={()=>handleDeleteBtn(i.filePath)}
+                                    title={`Törlés ${i.name}`}
                                     ></button>
-                                <img className="uploaded-img" src={i.url} alt="" />
-                                <figcaption>{i.name}</figcaption>
-                            </figure>
+                                 {CompType()}
+                            <figcaption className="text-wrap">{i.name}</figcaption>
+                             </figure>
                         </li>)
                 })
             }

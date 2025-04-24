@@ -1,4 +1,4 @@
-import { ref, listAll } from "firebase/storage";
+import { ref, listAll, getMetadata } from "firebase/storage";
 import getFireStorageDB from "./getFireStorageDB";
 
 
@@ -14,10 +14,18 @@ const getStorageFileList = async (folderPath) => {
         const folderRef = ref(storageDb, folderPath);
 
         const result = await listAll(folderRef);
-        const name = result.items.map((itemRef) => itemRef.name);
-        const fullPath = result.items.map((itemRef) => itemRef.fullPath);
-
-        return { fullPath, name };
+        const files = await Promise.all(
+            result.items.map(async (itemRef) => {
+              const fileMeta = await getMetadata(itemRef);
+              return {
+                name: itemRef.name,
+                fullPath: itemRef.fullPath,
+                contentType: fileMeta.contentType,
+              };
+            })
+          );
+      
+          return files; 
     } catch (error) {
         console.error("Error fetching file list from Firebase Storage:", error);
         return 'Nem sikerült a fájlok listáját lekérdezni!';

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import getStorageFileList from "../Functions/firebase/fireStorage/getStorageFileList";
 import { useImmer } from "use-immer";
 import downloadFile from "../Functions/firebase/fireStorage/downloadFile";
+import pauseMediaFile from "../Functions/Utils/pauseMediaFile";
 
 
 const PhotoBook = ({folderPath}) =>{
@@ -11,20 +12,22 @@ const PhotoBook = ({folderPath}) =>{
     useEffect(()=>{
 
         async function getFiles() {
-            const fileLists = await getStorageFileList(folderPath)// name, fullPath
+            const fileLists = await getStorageFileList(folderPath)
 
-            const filteredPathList = fileLists.fullPath.reduce((acc,path)=>{
+            const filteredPathList = fileLists.reduce((acc,fileDesc)=>{
 
-                const isNameOfMinPic = String(path).includes('400x267');
+              const { name, fullPath , contentType } = fileDesc;
+
+                const isNameOfMinPic = name.includes('400x267');
 
                 if(isNameOfMinPic){
-                    acc.minPic.push(path)
+                    acc.minPic.push(fileDesc.fullPath)
                 }
                 else{
-                    acc.bigPic.push(path)
+                    acc.bigFiles.push(fileDesc)
                 }
                 return acc;
-            },{minPic:[],bigPic:[]});
+            },{minPic:[],bigFiles:[]});
 
             const hasAnyMinPic = filteredPathList.minPic.length > 0;
 
@@ -47,7 +50,7 @@ const PhotoBook = ({folderPath}) =>{
     switch(loadindg){
         case 'loading' : SelectedComp = <img src="/assets/img/loadingGIF.gif" />;
         break;
-        case 'success' : SelectedComp = <SuccessComp pathList={picList}/>
+        case 'success' : SelectedComp = <SuccessComp picList={picList}/>
         break;
         case 'failed' : SelectedComp = <p className="mx-2 px-2 text-indent-no d-inline-block bg-danger fw-bolder text-decoration-underline">Nincs megjeleníthető kép</p>
         break;
@@ -65,12 +68,11 @@ const PhotoBook = ({folderPath}) =>{
 export default PhotoBook;
 
 
-const SuccessComp = ({pathList}) =>{
+const SuccessComp = ({picList}) =>{
     const [minPictures, setMinPictures] = useImmer([]);
-    const [bigPictures, setBigPictures] = useImmer([]);
     const [showCarousel, setShowCarousel] = useState(false)
 
-    const { minPic , bigPic  } = pathList
+    const { minPic , bigFiles : [{ name, fullPath , contentType }]  } = picList
 
     async function getPic(path,draftFun) {
         const url = await downloadFile(path);
@@ -89,27 +91,13 @@ const SuccessComp = ({pathList}) =>{
             getPic(path,setMinPictures)
         }
 
-    },[]);
-
-    // nagyképek redrelése
-    useEffect(()=>{
-
-        if(showCarousel && bigPictures.length < 1){
-            setBigPictures(() => []);
-            for(let i = 0; i < bigPic.length; i++){
-                const path = bigPic[i];
-                getPic(path,setBigPictures)
-            }
-        }
-
-    },[showCarousel]);
-    
+    },[]);  
 
     return(
         <>
-            { showCarousel && <CarouselComp closeFun={()=>setShowCarousel(false)} urlList={bigPictures} /> }
+            { showCarousel && <CarouselComp closeFun={()=>setShowCarousel(false)} bigLilesList={picList.bigFiles} /> }
         <section>
-            <button className="my-3 btn btn-info" onClick={()=>setShowCarousel(true)}>Fotógaléria megnyitása</button>
+            <button className="my-3 btn btn-info" onClick={()=>setShowCarousel(true)}>Fotógaléria, vidók megnyitása</button>
             <h2 className="text-center">Képek</h2>
             <div className="w-100 d-flex gap-3 justify-content-evenly flex-wrap">
                 {minPictures.map((url,n)=>{
@@ -123,7 +111,31 @@ const SuccessComp = ({pathList}) =>{
     )
 }
 
-const CarouselComp = ({ urlList, closeFun }) => {
+const CarouselComp = ({ closeFun, bigLilesList }) => {
+  const [readedFile, setReadedFile] = useImmer([])
+  useEffect(()=>{
+    
+    if(readedFile.length === 0){
+      console.log('Rendelés megkezdte a körhinta')
+  
+      async function getUrl(path,{ name,contentType  }){
+        const url = await downloadFile(path);
+        setReadedFile(draft => {
+          draft.push({url, name,contentType});
+        });
+      }
+      
+      const fileListNum = bigLilesList.length;
+      
+      for(let i = 0; i < fileListNum; i++){
+         getUrl(bigLilesList[i].fullPath,{ name: bigLilesList[i].name, contentType: bigLilesList[i].contentType })
+      }
+    }
+
+  },[])
+
+
+
   return (
     <div
       id="carouselExampleControlsNoTouching"
@@ -132,15 +144,36 @@ const CarouselComp = ({ urlList, closeFun }) => {
     >
       <div className="carousel-inner">
         <button className="btn btn-close red" aria-label="Fotógaléria bezárása" onClick={closeFun}></button>
-        {urlList.map((picture, index) => {
+        {readedFile.map(({url,name,contentType}, index) => {
+
+          let SelectedComp = <></>
+
+          switch (contentType) {
+            case "image/jpeg":
+              SelectedComp = (<img aria-label={name} className="d-block" src={url} alt="" />);
+              
+              break;
+            case "video/mp4":
+              SelectedComp = (<video aria-label={name} className="d-block" controls width={"400px"}><source src={url} type={contentType} /></video>)
+              break;
+            case "audio/mpeg":
+              SelectedComp = (<audio aria-label={name} className="d-block" controls ><source src={url} type={contentType} /></audio>)
+              break;
+            default:
+              SelectedComp = <span>Nem támogatott formátum switch blokban írd át</span>;
+          }
+
+
+
           return (
             <div key={index} className={ index === 0 ? 'carousel-item active' : "carousel-item" }>
-              <img src={picture} className="d-block" alt={`Kép: ${index}`} />
+              {SelectedComp}
             </div>
           );
         })}
       </div>
       <button
+        onClick={()=>pauseMediaFile('carouselExampleControlsNoTouching')}
         className="carousel-control-prev"
         type="button"
         data-bs-target="#carouselExampleControlsNoTouching"
@@ -150,6 +183,7 @@ const CarouselComp = ({ urlList, closeFun }) => {
         <span className="d-none d-xxl-block">Előző</span>
       </button>
       <button
+        onClick={()=>pauseMediaFile('carouselExampleControlsNoTouching')}
         className="carousel-control-next"
         type="button"
         data-bs-target="#carouselExampleControlsNoTouching"
