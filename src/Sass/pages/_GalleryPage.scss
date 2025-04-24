@@ -24,22 +24,22 @@
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        gap: 5rem;
+        gap: 1rem;
 
         div.card{
 
-            min-width: 300px;
-            min-height: 400px;
+            min-width: 280px;
+            max-width: 320px;
+            min-height: 450px;
+     
             box-sizing: border-box;
 
-
                  &:hover{
-                transform: scale(1.1);
+                transform: scale(1.06);
                 transition: ease-in-out 0.5s;
                 z-index: 1;
-                border: 2px solid red;
+                border: 2px solid red;      
 
-                cursor: pointer;
             }
 
             .picture-count-icon{
@@ -59,6 +59,12 @@
                 z-index: 2;
             }
 
+            img{
+                height: 100%;
+                
+                object-fit: cover;
+            }
+
 
         }
 
@@ -67,10 +73,10 @@
                 height: 70vh;
                 width: 90vw;
 
-                img{
-                    height: 100%;
-                    object-fit: cover;
+                p{
+                    overflow: hidden;
                 }
+           
 
                 .card-img-overlay{
 
@@ -96,23 +102,34 @@
     
                         height: 100%;
                         padding: 1rem 0rem 0rem;
+                        *:not(button){
+                            background-color: rgba(128, 128, 128, 0.85);
+                            overflow: hidden;
+                        }
                     }
 
             }
         }
                  
+    }
         .card-img-overlay{
 
             *:not(button){
                 padding: 0 .3rem;
                 text-shadow: 0px 0px 3px black;
-                background-color: rgba(128, 128, 128, 0.5);
+                background-color: rgba(128, 128, 128, 0.7);
                 overflow: hidden;
             }
         }
-    }
 
 
+        a.postion-galery-btn{
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0);
+        }
 
 }
 }

@@ -11,6 +11,7 @@ import Discounts from "../Pages/Kedvezmenyek/Discounts";
 import DocumentsPage from "../Pages/Dokumentumok/DocumentsPage";
 import GalleryPage from "../Pages/Gallery/GalleryPage";
 import ArticlePage from "../Pages/Programok/elements/ArticlePage";
+import GalleryEvent from "../Pages/Gallery/GalleryEvent";
 
 
 const route = createBrowserRouter([
@@ -49,6 +50,10 @@ const route = createBrowserRouter([
             {
                 path: '/galéria',
                 element: <GalleryPage/>
+            },
+            {
+                path: '/galéria/*',
+                element: <GalleryEvent/>
             },
             {
                 path: '/dokumentumok',

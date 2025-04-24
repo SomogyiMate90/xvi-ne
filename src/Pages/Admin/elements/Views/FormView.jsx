@@ -54,15 +54,9 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       if (docIdResp !== 'Hiba történt') {
         
         const resp = await upLoadFireStorage(bigFiles,`/${collectionName}/${docIdResp}`)
-        
-        if(resp === 'Kész'){
-          setChangedEvent(!changedEvent);
-          setDefaultValues({});
-          setFormKey(formKey + 1);
-          setPictureBase64Url(null);
-          setEnglishUrl(null);
-          setUploading(null);
 
+        if(resp === 'Kész'){
+          handleNewForm()
         }
         else{
           handleNewForm()
@@ -115,14 +109,17 @@ const FormView = ({ eventModify, collectionName, docs }) => {
 
     setFormKey(formKey+1);
     setDefaultValues({});
-    setPictureBase64Url(null);setEnglishUrl(null);setBigFiles([]);
+    setPictureBase64Url(null);
+    setEnglishUrl(null);
+    setBigFiles([]);
+    setChangedEvent(!changedEvent)
 }
 
 
   return (
     <div className="form-view-admin">
       <h3 className="text-center">Tölts ki az adatlapot</h3>
-      <DefaultInput defaultValue={docId ?? ""} givenLabelText="Dokumentum azonosító" inputProps={formField.docId.docId}/>
+      <DefaultInput key={formKey+1*2} defaultValue={docId ?? ""} givenLabelText="Dokumentum azonosító" inputProps={formField.docId.docId}/>
       <form key={formKey} onSubmit={handleSubmit} className="mb-3">
       <DefaultInput defaultValue={englishUrl ?? data?.titleUrl ?? ''} givenLabelText='Dinamikus URL' inputProps={formField.dinamicUrl.titleUrl}/>
         {
@@ -145,7 +142,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
                 else if( item === 'description') return <DefaultTextArea key={index} defaultValue={data?.description ?? ''}  inputProps={formFields[item]} />
                 else if( item === 'titleUrl') return <DefaultInput key={index} defaultValue={data?.titleUrl ?? ""}  inputProps={formFields[item]}/>;
                 else if( item === 'photoWidth') return null;
-                else if( item === 'fireStorage') return <EditFireStorage docId={docId} files={{bigFiles, setBigFiles}}/>
+                else if( item === 'fireStorage') return <EditFireStorage key={index} docId={docId} files={{bigFiles, setBigFiles}}/>
                 else{
                    return <DefaultInput defaultValue={data?.[item] ?? ""} key={index} inputProps={formFields[item]}/>
                 }  

@@ -211,11 +211,20 @@ const galeria = {
     className: "form-control text-success",
     required: true,
   },
+  time : {
+    id: 'date',
+    type: 'date',
+    readOnly: true,
+    value: new Date().toISOString().split('T')[0],
+    labelText : 'Szerkesztés ideje',
+    className: "form-control text-danger",
+  },
   fireStorage : {
     id: 'fireStorage',
     labelText : 'Képek feltöltése',
     className: "form-control text-danger",
-  }
+ }
+
 }
 
 export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria };

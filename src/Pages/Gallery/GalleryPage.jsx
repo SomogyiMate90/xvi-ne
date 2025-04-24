@@ -1,27 +1,26 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardFolder from "./element/CardFolder";
-import events from "./element/testEvcents";
 import Theme from "../../Functions/themes/ThemeContext";
 import PageHelmet from "../../Components/PageHelmet";
 import metaAndOpengraphTag from "../../Functions/helm/metaAndOpengraphTag";
+import FireStoreContext from "../../Functions/contexts/fireSroreContext";
+import { useImmer } from "use-immer";
+import LoadingTime from "../../Components/LoadingTime";
+import ErrorElement from "../../Components/ErrorElement";
+import NotFound from "../../Components/NotFound";
 
 const GalleryPage = () =>{
+    const theme = useContext(Theme);
+    const fireStoreContent = useContext(FireStoreContext);
+    const  [galeria , setGaleria] = useImmer([])
 
-    const theme = useContext(Theme)
+    useEffect(()=>{
+        
+        if(fireStoreContent.galeria) setGaleria(fireStoreContent.galeria)
 
-    const contentFolders = Array.from({ length: 12 }, () => {
-        // Véletlenszerű belső tömb hossza 3 és 11 között
-        const innerLength = Math.floor(Math.random() * 9) + 3;
-        // Létrehozunk egy belső tömböt a megadott hosszal,
-        // ahol minden elem 10 és 1200 közötti véletlenszerű szám
-        return Array.from({ length: innerLength }, () => 
-          Math.floor(Math.random() * (1200 - 10 + 1)) + 10
-        );
-      });
+    },[fireStoreContent]);
 
-      const eventsArray = events;
 
-    //   console.log(contentFolders)
 
     return(
         <>
@@ -29,28 +28,38 @@ const GalleryPage = () =>{
         <div className={`page-gallery ${theme}`}>
             <div className="hero-img camera-hero-img">
                 <h1 className="poz-center">Galéria</h1>
-
-
             </div>
-
-
          
                     <div className={`foto-side ${theme}`}>
                  
-                        {contentFolders.map((item,index)=>{
+                        {
+                        galeria.length > 0  ? (galeria.map(({docId, data},index)=>{
                             return(
-                            <CardFolder key={index} LoremId={contentFolders[index]} text={eventsArray[index]} />
+                            <CardFolder key={index} docId={docId} data={data}/>
                             )
-                        })}
-                    </div>
-          
-            <div className="row g-2">
-           
-            </div>
+                        }))
 
+                        : 
+                        
+                        <AlternativComp />
+                        }
+                    </div>
         </div>
         </>
     )
 }
 
 export default GalleryPage;
+
+
+const AlternativComp = () =>{
+    const [timeOut, setTimeOut] = useState(false)
+
+    setTimeout(()=>{
+        setTimeOut(true)
+    },6000)
+
+    return(  timeOut === false ? <LoadingTime /> : <ErrorElement/>)
+
+
+}

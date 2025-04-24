@@ -2,8 +2,6 @@
 import { getFirestore } from "firebase/firestore";
 import getFireBaseApp from "../getFireBaseApp";
 
-
-
 let appDb = null;
 
 export default function getFireStoreDB(){

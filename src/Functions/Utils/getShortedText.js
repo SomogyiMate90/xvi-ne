@@ -25,7 +25,7 @@ export default function getShortedText(array,maxCaractes = 320){
             }
 
             if(newParagraph.length>0){
-              acc.push(newParagraph)
+              acc.push(newParagraph.join(""));
             }            
             return acc;
           },[])

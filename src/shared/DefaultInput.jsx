@@ -6,9 +6,9 @@ const DefaultInput = ({
     fun = {}
 })=>{
 
- const {labelText, required = false , ...other} = inputProps
+ const {labelText, required = false , value,  ...other} = inputProps
 
-
+ const isControlled = value !== undefined && value !== false;
 
     return(
         <div className="mb-3">
@@ -16,7 +16,7 @@ const DefaultInput = ({
             <input 
                 name={inputProps.id} 
                 {...{className: 'form-control ',type:'text',  required, ...other}}
-                defaultValue={defaultValue ?? '' }                
+                {...(isControlled ? { value } : { defaultValue: defaultValue ?? '' })}        
                 {...fun}
             />
         </div>

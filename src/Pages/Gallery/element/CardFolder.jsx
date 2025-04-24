@@ -1,40 +1,57 @@
 
 import { pictureIcon } from "../../../Functions/themes/icons";
+import getShortedText from "../../../Functions/Utils/getShortedText";
 import LinkBTN from "../../../shared/LinkBTN";
 
-const CardFolder = ({LoremId,text}) => {
+const CardFolder = ({docId,data}) => {
 
-    const {title , paragraph , time } = text
+  const {title , base64Url, picAlt , description, fileSzam, date, titleUrl } = data;
 
-    const loremUrl = `https://picsum.photos/id/${LoremId[0]}/200/300`
-    const defaultImageUrl = 'public/assets/img/camera-no-pic.png'
+  const splitedDescription = description.split('\n');
+  const descriptionParagraps = splitedDescription.filter(item=> item !== '');
+  const shortedDescription = getShortedText(descriptionParagraps,160)
+  const defaultImageUrl = '/assets/img/no-img.png'
+
+  const now = Date.now()
+  const szerkesztve = new Date(date).getTime();
+  const kulonbseg = now - szerkesztve;
+
+  const napok =`szerkesztve: ${Math.floor(kulonbseg / (1000 * 60 * 60 * 24))} napja`;
+  
+  let honap;
+
+  if(napok > 35){
+    honap = `Szerkesztve: ${Math.floor(napok / 30)} hónapja`
+  }
 
   return (
     <div className="card text-bg-dark position-relative">
         <div className="picture-count-icon">
-        <span className="" >{pictureIcon}
+        <span>{pictureIcon}
 
         </span>
-            <span className="">
-            {LoremId.length}
+            <span>
+            {fileSzam}
             </span>
-
-
         </div>
 
-      <img src={loremUrl} 
+      <img src={base64Url.length === 0 ? defaultImageUrl : base64Url} 
 
       className="card-img" 
-      alt="..." />
+      alt={picAlt ?? 'Galéria nyiító kép'} />
       <div className="card-img-overlay">
-        <h5 className="card-title">{title || '' }</h5>
-        <p className="card-text">
-          {paragraph[0]}
+        <h4 className="card-title">{title || '' }</h4>
+        {
+                 shortedDescription.map((i,n)=>(<p className="card-text" key={n}>{i}</p>))
+                }
+        <p className="card-text d-inline">
+          <small>{honap ?? napok}</small>
         </p>
-        <p className="card-text">
-          <small>{`${time.getFullYear()}.${String(time.getMonth()+1).padStart(2,'0')}.${String(time.getDate()).padStart(2,'0')} `}</small>
-        </p>
-      <LinkBTN text='Tovább olvasom'/>
+
+      <LinkBTN anStyle='postion-galery-btn' 
+                text='Tovább olvasom'
+                url={`${titleUrl}`}/>
+
       </div>
     </div>
   );

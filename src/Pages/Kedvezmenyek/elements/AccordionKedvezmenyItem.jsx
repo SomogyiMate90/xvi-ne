@@ -3,12 +3,7 @@ import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
 
 
 const AccordionKedvezmenyItem = ({doc}) =>{
-    const {
-        docId,
-        data: { title, address, phoneNumber, link, text, description },
-      } = doc;
-
-      console.log(description)
+    const {docId, data: { title, address, phoneNumber, link, text, description } } = doc;
 
       const splitedDescription = description?.split('\n');
   

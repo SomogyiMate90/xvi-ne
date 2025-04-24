@@ -1,17 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PreViewreIMG from "./elements/PreViewreIMG";
 import { useImmer } from "use-immer";
 import getStorageFileList from "../../../../Functions/firebase/fireStorage/getStorageFileList";
 import downloadFile from "../../../../Functions/firebase/fireStorage/downloadFile";
 import deleteFile from "../../../../Functions/firebase/fireStorage/deleteFile";
+import DefaultInput from "../../../../shared/DefaultInput";
 
 const EditFireStorage = ({docId,files}) =>{
 
     const {bigFiles, setBigFiles} = files;
-    const [listPics, setList] = useImmer([])
+    const [listPics, setList] = useImmer([]);
+    const [uplI, upLoadingCount] = useState(0);
+    const [sC, storageCount] = useState(0);
+
 
     const handleCahnge = (e) =>{
         setBigFiles(e.target.files)
+        upLoadingCount(e.target.files.length)
+     
+        
     }
     
     useEffect(()=>{
@@ -21,17 +28,13 @@ const EditFireStorage = ({docId,files}) =>{
                 console.log(docId)
                 const fileList = await getStorageFileList(`galeria/${docId}/`);
                 const length = fileList.fullPath.length; // Ekkor biztos lehetsz benne, hogy tömb a fullPath és name
-                    console.log(fileList) 
-                    console.log(fileList.length) 
-                    console.log(length) 
-                    console.log(Array.isArray(fileList.fullPath).length) 
+                console.log(length)
+                storageCount(length)
       
                     for (let i = 0; i < length; i++) {
                         
                         const filePath = fileList.fullPath[i];
-                        console.log(filePath)
                         const url = await downloadFile(filePath);
-                        console.log(url)
                         setList(draft => {
                             draft.push({ url: url, filePath : filePath,  name: fileList.name[i] });
                           });
@@ -44,13 +47,17 @@ const EditFireStorage = ({docId,files}) =>{
 
         deleteFile(id);
         const liEl = document.getElementById(id);
-
+        storageCount(c=>c-1)
         liEl.remove();
     }
     
 
 return(
     <>
+    <DefaultInput key={uplI+sC} givenLabelText='File-ok darabszáma' 
+                  inputProps={{id : 'fileSzam', type:'number', readOnly : true}}
+                  defaultValue={uplI+sC}
+                  />
     <div className="mb-3">
         <label htmlFor='fireStorePic'>Képek</label>
         <input 

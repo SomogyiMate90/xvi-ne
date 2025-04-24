@@ -1,6 +1,10 @@
+import { useState } from "react";
 import deleteFirestoreDoc from "../Functions/firebase/deleteFirestoreDoc";
+import deleteFile from "../Functions/firebase/fireStorage/deleteFile";
+import getStorageFileList from "../Functions/firebase/fireStorage/getStorageFileList";
 import toConverStringAny from "../Functions/Utils/toConverStringAny";
 import BtnGroup from "../Pages/Admin/elements/Forms/BtnGroup";
+import LoadingTime from "../Components/LoadingTime";
 
 /**
  *
@@ -9,14 +13,28 @@ import BtnGroup from "../Pages/Admin/elements/Forms/BtnGroup";
  */
 const ListDocContent = ({setInputValues, eventModify, collectionName,item }) => {
   const { docId, data } = item;
+  const [deleting, setDeleting] = useState(false)
 
   const { changedEvent, setChangedEvent } = eventModify;
 
   const handleDelete = async () =>{
+      setDeleting(true);
 
-      const resp = await deleteFirestoreDoc(collectionName,docId)
-        console.log(resp)
-        setChangedEvent(!changedEvent);
+      await deleteFirestoreDoc(collectionName,docId)
+
+      const respStorageList = await getStorageFileList(`galeria/${docId}`);
+      const length = respStorageList.fullPath.length;
+
+      if(length > 0){
+        for (let i = 0; i < length; i++) {
+          const filePath = respStorageList.fullPath[i];
+          await deleteFile(filePath)
+        }
+
+      }
+
+      setDeleting(false);
+      setChangedEvent(!changedEvent);
   }
 
   const setDefaultValues = () =>{
@@ -63,6 +81,9 @@ const ListDocContent = ({setInputValues, eventModify, collectionName,item }) => 
               {inputProps :{onClick : handleDelete},className : "btn btn-danger",text: 'Törlés'}
 
             ]}/>
+      {
+        (deleting && <LoadingTime text={{title: "Törlés", content: ["Épp töröli az adatokat...",'Várd meg amig eltűnik ez az ablak!']}}/>)
+      }
     </div>
   );
 };

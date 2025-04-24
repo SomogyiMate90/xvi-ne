@@ -5,36 +5,21 @@ import getFireStorageDB from "./getFireStorageDB"
  * 
  * @param {FileList} files 
  */
-export default async function upLoadFireStorage(files,floderWdocId) {
     
-   console.log(files)
-   console.log(files.length)
-   const db = getFireStorageDB();
-
-   let finish = false;
-   let respText
-
-   for(let i = 0; i< files.length-1; i++){
-
-    if(finish) return;
-
-       const fileRef = ref(db,`${floderWdocId}/${files[i].name}`)
-
-    try{
-       await uploadBytes(fileRef,files[i])
-
-    }
-    catch(e){
-        console.error(e);
-        finish = true
-        respText = 'Hiba'
-    }
-
-    if(i === (files.length-1)) finish = true
+   export default async function upLoadFireStorage(files, floderWdocId) {
+      const db = getFireStorageDB();
+   
+      for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const fileRef = ref(db, `${floderWdocId}/${file.name}`);
+   
+          try {
+              await uploadBytes(fileRef, file);
+          } catch (e) {
+              console.error('Hiba történt:', e);
+              return 'Hiba';
+          }
+      }
+   
+      return 'Kész';
    }
-
-   if(finish){
-    return respText;
-   }
-
-}

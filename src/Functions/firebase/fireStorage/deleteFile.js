@@ -7,7 +7,7 @@ const deleteFile = async (pathName) => {
         const fileRef = ref(storageDb, pathName);
 
         await deleteObject(fileRef);
-        console.log(`File at ${pathName} deleted successfully.`);
+        // console.log(`File at ${pathName} deleted successfully.`);
     } catch (error) {
         console.error("Error deleting file:", error);
     }

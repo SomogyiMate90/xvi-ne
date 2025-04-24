@@ -12,7 +12,6 @@ const Events = () => {
     return (
       <EventsComp>
         <LoadingTime text={{ title: "Töltés", content: "Lekéri a szervertől" }} />
-        {/* <img className="loading-gif" src="/assets/img/loadingGIF.gif" alt="Várakozás a tartalomra"/> */}
       </EventsComp>
     );
   }
