@@ -9,6 +9,7 @@ import AccordionItem2 from "./elements/AccordionItem2";
 
 import saveAllAccordionStates from "../../Functions/saveAllAccordionStates";
 import { restoreAllAccordionStates } from "../../Functions/restoreAllAccordionStates";
+import AccordionItem4 from "./elements/AccordionItem4";
 
 const JoinUs = () => {
 
@@ -40,6 +41,7 @@ const JoinUs = () => {
         <AccordionItem1/>
         <AccordionItem2 />
         <AccordionItem3/>
+        <AccordionItem4/>
 
 
 

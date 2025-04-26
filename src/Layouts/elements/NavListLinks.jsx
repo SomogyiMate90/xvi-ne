@@ -13,14 +13,14 @@ const NavListLinks = () =>{
 
 
     const listLinks = [
-        // {text : 'Kezdőoldal', uri : '/'},
+        {text : 'Kezdőoldal', uri : '/'},
         {text : 'Rólunk', uri : '/rólunk'},
         {text : 'Programok', uri : '/programok'},
         {text : 'Csatlakozz', uri : '/csatlakozz'},
         {text : 'Adományok', uri : '/adományok'},
         {text : 'Kedvezmények', uri : '/kedvezmények'},
         {text : 'Galéria', uri : '/galéria'},
-        {text : 'Dokumentumok', uri : '/dokumentumok'},
+        // {text : 'Dokumentumok', uri : '/dokumentumok'},
         // {text : 'Admin (id)', uri : '/adminisztrátor'},
     ]
 
@@ -48,28 +48,6 @@ return(
           isLog === true ? <AdminListItem/> : <></> 
 
         }   
-        {/* <li className="nav-item dropdown">
-  <button
-    className="nav-link dropdown-toggle"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-    type="button"
-    role="button"
-  >
-    Közösség
-  </button>
-  <ul className="dropdown-menu">
-    <li>
-      <Link className="dropdown-item" to="/dokumentumok">Dokumentumok</Link>
-    </li>
-    <li>
-      <Link className="dropdown-item" to="/galéria">Galéria</Link>
-    </li>
-    <li>
-      <Link className="dropdown-item" to="/kedvezmények">Kedvezmények</Link>
-    </li>
-  </ul>
-</li> */}
   </ul>
 )
 }

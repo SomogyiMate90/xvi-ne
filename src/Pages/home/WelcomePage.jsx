@@ -30,7 +30,8 @@ const actualTheme = useContext(Theme);
    
       
           <section>
-          <div className="hero-img famiy-hero-img">
+          {/* <div className="hero-img famiy-hero-img"> */}
+          <div className="hero-img big-family-hero-img">
             <h2 className="alt-position">Mit csinál Egyesületünk?</h2>
             </div>
             <p className="mt-3">              
@@ -73,15 +74,15 @@ const actualTheme = useContext(Theme);
           </li>
           <li>
        
-              <mark>Ifjúsági kezdeményezések:</mark> Ifjúsági csoportunk aktívan várja a
-              jelentkezőket, akik így akár a kötelező 50 óra közszolgálatukat is
-              teljesíthetik. [Jelentkezés  ??? →]
+              <mark>Ifjúsági kezdeményezések:</mark> Várjuk közösségünkbe a középiskolás fiatal 
+              jelentkezőket, akik a kötelező 50 óra közszolgálatukat nálunk
+              teljesíthetik. <span className="text-danger"> Navigálás a szerzödött isk.</span>
         
           </li>
           <li>
     
               <mark>Élelmiszer- és ruhaadomány-gyűjtés:</mark> Hetente <InlineLink to='/csatlakozz#food-distribution'>élelmiszert osztunk,</InlineLink> és
-              minden kedden  <InlineLink to='/adományok'> ruha-, könyv- és játékadományokat fogadunk </InlineLink>, hogy a
+              minden kedden  <InlineLink myStyle="text-wrap" to='/adományok'> ruha-, könyv- és játékadományokat fogadunk </InlineLink>, hogy a
               közösség minden tagja számára elérhetőek legyenek a szükséges
               erőforrások.
        
@@ -111,8 +112,7 @@ const actualTheme = useContext(Theme);
         <h2 className="alt-position">Évről évre egyre többen...</h2>
         </div>
         <p  className="mt-3">
-   
-        Az egyesületünk évről évre gyarapodik, és minden új programmal még több lehetőséget kínál a családok számára a közösségi összetartásra, az élmények megosztására és a hagyományok ápolására. Ha szeretnél többet megtudni rólunk, illetve aktívan részt venni ebben az izgalmas, folyamatosan fejlődő közösségben, nézd meg részletes információinkat a tagfelvételi oldalon, és tudj meg mindent arról, hogyan válhatsz taggá!   <InlineLink to='/csatlakozz'>[ Csatlakozás 🔗]</InlineLink>
+        Az egyesületünk évről évre gyarapodik, és minden új programmal még több lehetőséget kínál a családok számára a közösségi összetartásra, az élmények megosztására és a hagyományok ápolására. Ha szeretnél többet megtudni rólunk, illetve aktívan részt venni ebben az izgalmas, folyamatosan fejlődő közösségben, nézd meg részletes információinkat a csatlakozási oldalon, és tudj meg mindent arról, hogyan válhatsz taggá!   <InlineLink to='/csatlakozz'>[ Csatlakozás 🔗]</InlineLink>
         
         </p>
         

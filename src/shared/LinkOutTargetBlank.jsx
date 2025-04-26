@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Theme from "../Functions/themes/ThemeContext";
 
 
-const LinkOutTargetBlank = ({link}) =>{
+const LinkOutTargetBlank = ({link,myStyle=''}) =>{
 
     const theme = useContext(Theme)
 
@@ -21,7 +21,7 @@ const LinkOutTargetBlank = ({link}) =>{
     let validHref = href.startsWith('http') === true ? href : `https://${href}`;
 
     return(
-        <a className={`link-out transform-line ${theme}`} href={validPhone || validHref} rel="noopener noreferrer" target="_blank">{text}</a>
+        <a className={`link-out transform-line ${theme} ${myStyle}`} href={validPhone || validHref} rel="noopener noreferrer" target="_blank">{text}</a>
     )
 }
 

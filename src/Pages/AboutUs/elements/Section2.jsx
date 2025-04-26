@@ -2,6 +2,7 @@ import LinkBTN from "../../../shared/LinkBTN";
 import Vezetoseg from "../../../Components/Vezetoseg";
 import InlineLink from "../../../shared/InlineLink";
 import MapBtn from "../../../shared/MapBtn";
+import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
 
 const Section2 = () => {
   return (
@@ -88,7 +89,7 @@ const Section2 = () => {
 
 
       <p>
-        Hetente kétszer a MÉB segítségével élelmiszert mentünk. Pillanatnyilag
+        Hetente kétszer a <LinkOutTargetBlank link={{text:'Magyar Élelmiszer Bank', href:'https://www.elelmiszerbank.hu/'}}/> segítségével élelmiszert mentünk. Pillanatnyilag
         115 tagcsaládunk részesül heti rendszerességgel élelmiszeradományból.
       </p>
 

@@ -10,7 +10,7 @@ const MoneyDonations = () => {
           </p>
           <p>
             {" "}
-            Utalását az <strong>123</strong> számú bankszámlánkra várjuk. A
+            Utalását a Magnet Banknál vezetett <strong className="letter-space-2 text-nowrap">16200223-10094635</strong> számú bankszámlánkra várjuk. A
             közlemény rovatba kérjük, írja be: <strong>„adomány”</strong>.
             Hálásan köszönjük minden támogatását!
           </p>

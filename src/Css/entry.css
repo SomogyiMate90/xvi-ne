@@ -561,7 +561,7 @@ header .sun-svg {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
 }
 .page-gallery .foto-side div.card {
   min-width: 280px;
@@ -649,6 +649,23 @@ header .sun-svg {
     background-position-y: 30%;
   }
 }
+.page-home .big-family-hero-img {
+  background-image: linear-gradient(90deg, hsl(45, 7%, 65%) 5%, hsla(45, 7%, 65%, 0.2) 60%), url("/public/assets/img/hero/big-family-hero.webp");
+  background-size: cover;
+  background-color: hsl(45, 7%, 65%);
+  color: white;
+  background-position: top;
+}
+@media screen and (min-width: 1200px) {
+  .page-home .big-family-hero-img {
+    background-size: 80%;
+    background-position-y: 15%;
+    background-position-x: 100%;
+    background-color: hsl(45, 7%, 65%);
+    background-blend-mode: normal;
+    background-image: linear-gradient(90deg, hsl(45, 7%, 65%) 5%, hsla(45, 7%, 65%, 0.2) 60%), url("/public/assets/img/hero/big-family-hero.webp");
+  }
+}
 .page-home .hands-hero {
   background-image: url("/public/assets/img/hero/hands-hero-img.webp");
   background-size: cover;
@@ -700,7 +717,7 @@ header .sun-svg {
   height: 55%;
   align-items: flex-end;
 }
-.my-carousel-css .carousel-item img, .my-carousel-css .carousel-item video, .my-carousel-css .carousel-item audio {
+.my-carousel-css .carousel-item img, .my-carousel-css .carousel-item figure, .my-carousel-css .carousel-item audio {
   margin: 5vh auto;
   width: 90%;
   height: 90%;
@@ -768,6 +785,11 @@ ul.hearth.dark li, ul.hearth.akadaly li {
 }
 ul.hearth.akadaly li mark {
   text-decoration: underline red;
+}
+
+ul li, ol li {
+  text-align: justify;
+  text-wrap: balance;
 }
 
 .offcanvas {
@@ -867,6 +889,7 @@ div.icon-box svg {
 a.link-out {
   margin-left: 6px;
   text-decoration: none;
+  text-wrap: nowrap;
   position: relative;
 }
 a.link-out.light {
@@ -903,6 +926,10 @@ a.transform-line:hover::after {
 
 button.btn.btn-close.red {
   --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cline x1='1' y1='1' x2='15' y2='15' stroke='%23FF0000' stroke-width='2.5'/%3e%3cline x1='15' y1='1' x2='1' y2='15' stroke='%23FF0000' stroke-width='2.5'/%3e%3c/svg%3e");
+}
+
+.letter-space-2 {
+  letter-spacing: 2px;
 }
 
 .alert-panel-of-first-use {

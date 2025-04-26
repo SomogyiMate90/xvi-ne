@@ -16,6 +16,28 @@
         }
      
     }
+
+    .big-family-hero-img{
+        background-image:   linear-gradient(90deg, hsl(45, 7%, 65%) 5%, hsla(45, 7%, 65%, 0.2) 60%),
+        url('/public/assets/img/hero/big-family-hero.webp');
+        background-size: cover;
+        background-color: hsl(45, 7%, 65%);
+        color: white;
+        background-position: top;
+        // background-blend-mode: multiply;
+        // align-items: flex-end;
+        @include mix.toAfterMaxwidth(1200px){
+            background-size: 80%;
+            background-position-y: 15%;
+            background-position-x: 100%;
+            background-color:hsl(45, 7%, 65%);
+            background-blend-mode: normal;
+            background-image:   linear-gradient(90deg, hsl(45, 7%, 65%) 5%, hsla(45, 7%, 65%, 0.2) 60%),
+            url('/public/assets/img/hero/big-family-hero.webp');
+            
+        }
+     
+    }
     
     .hands-hero{
         background-image: url('/public/assets/img/hero/hands-hero-img.webp');

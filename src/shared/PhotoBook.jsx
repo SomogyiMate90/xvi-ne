@@ -114,10 +114,11 @@ const SuccessComp = ({picList}) =>{
 const CarouselComp = ({ closeFun, bigLilesList }) => {
   const [readedFile, setReadedFile] = useImmer([])
   useEffect(()=>{
+
+    import ('bootstrap/js/dist/carousel.js');
     
     if(readedFile.length === 0){
-      console.log('Rendelés megkezdte a körhinta')
-  
+   
       async function getUrl(path,{ name,contentType  }){
         const url = await downloadFile(path);
         setReadedFile(draft => {
@@ -154,10 +155,17 @@ const CarouselComp = ({ closeFun, bigLilesList }) => {
               
               break;
             case "video/mp4":
-              SelectedComp = (<video aria-label={name} className="d-block" controls width={"400px"}><source src={url} type={contentType} /></video>)
+              SelectedComp = (<figure className="d-block" >
+                <figcaption style={{color: 'white', fontWeight: 'bolder' }}>{name}</figcaption>
+                <video aria-label={name} controls height={'100%'} width={"100%"}><source src={url} type={contentType} /></video>
+              </figure>)
               break;
             case "audio/mpeg":
-              SelectedComp = (<audio aria-label={name} className="d-block" controls ><source src={url} type={contentType} /></audio>)
+              SelectedComp = (
+                <figure>
+                  <figcaption style={{color: 'white', fontWeight: 'bolder' }}>{name}</figcaption>
+              <audio aria-label={name} className="d-block" controls ><source src={url} type={contentType} /></audio>
+                </figure>)            
               break;
             default:
               SelectedComp = <span>Nem támogatott formátum switch blokban írd át</span>;
