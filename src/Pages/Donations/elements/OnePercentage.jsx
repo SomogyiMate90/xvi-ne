@@ -31,7 +31,7 @@ const OnePercentage = () => {
             <p><mark>Köszönjük hogy adóbálásánál gondolt ránk.</mark></p>
           </div>
           <figure>
-            <img src="/assets/img/1szazalek1.webp" alt="1%" />
+            <img src="/assets/img/donations/1szazalek1.webp" alt="1%" />
           </figure>
       </div>
     </section>

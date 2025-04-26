@@ -22,7 +22,7 @@ const  CultureDonation = () =>{
             </div>
             <figure>
           <img
-            src="/assets/img/masks.webp"
+            src="/assets/img/donations/masks.webp"
             alt="Színházi maszkok"
           />
         </figure>

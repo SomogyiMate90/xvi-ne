@@ -27,7 +27,7 @@ const ClothDonations = () => {
               </p>
           </div>
           <figure>
-            <img src="/assets/img/ruha-adomany.webp" alt="Használt ruhák egy karoton dobozban és mellette" />
+            <img src="/assets/img/donations/ruha-adomany.webp" alt="Használt ruhák egy karoton dobozban és mellette" />
           </figure>
       </div>
     </section>

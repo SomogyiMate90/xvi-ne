@@ -6,7 +6,7 @@ export default function validPhonNum(text){
 
     const digits = text.replace(/\D/g, '');
 
-    if(digits.length < 6 ) return 'Nincs telefonszám'
+    if(digits.length < 6 ) return ''
 
     let validPhoneNumber;
 

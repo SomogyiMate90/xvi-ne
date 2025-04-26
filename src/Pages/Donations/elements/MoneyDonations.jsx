@@ -24,7 +24,7 @@ const MoneyDonations = () => {
         </div>
         <figure>
           <img
-            src="/assets/img/forints.webp"
+            src="/assets/img/donations/forints.webp"
             alt="Forint címletek és érmék egymáson"
           />
         </figure>

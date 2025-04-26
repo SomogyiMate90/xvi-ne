@@ -11,6 +11,8 @@ const LinkOutTargetBlank = ({link,myStyle=''}) =>{
     if( typeof href !== 'string' || typeof text !== 'string'){
         return null;
     }   
+
+    
  
     let validPhone;
 

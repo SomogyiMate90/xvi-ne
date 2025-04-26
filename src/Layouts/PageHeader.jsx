@@ -18,8 +18,9 @@ const PageHeader = ({setTheme}) => {
               id='logo-img'
               src="/assets/img/logo_with_text.webp"
               alt="XVI kerületi Nagycsaládosok Egyesület"
+              aria-label="Navigálás a kezőoldalra"
               width="270"
-              height="auto"
+              height="65"
             />
           </Link>
 
