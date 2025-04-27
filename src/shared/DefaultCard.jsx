@@ -1,12 +1,18 @@
 import LinkOutTargetBlank from "./LinkOutTargetBlank";
+import ImgFromStorage from "./hook/ImgFromStorage";
 
-const DefaultCard = ({tag}) => {
+const DefaultCard = ({tag, docId}) => {
 
-    const {name, base64Url, picAlt, beosztas, phoneNumber, email } = tag;
+    const {name,  picAlt, beosztas, phoneNumber, email } = tag;
+
+    //  nagykép : "1920x1280"
 
   return (
-    <div className="card" style={{width: '18rem' }}>
-      <img src={base64Url === '' ?('/assets/img/no-img.png') : base64Url} className="card-img-top h-75 object-fit-scale border rounded"  alt={`${picAlt ?? '' } fotója`} />
+    <div className="card" style={{width: '18rem', height: '34rem' }}>
+      <ImgFromStorage 
+      storageProps={{folderPath : `elnokseg/mainPic/${docId}`,namePart:'400x267', picAlt }}
+      classProps="card-img-top h-75 object-fit-contain  border rounded"
+        />
       <div className="card-body">
         <h4 className="text-center">{name ?? 'Nincs név'}</h4>
         <p className="text-uppercase text-end fw-bold">{beosztas ?? 'nincs beosztás'}</p>

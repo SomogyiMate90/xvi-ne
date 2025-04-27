@@ -32,7 +32,6 @@ const Vezetoseg = ({btnTitle='Elnökség'}) =>{
           const shortedElnokseg = elnokseg?.sort((a,b)=>{
             return  Number(a?.data?.rendezes)-Number(b?.data?.rendezes)
           })
-          console.log(shortedElnokseg)
             setCardDatas(shortedElnokseg)
         } 
         catch{
@@ -56,14 +55,14 @@ const Vezetoseg = ({btnTitle='Elnökség'}) =>{
     <h3 className="offcanvas-title" id="staticBackdropLabel">Elnökség</h3>
     <button type="button" className="btn btn-close red" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div className="offcanvas-body d-flex gap-2 flex-wrap justify-content-evenly">
+  <div className="offcanvas-body d-flex gap-4 flex-wrap justify-content-evenly">
     
         {
           cardDatas.length === 0 ? (<img style={{width: '30px', height: '30px' }} src="/assets/img/loadingGIF.gif" alt="Kép töltésről"/>) : 
            cardDatas.map((item)=>{
                 const {data, docId} = item;
                 console.log('Lefutott a kártya készítés')
-                return(<DefaultCard key={docId} tag={data}/>)
+                return(<DefaultCard key={docId} docId={docId} tag={data}/>)
                 }
           )
         }

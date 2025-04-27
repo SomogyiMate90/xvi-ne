@@ -57,7 +57,7 @@ return(
                   inputProps={{id : 'fileSzam', type:'number', readOnly : true}}
                   defaultValue={uplI+sC}
                   />
-    <div className="mb-3">
+    <div className="mb-3 bg-success-subtle">
         <label htmlFor='fireStorePic'>Képek</label>
         <input 
             id='fireStorePic'

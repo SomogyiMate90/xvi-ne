@@ -17,6 +17,15 @@ const dinamicUrl = {
   },
 };
 
+const mainPic = {
+  mainImage :{
+    id: 'mainImage',
+    type: 'file',
+    accept: 'image/*',
+    labelText : 'Képek feltöltése',
+    className: "form-control text-danger", 
+  }
+}
 
 const kedvezmenyek = {
   title: {
@@ -167,14 +176,24 @@ const elnokseg = {
     className: "form-control text-success",
     labelText: 'email'
   },
-  base64Url: {
-    id: "base64Url",
-    readOnly: true,
-    placeholder: "Nincs feltöltésre váró kép",
-  },
-  photoWidth: {
-    photoWidth : 300
-  },
+  // base64Url: {
+  //   id: "base64Url",
+  //   readOnly: true,
+  //   placeholder: "Nincs feltöltésre váró kép",
+  // },
+  // photoWidth: {
+  //   photoWidth : 300
+  // },
+
+  mainPic,
+
+  // fireStorageOneImg :{
+  //   id: 'mainImage',
+  //   type: 'file',
+  //   accept: 'image/*',
+  //   labelText : 'Képek feltöltése',
+  //   className: "form-control text-danger", 
+  // },
   rendezes: {
     id: 'rendezes',
     required: true,

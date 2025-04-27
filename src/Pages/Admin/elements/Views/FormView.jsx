@@ -6,12 +6,12 @@ import getEnglishUrl from "../../../../Functions/Utils/getEnglishUrl.js";
 import DefaultInput from "../../../../shared/DefaultInput.jsx";
 import getPictureSrcBase64 from "../../../../Functions/Utils/getPictureSrcBase64.js";
 import GetUploadedSections from "../Forms/GetUploadedSections.jsx";
-import DefaultInputImg from "../../../../shared/DefaultInputImg.jsx";
 import DefaultTextArea from "../../../../shared/DefaultTextArea.jsx";
 import BtnGroup from "../Forms/BtnGroup.jsx";
 import EditFireStorage from "./EditFireStorage.jsx";
 import upLoadFireStorage from "../../../../Functions/firebase/fireStorage/upLoadFireStorage.js";
 import LoadingTime from "../../../../Components/LoadingTime.jsx";
+import ImgFromStorage from "../../../../shared/hook/ImgFromStorage.jsx";
 
 
 const FormView = ({ eventModify, collectionName, docs }) => {
@@ -24,6 +24,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
   const [uploading, setUploading] = useState(null)
 
   const [bigFiles, setBigFiles] = useImmer([]);
+  const [mainFile, setMainFile] = useImmer([])
 
 
 
@@ -54,8 +55,11 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       if (docIdResp !== 'Hiba történt') {
         
         const resp = await upLoadFireStorage(bigFiles,`/${collectionName}/${docIdResp}`)
+        const resp2 = await upLoadFireStorage(mainFile,`/${collectionName}/mainPic/${docIdResp}`)
 
-        if(resp === 'Kész'){
+        console.log(resp2)
+
+        if(resp === 'Kész' && resp2 === 'Kész'){
           handleNewForm()
         }
         else{
@@ -91,6 +95,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
     } else {
       const compresedPicBase64Url = await getPictureSrcBase64(file,defFotoWidth);
       setPictureBase64Url(compresedPicBase64Url);
+      setMainFile(event.target.files)
     }
   };
   /**
@@ -129,19 +134,42 @@ const FormView = ({ eventModify, collectionName, docs }) => {
                                                         key={index} 
                                                         fun={{onChange: (event)=>handleSetEnglisCharacters(event)}} 
                                                         inputProps={formFields[item]}/>
-                if(item === 'base64Url') return (<div key={index}>
-                                                    <DefaultInputImg title={formFields[item].title} key={`${index}}-B`} handleFun={getNewPicUrl}/>
-                                                    <DefaultInput key={`${index}}-A`} defaultValue={pictureBase64Url ?? data?.base64Url} 
-                                                                  givenLabelText='Átkonvertált kép' 
-                                                                  inputProps={formFields[item]}/>   
-                                                   {(pictureBase64Url || data?.base64Url) && (
-                                                     <img src={pictureBase64Url ?? data?.base64Url} 
-                                                          alt="Előnézet" 
-                                                          style={{ maxWidth: '100%', margin: '10px' }} />)}
-                                                </div>);
+
+                if(item === 'mainPic') return (
+                                                  <div key={index} className="rounded-2 bg-danger-subtle p-2">
+                                                   <DefaultInput fun={{onChange: getNewPicUrl}}  inputProps={formFields[item].mainImage} /> 
+
+                                                   <ImgFromStorage storageProps={{folderPath : `${collectionName}/mainPic/${docId}`, picAlt : data?.picAlt ?? '' }} />
+
+                                                   {
+                                                    pictureBase64Url && (
+                                                          <div className="bg-success-subtle pt-2">
+                                                          <span className="mx-5 text-center d-block bg-success-subtle"><b>Feltöleni kívánt új borító kép</b><br /> ( A régiek maradnak, ezért egyesével kell kitörölni őket 
+                                                            [ <span className="text-danger">piros x</span> ] )</span>
+                                                          <img src={pictureBase64Url ?? data?.base64Url} 
+                                                           alt="Előnézet" 
+                                                           className="bg-success-subtle"
+                                                           style={{ maxWidth: '150px', margin: '10px', padding: "15px"}} />
+                                                           </div>
+                                                                                                                     
+                                                    )
+                                                   }   
+                                                   <DefaultInput 
+                                                        inputProps={{id:"picAlt", labelText: 'Mit ábrázol a kép?', required: true, className: "form-control text-success "}} 
+                                                        defaultValue={data?.picAlt ?? ''}/>
+                                                   </div>
+                                                  )                                    
+
+
+
+
+
+
+
+
+
                 else if( item === 'description') return <DefaultTextArea key={index} defaultValue={data?.description ?? ''}  inputProps={formFields[item]} />
                 else if( item === 'titleUrl') return <DefaultInput key={index} defaultValue={data?.titleUrl ?? ""}  inputProps={formFields[item]}/>;
-                else if( item === 'photoWidth') return null;
                 else if( item === 'fireStorage') return <EditFireStorage key={index} docId={docId} files={{bigFiles, setBigFiles}}/>
                 else{
                    return <DefaultInput defaultValue={data?.[item] ?? ""} key={index} inputProps={formFields[item]}/>
