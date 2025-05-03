@@ -130,6 +130,7 @@ const partnerek = {
   },
   url: {
     id: "url",
+    type: 'url',
     required: true,
     placeholder: "www.adomanyozo-neve.hu",
     className: "form-control text-success",
@@ -233,6 +234,7 @@ const szerzodott_iskolak = {
   },
   link: {
     id: "link",
+    type : 'url',
     placeholder: "Iskola weboldala",
     className: "form-control text-success",
     labelText: 'A vállalkozás weboldala',

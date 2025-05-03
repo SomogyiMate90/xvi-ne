@@ -12,6 +12,9 @@ export default function toConverStringAny(anything){
     else if(Array.isArray(anything) ){
         converted = anything.join(", ")
     }
+    else if(anything === null){
+        converted = 'ÜRES MEZŐ !!!'
+    }
     else if(Object.hasOwn(anything,'seconds')){
         // console.log('megtalálta a Secons objektumot')
         let seconds = 'seconds';

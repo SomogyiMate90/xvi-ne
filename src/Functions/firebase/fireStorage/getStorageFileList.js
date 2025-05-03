@@ -27,7 +27,7 @@ const getStorageFileList = async (folderPath) => {
       
           return files; 
     } catch (error) {
-        console.error("Error fetching file list from Firebase Storage:", error);
+        console.error("Nem sikerült a fájlok listáját lekérdezni:", error);
         return 'Nem sikerült a fájlok listáját lekérdezni!';
     }
 

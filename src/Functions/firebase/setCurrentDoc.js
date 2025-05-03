@@ -7,7 +7,7 @@ export default async function setCurrentDoc(obj,collectionName,docId) {
     const docRef = doc(db,collectionName,docId)
     
     try{
-        const resp =  await setDoc(docRef,obj)
+        const resp =  await setDoc(docRef,obj, { merge: true })
         return resp;
     }
     catch(e){

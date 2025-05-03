@@ -72,7 +72,7 @@ const Tamogatok = () =>{
         <aside className="partnerek-aside">
             <h2 className="text-center fs-4">Támogatóink</h2>
 
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
 
 
@@ -84,17 +84,20 @@ const Tamogatok = () =>{
                         
                         const {data, docId} = item;
                         
-                        const {picAlt ,  title , url} = data;
-                        
+                        const {picAlt ,  title , url, lowPicture} = data;
+
+                                        
                         console.log(item)
+                        console.log(lowPicture?.url)
                         
                         return(
                             
                         
 
-                            <div key={docId}  class={index === 0  ? " carousel-item active" : "carousel-item" }>
-                                <a href={url} rel="noopener noreferrer" target="_blank">
-                               <ImgFromStorage storageProps={{folderPath: `/partnerek/mainPic/${docId}`, namePart : '400x267', picAlt  }} classProps='' />
+                            <div key={docId}  className={index === 0  ? " carousel-item active" : "carousel-item" }>
+                                <a href={url ?? ''} rel="noopener noreferrer" target="_blank">
+                               {/* <ImgFromStorage storageProps={{folderPath: `/partnerek/mainPic/${docId}`, namePart : '400x267', picAlt  }} classProps='' /> */}
+                               <img src= {lowPicture?.url} alt={picAlt} />
                                 </a>
                                 </div>
                             )

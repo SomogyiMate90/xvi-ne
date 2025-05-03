@@ -13,6 +13,9 @@ import upLoadFireStorage from "../../../../Functions/firebase/fireStorage/upLoad
 import LoadingTime from "../../../../Components/LoadingTime.jsx";
 import ImgFromStorage from "../../../../shared/hook/ImgFromStorage.jsx";
 import toNavigateTop from "../../../../Functions/toNavigateTop.js";
+import getStorageFileList from "../../../../Functions/firebase/fireStorage/getStorageFileList.js";
+import setCurrentDoc from "../../../../Functions/firebase/setCurrentDoc.js";
+import downloadFile from "../../../../Functions/firebase/fireStorage/downloadFile.js";
 
 
 const FormView = ({ eventModify, collectionName, docs }) => {
@@ -26,11 +29,6 @@ const FormView = ({ eventModify, collectionName, docs }) => {
 
   const [bigFiles, setBigFiles] = useImmer([]);
   const [mainFile, setMainFile] = useImmer([])
-
-
-
-
-
 
  const {docId , data} = defaultValues;
 
@@ -55,10 +53,34 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       const docIdResp = await submitFunction(event, collectionName);
       if (docIdResp !== 'Hiba történt') {
         
-        const resp = await upLoadFireStorage(bigFiles,`/${collectionName}/${docIdResp}`)
-        const resp2 = await upLoadFireStorage(mainFile,`/${collectionName}/mainPic/${docIdResp}`)
+        const resp = await upLoadFireStorage(bigFiles,`/${collectionName}/${docIdResp}`);
+        const resp2 = await upLoadFireStorage(mainFile,`${collectionName}/mainPic/${docIdResp}`);
 
-        console.log(resp2)
+        setTimeout( async ()=>{
+          
+          const mainPicFiles = await getStorageFileList(`${collectionName}/mainPic/${docIdResp}`);
+          
+          const mainPicObj = {lowPicture: null,highPicture: null};
+          
+          for(let i = 0; i<mainPicFiles.length;i++){
+            
+            const uploadedFile = mainPicFiles[i];
+            const { name, fullPath } = uploadedFile;
+
+            const url = await downloadFile(fullPath);
+            
+            if(name.includes('400x267')){
+              mainPicObj.highPicture =  {...uploadedFile, url}
+              
+            }
+            else{
+              mainPicObj.lowPicture =  {...uploadedFile, url}
+            }
+            
+          }
+          
+          setCurrentDoc(mainPicObj,collectionName,docIdResp)        
+        },2000)
 
         if(resp === 'Kész' && resp2 === 'Kész'){
           handleNewForm()
@@ -76,7 +98,9 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       alert(e);
     }
     finally{
-      setUploading(false);
+      setTimeout(()=>{
+        setUploading(false);
+      },2500)
       toNavigateTop({behavior : 'smooth'});
     }
 
