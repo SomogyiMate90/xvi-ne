@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import getStorageFileList from "../../Functions/firebase/fireStorage/getStorageFileList";
 import downloadFile from "../../Functions/firebase/fireStorage/downloadFile";
 import { useImmer } from "use-immer";
-import DefaultFigure from "../DefaultFigure";
 import deleteFile from "../../Functions/firebase/fireStorage/deleteFile";
 
 const ImgFromStorage = ({storageProps,classProps = ''}) =>{
@@ -12,14 +11,12 @@ const ImgFromStorage = ({storageProps,classProps = ''}) =>{
     const { folderPath, namePart = undefined, picAlt  } = storageProps;
 
 
-
-    console.log(storageProps)
-
     useEffect(()=>{
 
         async function getMainPic() {
            
           const fileLists = await getStorageFileList(folderPath);
+          console.log('fileLists db lekérés volt')
           console.log(fileLists)
 
           if(namePart === undefined){
@@ -27,8 +24,6 @@ const ImgFromStorage = ({storageProps,classProps = ''}) =>{
             let renderedList = [];
 
             for(let i = 0; i < fileLists.length; i++){
-
-              console.log(fileLists[i])
 
               const url = await downloadFile(fileLists[i].fullPath)
               const renderedObj = { path : fileLists[i].fullPath, url, picName : fileLists[i].name}

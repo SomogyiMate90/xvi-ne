@@ -1,16 +1,28 @@
-const DefaultFigure = ({props, classStyle}) => {
+const DefaultFigure = ({props ={}, classStyle , children }) => {
 
-   const {imgSrc, imgAlt } = props;
+   const {imgSrc = '', imgAlt } = props;
 
-   if(!imgSrc) return;
+  //  if(!imgSrc) return;
+
+  let SelectedComp;
+
+  if( imgSrc.length){
+    SelectedComp = (
+      <img
+      src={imgSrc}
+      alt={imgAlt ?? "Az eseményhez kapcsolodó kép"}
+    />
+    )
+  }
+
+  else{
+    SelectedComp = children
+  }
 
   return (
     <figure className={classStyle}>
-        <img
-          src={imgSrc}
-          alt={imgAlt ?? "Az eseményhez kapcsolodó kép"}
-        />
-      <figcaption className="text-center fst-italic fw-light">{imgAlt ?? ""}</figcaption>
+      {SelectedComp}
+      <figcaption className="text-center fst-italic fw-light">{imgAlt ?? "Nincs képleírás"}</figcaption>
     </figure>
   );
 };

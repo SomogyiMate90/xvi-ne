@@ -1,4 +1,5 @@
 import getShortedText from "../../Functions/Utils/getShortedText";
+import ImgFromStorage from "../../shared/hook/ImgFromStorage";
 import LinkBTN from "../../shared/LinkBTN";
 
 
@@ -23,7 +24,9 @@ const SliderPanelCardSlider = ({receivedArray}) =>{
                 return(
 
                     <div  key={docId} className="d-none article-slider animate__animated">
-                   <div className=""><img src={data?.base64Url || '/assets/img/no-img.png'} alt={data?.picAlt || 'nincs kép feltöltve'} /></div>
+                   <div className="">
+                    <ImgFromStorage storageProps={{folderPath : `/programok/mainPic/${docId}`, namePart: '1920x1280', picAlt : data.picAlt }} />
+                    </div>
                    
                     <section className="">
                         <h3 className="">{data?.title} </h3>

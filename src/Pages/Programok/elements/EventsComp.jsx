@@ -5,6 +5,7 @@ import getShortedText from "../../../Functions/Utils/getShortedText";
 import PageHelmet from "../../../Components/PageHelmet";
 import LinkBTN from "../../../shared/LinkBTN";
 import DefaultFigure from "../../../shared/DefaultFigure";
+import ImgFromStorage from "../../../shared/hook/ImgFromStorage";
 
 const EventsComp = ({children,expandedEvents=[]}) => {
 
@@ -46,8 +47,9 @@ const EventsComp = ({children,expandedEvents=[]}) => {
                 }
                 <LinkBTN anStyle={index % 2 === 0 ? 'text-start' : 'text-end'} text="Tovább olvasom" url={`/programok/${data?.titleUrl}`}/>
                 </div>
-       
-                   {data?.base64Url && ( <DefaultFigure props={{imgSrc : data?.base64Url , imgAlt : data?.picAlt  }}/> )}    
+                <DefaultFigure props={{imgAlt : data.picAlt || 'Nincs kép' }}>
+                  <ImgFromStorage storageProps={{folderPath : `programok/mainPic/${docId}`, namePart : '1920x1280', picAlt : data.picAlt}}  />
+                </DefaultFigure>
                 </div>
               </article>
             )}

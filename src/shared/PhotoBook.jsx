@@ -76,6 +76,7 @@ const SuccessComp = ({picList}) =>{
 
     async function getPic(path,draftFun) {
         const url = await downloadFile(path);
+        console.log(url)
         draftFun(draft => {
             draft.push(url);
           });

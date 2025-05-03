@@ -1,5 +1,16 @@
+import { useContext } from "react";
+import FireStoreContext from "../../../Functions/contexts/fireSroreContext";
+import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
+import { href } from "react-router-dom";
 
 const AccordionItem4 = () =>{
+
+  const fireData = useContext(FireStoreContext);
+
+  
+
+
+
     return(
         <div className="accordion-item">
         <h2 className="accordion-header">
@@ -15,6 +26,20 @@ const AccordionItem4 = () =>{
 
             <h3>Iskolák Listája</h3>
             <ul>
+              {
+                fireData.length === 0 ? <img src="/assets/img/loadingGIF.gif"/> : fireData.szerzodott_iskolak.map(({data, docId},n)=>{
+                  return(
+                    <li className="mb-2 border-bottom " key={docId}>
+                                    <span className="d-block fw-bold">{data.title}</span>
+                                    <span className="d-block">{data.address}</span>
+                                    <span className="mx-2"><LinkOutTargetBlank link={{href:  `tel:${data?.phoneNumber}`, text : data?.phoneNumber }} /></span>
+                                    <span className="mx-2"><LinkOutTargetBlank link={{href:data?.link, text : 'weboldal' }} /></span>
+                  </li>
+                  )
+
+
+                })
+              }
               <li>ISK. 1.  Valahol utca 2</li>
               <li>ISK. 1.  Valahol utca 2</li>
               <li>ISK. 1.  Valahol utca 2</li>

@@ -1,11 +1,13 @@
 import { animationStylesToSliderPanel } from "./themes/animationStyles";
 import getRandumNum from "./Utils/getRandomNum";
 
-function animateSliderPanel(){
+function animateSliderPanel(paranetid = 'slider-panel'){
 
-    const sliderPanelEl = document.getElementById('slider-panel')
+    const sliderPanelEl = document.getElementById(paranetid)
 
     const countOfSliderPanelChild = sliderPanelEl.children.length;
+
+    console.log(countOfSliderPanelChild)
 
     const stlyesArray = animationStylesToSliderPanel;
     const stlyesMax = stlyesArray.length;

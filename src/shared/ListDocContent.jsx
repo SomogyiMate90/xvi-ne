@@ -11,7 +11,7 @@ import LoadingTime from "../Components/LoadingTime";
  * @param {object} param0
  * @returns
  */
-const ListDocContent = ({setInputValues, eventModify, collectionName,item }) => {
+const ListDocContent = ({handleNewForm,setInputValues, eventModify, collectionName,item }) => {
   const { docId, data } = item;
   const [deleting, setDeleting] = useState(false)
 
@@ -49,6 +49,7 @@ const ListDocContent = ({setInputValues, eventModify, collectionName,item }) => 
 
       setDeleting(false);
       setChangedEvent(!changedEvent);
+      handleNewForm();
   }
 
   const setDefaultValues = () =>{

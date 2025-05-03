@@ -1,7 +1,7 @@
 import ListDocContent from "../../../../shared/ListDocContent"
 
 
-const GetUploadedSections = ({setInputValues, eventModify,collectionName,docs}) =>{
+const GetUploadedSections = ({handleNewForm,setInputValues, eventModify,collectionName,docs}) =>{
 
     // console.log(docs)
 
@@ -16,7 +16,7 @@ const GetUploadedSections = ({setInputValues, eventModify,collectionName,docs}) 
             {
                 docs.map((item,index)=>{
                     // console.log(item)
-                    return(<ListDocContent setInputValues={setInputValues} eventModify={eventModify} key={item.docId} collectionName={collectionName} item={item} />)
+                    return(<ListDocContent handleNewForm={handleNewForm} setInputValues={setInputValues} eventModify={eventModify} key={item.docId} collectionName={collectionName} item={item} />)
                 })
             }
             <hr />

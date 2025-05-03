@@ -9,6 +9,7 @@ import LoadingTime from "../Components/LoadingTime";
 import FireStoreContext from "../Functions/contexts/fireSroreContext";
 import { getFIRESOTER_content } from "../Functions/firebase/getFIRESOTER_content";
 import { useImmer } from "use-immer";
+import Tamogatok from "../Components/Tamogatok";
 
 
 
@@ -51,19 +52,19 @@ const DefaultLayout = () => {
       >
         <IsLogProvider>
           <PageHeader setTheme={setTheme} />
-          <div className="px-md-1 px-lg-3">
-
+          <div className="px-md-1 px-lg-3">  
+    {/* itt kell megoldani az asid rendezési elvét */}
 
           {isNavigating && <LoadingTime text={{title: 'Töltés'}}/>}
 
-            <main className={`container-lg my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
               <FireStoreContext.Provider  value={fireStoreDatas}>
+            <main className={`container-lg my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
                 <Outlet />
-              
-              </FireStoreContext.Provider>              
        
 
             </main>
+                <Tamogatok/>
+              </FireStoreContext.Provider>              
          
           </div>
         </IsLogProvider>

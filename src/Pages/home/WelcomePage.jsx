@@ -75,8 +75,8 @@ const actualTheme = useContext(Theme);
           <li>
        
               <mark>Ifjúsági kezdeményezések:</mark> Várjuk közösségünkbe a középiskolás fiatal 
-              jelentkezőket, akik a kötelező 50 óra közszolgálatukat nálunk
-              teljesíthetik. <span className="text-danger"> Navigálás a szerzödött isk.</span>
+              jelentkezőket, akik a kötelező 50 óraás közszolgálatukat nálunk
+              teljesíthetik. Nézd meg, hogy a te iskolád a listánkban szereple-e. <InlineLink to='/csatlakozz'>[Szerződött iskolák 🔗]</InlineLink>
         
           </li>
           <li>

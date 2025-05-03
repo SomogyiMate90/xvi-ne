@@ -90,6 +90,7 @@ const programok = {
     placeholder: "irányítószám, Város, és (ha szükséges) utca házszám. Esetlen GPS koordináta",
     className: "form-control text-success",
   },
+  mainPic,
 
   description: {
     id: "description",
@@ -97,12 +98,6 @@ const programok = {
     placeholder: "Enter billentyűvel válaszd el a bekedéseket egymástól...",
     className: "form-control text-success",
     required: true,
-  },
-
-  base64Url: {
-    id: "base64Url",
-    readOnly: true,
-    placeholder: "Nincs feltöltésre váró kép",
   },
 
   startTime: {
@@ -140,15 +135,8 @@ const partnerek = {
     className: "form-control text-success",
     labelText: 'Partner weboldal címe'
   },
+  mainPic
 
-  base64Url: {
-    id: "base64Url",
-    readOnly: true,
-    placeholder: "Nincs feltöltésre váró kép",
-  },
-  photoWidth: {
-    photoWidth : 200
-  }
 };
 
 const elnokseg = {
@@ -176,24 +164,7 @@ const elnokseg = {
     className: "form-control text-success",
     labelText: 'email'
   },
-  // base64Url: {
-  //   id: "base64Url",
-  //   readOnly: true,
-  //   placeholder: "Nincs feltöltésre váró kép",
-  // },
-  // photoWidth: {
-  //   photoWidth : 300
-  // },
-
   mainPic,
-
-  // fireStorageOneImg :{
-  //   id: 'mainImage',
-  //   type: 'file',
-  //   accept: 'image/*',
-  //   labelText : 'Képek feltöltése',
-  //   className: "form-control text-danger", 
-  // },
   rendezes: {
     id: 'rendezes',
     required: true,
@@ -207,16 +178,11 @@ const galeria = {
   title: {
     id: "title",
     labelText: 'Cím',
-    placeholder: "Kirándulás/esemény neve",
+    placeholder: "Kirándulás / esemény neve",
     className: "form-control text-success",
     required: true,
   },
-  base64Url: {
-    title : 'Borító kép (1 db)',
-    id: "base64Url",
-    readOnly: true,
-    placeholder: "Nincs feltöltésre váró kép",
-  },
+  mainPic,
   address: {
     id: "address",
     labelText: 'Helyszín (hol volt?)',
@@ -246,4 +212,35 @@ const galeria = {
 
 }
 
-export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria };
+const szerzodott_iskolak = {
+  title: {
+    id: "title",
+    required: true,
+    className: "form-control text-success",
+    labelText: 'Iskola neve:'
+  },
+  address: {
+    id: "address",
+    labelText: 'Iskola címe:',
+    className: "form-control text-success",
+    required: true,
+  },
+  phoneNumber: {
+    id: "phoneNumber",
+    className: "form-control text-success",
+    minLength: 10,
+    labelText: 'Telefonszám',
+  },
+  link: {
+    id: "link",
+    placeholder: "Iskola weboldala",
+    className: "form-control text-success",
+    labelText: 'A vállalkozás weboldala',
+  },
+
+}
+
+export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria, szerzodott_iskolak };
+
+
+

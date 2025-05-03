@@ -12,6 +12,7 @@ import EditFireStorage from "./EditFireStorage.jsx";
 import upLoadFireStorage from "../../../../Functions/firebase/fireStorage/upLoadFireStorage.js";
 import LoadingTime from "../../../../Components/LoadingTime.jsx";
 import ImgFromStorage from "../../../../shared/hook/ImgFromStorage.jsx";
+import toNavigateTop from "../../../../Functions/toNavigateTop.js";
 
 
 const FormView = ({ eventModify, collectionName, docs }) => {
@@ -76,6 +77,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
     }
     finally{
       setUploading(false);
+      toNavigateTop({behavior : 'smooth'});
     }
 
   };
@@ -117,7 +119,8 @@ const FormView = ({ eventModify, collectionName, docs }) => {
     setPictureBase64Url(null);
     setEnglishUrl(null);
     setBigFiles([]);
-    setChangedEvent(!changedEvent)
+    setChangedEvent(!changedEvent);
+    toNavigateTop({behavior : 'smooth'});
 }
 
 
@@ -159,15 +162,6 @@ const FormView = ({ eventModify, collectionName, docs }) => {
                                                         defaultValue={data?.picAlt ?? ''}/>
                                                    </div>
                                                   )                                    
-
-
-
-
-
-
-
-
-
                 else if( item === 'description') return <DefaultTextArea key={index} defaultValue={data?.description ?? ''}  inputProps={formFields[item]} />
                 else if( item === 'titleUrl') return <DefaultInput key={index} defaultValue={data?.titleUrl ?? ""}  inputProps={formFields[item]}/>;
                 else if( item === 'fireStorage') return <EditFireStorage key={index} docId={docId} files={{bigFiles, setBigFiles}}/>
@@ -185,6 +179,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
       </form>
       <hr />
       <GetUploadedSections
+       handleNewForm={handleNewForm}
         setInputValues={setDefaultValues}
         eventModify={eventModify}
         collectionName={collectionName}

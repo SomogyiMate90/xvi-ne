@@ -1,6 +1,7 @@
 
 import { pictureIcon } from "../../../Functions/themes/icons";
 import getShortedText from "../../../Functions/Utils/getShortedText";
+import ImgFromStorage from "../../../shared/hook/ImgFromStorage";
 import LinkBTN from "../../../shared/LinkBTN";
 
 const CardFolder = ({docId,data}) => {
@@ -35,10 +36,8 @@ const CardFolder = ({docId,data}) => {
             </span>
         </div>
 
-      <img src={base64Url.length === 0 ? defaultImageUrl : base64Url} 
-
-      className="card-img" 
-      alt={picAlt ?? 'Galéria nyiító kép'} />
+        <ImgFromStorage storageProps={{folderPath : `galeria/mainPic/${docId}`, namePart : '1920x1280', picAlt}}  />
+    
       <div className="card-img-overlay">
         <h4 className="card-title">{title || '' }</h4>
         {

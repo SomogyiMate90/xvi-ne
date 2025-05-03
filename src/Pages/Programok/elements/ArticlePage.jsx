@@ -8,6 +8,7 @@ import NotFound from "../../../Components/NotFound";
 import MapBtn from "../../../shared/MapBtn";
 import ArticleElements from "./ArticleElements";
 import PageHelmet from "../../../Components/PageHelmet";
+import ImgFromStorage from "../../../shared/hook/ImgFromStorage";
 
 const ArticlePage = () => {
   const [selectedComp, setSelectedComp] = useState(<LoadingTime text={{ title: "Töltés", content: "Lekéri a szervertől" }} />);
@@ -29,7 +30,7 @@ const ArticlePage = () => {
         
         const { address, base64Url, picAlt, description, title  } = foundedDoc;
 
-        console.log(description.slice(0,154))
+        // console.log(description.slice(0,154))
 
         const splitedDescription = description.split('\n');
   
@@ -53,7 +54,9 @@ const ArticlePage = () => {
 
             <h1>{title}</h1>
             <div className="clearfix">
-              <DefaultFigure classStyle='p-0 p-lg-2 ps-xl-4 float-xl-end mb-0' props={{ imgSrc: base64Url, imgAlt: picAlt }} />
+              <DefaultFigure props={{imgAlt: picAlt}}  classStyle='p-0 p-lg-2 ps-xl-4 float-xl-end mb-2'>
+              <ImgFromStorage storageProps={{folderPath : `/programok/mainPic/${foundedObj[0].docId}`, namePart: '1920x1280'  }} />
+              </DefaultFigure>
               <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>
             </div>
             <div className="clear-fix"></div>

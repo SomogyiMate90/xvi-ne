@@ -6,9 +6,9 @@ const LinkOutTargetBlank = ({link,myStyle=''}) =>{
 
     const theme = useContext(Theme)
 
-    const {href , text} = link
+    const {href = '' , text} = link
 
-    if( typeof href !== 'string' || typeof text !== 'string'){
+    if( typeof href !== 'string' || typeof text !== 'string' || href.length === 0 || href === 'tel:') {
         return null;
     }   
 

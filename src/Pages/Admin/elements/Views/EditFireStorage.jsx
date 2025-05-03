@@ -54,7 +54,7 @@ const EditFireStorage = ({docId,files}) =>{
 return(
     <>
     <DefaultInput key={uplI+sC} givenLabelText='File-ok darabszáma' 
-                  inputProps={{id : 'fileSzam', type:'number', readOnly : true}}
+                  inputProps={{id : 'fileSzam', type:'number'}}
                   defaultValue={uplI+sC}
                   />
     <div className="mb-3 bg-success-subtle">
@@ -72,8 +72,8 @@ return(
         
     </div>
     <hr />
-    <div className="file-list-in-data-base">
-        <h5>Adatbázisban szereplő feltöltött fileok</h5>
+    <div className="file-list-in-data-base bg-secondary py-2 mb-3">
+        <h5 className="text-white">Adatbázisban szereplő feltöltött fileok</h5>
         <ol className="list-unstyled d-flex flex-wrap gap-2 justify-content-center">
             {
                 listPics.map((i,n)=>{
