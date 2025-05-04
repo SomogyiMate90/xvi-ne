@@ -7,8 +7,7 @@ export default async function submitFunction(event,collectionName) {
     
             const docId = document.getElementById('docId').value;
             const hasDocId = docId === "" ? false : true;
-            
-            console.log(hasDocId)
+
             let resp;
             let actualDocId;
             

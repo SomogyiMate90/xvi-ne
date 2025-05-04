@@ -70,11 +70,11 @@ const FormView = ({ eventModify, collectionName, docs }) => {
             const url = await downloadFile(fullPath);
             
             if(name.includes('400x267')){
-              mainPicObj.highPicture =  {...uploadedFile, url}
+              mainPicObj.lowPicture =  {...uploadedFile, url}
               
             }
             else{
-              mainPicObj.lowPicture =  {...uploadedFile, url}
+              mainPicObj.highPicture =  {...uploadedFile, url}
             }
             
           }
@@ -173,10 +173,11 @@ const FormView = ({ eventModify, collectionName, docs }) => {
                                                           <div className="bg-success-subtle pt-2">
                                                           <span className="mx-5 text-center d-block bg-success-subtle"><b>Feltöleni kívánt új borító kép</b><br /> ( A régiek maradnak, ezért egyesével kell kitörölni őket 
                                                             [ <span className="text-danger">piros x</span> ] )</span>
-                                                          <img src={pictureBase64Url ?? data?.base64Url} 
+                                                          <img src={pictureBase64Url.src} 
                                                            alt="Előnézet" 
                                                            className="bg-success-subtle"
-                                                           style={{ maxWidth: '150px', margin: '10px', padding: "15px"}} />
+                                                           style={{ maxWidth: '150px', margin: '10px', padding: "15px"}} 
+                                                           />
                                                            </div>
                                                                                                                      
                                                     )

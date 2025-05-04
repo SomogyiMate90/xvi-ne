@@ -25,7 +25,8 @@ const SliderPanelCardSlider = ({receivedArray}) =>{
 
                     <div  key={docId} className="d-none article-slider animate__animated">
                    <div className="">
-                    <ImgFromStorage storageProps={{folderPath : `/programok/mainPic/${docId}`, namePart: '1920x1280', picAlt : data.picAlt }} />
+                    <img src={data?.highPicture?.url || '/assets/img/no-img.png'} alt={data.picAlt}/>
+                    {/* <ImgFromStorage storageProps={{folderPath : `/programok/mainPic/${docId}`, namePart: '1920x1280', picAlt : data.picAlt }} /> */}
                     </div>
                    
                     <section className="">

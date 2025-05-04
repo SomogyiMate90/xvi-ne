@@ -3,6 +3,7 @@ import getStorageFileList from "../Functions/firebase/fireStorage/getStorageFile
 import { useImmer } from "use-immer";
 import downloadFile from "../Functions/firebase/fireStorage/downloadFile";
 import pauseMediaFile from "../Functions/Utils/pauseMediaFile";
+import ImgHTML from "./ImgHTML";
 
 
 const PhotoBook = ({folderPath}) =>{
@@ -76,7 +77,6 @@ const SuccessComp = ({picList}) =>{
 
     async function getPic(path,draftFun) {
         const url = await downloadFile(path);
-        console.log(url)
         draftFun(draft => {
             draft.push(url);
           });
@@ -150,26 +150,29 @@ const CarouselComp = ({ closeFun, bigLilesList }) => {
 
           let SelectedComp = <></>
 
-          switch (contentType) {
-            case "image/jpeg":
+          switch (true) {
+            case contentType.startsWith("image/") :
               SelectedComp = (<img aria-label={name} className="d-block" src={url} alt="" />);
               
               break;
-            case "video/mp4":
+            case contentType.startsWith("video/"):
               SelectedComp = (<figure className="d-block" >
                 <figcaption style={{color: 'white', fontWeight: 'bolder' }}>{name}</figcaption>
                 <video aria-label={name} controls height={'100%'} width={"100%"}><source src={url} type={contentType} /></video>
               </figure>)
               break;
-            case "audio/mpeg":
+            case contentType.startsWith("audio/"):
               SelectedComp = (
-                <figure>
+                <figure className="bg-music-img">
+                {/* <ImgHTML style="h-25" src="https://www.shutterstock.com/image-vector/sound-wave-graphic-symbol-abstract-260nw-2562255953.jpg" /> */}
                   <figcaption style={{color: 'white', fontWeight: 'bolder' }}>{name}</figcaption>
-              <audio aria-label={name} className="d-block" controls ><source src={url} type={contentType} /></audio>
+              <audio aria-label={name} className="d-block" controls >
+                <source src={url} type={contentType} />
+              </audio>
                 </figure>)            
               break;
             default:
-              SelectedComp = <span>Nem támogatott formátum switch blokban írd át</span>;
+              SelectedComp = <span className="text-white">Nem támogatott formátum switch blokban írd át</span>;
           }
 
 

@@ -1,4 +1,4 @@
-import ImgFromStorage from "../../../shared/hook/ImgFromStorage";
+import ImgHTML from "../../../shared/ImgHTML";
 import MapBtn from "../../../shared/MapBtn";
 import PhotoBook from "../../../shared/PhotoBook";
 
@@ -15,10 +15,10 @@ const GalleryEventArticle = ({article}) =>{
  * @property {string} date
  * @property {number} fileSzam
  * @property {string} picAlt
+ * @property {Object} lowPicture
  */
-    const { docId, data : { address , base64Url, description,  picAlt, title }  } = article;
+    const { docId, data : { address , base64Url, description,  picAlt, title, lowPicture  }  } = article;
 
-    console.log(article)
     
     const splitedDescription = description.split('\n');
 
@@ -35,7 +35,8 @@ const GalleryEventArticle = ({article}) =>{
             <div className="d-flex d-lg-block flex-column aling-items-center">
                 { base64Url === '' ? <></> : 
                 <figure className="m-1 m-lg-2 float-end">
-                    <ImgFromStorage storageProps={{folderPath : `galeria/mainPic/${docId}`, namePart : '400x267', picAlt}}  />
+                    <ImgHTML src={lowPicture.url} picAlt={picAlt} />
+                    {/* <ImgFromStorage storageProps={{folderPath : `galeria/mainPic/${docId}`, namePart : '400x267', picAlt}}  /> */}
                     {/* <img className="d-block mx-auto object-fit-contain w-75" src={base64Url} alt={picAlt || 'borítókép'} /> */}
                     <figcaption className="text-center fst-italic">{picAlt}</figcaption>
                 </figure>

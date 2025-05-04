@@ -25,7 +25,6 @@ const EditFireStorage = ({docId,files}) =>{
         
         if(docId !== undefined){
             const getFiles = async () => {
-                console.log(docId)
                 const fileList = await getStorageFileList(`galeria/${docId}/`);
                 const length = fileList.length; // Ekkor biztos lehetsz benne, hogy tömb a fullPath és name
                 storageCount(length)
@@ -55,7 +54,7 @@ return(
     <>
     <DefaultInput key={uplI+sC} givenLabelText='File-ok darabszáma' 
                   inputProps={{id : 'fileSzam', type:'number'}}
-                  defaultValue={uplI+sC}
+                  defaultValue={uplI+( Math.ceil(sC/2))}
                   />
     <div className="mb-3 bg-success-subtle">
         <label htmlFor='fireStorePic'>Képek</label>
@@ -64,7 +63,21 @@ return(
             className='form-control' 
             onChange={(e)=>handleCahnge(e)}
             type="file"
-            // accept="image/*"
+            accept="
+                    image/jpeg,
+                    image/jpg,
+                    image/webp,
+                    image/gif,
+                    image/bmp,
+                    image/svg+xml,
+                    audio/mpeg,
+                    audio/wav,
+                    audio/ogg,
+                    application/x-mpegURL,
+                    video/mp4,
+                    video/webm,
+                    video/ogg
+                "
             multiple
             />
         <PreViewreIMG selectedFiles={bigFiles} />
@@ -77,36 +90,30 @@ return(
         <ol className="list-unstyled d-flex flex-wrap gap-2 justify-content-center">
             {
                 listPics.map((i,n)=>{
+
                       let CompType = <span>Nem megjeleníthető</span>
 
-                    switch(i.contentType){
-                        case 'image/jpeg' : CompType = () =>{
-                            return(
-                                                 
-                                <img className="uploaded-img" src={i.url} alt="" />
-                              
-               
-                            )
-                        };
-                        break;
-                        case 'video/mp4' : CompType = () =>{
-                            return(
-                                <video controls width={'400px'}>
-                                    <source src={i.url} type={i.contentType}/>
-                                </video>
-                            )
-                        }
-                        break;
-                        case 'audio/mpeg' : CompType = () =>{
-                            return(
-                                <audio controls style={{display: 'block', margin : 'auto'  }} >
-                                    <source src={i.url} type={i.contentType}/>
-                                </audio>
-                            )
-                        }
-                        break;
-                        default : CompType = <span>Nem támogatott formátum switch blokban írd át</span>;
-                    }
+                      switch (true) {
+                        case i.contentType.startsWith("image/") :
+                            CompType = (<img className="d-block" src={i.url} alt="" />);
+                          
+                          break;
+                        case i.contentType.startsWith("video/"):
+                            CompType = (<figure className="d-block" >
+                            <figcaption style={{color: 'white', fontWeight: 'bolder' }}></figcaption>
+                            <video controls height={'100%'} width={"100%"}><source src={i.url} type={i.contentType} /></video>
+                          </figure>)
+                          break;
+                        case i.contentType.startsWith("audio/"):
+                            CompType = (
+                            <figure>
+                              <figcaption style={{color: 'white', fontWeight: 'bolder' }}></figcaption>
+                          <audio className="d-block" controls ><source src={i.url} type={i.contentType} /></audio>
+                            </figure>)            
+                          break;
+                        default:
+                            CompType = <span className="text-white">Nem támogatott formátum switch blokban írd át</span>;
+                      }
 
                     return(
                         <li id={i.filePath} key={n}>
@@ -116,7 +123,7 @@ return(
                                     onClick={()=>handleDeleteBtn(i.filePath)}
                                     title={`Törlés ${i.name}`}
                                     ></button>
-                                 {CompType()}
+                                 {CompType}
                             <figcaption className="text-wrap">{i.name}</figcaption>
                              </figure>
                         </li>)

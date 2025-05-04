@@ -16,8 +16,6 @@ const ImgFromStorage = ({storageProps,classProps = ''}) =>{
         async function getMainPic() {
            
           const fileLists = await getStorageFileList(folderPath);
-          console.log('fileLists db lekérés volt')
-          console.log(fileLists)
 
           if(namePart === undefined){
 
@@ -49,7 +47,7 @@ const ImgFromStorage = ({storageProps,classProps = ''}) =>{
       },[folderPath])
 
       if(typeof classProps !== 'string'){
-        console.error('classProps az ImgFromStorage komponensben nem string  (HIba!)');
+        console.error('classProps az ImgFromStorage komponensben nem string  (Hiba!)');
         return;
     }
 

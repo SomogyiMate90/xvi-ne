@@ -1,32 +1,31 @@
-
 import { pictureIcon } from "../../../Functions/themes/icons";
 import getShortedText from "../../../Functions/Utils/getShortedText";
-import ImgFromStorage from "../../../shared/hook/ImgFromStorage";
+import ImgHTML from "../../../shared/ImgHTML";
 import LinkBTN from "../../../shared/LinkBTN";
 
 const CardFolder = ({docId,data}) => {
 
-  const {title , base64Url, picAlt , description, fileSzam, date, titleUrl } = data;
+  const {title ,  picAlt , description, fileSzam, date, titleUrl, highPicture } = data;
 
   const splitedDescription = description.split('\n');
   const descriptionParagraps = splitedDescription.filter(item=> item !== '');
   const shortedDescription = getShortedText(descriptionParagraps,160)
-  const defaultImageUrl = '/assets/img/no-img.png'
 
   const now = Date.now()
   const szerkesztve = new Date(date).getTime();
   const kulonbseg = now - szerkesztve;
+  const dayLeft = Math.floor(kulonbseg / (1000 * 60 * 60 * 24))
 
-  const napok =`szerkesztve: ${Math.floor(kulonbseg / (1000 * 60 * 60 * 24))} napja`;
+  const napok =`szerkesztve: ${dayLeft} napja`;
   
   let honap;
 
-  if(napok > 35){
+  if(dayLeft > 35){
     honap = `Szerkesztve: ${Math.floor(napok / 30)} hónapja`
   }
 
   return (
-    <div className="card text-bg-dark position-relative">
+    <div id={docId} className="card text-bg-dark position-relative">
         <div className="picture-count-icon">
         <span>{pictureIcon}
 
@@ -35,9 +34,7 @@ const CardFolder = ({docId,data}) => {
             {fileSzam}
             </span>
         </div>
-
-        <ImgFromStorage storageProps={{folderPath : `galeria/mainPic/${docId}`, namePart : '1920x1280', picAlt}}  />
-    
+        <ImgHTML src={highPicture.url} picAlt={picAlt} />    
       <div className="card-img-overlay">
         <h4 className="card-title">{title || '' }</h4>
         {

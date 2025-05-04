@@ -4,8 +4,17 @@
  * @returns 
  */
 export default async function getPictureSrcBase64(value,maxWidth = 400) {
+
+    let compressedObj;
+
     if (!value) throw new Error("Nincs fájl kiválasztva!");
 
+    if (value.type.startsWith('video/')){
+        return compressedObj = {src :'https://tatkultur.hu/wp-content/uploads/Video-scaled.jpg', title : value.name};
+    } 
+    if (value.type.startsWith('audio/')){
+        return compressedObj = {src : 'https://e1.pngegg.com/pngimages/475/427/png-clipart-vista-rtm-wow-icon-music-file-music-icon-thumbnail.png', title : value.name};
+    } 
     if (!value.type.startsWith('image/')) return;
     // console.log(value);
 
@@ -53,13 +62,12 @@ export default async function getPictureSrcBase64(value,maxWidth = 400) {
     ctx.drawImage(newImg, 0, 0, newWidth, newHeight);
 
     // A módosított kép Base64 formátumban
-    const compressedBase64 = canvas.toDataURL("image/jpeg",1); // 100%-os minőség
 
-    
-/*
-    console.log("Tömörített Base64 URL:", compressedBase64);
-*/
+    const compressedBase64 = canvas.toDataURL("image/jpeg",1)
 
-    return compressedBase64
+    compressedObj = {src : compressedBase64 , title : value.name}; // 100%-os minőség
+
+
+    return compressedObj
  
 }

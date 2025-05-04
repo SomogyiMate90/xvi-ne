@@ -132,3 +132,12 @@ a.transform-line::after {
     figure>img{
         width: 100%;
     }
+
+
+    .bg-music-img{
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 15%;
+        background-image: url('/public/assets/img/volume-blue.svg') !important;
+
+    }

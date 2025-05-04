@@ -1,9 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import FireStoreContext from "../Functions/contexts/fireSroreContext";
-import { useImmer } from "use-immer";
-import LinkOutTargetBlank from "../shared/LinkOutTargetBlank";
-import { href } from "react-router-dom";
-import ImgFromStorage from "../shared/hook/ImgFromStorage";
+
 import animateSliderPanel from "../Functions/animateSliderPanel";
 
 const Tamogatok = () =>{
@@ -82,21 +79,16 @@ const Tamogatok = () =>{
                 {
                     fireStoreData.length === 0 ? <img src="/assets/img/no-img.png"/> : fireStoreData.partnerek.map(( item,index)=>{
                         
-                        const {data, docId} = item;
-                        
+                        const {data, docId} = item;                
                         const {picAlt ,  title , url, lowPicture} = data;
-
-                                        
-                        console.log(item)
-                        console.log(lowPicture?.url)
                         
                         return(
                             
                         
 
                             <div key={docId}  className={index === 0  ? " carousel-item active" : "carousel-item" }>
-                                <a href={url ?? ''} rel="noopener noreferrer" target="_blank">
-                               {/* <ImgFromStorage storageProps={{folderPath: `/partnerek/mainPic/${docId}`, namePart : '400x267', picAlt  }} classProps='' /> */}
+                                <a href={url ?? ''} aria-label={`navigálás a ${title} oldalra`} rel="noopener noreferrer" target="_blank">
+                                
                                <img src= {lowPicture?.url} alt={picAlt} />
                                 </a>
                                 </div>
