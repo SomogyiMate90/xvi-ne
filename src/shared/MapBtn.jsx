@@ -2,7 +2,7 @@ import { mapIcon } from "../Functions/themes/icons";
 
 const MapBtn = ({className, address}) =>{
 
-    if((typeof address !== 'string')) return;
+    if((typeof address !== 'string' || address === '')) return;
 
     const query = encodeURIComponent(address);
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;

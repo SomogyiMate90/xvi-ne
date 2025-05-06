@@ -12,7 +12,7 @@ const  CultureDonation = () =>{
             
                     <h3>Térfelajánlás</h3>
                     <p>
-                    Ha van rendelkezésre álló terem vagy akár kisebb közösségi tér, örömmel fogadjuk az ingyenes helyszínbiztosítást: rendezvényeink így zökkenőmentesebben, barátságos környezetben valósulhatnak meg.  
+                    Ha van rendelkezésre álló terem vagy akár kisebb közösségi tér, örömmel fogadjuk az ingyenes helyszínbiztosítást. Rendezvényeink így zökkenőmentesebben, barátságos környezetben valósulhatnak meg.  
                     </p>
             
                     <h3>Új tárgyi adományok</h3>

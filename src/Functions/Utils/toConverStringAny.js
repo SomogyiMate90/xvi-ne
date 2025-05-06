@@ -13,7 +13,7 @@ export default function toConverStringAny(anything){
         converted = anything.join(", ")
     }
     else if(anything === null){
-        converted = 'ÜRES MEZŐ !!!'
+        converted = 'ÜRES MEZŐ VAGY NEM TARTALMAZ KÉPET !!!'
     }
     else if(Object.hasOwn(anything,'seconds')){
         // console.log('megtalálta a Secons objektumot')
@@ -24,7 +24,7 @@ export default function toConverStringAny(anything){
         converted = `${localDateString} - ISO Idő:  ${localDateIso}`;
     }
     else{
-        converted = 'Nem történt átalakítás!';
+        converted = 'KÉPET VAGY EGYÉB ADATOT TARTALMAZ  (Nem történt átalakítás!)';
     }
     return converted;
 

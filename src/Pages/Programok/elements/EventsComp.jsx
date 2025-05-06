@@ -6,6 +6,7 @@ import PageHelmet from "../../../Components/PageHelmet";
 import LinkBTN from "../../../shared/LinkBTN";
 import DefaultFigure from "../../../shared/DefaultFigure";
 import ImgHTML from "../../../shared/ImgHTML";
+import InlineLink from "../../../shared/InlineLink";
 
 const EventsComp = ({children,expandedEvents=[]}) => {
 
@@ -16,11 +17,15 @@ const EventsComp = ({children,expandedEvents=[]}) => {
         <PageHelmet helmetObj={metaAndOpengraphTag.programs}/>
         <div className={`page-events ${actualTheme}`}>
           <div className="hero-img firendship-hero-img">
-            <h1 className="poz-center">Közelgő események, Hírek</h1>
+            <h1 className="poz-center top mb-0 mt-3">Közelgő események, Hírek</h1>
+
+          <p className="position-absolute bottom-0 mb-1 mx-1 mb-md-3 mb-xl-5 mx-xl-5 mx-3 fs-md-3 d-inline bg-my-light "> Fedezd fel egyesületünk legújabb programjait nem csak egyesületi tagoknak! </p>
+
           </div>
+          <p> Családi napok, közösségi tréningek és kreatív workshopok várnak rád. <InlineLink to='/csatlakozz'>Csatlakozz</InlineLink> és építsük együtt a közösségünket. Nézz körbe folyamatosan frissülő programkinálatunkban!</p>
           {children}
           {expandedEvents.map(({docId, data}, index) => {
-  
+
             /**
              * @type {Array}
              */
@@ -48,7 +53,7 @@ const EventsComp = ({children,expandedEvents=[]}) => {
                 <LinkBTN anStyle={index % 2 === 0 ? 'text-start' : 'text-end'} text="Tovább olvasom" url={`/programok/${data?.titleUrl}`}/>
                 </div>
                 <DefaultFigure props={{imgAlt : data.picAlt || 'Nincs kép' }}>
-                  <ImgHTML src={data.lowPicture.url} picAlt={data.picAlt}/>
+                  <ImgHTML src={data?.highPicture?.url} picAlt={data?.picAlt}/>
                 </DefaultFigure>
                 </div>
               </article>

@@ -6,10 +6,6 @@ import EditCollectionDocs from "./Forms/EditCollectionDocs";
 import collectionsList from "../../../Functions/firebase/firestore/collectionsList.js";
 import LoadingTime from "../../../Components/LoadingTime";
 
-
-
-
-
 const EditingForm  = () =>{
     const [d, setD] = useImmer([])
     const [collection , setCollection] = useState(false);
@@ -24,7 +20,6 @@ const EditingForm  = () =>{
             const obj = await getFIRESOTER_content(collection);
             setTimeout(()=>{
                 setD(obj);
-                console.log(obj);
                 setLoading(true);
             },100)
         };
@@ -33,7 +28,6 @@ const EditingForm  = () =>{
         
     },[changedEvent,collection])
 
-    // const collectionOptions = Object.keys(d);
     const selectedCollcetion = d[collection];
 
     

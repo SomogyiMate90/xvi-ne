@@ -24,7 +24,7 @@ const route = createBrowserRouter([
                 element: <WelcomePage/>
             },
             {
-                path: '/rólunk',
+                path: '/rolunk',
                 element: <AboutUs/>
             },
             {
@@ -40,19 +40,19 @@ const route = createBrowserRouter([
                 element: <JoinUs/>
             },
             {
-                path: '/adományok',
+                path: '/adomanyok',
                 element: <Donations/>
             },
             {
-                path: '/kedvezmények',
+                path: '/kedvezmenyek',
                 element: <Discounts/>
             },
             {
-                path: '/galéria',
+                path: '/galeria',
                 element: <GalleryPage/>
             },
             {
-                path: '/galéria/*',
+                path: '/galeria/*',
                 element: <GalleryEvent/>
             },
             {
@@ -60,7 +60,7 @@ const route = createBrowserRouter([
                 element: <DocumentsPage/>
             },
             {
-                path: '/adminisztrátor',
+                path: '/szerkesztes',
                 element: <Admin/>
             },
             {

@@ -3,20 +3,6 @@
 
 .page-home{
 
-    .famiy-hero-img{
-        background-image: url('/public/assets/img/hero/family-hero-img-2.webp');
-        background-size: cover;
-        background-color: hsl(45, 7%, 65%);
-        color: white;
-        background-position: top;
-        background-blend-mode: multiply;
-        // align-items: flex-end;
-        @include mix.toAfterMaxwidth(1200px){
-            background-position-y: 30%;
-        }
-     
-    }
-
     .big-family-hero-img{
         background-image:   linear-gradient(90deg, hsl(45, 7%, 65%) 5%, hsla(45, 7%, 65%, 0.2) 60%),
         url('/public/assets/img/hero/big-family-hero.webp');
@@ -24,8 +10,7 @@
         background-color: hsl(45, 7%, 65%);
         color: white;
         background-position: top;
-        // background-blend-mode: multiply;
-        // align-items: flex-end;
+
         @include mix.toAfterMaxwidth(1200px){
             background-size: 80%;
             background-position-y: 15%;
@@ -45,10 +30,10 @@
         background-position: center;
         background-color: hsl(210, 70%, 42%);
         color: black;
-        background-blend-mode: multiply;
+        background-blend-mode: overlay;
         color: white;
         @include mix.toAfterMaxwidth(1200px){
-            background-position-y: 60%;
+            background-position-y: 75%;
         }
     }
 

@@ -35,23 +35,23 @@ const AccordionKedvezmenyItem = ({doc}) =>{
             data-bs-parent={`#${docId}`}
           >
             <div className="accordion-body">
-              <p className="text-indent-no">
+              <p className="text-indent-no text-start">
                 <strong>Cím:</strong> {address}
               </p>
-              <p className="text-indent-no">
+              <p className="text-indent-no ">
                 <strong>Leírás:</strong> {text}
               </p>
-              <p className="text-indent-no">
+              <p className="text-indent-no text-start">
                 <strong>Nyitvatartás:</strong> {descriptionParagraps.map((i,n)=>(<span className="d-block ms-5" key={n}>{i}</span>))}
               </p>
-              <p className="text-indent-no">
+              <p className="text-indent-no text-start">
                 <strong>Telefonszám:</strong>  {
                   phoneNumber !== 'Nincs telefonszám' ? <LinkOutTargetBlank link={{ href: ancorPhoneNum, text: phoneNumber }} /> : "Nincs"
                   
                   }
               </p>
-              <p className="text-indent-no">
-                <strong>Weboldal címe:</strong>{" "}
+              <p className="text-indent-no text-start">
+                <strong className="">Weboldal címe:</strong>{" "}
                 {link ? (
                   <LinkOutTargetBlank link={{text : link, href : link}}/>
                 ) : (

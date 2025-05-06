@@ -85,9 +85,29 @@ header{
 
         div.container-fluid{
             img{
-                max-width: 270px;
+                max-width: 302px;
+                max-height: 65px;
                
             }
+        }
+
+        @media screen and (max-width:400px) {
+
+          div.container-fluid{
+            padding: 0px 4px;
+
+          }
+
+          #navbarBtn{
+            width: 40px;
+            height: 50px;
+            padding: 2px;
+            .navbar-toggler-icon{
+              width: 100%;
+            }
+          }
+
+          
         }
 
         .nav-item{
@@ -124,15 +144,29 @@ header{
             a{
                 display: inline-block;
                 flex-grow: 0;
+
+                // &:last-of-type{
+                //   padding-right: 0px !important;
+                // }
+                
             }
 
             font-size: 1.3rem;
             padding: 0 .5rem;
 
             &:not(:last-of-type){
-                @include mix.toAfterMaxwidth(992px){
+                @include mix.toAfterMaxwidth(1400px){
                     border-right: 1px solid black;
                 }
+            }
+
+            &:last-of-type{
+              a{
+                padding-right: 0px !important;
+              }
+              @include mix.toAfterMaxwidth(1200px){
+                padding-right: 0px !important;
+            }
             }
 
             

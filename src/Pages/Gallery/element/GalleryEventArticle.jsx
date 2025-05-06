@@ -1,3 +1,4 @@
+import PageHelmet from "../../../Components/PageHelmet";
 import ImgHTML from "../../../shared/ImgHTML";
 import MapBtn from "../../../shared/MapBtn";
 import PhotoBook from "../../../shared/PhotoBook";
@@ -29,15 +30,20 @@ const GalleryEventArticle = ({article}) =>{
         return acc;
     },[]);
 
+    const helmetObj = {metaNameObj: { title: `NOE XVI. - ${title}`,
+    description: `${description.slice(0,154).replaceAll('\n',' ')}`,
+    keywords: ` képek,galéria, ${title || ''}, ${address || 'xvi. kerület'}, fotógaléria,  események, programok, kirándulás, családi rendezvények,beszámoló`,
+    robots: "index,follow"
+}}
+
     return(
         <>
+         <PageHelmet helmetObj={helmetObj}/>
             <h1>{title}</h1>
             <div className="d-flex d-lg-block flex-column aling-items-center">
                 { base64Url === '' ? <></> : 
-                <figure className="m-1 m-lg-2 float-end">
-                    <ImgHTML src={lowPicture.url} picAlt={picAlt} />
-                    {/* <ImgFromStorage storageProps={{folderPath : `galeria/mainPic/${docId}`, namePart : '400x267', picAlt}}  /> */}
-                    {/* <img className="d-block mx-auto object-fit-contain w-75" src={base64Url} alt={picAlt || 'borítókép'} /> */}
+                <figure style={{maxWidth: '450px', width: '100%'}} className="border border-3  pb-1 rounded-2  my-2 mx-auto ms-lg-4 float-end">
+                    <ImgHTML src={lowPicture?.url} picAlt={picAlt} />
                     <figcaption className="text-center fst-italic">{picAlt}</figcaption>
                 </figure>
                 }

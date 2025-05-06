@@ -6,11 +6,9 @@ const DefaultCard = ({tag, docId}) => {
 
     const {name,  picAlt, beosztas, phoneNumber, email, highPicture } = tag;
 
-    //  nagykép : "1920x1280"
-
   return (
     <div className="card" style={{width: '18rem', height: '34rem' }}>
-      <ImgHTML style="card-img-top h-75 object-fit-contain  border rounded" src={highPicture?.url} picAlt={picAlt}/> 
+      <ImgHTML style="card-img-top h-75 object-fit-contain border rounded" src={highPicture?.url} picAlt={picAlt}/> 
       <div className="card-body">
         <h4 className="text-center">{name ?? 'Nincs név'}</h4>
         <p className="text-uppercase text-end fw-bold">{beosztas ?? 'nincs beosztás'}</p>

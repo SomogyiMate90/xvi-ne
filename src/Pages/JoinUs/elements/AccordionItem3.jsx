@@ -1,4 +1,3 @@
-import DownLoadBTN from "../../../Components/DownLoadBTN";
 import NyilatkozatokBTNGroup from "../../../Components/NyilatkozatokBTNGroup";
 
 const AccordionItem3 = () =>{

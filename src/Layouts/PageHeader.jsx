@@ -12,14 +12,14 @@ const PageHeader = ({setTheme}) => {
   return (
     <header className={actualTheme} onClick={(event) => closeNavBarNavElement(event)}>
       <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid">
+        <div className="container-fluid ps-1 ps-md-3 ps-lg-1 ps-xxl-3 pe-xxl-1 pe-1 pe-md-2">
           <Link to="/">
             <img
               id='logo-img'
               src="/assets/img/logo_with_text.webp"
               alt="XVI kerületi Nagycsaládosok Egyesület"
               aria-label="Navigálás a kezőoldalra"
-              width="270"
+              width="302"
               height="65"
             />
           </Link>

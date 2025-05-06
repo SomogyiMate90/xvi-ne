@@ -7,10 +7,6 @@ import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
 const AccordionItem2 = () => {
   const theme = useContext(Theme);
 
-
-
-
-
   return (
     <div className="accordion-item">
         <h2 className="accordion-header">
@@ -46,9 +42,9 @@ const AccordionItem2 = () => {
                     </p>
                 </details></li>
             <li>Ingyenes vagy kedvezményes rendezvény belépőkért <LinkOutTargetBlank link={{href: 'https://noe.hu/feliratkozas-hirlevelre/', text: 'iratkozz fel a NOE hirlevélre.'}} /></li>
-            <li><InlineLink to='/adományok#cloth-donations'>Ruhatámogatási program</InlineLink> – „Öltözz ingyen” akciók</li>
+            <li><InlineLink to='/adomanyok#cloth-donations'>Ruhatámogatási program</InlineLink> – „Öltözz ingyen” akciók</li>
             <li>Ingyenes tanácsadások (pl. jogi, pályázati, nevelési)</li>
-            <li>Tagi kedvezmények <InlineLink to='/kedvezmények'>partnereinknél</InlineLink></li>
+            <li>Tagi kedvezmények <InlineLink to='/kedvezmenyek'>partnereinknél</InlineLink></li>
             <li>Közösségi eseményeken való részvétel lehetősége <InlineLink to='/programok'>programok</InlineLink> oldalon</li>
           </ul>
         </div>

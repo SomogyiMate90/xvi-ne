@@ -2,10 +2,10 @@ import LinkBTN from "../shared/LinkBTN";
 
 const NotFound = () =>{
     return(
-        <div className="hero-img empty-swing-hero-img">
+        <div className="hero-img empty-swing-hero-img postion-relative">
 
             <h1 className="poz-center top">A keresett oldal nem található</h1>
-            <LinkBTN classStyle='btn btn-info mb-2 ms-auto me-2' text='Vissza a fő oldalra' url='/'/>
+            <LinkBTN btnStyle='position-absolute bottom-0 end-0 mb-3 me-3 btn btn-info ' text='Vissza a fő oldalra' url='/'/>
         </div>
     )
 }

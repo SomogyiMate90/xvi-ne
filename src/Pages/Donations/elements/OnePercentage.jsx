@@ -17,7 +17,7 @@ const OnePercentage = () => {
               Kedves Mindenki! Kérjük, aki teheti, ajánlja fel nekünk <LinkOutTargetBlank link={{text: 'adója 1 %-át!', href:'https://eszja.nav.gov.hu/app/login/#login'}} />
             </p>
             <blockquote className="fst-italic">
-            "Az szja 1+1%-áról – függetlenül az szja-bevallás módjától – a bevallással együtt vagy külön is lehet rendelkezni.""
+            "Az szja 1+1%-áról – függetlenül az szja-bevallás módjától – a bevallással együtt vagy külön is lehet rendelkezni."
               <cite><LinkOutTargetBlank myStyle="text-wrap" link={{text: 'Nemzeti Adó- és Vámhivatal (NAV)', href:'https://nav.gov.hu/Elethelyzetek-adozasa/munka/Rendelkezes-az-ado-11-szazalekarol'}} /></cite>
             </blockquote>
             <p>

@@ -16,7 +16,7 @@ const AdminListItem = () =>{
         <>
         <li className='nav-item admin pe-0'>
         <div className="d-flex gap-3 justify-content-between">
-            <Link to="/Adminisztrátor" className={decodeURIComponent(window.location.pathname) ===  'adminisztrátor' ? 'nav-link active' : 'nav-link transform-line'}>
+            <Link to="/szerkesztes" className={decodeURIComponent(window.location.pathname) ===  'szerkesztes' ? 'nav-link active' : 'nav-link transform-line'}>
                 Weboldal szerkesztése
             </Link>
             <button type="button" onClick={logOut} className="btn btn-danger">Kijelentkezés</button>

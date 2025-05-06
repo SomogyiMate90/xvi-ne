@@ -25,9 +25,6 @@ const ListDocContent = ({handleNewForm,setInputValues, eventModify, collectionNa
       const respStorageListAssetFiles = await getStorageFileList(`${collectionName}/${docId}`);
       const respStorageListMainPictures = await getStorageFileList(`${collectionName}/mainPic/${docId}`);
 
-
-    console.log(respStorageListAssetFiles)
-
       const length = respStorageListAssetFiles.length;
       const mainPicLength = respStorageListMainPictures.length;
 

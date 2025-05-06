@@ -32,11 +32,59 @@
             top: -50%;
             align-self: center;
         }
+
+        p.bg-my-light{
+            // background-color: rgba(0, 0, 0, 0.10);
+            text-shadow:  0px 2px black;
+
+            text-align: start;
+
+            span.text-end{
+                display: block;
+                text-align: end;
+            }
+
+        }
+
+        p,h1{
+            line-height: initial !important;
+        }
+
     }
 
     @include mix.toAfterMaxwidth(600px){
+
+        p.bg-my-light{
+            font-size: 1.2em;
+        }
+
             .hero-img{
                 max-height: none;
                 height: 320px;       
             }
     }
+
+    @include mix.toAfterMaxwidth(800px){
+
+        p.bg-my-light{
+            font-size: 1.6em !important;
+        }
+
+            .hero-img{
+                max-height: none;
+                height: 340px;       
+            }
+    }
+
+    @include mix.toAfterMaxwidth(1300px){
+
+        p.bg-my-light{
+            font-size: 1.8em !important;
+        }
+
+
+        .hero-img{
+            max-height: none;
+            height: 370px;       
+        }
+}

@@ -158,7 +158,13 @@ const CarouselComp = ({ closeFun, bigLilesList }) => {
             case contentType.startsWith("video/"):
               SelectedComp = (<figure className="d-block"  >
                 <figcaption className="position-absolute top-0 mt-1" style={{color: 'white', opacity: '0.5' }}>{name}</figcaption>
-                <video onClick={()=>{}} aria-label={name} controls height={'100%'} width={"100%"}><source src={url} type={contentType} /></video>
+                <video onClick={()=>{}} 
+                      aria-label={name} 
+                      controls 
+                      height={'100%'} 
+                      width={"100%"}
+                      poster="/assets/img/helm/metaLogo.jpg">
+                        <source src={url} type={contentType} /></video>
               </figure>)
               break;
             case contentType.startsWith("audio/"):

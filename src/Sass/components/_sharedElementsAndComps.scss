@@ -94,6 +94,7 @@ a.link-out{
 
     &.akadaly{
         color: rgba( base.$akadaly-ancor, 0.7) !important;
+        background-color: rgb(3, 255, 242);
         &:hover{
             color: rgba( base.$akadaly-ancor, 1) !important;
             transform: scale(1.4) !important;

@@ -7,7 +7,6 @@ import EventsComp from "./elements/EventsComp";
 const Events = () => {
   const fireBaseContent = useContext(FireStoreContext);
 
-  // Ha még nincs adat, jelenítsük meg a LoadingTime-t
   if (!fireBaseContent.programok) {
     return (
       <EventsComp>
@@ -16,7 +15,6 @@ const Events = () => {
     );
   }
 
-  // Ha elérhető, de üres az adat
   if (fireBaseContent.programok.length === 0) {
     return (
       <EventsComp>

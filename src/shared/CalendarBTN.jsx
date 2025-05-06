@@ -13,13 +13,32 @@ const CalendarBTN = ({event}) => {
         description = undefined
       } = event;
 
+
+      if(startTime){
+        const now = Date.now();
+
+        const validStartTime = new Date(startTime).getTime()
+
+        if(isNaN(validStartTime)) return;
+        
+        
+        console.log(now)
+        console.log(validStartTime)
+
+        if((validStartTime - now) < 0) return
+
+      }
+
+      const validEndTime = endTime === '' ? startTime : endTime;
+      const validAddress = address === '' ? 'Hungary' : address;
       const params = [];
 
       if (title) params.push(`text=${encodeURIComponent(title)}`);
       if (description) params.push(`details=${encodeURIComponent(description)}`);
-      if (startTime && endTime)
-        params.push(`dates=${formatDateForGoogleCalendar(startTime)}/${formatDateForGoogleCalendar(endTime)}`);
-      if (address) params.push(`location=${encodeURIComponent(address)}`);
+      if (startTime)
+        params.push(`dates=${formatDateForGoogleCalendar(startTime)}/${formatDateForGoogleCalendar(validEndTime)}`);
+      
+      params.push(`location=${encodeURIComponent(validAddress)}`);
 
       if(params.length < 4) return;
       

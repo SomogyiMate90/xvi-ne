@@ -58,7 +58,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
 
         setTimeout( async ()=>{
           
-          const mainPicFiles = await getStorageFileList(`${collectionName}/mainPic/${docIdResp}`);
+          const mainPicFiles = await getStorageFileList(`${collectionName}/mainPic/${docIdResp}`); 
           
           const mainPicObj = {lowPicture: null,highPicture: null};
           
@@ -80,10 +80,16 @@ const FormView = ({ eventModify, collectionName, docs }) => {
           }
           
           setCurrentDoc(mainPicObj,collectionName,docIdResp)        
-        },2000)
+
+
+        },3000)
 
         if(resp === 'Kész' && resp2 === 'Kész'){
-          handleNewForm()
+
+          setTimeout(()=>{
+            handleNewForm()
+          },4000)
+
         }
         else{
           handleNewForm()

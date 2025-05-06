@@ -1,12 +1,16 @@
+import { useState } from "react";
 
 const SelectCollcetion = ({collectOp,setLoading,setCollection}) =>{
-
+const [isSelectedAny, setSelectedAny] = useState('form-select')
 /**
  * 
  * @param {Event} event 
  */
     const readValue = (event) =>{
-        setCollection(event.target.value);
+        setCollection(event.target.value); 
+
+        event.target.value !== '' ? setSelectedAny('form-select bg-success text-white fw-bold') : setSelectedAny('form-select')
+
         setLoading(false)
     }
 
@@ -17,12 +21,12 @@ const SelectCollcetion = ({collectOp,setLoading,setCollection}) =>{
 
     return(
         <div className="mb-3">
-        <select onChange={(event)=>readValue(event)} className="form-select" name="collections" id="collections" required>
-            <option onClick={emptyCollections} value="">Jelöld kí a kívánt aloldalt, amit szerkeszteni szeretnél</option>
+        <select onChange={(event)=>readValue(event)} className={isSelectedAny} name="collections" id="collections" required>
+            <option onClick={emptyCollections} value="" className="bg-primary-subtle text-dark" >Válasz a szerkeszteni kívánt témakörök közül</option>
 
             {
                 collectOp.map((item,index)=>{
-                    return(<option key={index} value={item}>{item}</option>)
+                    return(<option  key={index} value={item}>{item}</option>)
                 })
             }
         </select>

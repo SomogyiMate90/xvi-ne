@@ -58,7 +58,7 @@ const DefaultLayout = () => {
           {isNavigating && <LoadingTime text={{title: 'Töltés'}}/>}
 
               <FireStoreContext.Provider  value={fireStoreDatas}>
-            <main className={`container-xxl my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
+            <main className={`container-xxl my-xxl my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
                 <Outlet />
        
 

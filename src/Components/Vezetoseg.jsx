@@ -18,7 +18,6 @@ const Vezetoseg = ({btnTitle='Elnökség'}) =>{
     if(openBtn){
 
       async function fetchElnokseg(){
-        console.log('Belépett a blokba')
         try{
           const fireBaseContent = await getFIRESOTER_content('elnokseg');
 
@@ -61,7 +60,6 @@ const Vezetoseg = ({btnTitle='Elnökség'}) =>{
           cardDatas.length === 0 ? (<img style={{width: '30px', height: '30px' }} src="/assets/img/loadingGIF.gif" alt="Kép töltésről"/>) : 
            cardDatas.map((item)=>{
                 const {data, docId} = item;
-                console.log('Lefutott a kártya készítés')
                 return(<DefaultCard key={docId} docId={docId} tag={data}/>)
                 }
           )

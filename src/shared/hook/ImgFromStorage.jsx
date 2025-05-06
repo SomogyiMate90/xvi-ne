@@ -7,9 +7,7 @@ import deleteFile from "../../Functions/firebase/fireStorage/deleteFile";
 const ImgFromStorage = ({storageProps,classProps = ''}) =>{
     const [imgUrl, setImgUrl] = useState('/assets/img/no-img.png');
     const [renderingList, setRenderingFileList] = useImmer([]);
-
     const { folderPath, namePart = undefined, picAlt  } = storageProps;
-
 
     useEffect(()=>{
 

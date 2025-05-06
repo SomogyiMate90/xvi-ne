@@ -82,7 +82,7 @@ const actualTheme = useContext(Theme);
           <li>
     
               <mark>Élelmiszer- és ruhaadomány-gyűjtés:</mark> Hetente <InlineLink to='/csatlakozz#food-distribution'>élelmiszert osztunk,</InlineLink> és
-              minden kedden  <InlineLink myStyle="text-wrap" to='/adományok'> ruha-, könyv- és játékadományokat fogadunk </InlineLink>, hogy a
+              minden kedden  <InlineLink myStyle="text-wrap" to='/adomanyok'> ruha-, könyv- és játékadományokat fogadunk </InlineLink>, hogy a
               közösség minden tagja számára elérhetőek legyenek a szükséges
               erőforrások.
        

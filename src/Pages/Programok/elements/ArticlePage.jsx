@@ -9,6 +9,7 @@ import MapBtn from "../../../shared/MapBtn";
 import ArticleElements from "./ArticleElements";
 import PageHelmet from "../../../Components/PageHelmet";
 import ImgFromStorage from "../../../shared/hook/ImgFromStorage";
+import RenderingArticleEl from "./RenderingArticleEl";
 
 const ArticlePage = () => {
   const [selectedComp, setSelectedComp] = useState(<LoadingTime text={{ title: "Töltés", content: "Lekéri a szervertől" }} />);
@@ -18,6 +19,7 @@ const ArticlePage = () => {
   
   useEffect(() => {
     let timeoutId;
+
     if (eventObj.programok) {
       // Adatok betöltése esetén
       const uri = window.location.pathname; 
@@ -27,14 +29,9 @@ const ArticlePage = () => {
       );
       if (foundedObj.length > 0) {
         const foundedDoc = foundedObj[0].data;
+        const docId =foundedObj[0].docId;
         
-        const { address, base64Url, picAlt, description, title  } = foundedDoc;
-
-        // console.log(description.slice(0,154))
-
-        const splitedDescription = description.split('\n');
-  
-        const descriptionParagraps = splitedDescription.filter(item=> item !== '');
+        const { address, description, title  } = foundedDoc;
 
         const helmetObj = {metaNameObj: { title: `NOE XVI. - ${title}`,
           description: `${description.slice(0,154).replaceAll('\n',' ')}`,
@@ -42,34 +39,17 @@ const ArticlePage = () => {
           robots: "index,follow"
       }}
 
+
         setSelectedComp(
-// KI szervezni külön függvénybe!!
           <>
           <PageHelmet helmetObj={helmetObj}/>
-          <div key={foundedObj[0].docId} className="page-article d-flex flex-column align-items-center">
-            <div className="icon-box d-flex align-self-end gap-2">
-            <CalendarBTN  event={foundedDoc} />
-            <MapBtn address={address}/>
-            </div>
-
-            <h1>{title}</h1>
-            <div className="clearfix">
-              <DefaultFigure props={{imgAlt: picAlt}}  classStyle='p-0 p-lg-2 ps-xl-4 float-xl-end mb-2'>
-              <ImgFromStorage storageProps={{folderPath : `/programok/mainPic/${foundedObj[0].docId}`, namePart: '1920x1280'  }} />
-              </DefaultFigure>
-              <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>
-            </div>
-            <div className="clear-fix"></div>
-            <ArticleElements docContent={foundedDoc} />
-          </div>
+          <RenderingArticleEl  docId={docId} doc={foundedDoc}  />
           </>
         );
       } else {
-        // Ha nem található program, esetleg hibát jelezhetsz itt
         setSelectedComp(<NotFound />);
       }
     } else {
-      // Ha az adatok még nem jöttek meg, várunk 4 másodpercet, majd hibát mutatunk
       timeoutId = setTimeout(() => {
         setSelectedComp(<ErrorElement />);
       }, 4000);

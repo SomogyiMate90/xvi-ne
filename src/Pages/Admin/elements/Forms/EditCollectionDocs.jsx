@@ -6,7 +6,7 @@ const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
     let component = <span className="text-danger">Válasz űrlapot a gördülő elemmel</span>
 
     switch (collectionName) {
-        case 'dokumentumok' : component = <span>DOKUMENTUMOK</span>
+        case 'dokumentumok' : component = <span>DOKUMENTUMOK - Jelenleg ilyen komponens nincs</span>
         break;
         case 'galeria' : component = <FormView  key='A' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
