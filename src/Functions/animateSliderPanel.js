@@ -7,8 +7,6 @@ function animateSliderPanel(paranetid = 'slider-panel'){
 
     const countOfSliderPanelChild = sliderPanelEl.children.length;
 
-    console.log(countOfSliderPanelChild)
-
     const stlyesArray = animationStylesToSliderPanel;
     const stlyesMax = stlyesArray.length;
 

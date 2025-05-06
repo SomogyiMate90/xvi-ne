@@ -73,6 +73,7 @@ return(
                     audio/mpeg,
                     audio/wav,
                     audio/ogg,
+                    audio/flac,
                     application/x-mpegURL,
                     video/mp4,
                     video/webm,

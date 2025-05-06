@@ -3,7 +3,7 @@ const BtnGroup = ({btn=[]}) =>{
 
 
     return(
-        <div className="d-flex justify-content-evenly">
+        <div className="d-flex justify-content-evenly order-5">
             {btn.map((item,index)=>{
 
                 const { text, type, inputProps , className } = item

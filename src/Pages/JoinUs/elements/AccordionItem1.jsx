@@ -1,4 +1,7 @@
 import DownLoadBTN from "../../../Components/DownLoadBTN";
+import NyilatkozatokBTNGroup from "../../../Components/NyilatkozatokBTNGroup";
+import InlineLink from "../../../shared/InlineLink";
+import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
 
 const AccordionItem1 = () =>{
     return(
@@ -13,27 +16,29 @@ const AccordionItem1 = () =>{
             <h2>Kedves Nagycsaládos!</h2>
 
             <p>
-            Amennyiben érdeklődsz a XVI. kerületi Nagycsaládosok Egyesülete iránt, és tagjaink közé tartozni, a nagycsaládosokért tevékenykedni, elsőként olvasd el Egyesületünk alapító okiratát <span className="text-danger">Link hiányzik</span>  
+            Amennyiben érdeklődsz a XVI. kerületi Nagycsaládosok Egyesülete iránt, és tagjaink közé tartozni, a nagycsaládosokért tevékenykedni, elsőként olvasd el Egyesületünk alapító okiratát  
             </p>
 
-            <p>Ha egyetértesz Egyesületünk célkitűzéseivel, feladataival és tevékenységével, és „rendes”, vagy „pártoló” tagként szeretnél belépni közénk, a belépési nyilatkozatunk kitöltésével <span className="text-danger">(link)</span> jelezheted szándékodat. Rendes tag, akkor lehetsz, ha háztartásodban legalább 3 gyermeket nevelsz, vagy neveltél fel. Pártoló tag bárki lehet, aki tevékenységünket támogatja.</p>
+            <p>Ha egyetértesz Egyesületünk célkitűzéseivel, feladataival és tevékenységével, és „rendes”, vagy „pártoló” tagként szeretnél belépni közénk, a belépési nyilatkozatunk kitöltésével jelezheted szándékodat. Rendes tag, akkor lehetsz, ha háztartásodban legalább 3 gyermeket nevelsz, vagy neveltél fel. Pártoló tag bárki lehet, aki tevékenységünket támogatja.</p>
 
             <p>Tagjaink részt vehetnek a közgyűlés munkájában, rendezvényeinken, igénybe vehetik szolgáltatásainkat, a tagsághoz kötődő kedvezményeket, tagjai lesznek levelezőlistáinknak. Egyesületünk tisztségviselőit választó joggal rendes tagjaink rendelkeznek, és egyben ők választhatóak tisztségviselőnek (elnökség, ellenőrző bizottság tagjai).</p>
 
             <p>Tagjaink a mindenkori közgyűlés által megállapított tagdíjat fizetik, ezzel támogatva Egyesületünk működését.</p>
 
-            <p>(A 2019- es tagdíj  8000 ft, melyet utalással a XVI. ker. NE  , 16200223-10094635, MagNet Bank számlájára kérjük utalni, kizárólag miután az elnökség felvette az új tagokat és a erről Ők értesítást kaptak.)</p>
+            {/* <p>(A 2019- es tagdíj  8000 ft, melyet utalással a XVI. ker. NE  , 16200223-10094635, MagNet Bank számlájára kérjük utalni, kizárólag miután az elnökség felvette az új tagokat és a erről Ők értesítást kaptak.)</p> */}
             
-            <p className="text-danger">NOE tagság: Tagcsaládjaink belépésükkor egy külön belépési nyilatkozattal (link) beléphetnek a Nagycsaládosok Országos Egyesületének (NOE, http://www.noe.hu/) tagjai közé, mely ernyőszervezete a helyi nagycsaládos szervezeteknek. Mind a XVI. kerületi Nagycsaládosok Egyesülete, mind a NOE belépési nyilatkozatát kérjük a következő címre küldeni: tagfelvetel@xvi-ne.hu</p>
+            <p>NOE tagság: Tagcsaládjaink belépésükkor egy külön belépési nyilatkozattal beléphetnek a <LinkOutTargetBlank link={{href: 'http://www.noe.hu/', text: 'Nagycsaládosok Országos Egyesületének'}} /> tagjai közé, mely ernyőszervezete a helyi nagycsaládos szervezeteknek. Mind a XVI. kerületi Nagycsaládosok Egyesülete, mind a NOE belépési nyilatkozatát kérjük a következő címre küldeni: <InlineLink myStyle='text-info'  to='mailto:nagycsaladosok16@gmail.com'>nagycsaladosok16@gmail.com</InlineLink></p>
+
+            <NyilatkozatokBTNGroup/>
 
 
             <p>Egyesületünk azon tagjai, akik a NOE-be is belépnek és a XVI. kerületi Nagycsaládosok Egyesületének befizették a tagdíjukat mentesülnek a NOE tagdíjának fizetése alól, mivel azt egyesületünk ezen tagok helyett csoportos befizetéssel megfizeti. A két szervezet tagjaként a NOE szolgáltatásait, híreit is egyesületünkön keresztül hiánytalanul megkapja, a NOE tagkártya használatával országszerte kedvezményekhez juthat. A NOE tagkártyát a XVI. kerületi Nagycsaládosok Egyesülete éves tagdíjának befizetése után érvényesítjük minden évben.</p>
 
 
-            <p>Ha viszont csak a Nagycsaládosok Országos Egyesületébe lép be és ott fizeti be tagdíját, abból Egyesületünk nem részesül, akkor csak a NOE által nyújtott szolgáltatásokat veheti igénybe!</p>
+            <p>Amennyiben csak a Nagycsaládosok Országos Egyesületébe lép be és ott fizeti be tagdíját, abból Egyesületünk nem részesül, akkor csak a NOE által nyújtott szolgáltatásokat veheti igénybe!</p>
 
 
-            <p>A tagokról, jogaikról és kötelezettségeiről, tagság megszüntetéséről részletes információkat Alapszabályunk 4.,5.,6.,7. paragrafusaiban olvashatsz.</p>
+            <p>A tagokról, jogaikról és kötelezettségeiről, tagság megszüntetéséről részletes információkat <span className="text-nowrap">Alapszabályunk 4–7. §-aiban</span> olvashatsz.</p>
 
             <section>
                 <h2>Alapaszabályzat</h2>

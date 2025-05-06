@@ -1,48 +1,73 @@
+@use '../base/indexBase' as base;
 
 .partnerek-aside{
 
-    
-
-    height: 200px;
-    width: 100vw;
+    height: 290px;
+    width: 100%;
     max-width: 400px;
-    margin: 0rem auto 1rem;
+    margin: 1rem auto .5rem;
 
-    .carousel-item.active{
+    overflow: hidden;
+  
 
-        margin: 0 auto;
-
-        display: flex;
-        justify-content: center;
+    ul{
+        padding: 0rem;
+        li{
+            list-style: none;
+        }
     }
 
     img{
-        // margin: 0 auto;
-        height: 150px;
-        width: 300px;
-        object-fit: contain !important ;
-
+        height: 250px;
+        width: 350px;
+        object-fit: contain;
     }
 
-    // ul{
-
-    //    display: flex;     
-
-
-    //     li{
-    //         &::marker{
-    //             content: '';
-    //         }
-
-    //         img{
-    //             width: 150px;
-    //             height: 100%;
-    //             object-fit: contain;
-    //             size: 0% 100%;
-    //         };
-
-
-    //     }
-    // }
-
 }
+
+@media screen and (min-width: 1400px){
+
+    .partnerek-aside{
+
+        
+
+        max-width: 1350px;
+        height: auto;
+    
+        margin: 1rem  auto;
+    
+        #partnerek-lists{
+
+            flex-wrap: wrap;
+
+            li.animate__animated{
+            
+                animation: none !important;
+       
+                img{
+                    // width: 250px;
+
+                    width: fit-content;
+                    height: 150px;
+                    
+                }
+
+                &:nth-of-type(n+4):last-of-type{
+                margin: 0 auto 0 1.8rem;
+            }    
+        
+            }
+        }
+    }
+
+    .partnerek-aside.akadaly, .partnerek-aside.dark{
+    
+        ul{
+            
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: .5rem;
+            border-radius: 1rem;
+        }
+    }
+}
+

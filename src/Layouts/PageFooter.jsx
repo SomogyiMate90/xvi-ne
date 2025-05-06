@@ -17,12 +17,12 @@ const PageFooter = () => {
             <address className="row gx-0 gy-lg-2">
               <div className="col-12 col-md-6 col-lg-6 col-xl-12 d-xl-flex gap-2 justify-content-evenly align-items-center col-xxl-7" >
                 <div className="d-flex justify-content-center align-items-center">
-                  <p className="text-indent-no">Telephely:<br className="d-sm-none d-md-block d-xxl-none"/> 1165 Budapest, Veres Péter út 157.</p>
+                  <p className="text-indent-no">Telephely:<br className="d-sm-none d-md-block d-xl-none"/> 1165 Budapest, Veres Péter út 157.</p>
                   <MapBtn className='d-block' address='1165 Budapest, Veres Péter út 157' />
                   
                 </div>
                 {/* <p>Székhely: 1165 Budapest Íjász utca 17/B</p> */}
-                <p className="text-indent-no">Email:<br className="d-sm-none d-md-block d-xxl-none"/><InlineLink myStyle='text-info'  to='mailto:nagycsaladosok16@gmail.com'>nagycsaladosok16@gmail.com</InlineLink> </p>
+                <p className="text-indent-no">Email:<br className="d-sm-none d-md-block d-xl-none"/><InlineLink myStyle='text-info'  to='mailto:nagycsaladosok16@gmail.com'>nagycsaladosok16@gmail.com</InlineLink> </p>
               </div>
             <div className="col-12 col-md-6 col-lg-6 col-xl-12 d-xl-flex gap-5 justify-content-center align-items-center col-xxl-5">
               <p className="text-indent-no">

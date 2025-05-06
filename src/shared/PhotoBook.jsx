@@ -3,7 +3,7 @@ import getStorageFileList from "../Functions/firebase/fireStorage/getStorageFile
 import { useImmer } from "use-immer";
 import downloadFile from "../Functions/firebase/fireStorage/downloadFile";
 import pauseMediaFile from "../Functions/Utils/pauseMediaFile";
-import ImgHTML from "./ImgHTML";
+
 
 
 const PhotoBook = ({folderPath}) =>{
@@ -17,7 +17,7 @@ const PhotoBook = ({folderPath}) =>{
 
             const filteredPathList = fileLists.reduce((acc,fileDesc)=>{
 
-              const { name, fullPath , contentType } = fileDesc;
+              const { name} = fileDesc;
 
                 const isNameOfMinPic = name.includes('400x267');
 
@@ -49,7 +49,7 @@ const PhotoBook = ({folderPath}) =>{
     let SelectedComp; 
 
     switch(loadindg){
-        case 'loading' : SelectedComp = <img src="/assets/img/loadingGIF.gif" />;
+        case 'loading' : SelectedComp = <img src="/assets/img/loadingGIF.gif" alt="töltés"/>;
         break;
         case 'success' : SelectedComp = <SuccessComp picList={picList}/>
         break;
@@ -156,16 +156,15 @@ const CarouselComp = ({ closeFun, bigLilesList }) => {
               
               break;
             case contentType.startsWith("video/"):
-              SelectedComp = (<figure className="d-block" >
-                <figcaption style={{color: 'white', fontWeight: 'bolder' }}>{name}</figcaption>
-                <video aria-label={name} controls height={'100%'} width={"100%"}><source src={url} type={contentType} /></video>
+              SelectedComp = (<figure className="d-block"  >
+                <figcaption className="position-absolute top-0 mt-1" style={{color: 'white', opacity: '0.5' }}>{name}</figcaption>
+                <video onClick={()=>{}} aria-label={name} controls height={'100%'} width={"100%"}><source src={url} type={contentType} /></video>
               </figure>)
               break;
             case contentType.startsWith("audio/"):
               SelectedComp = (
                 <figure className="bg-music-img">
-                {/* <ImgHTML style="h-25" src="https://www.shutterstock.com/image-vector/sound-wave-graphic-symbol-abstract-260nw-2562255953.jpg" /> */}
-                  <figcaption style={{color: 'white', fontWeight: 'bolder' }}>{name}</figcaption>
+                  <figcaption className="position-absolute top-0 mt-1" style={{color: 'white', opacity: '0.5' }}>{name}</figcaption>
               <audio aria-label={name} className="d-block" controls >
                 <source src={url} type={contentType} />
               </audio>

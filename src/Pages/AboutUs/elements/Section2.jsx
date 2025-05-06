@@ -5,6 +5,21 @@ import MapBtn from "../../../shared/MapBtn";
 import LinkOutTargetBlank from "../../../shared/LinkOutTargetBlank";
 
 const Section2 = () => {
+
+  const handleRemoveCameraIcon = (event) =>{
+
+    const iconEl = document.getElementById('video-icon');
+
+    if(iconEl){
+      iconEl.remove();
+      /**
+       * @type {HTMLVideoElement}
+       */
+      const videoEl = document.getElementById('celebration-video');
+      videoEl.play();
+    }
+  }
+
   return (
     <section>
       <h2>Céljaink:</h2>
@@ -66,8 +81,30 @@ const Section2 = () => {
         <MapBtn className='d-inline' address='1165 Budapest, Veres Péter út 157' />
         </div>
         <p>Az átadó ünnepségről videó is készült</p>
-        <div className="my-4 d-flex justify-content-center">
-          <iframe
+        {/* <div className="my-4 d-flex justify-content-center"> */}
+        <div className="position-relative my-3">
+        <video preload="none"
+               id="celebration-video"  
+               aria-label='ünnepség videója' 
+               controls 
+               height={'100%'} 
+               width={"80%"}
+               className="d-block mx-auto"  
+               onPlay={handleRemoveCameraIcon}
+               onClick={handleRemoveCameraIcon}
+              //  poster="/assets/img/hero/donation-hero-img.webp"
+               >
+            <source  src='https://firebasestorage.googleapis.com/v0/b/xvi-ne-d6b24.firebasestorage.app/o/statikusElemek%2F20190912%20NOE%20XVI.mp4?alt=media&token=7fb699f2-78c9-4ca1-be1d-dbd076092f2a' 
+            type='video/mp4' />
+        </video>
+                 <img
+                   id="video-icon" className="position-absolute top-50 start-50 translate-middle" src="/assets/img/camera-reels-fill.svg" 
+                   alt="video-icon"
+                   onClick={handleRemoveCameraIcon} />
+        </div>  
+
+
+          {/* <iframe
             style={{ maxWidth: "680px", width: "100%", aspectRatio: "16/9" }}
             className="youtube-video"
             src="https://www.youtube-nocookie.com/embed/c_8aNDKJRCc?si=EqfEoc4ByBWDlTKj"
@@ -75,8 +112,8 @@ const Section2 = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-          ></iframe>
-        </div>
+          ></iframe> */}
+        {/* </div> */}
       </div>
 
       <p>

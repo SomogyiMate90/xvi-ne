@@ -78,7 +78,7 @@ const ListDocContent = ({handleNewForm,setInputValues, eventModify, collectionNa
           const convertedElement = toConverStringAny(data[it]);
 
           return (    
-              <pre key={ind}>
+              <pre className={it === 'title' ? "text-dark fw-bolder text-decoration-underline order-1" : 'text-wrap order-2' } key={ind}>
                   {`${it} : ${convertedElement}`}
               </pre>
           );
@@ -87,7 +87,7 @@ const ListDocContent = ({handleNewForm,setInputValues, eventModify, collectionNa
 
       })}
 
-      <pre>
+      <pre className="order-4">
         docId : {docId}
       </pre>
 

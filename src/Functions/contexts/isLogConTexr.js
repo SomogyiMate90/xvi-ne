@@ -3,7 +3,7 @@ import { createContext, useState, useContext } from "react";
 const IsLogContext = createContext(null);
 
 export const IsLogProvider = ({ children }) => {
-    const [isLog, setIsLog] = useState(true); // Itt kezeljük az állapotot
+    const [isLog, setIsLog] = useState(false); // Itt kezeljük az állapotot
 
     return (
         <IsLogContext.Provider value={{ isLog, setIsLog }}>

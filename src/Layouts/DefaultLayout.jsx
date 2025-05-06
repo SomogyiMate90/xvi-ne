@@ -52,13 +52,13 @@ const DefaultLayout = () => {
       >
         <IsLogProvider>
           <PageHeader setTheme={setTheme} />
-          <div className="px-md-1 px-lg-3">  
+          <div className="px-md-2">  
     {/* itt kell megoldani az asid rendezési elvét */}
 
           {isNavigating && <LoadingTime text={{title: 'Töltés'}}/>}
 
               <FireStoreContext.Provider  value={fireStoreDatas}>
-            <main className={`container-lg my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
+            <main className={`container-xxl my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
                 <Outlet />
        
 
