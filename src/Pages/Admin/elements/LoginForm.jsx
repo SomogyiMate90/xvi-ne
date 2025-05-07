@@ -47,6 +47,7 @@ const LoginForm = () => {
           className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
+          autoComplete="current-password"
           required
         />
       </div>
@@ -63,6 +64,7 @@ const LoginForm = () => {
           type="password"
           className="form-control"
           id="exampleInputPassword1"
+          autoComplete="current-password"
           required
         />
       </div>

@@ -10,8 +10,6 @@ const WelcomePage = () => {
 
 const actualTheme = useContext(Theme);
 
-  
-
   return (
     <>
     <PageHelmet helmetObj={metaAndOpengraphTag.homepage}/>
@@ -20,19 +18,14 @@ const actualTheme = useContext(Theme);
     {
       actualTheme === 'akadaly' ?  <></> :  <SliderPanel classStyle='not-reverse-mobil h470' displayList='programok' />
     }
-
-
-    
+  
       <hr />
     
       <h1>Üdvözöljük a XVI. kerületi Nagycsaládosok Egyesületének oldalán</h1>
-   
-   
-      
+         
           <section>
-          {/* <div className="hero-img famiy-hero-img"> */}
           <div className="hero-img big-family-hero-img">
-            <h2 className="alt-position">Mit Csinál Egyesületünk?</h2>
+            <h2 className="alt-position">Mit csinál egyesületünk?</h2>
             </div>
             <p className="mt-3">              
                 Egyesületünk, mely 2003 óta működik, valódi közösséget épít a
@@ -55,11 +48,6 @@ const actualTheme = useContext(Theme);
             </p>
           </section>
   
-
-
-
-
-    
       <section >
         <div className="hero-img hands-hero">
           <h2 className="alt-position">Fő programjaink:</h2>

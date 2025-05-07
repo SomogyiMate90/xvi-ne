@@ -1,4 +1,4 @@
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import PageHeader from "./PageHeader";
 import PageFooter from "./PageFooter";
 import { closeNavBarNotNavElement } from "../Functions/closeNavBar";
@@ -11,6 +11,12 @@ import { getFIRESOTER_content } from "../Functions/firebase/getFIRESOTER_content
 import { useImmer } from "use-immer";
 import Tamogatok from "../Components/Tamogatok";
 
+
+// Analitika
+
+
+import runAnalytics from "../Functions/firebase/analytics/getAnalitycApp";
+import { logEvent } from "firebase/analytics";
 
 
 const DefaultLayout = () => {
@@ -43,6 +49,24 @@ const DefaultLayout = () => {
   },[])
 
 
+  // Analitika
+
+  const location = useLocation()
+  const analytics = typeof window !== 'undefined'
+    ? runAnalytics()
+    : null
+
+  useEffect(() => {
+    if (analytics) {
+      logEvent(analytics, 'page_view', {
+        page_path:   location.pathname + location.search,
+        page_title:  document.title,
+        page_location: window.location.href
+      })
+    }
+  }, [location, analytics])
+
+
   return (
     <Theme.Provider value={theme}>
       <div
@@ -53,7 +77,6 @@ const DefaultLayout = () => {
         <IsLogProvider>
           <PageHeader setTheme={setTheme} />
           <div className="px-md-2">  
-    {/* itt kell megoldani az asid rendezési elvét */}
 
           {isNavigating && <LoadingTime text={{title: 'Töltés'}}/>}
 
