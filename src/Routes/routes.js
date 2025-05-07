@@ -8,7 +8,6 @@ import NotFound from "../Components/NotFound";
 import Admin from "../Pages/Admin/Admin";
 import Donations from "../Pages/Donations/Donations";
 import Discounts from "../Pages/Kedvezmenyek/Discounts";
-// import DocumentsPage from "../Pages/Dokumentumok/DocumentsPage";
 import GalleryPage from "../Pages/Gallery/GalleryPage";
 import ArticlePage from "../Pages/Programok/elements/ArticlePage";
 import GalleryEvent from "../Pages/Gallery/GalleryEvent";
@@ -55,10 +54,6 @@ const route = createBrowserRouter([
                 path: '/galeria/*',
                 element: <GalleryEvent/>
             },
-            // {
-            //     path: '/dokumentumok',
-            //     element: <DocumentsPage/>
-            // },
             {
                 path: '/szerkesztes',
                 element: <Admin/>

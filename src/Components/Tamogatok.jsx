@@ -15,15 +15,15 @@ const Tamogatok = () =>{
     useEffect(()=>{
 
         if(elements && elements.length > 0){
-            const newComp = fireStoreData.partnerek.map(( item,index)=>{
+            const newComp = fireStoreData?.partnerek.map(( item,index)=>{
                
                 const {data, docId} = item;    
                 const {picAlt ,  title , url, lowPicture} = data;
         
                 return(
                     <li className="d-none d-xxl-block animate__animated " key={docId}>
-                        <a href={url} rel="noopener noreferrer" target="_blank">
-                        <ImgHTML src={lowPicture.url} picAlt={picAlt} />                   
+                        <a href={url || '/'} rel="noopener noreferrer" target="_blank">
+                        <ImgHTML src={lowPicture?.url} picAlt={picAlt} />                   
                         </a>
                     </li>
                 )
@@ -32,7 +32,7 @@ const Tamogatok = () =>{
                 SetRenderesComp(newComp)
 
                 setTimeout(()=>{
-                    animateSliderPanel('partnerek-lists')
+                    animateSliderPanel('partnerek-lists',0.45)
                 },1000)
         }
 

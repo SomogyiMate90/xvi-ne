@@ -56,6 +56,8 @@ const FormView = ({ eventModify, collectionName, docs }) => {
         const resp = await upLoadFireStorage(bigFiles,`/${collectionName}/${docIdResp}`);
         const resp2 = await upLoadFireStorage(mainFile,`${collectionName}/mainPic/${docIdResp}`);
 
+        if(resp === 'Kész' && resp2 === 'Kész'){
+
         setTimeout( async ()=>{
           
           const mainPicFiles = await getStorageFileList(`${collectionName}/mainPic/${docIdResp}`); 
@@ -81,14 +83,9 @@ const FormView = ({ eventModify, collectionName, docs }) => {
           
           setCurrentDoc(mainPicObj,collectionName,docIdResp)        
 
+          handleNewForm()
 
-        },3000)
-
-        if(resp === 'Kész' && resp2 === 'Kész'){
-
-          setTimeout(()=>{
-            handleNewForm()
-          },4000)
+        },2000)
 
         }
         else{

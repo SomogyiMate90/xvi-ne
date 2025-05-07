@@ -13,7 +13,7 @@ const SliderPanelCardSlider = ({receivedArray}) =>{
             receivedArray.map(({docId, data},index)=>{
                 
                 const splitedDescription = data?.description.split('\n');
-  
+ 
                 const descriptionParagraps = splitedDescription.filter(item=> item !== '');
       
                 const shortedDescription = getShortedText(descriptionParagraps,240)

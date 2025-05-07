@@ -4,12 +4,12 @@
 .page-about-us{
 
     .about-us-img{
-        background-image: url('/public/assets/img/hero/csoport_kep.jpg');
+
+        background-image: url('/public/assets/img/hero/csoport_kep2.webp');
 
         background-position: 30%;
         background-size: 250%;
-        // background-color:  #1f66ad;
-        // background-blend-mode: overlay;
+
         position: relative;
         
     h1{
@@ -28,8 +28,6 @@
 
        }
 
-
-
     }
 
 
@@ -47,7 +45,7 @@
     @include mix.toAfterMaxwidth(980px){
         .about-us-img{
             background-size: cover;
-            background-position-y: 40%;
+            background-position-y: 50%;
         }
 
     }

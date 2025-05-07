@@ -65,8 +65,8 @@ body, html {
 }
 
 :global(:root) {
-  --animate-duration: 2.5s;
-  --animate-delay: 1s;
+  --animate-duration: 0.5s;
+  --animate-delay: 0s;
   --animate-repeat: 1;
 }
 
@@ -356,7 +356,7 @@ header .sun-svg {
 }
 
 .page-about-us .about-us-img {
-  background-image: url("/public/assets/img/hero/csoport_kep.jpg");
+  background-image: url("/public/assets/img/hero/csoport_kep2.webp");
   background-position: 30%;
   background-size: 250%;
   position: relative;
@@ -383,7 +383,7 @@ header .sun-svg {
 @media screen and (min-width: 980px) {
   .page-about-us .about-us-img {
     background-size: cover;
-    background-position-y: 40%;
+    background-position-y: 50%;
   }
 }
 .page-about-us ol li {
@@ -432,14 +432,6 @@ header .sun-svg {
 }
 .page-admin .file-list-in-data-base ol li:nth-of-type(even) {
   background-color: rgba(16, 113, 240, 0.3);
-}
-
-.page-document .document-hero-img {
-  background-image: url("/public/assets/img/hero/documents-hero-img.webp");
-  background-size: cover;
-  background-position: bottom;
-  background-blend-mode: multiply;
-  color: white;
 }
 
 .page-discounts .percent-hero-img {
@@ -1031,39 +1023,6 @@ figure > img {
   background-position: 50%;
   background-size: 15%;
   background-image: url("/public/assets/img/volume-blue.svg") !important;
-}
-
-.alert-panel-of-first-use {
-  width: 95vw;
-  height: 95vh;
-  background-color: rgb(0, 0, 0);
-  z-index: 2000;
-  position: fixed;
-  top: 2.5%;
-  left: 2.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 500px) and (min-height: 700px) {
-  .alert-panel-of-first-use {
-    width: 60vw;
-    height: 80vh;
-    top: 10%;
-    left: 20%;
-  }
-}
-.alert-panel-of-first-use h1, .alert-panel-of-first-use p {
-  font-size: 2em;
-  color: yellow;
-  text-shadow: 1px 1px white;
-}
-.alert-panel-of-first-use p {
-  padding: 1rem;
-  border-radius: 2rem;
-  margin: 1rem 0;
-  text-align: center;
 }
 
 .slider-panel {
