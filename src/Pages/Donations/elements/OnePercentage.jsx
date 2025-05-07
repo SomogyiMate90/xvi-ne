@@ -24,11 +24,11 @@ const OnePercentage = () => {
 
             </p>
             <ul className={`hearth ${theme}`}>
-              <li><b>Név:</b> XVI.KERÜLETI NAGYCSALÁDOSOK EGYESÜLETE</li>
+              <li><b>Név:</b> XVI. KERÜLETI NAGYCSALÁDOSOK EGYESÜLETE</li>
               <li><b>Adószám:</b> 18180781-1-42 </li>
-              <li><b>Székhely </b>1165 BUDAPEST ÍJÁSZ UTCA 17/B</li>
+              <li><b>Székhely </b>1165 BUDAPEST, ÍJÁSZ UTCA 17/B.</li>
             </ul>
-            <p><mark>Köszönjük hogy adóbevallásnál gondolt ránk.</mark></p>
+            <p><mark>Köszönjük, hogy adóbevallásnál gondolt ránk!</mark></p>
           </div>
           <figure>
             <img src="/assets/img/donations/1szazalek1.webp" alt="1%" />

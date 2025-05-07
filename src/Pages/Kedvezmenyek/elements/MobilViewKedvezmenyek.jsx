@@ -14,7 +14,7 @@ const MobilViewKedvezmenyek = ({ kedv }) => {
 
  
   return (
-    <div className={`accordion ${theme} d-xl-none`} 
+    <div className={`accordion ${theme} d-xxl-none`} 
         id="kedzvezmenyek-accordion"
             onClick={() => {
                     setTimeout(() => {

@@ -10,7 +10,7 @@ const AccordionItem3 = () =>{
         </h2>
         <div id="flush-collapse3" className="accordion-collapse collapse" data-bs-parent="#about-us-accordion">
           <div className="accordion-body">
-            <p>Az egyesületbe rendes tagnak,pártoló tagnak és tiszteletbeli tagnak jelentkezni az alábbi nyilatkozat kitöltésével lehet!</p>
+            <p>Az egyesületbe rendes tagnak, pártoló tagnak és tiszteletbeli tagnak jelentkezni az alábbi nyilatkozat kitöltésével lehet!</p>
 
             <p><b>Dokumentumok letöltése:</b></p>
             <NyilatkozatokBTNGroup/>

@@ -12,7 +12,7 @@ const Discounts = () => {
         <h1 className="poz-center">Tagkártya kedvezmény</h1>
       </div>
       <p>
-        Egyesületünk kártyájával többféle kedvezményt tud biztosítani
+        Egyesületünk kártyájával többféle kedvezményt biztosíthat
         tagcsaládjai számára a mindennapi vásárlásaik során.
       </p>
 

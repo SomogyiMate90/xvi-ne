@@ -3,16 +3,16 @@ const  CultureDonation = () =>{
 
     return(
         <section>
-            <h2>Kultúrális adomány</h2>
+            <h2>Kulturális adomány</h2>
             <div className="content">
             <div>   
             
                     <h3>Kulturális élmények ajándékozása</h3>
-                    <p>Színházjeggyel, múzeumi belépővel vagy koncertjeggyel is támogathatod közösségünket – nonprofit szervezetként adománylevelet állítunk ki, így ezek az értékes élmények is leírhatók adóbevallásodban.</p>
+                    <p>Színházjeggyel, múzeumi belépővel, vagy koncertjeggyel is támogathatod közösségünket – nonprofit szervezetként adománylevelet állítunk ki, így ezek az értékes élmények is leírhatók adóbevallásodban.</p>
             
                     <h3>Térfelajánlás</h3>
                     <p>
-                    Ha van rendelkezésre álló terem vagy akár kisebb közösségi tér, örömmel fogadjuk az ingyenes helyszínbiztosítást. Rendezvényeink így zökkenőmentesebben, barátságos környezetben valósulhatnak meg.  
+                    Ha van rendelkezésre álló terem, vagy akár kisebb közösségi tér, örömmel fogadjuk az ingyenes helyszínbiztosítást. Rendezvényeink így zökkenőmentesebben, barátságos környezetben valósulhatnak meg.  
                     </p>
             
                     <h3>Új tárgyi adományok</h3>

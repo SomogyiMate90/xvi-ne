@@ -6,11 +6,11 @@ const ClothDonations = () => {
           <div>
               <p>
                 Kinőtte a gyereked a ruháját? Méretváltás volt a felnőtt ruhákban? Nem
-                tudod hová adhatnád le megunt de még használható játékát?
+                tudod, hová adhatnád le megunt, de még használható játékát?
               </p>
               <p>
                 <strong>
-                  Amennyiben olyan az állapota amit te is szívesen hazavinnél, hozd el
+                  Amennyiben olyan az állapota, amit te is szívesen hazavinnél, hozd el
                   nekünk.
                 </strong>
               </p>
@@ -18,12 +18,12 @@ const ClothDonations = () => {
                 <u>Mi történik a leadott tárgyakkal?</u>
               </p>
               <p>
-                Az önkénteseink kivállogatják, szortírozzák és szépen összehajtogatva
-                polcokra kerül. A tagcsaládok aikik igénylik heti rendszerességgel
-                eljönnek és kiválogatják amit használni tudnak. Évente minimum 3x
+                Az önkénteseink kiválogatják, szortírozzák, és szépen összehajtogatva
+                polcokra kerül. A tagcsaládok - akik igénylik - heti rendszerességgel
+                eljönnek, és kiválogatják amit használni tudnak. Évente minimum 3x
                 meghirdetjük az "Öltözz ingyen" programunkat minden XVI. kerületi
                 családnak. Amikor már nem férünk el, hátrányos helyzetű településekre
-                juttatjuk el a ruhákat, játékokat és kezdük elölről.{" "}
+                juttatjuk el a ruhákat, játékokat, és kezdjük elölről az adománygyűjtést.{" "}
               </p>
           </div>
           <figure>

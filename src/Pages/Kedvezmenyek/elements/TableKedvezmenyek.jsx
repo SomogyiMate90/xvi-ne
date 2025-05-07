@@ -12,8 +12,8 @@ const TableKedvezmenyek = ({ kedv }) => {
     <table
       className={
         theme === "light"
-          ? "table table-hover d-flex d-none d-xl-block"
-          : "table table-dark table-hover d-flex d-none d-xl-block"
+          ? "table table-hover d-flex d-none d-xxl-block"
+          : "table table-dark table-hover d-flex d-none d-xxl-block"
       }
     >
       <thead>
@@ -30,6 +30,16 @@ const TableKedvezmenyek = ({ kedv }) => {
         {kedv.map((item, index) => {
           const { docId, data } = item;
 
+          const { description = '' } = data;
+
+          const validDescription = String(description).split('\n').map((i,n)=>{
+
+            if(i !== ''){
+              return (<span className="d-block" key={n}>{i}</span>)
+            }
+
+          })
+
           let ancorPhoneNum = null;
           if(data?.phoneNumber !== 'Nincs telefonszám') {
             ancorPhoneNum = getAncorPhoneNume(data.phoneNumber);
@@ -38,10 +48,10 @@ const TableKedvezmenyek = ({ kedv }) => {
           return (
             <tr key={docId}>
               <td className="text-center align-middle">{data?.title}</td>
-              <td className="text-center align-middle">{data?.address}</td>
+              <td style={{minWidth: "8rem"}} className="text-center align-middle">{data?.address}</td>
               <td className="text-justify align-middle">{data?.text}</td>
-              <td className="text-center align-middle">{data?.description}</td>
-              <td style={{minWidth: "10rem"}} className="text-center align-middle">
+              <td style={{minWidth: "18rem"}} className="text-center align-middle">{validDescription}</td>
+              <td style={{minWidth: "5rem"}} className="text-center align-middle">
                 {
                   data?.phoneNumber !== 'Nincs telefonszám' ? <LinkOutTargetBlank link={{ href: ancorPhoneNum, text: data.phoneNumber }} /> : "Nincs"
                   

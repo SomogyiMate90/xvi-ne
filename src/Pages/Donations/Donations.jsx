@@ -20,7 +20,7 @@ const Donations = () => {
         <h1 className="poz-center">Adományozz te is a közösségért!</h1>
       </div>
       
-      <p>Az egyesületünk elkötelezetten dolgozik azon, hogy minél több rászoruló család számára biztosítsa az alapvető szükségleteket és támogassa a közösségi összetartást. Ennek érdekében többféle adományt gyűjtünk: pénzbeli támogatást, ruhaadományokat, élelmiszert, valamint gyermek játékokat is. Minden egyes hozzájárulás számít, hiszen segítségével még hatékonyabban tudunk segíteni a rászorulóknak, és építeni egy erős, összetartó közösséget.</p>
+      <p>Egyesületünk elkötelezetten dolgozik azon, hogy minél több rászoruló család számára biztosítsa az alapvető szükségleteket, és támogassa a közösségi összetartást. Ennek érdekében többféle adományt gyűjtünk: pénzbeli támogatást, ruhaadományokat, élelmiszert, valamint gyermekjátékokat is. Minden egyes hozzájárulás számít, hiszen segítségével még hatékonyabban tudunk segíteni a rászorulóknak, és építeni egy erős, összetartó közösséget.</p>
 
     <OnePercentage/>
     <ClothDonations/>

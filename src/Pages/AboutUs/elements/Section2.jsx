@@ -23,23 +23,23 @@ const Section2 = () => {
             felmutatni a társadalomnak a nagycsaládosok által képviselt értékeket,
           </li>
           <li>
-            a nagycsaládok egymást ismerő és segítő közösségekké szervezése.
+            a nagycsaládok egymást ismerő és segítő közösségekké szervezése,
           </li>
           <li>
-            az idősebb korosztály segítése
+            az idősebb korosztály segítése,
           </li>
           <li>
-            az ifjúság segítése és számukra célzottporgramok szervezése
+            az ifjúság segítése és számukra célzott programok szervezése
           </li>
         </ol>
 
       <p>
         Egyesületünk 7 tagú elnöksége és 3 tagú ellenőrző bizottsága
-        önkéntesekből áll, akik szabadidejükben, de nagy lelkesedéssel dolgoznak
+        önkéntesekből áll, akik szabadidejükben, nagy lelkesedéssel dolgoznak
         az egyesület közösségéért. Időnként szervezünk olyan megmozdulásokat is,
-        melyek nyitottak a kerület családjai részére, pl. hagyományos ünnepekhez
-        kapcsolódó családi napokat stb. Jó kapcsolatunk van a Kertvárosi
-        Helytörténeti és Emlékezetközponttal, a XVI. kerületi Vöröskereszttel,a
+        melyek nyitottak a kerület családjai részére, (pl. hagyományos ünnepekhez
+        kapcsolódó családi napokat stb.). Jó kapcsolatunk van a Kertvárosi
+        Helytörténeti és Emlékezetközponttal, a Magyar Vöröskereszt XVI. Kerületi Szervezetével, a
         Magyar Élelmiszerbankkal, néhány alapítvánnyal és egyesülettel. Egymást
         támogatva, kiegészítve több eredményt érhetünk el.
       </p>
@@ -47,11 +47,11 @@ const Section2 = () => {
     <div className="d-flex justify-content-end mx-5"><Vezetoseg/></div>
 
       <p>
-        Főbb bevételi forrásunk a befizetett éves tagdíjakból áll (2024-ben 12 000
+        Főbb bevételi forrásunk a befizetett éves tagdíjakból áll (2025-ben 12000
         forint). A tagdíj mérséklését, részletfizetését lehet kérni.
       </p>
       <p>
-        Állandó költségeink: helyiségünk bérleti díja és rezsije, telefon számla, könyvelési díj, bankköltség, postaköltség, rendezvények költségei.
+        Állandó költségeink: helyiségünk bérleti díja és rezsije, telefonszámla, könyvelési díj, bankköltség, postaköltség, rendezvények költségei.
         Rendezvényeinkre tárgyi adományokat gyűjtünk
         és pályázatokat írunk a költségek fedezésére.
       </p>
@@ -61,13 +61,13 @@ const Section2 = () => {
 
         <p>
           <b>
-            2019-ben új székhelyünk lett mely a 1165 Budapest, Veres Péter út 157
+            2019-ben új székhelyünk lett, mely a 1165 Budapest, Veres Péter út 157.
             alatt található. 
           </b>
         </p>
         <MapBtn className='d-inline my-auto' address='1165 Budapest, Veres Péter út 157' />
         </div>
-        <p>Az átadó ünnepségről videó is készült</p>
+        <p>Az átadó ünnepségről videó is készült.</p>
         {/* <div className="my-4 d-flex justify-content-center"> */}
 
         <video preload="none"
@@ -88,14 +88,14 @@ const Section2 = () => {
       <p>
         Működtetjük az <InlineLink to='/programok/oltozz-ingyen'>„öltözz ingyen programot”.</InlineLink> A behozott ruhaadományt az
         önkénteseink szétválogatják, így a családok már csak azzal találkoznak,
-        ami használható állapotban van. A tagjaink számára ez heti
-        rendszerességgel nyitva áll és időnként kinyitjuk a kapukat a kerület
-        minden családjának.
+        ami használható állapotban van. Tagjaink számára ez heti
+        rendszerességgel elérhető, és időnként megnyitjuk a kapukat a kerület
+        minden családja előtt is.
       </p>
 
 
       <p>
-        Hetente kétszer a <LinkOutTargetBlank link={{text:'Magyar Élelmiszer Bank', href:'https://www.elelmiszerbank.hu/'}}/> segítségével élelmiszert mentünk. Pillanatnyilag
+        Hetente a <LinkOutTargetBlank link={{text:'Magyar Élelmiszerbank Egyesület', href:'https://www.elelmiszerbank.hu/'}}/> segítségével élelmiszert mentünk. Pillanatnyilag
         115 tagcsaládunk részesül heti rendszerességgel élelmiszeradományból.
       </p>
 

@@ -20,7 +20,7 @@ const AccordionItem2 = () => {
         data-bs-parent="#about-us-accordion"
       >
         <div className="accordion-body">
-          <h2>Kedves Érdeklődő, Egyesületi-Tag!</h2>
+          <h2>Kedves Érdeklődők és Egyesületi Tagok!</h2>
 
           <p>
             A tagság számos előnyt kínál, amelyeket közösségünk tagjai vehetnek
@@ -41,11 +41,11 @@ const AccordionItem2 = () => {
                     Egyesületünk heti rendszerességgel osztja a tagjainak a Magyar Élemiszerbank Egyesület által megmentett élelmiszereket. Zömében pékárú, de néha egyéb meglepetést is kapunk.
                     </p>
                 </details></li>
-            <li>Ingyenes vagy kedvezményes rendezvény belépőkért <LinkOutTargetBlank link={{href: 'https://noe.hu/feliratkozas-hirlevelre/', text: 'iratkozz fel a NOE hirlevélre.'}} /></li>
-            <li><InlineLink to='/adomanyok#cloth-donations'>Ruhatámogatási program</InlineLink> – „Öltözz ingyen” akciók</li>
+            <li>Ingyenes vagy kedvezményes rendezvény belépőkért <LinkOutTargetBlank link={{href: 'https://noe.hu/feliratkozas-hirlevelre/', text: 'iratkozz fel a NOE hírlevelére'}} /></li>
+            <li><InlineLink  myStyle='ms-0' to='/programok/oltozz-ingyen'>Ruhatámogatási program</InlineLink> – „Öltözz ingyen” akciók</li>
             <li>Ingyenes tanácsadások (pl. jogi, pályázati, nevelési)</li>
-            <li>Tagi kedvezmények <InlineLink to='/kedvezmenyek'>partnereinknél</InlineLink></li>
-            <li>Közösségi eseményeken való részvétel lehetősége <InlineLink to='/programok'>programok</InlineLink> oldalon</li>
+            <li>Tagi kedvezmények<InlineLink to='/kedvezmenyek'>partnereinknél</InlineLink></li>
+            <li>Közösségi eseményeken való részvétel lehetősége a<InlineLink to='/programok'>programok</InlineLink> oldalon</li>
           </ul>
         </div>
       </section>

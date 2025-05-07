@@ -32,7 +32,7 @@ const actualTheme = useContext(Theme);
           <section>
           {/* <div className="hero-img famiy-hero-img"> */}
           <div className="hero-img big-family-hero-img">
-            <h2 className="alt-position">Mit csinál Egyesületünk?</h2>
+            <h2 className="alt-position">Mit Csinál Egyesületünk?</h2>
             </div>
             <p className="mt-3">              
                 Egyesületünk, mely 2003 óta működik, valódi közösséget épít a
@@ -48,9 +48,9 @@ const actualTheme = useContext(Theme);
             </p>
             <p>
        
-                A Budapest XVI. kerület szívében, a Kertvárosi Helytörténeti és
+                Budapest XVI. kerületének szívében, a Kertvárosi Helytörténeti és
                 Emlékezetközpont területén található központunkban (1165 Budapest,
-                Veres Péter út 157) szeretettel várjuk az érdeklődőket.
+                Veres Péter út 157.) szeretettel várjuk az érdeklődőket.
             
             </p>
           </section>
@@ -75,14 +75,14 @@ const actualTheme = useContext(Theme);
           <li>
        
               <mark>Ifjúsági kezdeményezések:</mark> Várjuk közösségünkbe a középiskolás fiatal 
-              jelentkezőket, akik a kötelező 50 óraás közszolgálatukat nálunk
-              teljesíthetik. Nézd meg, hogy a te iskolád a listánkban szereple-e. <InlineLink to='/csatlakozz'>[Szerződött iskolák 🔗]</InlineLink>
+              jelentkezőket, akik a kötelező 50 órás közszolgálatukat nálunk
+              teljesíthetik. Nézd meg, hogy a te iskolád szerepel-e a listánkban. <InlineLink to='/csatlakozz'>[Szerződött iskolák 🔗]</InlineLink>
         
           </li>
           <li>
     
               <mark>Élelmiszer- és ruhaadomány-gyűjtés:</mark> Hetente <InlineLink to='/csatlakozz#food-distribution'>élelmiszert osztunk,</InlineLink> és
-              minden kedden  <InlineLink myStyle="text-wrap" to='/adomanyok'> ruha-, könyv- és játékadományokat fogadunk </InlineLink>, hogy a
+              minden kedden  <InlineLink myStyle="text-wrap" to='/adomanyok'> ruha-, könyv- és játékadományokat fogadunk</InlineLink>, hogy a
               közösség minden tagja számára elérhetőek legyenek a szükséges
               erőforrások.
        
@@ -112,7 +112,7 @@ const actualTheme = useContext(Theme);
         <h2 className="alt-position">Évről évre egyre többen...</h2>
         </div>
         <p  className="mt-3">
-        Az egyesületünk évről évre gyarapodik, és minden új programmal még több lehetőséget kínál a családok számára a közösségi összetartásra, az élmények megosztására és a hagyományok ápolására. Ha szeretnél többet megtudni rólunk, illetve aktívan részt venni ebben az izgalmas, folyamatosan fejlődő közösségben, nézd meg részletes információinkat a csatlakozási oldalon, és tudj meg mindent arról, hogyan válhatsz taggá!   <InlineLink to='/csatlakozz'>[ Csatlakozás 🔗]</InlineLink>
+        Egyesületünk évről évre gyarapodik, és minden új programmal még több lehetőséget kínál a családok számára a közösségi összetartásra, az élmények megosztására és a hagyományok ápolására. Ha szeretnél többet megtudni rólunk, illetve aktívan részt venni ebben az izgalmas, folyamatosan fejlődő közösségben, nézd meg részletes információinkat a csatlakozási oldalon, és tudj meg mindent arról, hogyan válhatsz taggá!   <InlineLink to='/csatlakozz'>[ Csatlakozás 🔗]</InlineLink>
         
         </p>
         
