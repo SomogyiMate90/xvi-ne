@@ -575,6 +575,9 @@ header .sun-svg {
   background-position-x: center;
   scroll-snap-align: start;
 }
+.page-gallery .camera-hero-img h1, .page-gallery .camera-hero-img p, .page-gallery .camera-hero-img span {
+  text-shadow: 1px 1px 5px black;
+}
 .page-gallery .foto-side {
   padding: 2rem 0rem;
   display: flex;
@@ -885,6 +888,8 @@ ul li, ol li {
 
 @media screen and (min-width: 1400px) {
   .partnerek-aside {
+    padding: 0.5rem;
+    border-radius: 1rem;
     max-width: 1350px;
     height: auto;
     margin: 1rem auto;
@@ -902,10 +907,15 @@ ul li, ol li {
   .partnerek-aside #partnerek-lists li.animate__animated:nth-of-type(n+4):last-of-type {
     margin: 0 auto 0 1.8rem;
   }
-  .partnerek-aside.akadaly ul, .partnerek-aside.dark ul {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem;
-    border-radius: 1rem;
+  .partnerek-aside.akadaly {
+    background-color: rgb(60, 60, 60);
+  }
+  .partnerek-aside.dark {
+    background-color: rgb(48, 48, 48);
+  }
+  .partnerek-aside.light {
+    box-shadow: 2px 2px 10px black;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 .static-loading-field {

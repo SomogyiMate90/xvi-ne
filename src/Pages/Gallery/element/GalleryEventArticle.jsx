@@ -52,6 +52,7 @@ const GalleryEventArticle = ({article}) =>{
             <div className="clearfix">
                 {address &&  (<div className="d-flex gap-2"><p className="d-inline-block"><b>Helyszín: {address}</b></p> <MapBtn address={address}/></div>)} 
             </div>
+
             <PhotoBook folderPath={`galeria/${docId}`} />    
         </>
     )

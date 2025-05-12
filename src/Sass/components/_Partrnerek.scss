@@ -29,7 +29,8 @@
 
     .partnerek-aside{
 
-        
+        padding: .5rem;
+        border-radius: 1rem;
 
         max-width: 1350px;
         height: auto;
@@ -60,14 +61,25 @@
         }
     }
 
-    .partnerek-aside.akadaly, .partnerek-aside.dark{
+    .partnerek-aside.akadaly{
     
-        ul{
+    
             
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: .5rem;
-            border-radius: 1rem;
-        }
+            background-color:  base.$dark-bg-nav;
+         
+      
+    }
+
+    .partnerek-aside.dark{
+        background-color: base.$dark-outlet-bg;
+    }
+
+
+    .partnerek-aside.light{
+             box-shadow: 2px 2px 10px black;
+            background-color: base.$light-outlet-bg;
+            
+       
     }
 }
 

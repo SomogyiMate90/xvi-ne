@@ -1,6 +1,7 @@
 import CalendarBTN from "../../../shared/CalendarBTN";
 import DefaultFigure from "../../../shared/DefaultFigure";
 import ImgHTML from "../../../shared/ImgHTML";
+import LinkBTN from "../../../shared/LinkBTN";
 import MapBtn from "../../../shared/MapBtn";
 import ArticleElements from "./ArticleElements";
 
@@ -25,6 +26,7 @@ const RenderingArticleEl = ({docId,doc}) =>{
           <ImgHTML src={highPicture?.url}  picAlt={picAlt}/>
           </DefaultFigure>
           <div className="descriptions">{descriptionParagraps.map((i,n)=>(<p key={n}>{i}</p>))}</div>
+          <LinkBTN btnStyle = 'btn btn-info ms-3 mb-2' url='/programok' text='Vissza a programok oldalra'/>
         </div>
         <div className="clear-fix"></div>
         <ArticleElements docContent={doc} />

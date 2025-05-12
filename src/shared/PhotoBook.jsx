@@ -3,6 +3,7 @@ import getStorageFileList from "../Functions/firebase/fireStorage/getStorageFile
 import { useImmer } from "use-immer";
 import downloadFile from "../Functions/firebase/fireStorage/downloadFile";
 import pauseMediaFile from "../Functions/Utils/pauseMediaFile";
+import LinkBTN from "./LinkBTN";
 
 
 
@@ -98,7 +99,11 @@ const SuccessComp = ({picList}) =>{
         <>
             { showCarousel && <CarouselComp closeFun={()=>setShowCarousel(false)} bigLilesList={picList.bigFiles} /> }
         <section>
-            <button className="my-3 btn btn-info" onClick={()=>setShowCarousel(true)}>Fotógaléria, vidók megnyitása</button>
+          <div className="my-3 d-flex justify-content-center" role="group">
+
+            <LinkBTN btnStyle = 'btn btn-info rounded-start-pill' url='/galeria' text='Vissza a galéria oldalra'/>
+            <button className="btn btn-primary rounded-end-pill" onClick={()=>setShowCarousel(true)}>Képek, vidók megnyitása</button>
+          </div>
             <h2 className="text-center">Képek</h2>
             <div className="w-100 d-flex gap-3 justify-content-evenly flex-wrap">
                 {minPictures.map((url,n)=>{

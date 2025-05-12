@@ -13,6 +13,11 @@
         background-position-y: 35%;
         background-position-x: center;
         scroll-snap-align: start;
+
+        h1 ,p ,span{
+            text-shadow: 1px 1px 5px black;
+        }
+
         
     }
   

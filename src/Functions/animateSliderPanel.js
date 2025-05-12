@@ -7,6 +7,10 @@ function animateSliderPanel(paranetid = 'slider-panel', faster = 1){
 
     const countOfSliderPanelChild = sliderPanelEl.children.length;
 
+    for (let j = 0; j < countOfSliderPanelChild; j++) {
+        sliderPanelEl.children[j].classList.add('d-none');
+        }
+
     const stlyesArray = animationStylesToSliderPanel;
     const stlyesMax = stlyesArray.length;
 
