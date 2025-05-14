@@ -73,7 +73,7 @@ const metaAndOpengraphTag = {
 
     admin: {
         metaNameObj: {
-            title: "NOE XVI. - Adminisztráció",
+            title: "NOE XVI. - Szerkesztés",
             description: "Adminisztrációs felület, amelyet a munkatársak használhatnak az oldal kezelése és karbantartása céljából.",
             keywords: "",
             robots: "noindex,nofollow"

@@ -102,7 +102,7 @@ const SuccessComp = ({picList}) =>{
           <div className="my-3 d-flex justify-content-center" role="group">
 
             <LinkBTN btnStyle = 'btn btn-info rounded-start-pill' url='/galeria' text='Vissza a galéria oldalra'/>
-            <button className="btn btn-primary rounded-end-pill" onClick={()=>setShowCarousel(true)}>Képek, vidók megnyitása</button>
+            <button className="btn btn-primary rounded-end-pill" onClick={()=>setShowCarousel(true)}>Képek, videók megnyitása</button>
           </div>
             <h2 className="text-center">Képek</h2>
             <div className="w-100 d-flex gap-3 justify-content-evenly flex-wrap">

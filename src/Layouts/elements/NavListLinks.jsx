@@ -21,12 +21,11 @@ const NavListLinks = () =>{
         {text : 'Kedvezmények', uri : '/kedvezmenyek'},
         {text : 'Galéria', uri : '/galeria'},
         // {text : 'Dokumentumok', uri : '/dokumentumok'},
-        // {text : 'Admin (id)', uri : '/adminisztrátor'},
     ]
 
 
 return(
-    <ul className="ms-lg-0 mt-2 mt-lg-0 navbar-nav me-auto mb-2 mb-lg-0 flex-wrap">
+    <ul className="ms-1 ms-lg-0 mt-2 mt-lg-0 navbar-nav me-auto mb-2 mb-lg-0 flex-wrap">
         {
             listLinks.map((listItem, index)=>{
 

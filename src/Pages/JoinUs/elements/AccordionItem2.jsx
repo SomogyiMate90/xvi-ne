@@ -41,7 +41,7 @@ const AccordionItem2 = () => {
                     Egyesületünk heti rendszerességgel osztja a tagjainak a Magyar Élemiszerbank Egyesület által megmentett élelmiszereket. Zömében pékárú, de néha egyéb meglepetést is kapunk.
                     </p>
                 </details></li>
-            <li>Ingyenes vagy kedvezményes rendezvény belépőkért <LinkOutTargetBlank link={{href: 'https://noe.hu/feliratkozas-hirlevelre/', text: 'iratkozz fel a NOE hírlevelére'}} /></li>
+            <li>Ingyenes vagy kedvezményes rendezvény belépőkért iratkozz fel a<LinkOutTargetBlank link={{href: 'https://noe.hu/feliratkozas-hirlevelre/', text: 'NOE hírlevelére'}} /></li>
             <li><InlineLink  myStyle='ms-0' to='/programok/oltozz-ingyen'>Ruhatámogatási program</InlineLink> – „Öltözz ingyen” akciók</li>
             <li>Ingyenes tanácsadások (pl. jogi, pályázati, nevelési)</li>
             <li>Tagi kedvezmények<InlineLink to='/kedvezmenyek'>partnereinknél</InlineLink></li>
