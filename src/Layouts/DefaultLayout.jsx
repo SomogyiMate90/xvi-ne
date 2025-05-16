@@ -76,22 +76,22 @@ const DefaultLayout = () => {
       >
         <IsLogProvider>
           <PageHeader setTheme={setTheme} />
+              <FireStoreContext.Provider  value={fireStoreDatas}>
           <div className="px-md-2">  
 
           {isNavigating && <LoadingTime text={{title: 'Töltés'}}/>}
 
-              <FireStoreContext.Provider  value={fireStoreDatas}>
             <main className={`container-xxl my-xxl my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
                 <Outlet />
        
 
             </main>
                 <Tamogatok/>
-              </FireStoreContext.Provider>              
          
           </div>
+                <PageFooter />
+              </FireStoreContext.Provider>              
         </IsLogProvider>
-        <PageFooter />
       </div>
     </Theme.Provider>
   );

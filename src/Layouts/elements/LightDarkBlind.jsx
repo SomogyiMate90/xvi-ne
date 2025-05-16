@@ -49,7 +49,7 @@ const LightDarkBlind = ({ setTheme }) => {
 
   return (
 
-    <div className="ps-3 ps-lg-0 d-flex flex-xl-column flex-xxl-row   justify-content-xl-center gap-2 gap-lg-0">
+    <div id='theme-blind-btn-group' className="ps-3 ps-lg-0 d-flex flex-lg-column flex-xxl-row   justify-content-xl-center gap-2 gap-lg-0">
       <label htmlFor="night-light-checkbox" className="night-light-label">
         <input onChange={(event)=>setLightDarkTheme(event)} type="checkbox" checked={actualTheme === 'dark' ? true : false } id="night-light-checkbox" />
         <span className="night-light-ball"></span>

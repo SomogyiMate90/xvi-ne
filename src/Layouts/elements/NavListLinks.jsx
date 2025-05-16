@@ -29,10 +29,8 @@ return(
         {
             listLinks.map((listItem, index)=>{
 
-
-
                 return(
-                    <li key={index} className='nav-item px-1 '>
+                    <li key={index} className='nav-item px-1'>
                         <Link to={listItem?.uri}
                               className={firstRenderingPathName ===  listItem?.uri ? 'nav-link active' : 'nav-link transform-line'}
                         >

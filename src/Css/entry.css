@@ -225,6 +225,7 @@ header nav div.container-fluid img {
   }
 }
 header nav .nav-item {
+  width: min-content;
   font-size: 1.3rem;
   padding: 0 0.5rem;
 }
@@ -327,6 +328,12 @@ header .sun-svg {
   }
 }
 
+@media screen and (min-width: 1360px) {
+  div#theme-blind-btn-group {
+    display: flex;
+    flex-direction: row !important;
+  }
+}
 .page-footer {
   margin: 0;
   background-color: rgba(0, 0, 0, 0.8);

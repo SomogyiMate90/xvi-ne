@@ -4,12 +4,6 @@ import partOfCollections from "./firestore/partOfColletcionList";
 
 
 export async function getFIRESOTER_content(collectionName=false) {
-
-    /* ÉRDEMES LENNE KIBŐVÍTENI, MERT EZ JÓ LENNE A SIMA FELHASZNÁLÓKNAK, A SZERKESZTÉS
-    TEKINTETÉBEN PEDIG A COLLCIÓ NEVÉT ADNÁ ÁT MINDIG ARGOMENTUMKÉNT 
-
-    PL. a shortedCollections LEHETNE SIMÁN LET ÉS IFE FELTÉTELLEL ADNÁM MEG A TARTALMÁT
-    */
     
     const db = getFireStoreDB();
 
