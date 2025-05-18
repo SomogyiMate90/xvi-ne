@@ -78,6 +78,15 @@ const metaAndOpengraphTag = {
             keywords: "",
             robots: "noindex,nofollow"
         }
+    },
+
+    notFound : {
+          metaNameObj: {
+            title: " 404 - az oldal nem található",
+            description: "A keresett oldal nem található, vagy elköltözött",
+            keywords: "",
+            robots: "noindex,nofollow"
+        }
     }
 };
 

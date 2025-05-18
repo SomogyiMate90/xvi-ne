@@ -7,6 +7,7 @@ import FireStoreContext from "../Functions/contexts/fireSroreContext";
 
 const Vezetoseg = ({ btnTitle = "Elnökség" }) => {
   const [cardDatas, setCardDatas] = useImmer([]);
+  const [openFirstBtn, setOpenFirstBtn] = useState(null)
 
   const theme = useContext(Theme);
   const fireBaseContent = useContext(FireStoreContext);
@@ -42,6 +43,7 @@ const Vezetoseg = ({ btnTitle = "Elnökség" }) => {
         data-bs-toggle="offcanvas"
         data-bs-target="#elnoksegCanvas"
         aria-controls="elnoksegCanvas"
+        onClick={()=>setOpenFirstBtn(true)}
       >
         {btnTitle}
       </button>
@@ -65,7 +67,7 @@ const Vezetoseg = ({ btnTitle = "Elnökség" }) => {
           ></button>
         </div>
         <div className="offcanvas-body d-flex gap-4 flex-wrap justify-content-evenly">
-          {cardDatas.length === 0 ? (
+          {(cardDatas.length === 0 || openFirstBtn === null) ? (
             <img
               style={{ width: "30px", height: "30px" }}
               src="/assets/img/loadingGIF.gif"
