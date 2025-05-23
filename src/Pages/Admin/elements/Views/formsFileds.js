@@ -240,9 +240,20 @@ const szerzodott_iskolak = {
     labelText: 'A vállalkozás weboldala',
   },
 
+
 }
 
-export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria, szerzodott_iskolak };
+const gdpr = {
+    description: {
+    id: "description",
+    labelText: 'GDPR-es tájékoztató szöveg',
+    placeholder: "Enter billentyűvel válaszd el a bekedéseket egymástól...\n\nFONTOS csak 1 tájékoztató szöveg legyen az adatbázisban!",
+    className: "form-control text-success",
+    required: true,
+  }
+}
+
+export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria, szerzodott_iskolak,gdpr };
 
 
 

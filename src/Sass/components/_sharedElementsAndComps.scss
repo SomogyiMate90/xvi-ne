@@ -76,9 +76,10 @@ div.icon-box{
 a.link-out{
 
     margin-left: 6px;
-
     text-decoration: none;
     position: relative;
+    hyphens: none;
+    text-wrap: nowrap;
 
     &.light{
         font-weight: 600;
@@ -145,4 +146,13 @@ a.transform-line::after {
         background-size: 15%;
         background-image: url('/public/assets/img/volume-blue.svg') !important;
 
+    }
+
+    .cursor-pointer{
+        cursor: pointer;
+    }
+
+    .hover-green:hover{
+
+        color: greenyellow;
     }

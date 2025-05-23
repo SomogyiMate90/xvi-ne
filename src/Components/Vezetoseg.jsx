@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import DefaultCard from "../shared/DefaultCard";
 import { useImmer } from "use-immer";
-import { getFIRESOTER_content } from "../Functions/firebase/getFIRESOTER_content";
 import Theme from "../Functions/themes/ThemeContext";
 import FireStoreContext from "../Functions/contexts/fireSroreContext";
+import runAnalytics from "../Functions/firebase/analytics/getAnalitycApp";
+import { logEvent } from "firebase/analytics";
 
 const Vezetoseg = ({ btnTitle = "Elnökség" }) => {
   const [cardDatas, setCardDatas] = useImmer([]);
@@ -35,6 +36,20 @@ const Vezetoseg = ({ btnTitle = "Elnökség" }) => {
     }
   }, [fireBaseContent]);
 
+  const handleOpen = () =>{
+    setOpenFirstBtn(true);
+
+    const hasConsent = document.cookie.includes("statementCookie=hozza_jarulva_");
+
+    if(hasConsent){
+       const analytics = runAnalytics();
+       logEvent(analytics, "elnokseg_arckepek", {
+      component: "Vezetoseg",
+    });
+    }
+
+  }
+
   return (
     <>
       <button
@@ -43,7 +58,7 @@ const Vezetoseg = ({ btnTitle = "Elnökség" }) => {
         data-bs-toggle="offcanvas"
         data-bs-target="#elnoksegCanvas"
         aria-controls="elnoksegCanvas"
-        onClick={()=>setOpenFirstBtn(true)}
+        onClick={handleOpen}
       >
         {btnTitle}
       </button>
@@ -64,6 +79,7 @@ const Vezetoseg = ({ btnTitle = "Elnökség" }) => {
             className="btn btn-close red"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
+            onClick={()=>setOpenFirstBtn(null)}
           ></button>
         </div>
         <div className="offcanvas-body d-flex gap-4 flex-wrap justify-content-evenly">

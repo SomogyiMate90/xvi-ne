@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import FireStoreContext from "../Functions/contexts/fireSroreContext";
+import FireStoreContext from "../../Functions/contexts/fireSroreContext";
 
-import animateSliderPanel from "../Functions/animateSliderPanel";
-import ImgHTML from "../shared/ImgHTML";
-import Theme from "../Functions/themes/ThemeContext";
+import animateSliderPanel from "../../Functions/animateSliderPanel";
+import ImgHTML from "../../shared/ImgHTML";
+import Theme from "../../Functions/themes/ThemeContext";
 
 const Tamogatok = () =>{
     const fireStoreData = useContext(FireStoreContext); 

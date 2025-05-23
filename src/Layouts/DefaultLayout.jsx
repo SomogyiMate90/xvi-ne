@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigation } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import PageHeader from "./PageHeader";
 import PageFooter from "./PageFooter";
 import { closeNavBarNotNavElement } from "../Functions/closeNavBar";
@@ -9,19 +9,15 @@ import LoadingTime from "../Components/LoadingTime";
 import FireStoreContext from "../Functions/contexts/fireSroreContext";
 import { getFIRESOTER_content } from "../Functions/firebase/getFIRESOTER_content";
 import { useImmer } from "use-immer";
-import Tamogatok from "../Components/Tamogatok";
 
-
-// Analitika
-
-
-import runAnalytics from "../Functions/firebase/analytics/getAnalitycApp";
-import { logEvent } from "firebase/analytics";
+import Tamogatok from "../Components/aside/Tamogatok";
+import GDPRCookies from "../Components/aside/GDPRCookies";
 
 
 const DefaultLayout = () => {
   const ThemeContext = useContext(Theme);
   const [theme, setTheme] = useState(ThemeContext);
+  const [showGDPRBox, setShowGDPRBox] = useState(false)
  
   const navigation = useNavigation();
   const isNavigating = Boolean(navigation.location);
@@ -49,24 +45,6 @@ const DefaultLayout = () => {
   },[])
 
 
-  // Analitika
-
-  const location = useLocation()
-  const analytics = typeof window !== 'undefined'
-    ? runAnalytics()
-    : null
-
-  useEffect(() => {
-    if (analytics) {
-      logEvent(analytics, 'page_view', {
-        page_path:   location.pathname + location.search,
-        page_title:  document.title,
-        page_location: window.location.href
-      })
-    }
-  }, [location, analytics])
-
-
   return (
     <Theme.Provider value={theme}>
       <div
@@ -84,12 +62,12 @@ const DefaultLayout = () => {
             <main className={`container-xxl my-xxl my-0 my-md-4 outlet-component ${isNavigating === true ? 'blur' : 'no-blur'}`}>
                 <Outlet />
        
-
-            </main>
                 <Tamogatok/>
+                <GDPRCookies showGDPRBox={showGDPRBox} setShowGDPRBox={setShowGDPRBox}/>
+            </main>
          
           </div>
-                <PageFooter />
+                <PageFooter showGDPRBox={showGDPRBox} setShowGDPRBox={setShowGDPRBox}/>
               </FireStoreContext.Provider>              
         </IsLogProvider>
       </div>

@@ -1,5 +1,5 @@
 
-const collections = ['dokumentumok','kedvezmenyek','programok','partnerek','galeria','szerzodott_iskolak','elnokseg'];
+const collections = ['kedvezmenyek','programok','partnerek','galeria','szerzodott_iskolak','elnokseg','gdpr'];
 
 const partOfCollecionList = collections.slice().sort((a, b) => a.localeCompare(b))
 

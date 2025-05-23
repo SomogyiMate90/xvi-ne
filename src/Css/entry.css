@@ -127,10 +127,6 @@ body, html {
   text-align: center;
   margin-bottom: 2rem;
 }
-.page-defalult-layout p {
-  text-align: justify;
-  text-indent: 1rem;
-}
 .page-defalult-layout .outlet-component {
   min-height: 600px;
   background-color: var(--outlet-bg-color);
@@ -139,6 +135,20 @@ body, html {
 }
 .page-defalult-layout .outlet-component.my-xxl {
   max-width: 1650px;
+}
+.page-defalult-layout .outlet-component p {
+  text-indent: 1rem;
+  text-align: justify;
+  hyphens: auto;
+  text-align-last: left;
+}
+.page-defalult-layout .outlet-component li {
+  text-align: start;
+}
+@media screen and (min-width: 600px) {
+  .page-defalult-layout .outlet-component li {
+    text-align: justify;
+  }
 }
 @media screen and (min-width: 800px) {
   .page-defalult-layout .outlet-component {
@@ -752,6 +762,44 @@ header .sun-svg {
   background-position-x: 60%;
 }
 
+aside.gdpr-aside {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  box-sizing: border-box;
+}
+aside.gdpr-aside .gdpr-box .accpet-main-button-box {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+aside.gdpr-aside .gdpr-box .linear-element {
+  height: 5vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: linear-gradient(to bottom, green, rgba(0, 0, 0, 0.8), rgb(0, 0, 0));
+}
+aside.gdpr-aside .gdpr-box div.gdpr-box-description {
+  height: 40vh;
+  background-color: rgb(0, 0, 0);
+  padding: 0rem 1rem;
+  overflow-y: scroll;
+  padding-bottom: 2rem;
+}
+
+#main-accept-gdpr-btn {
+  z-index: 5;
+  overflow-y: visible !important;
+}
+
 .hero-img {
   margin-bottom: 1rem;
   display: flex;
@@ -884,8 +932,8 @@ ul li, ol li {
   list-style: none;
 }
 .partnerek-aside img {
-  height: 250px;
-  width: 350px;
+  height: 230px;
+  width: 320px;
   object-fit: contain;
 }
 
@@ -984,6 +1032,8 @@ a.link-out {
   margin-left: 6px;
   text-decoration: none;
   position: relative;
+  hyphens: none;
+  text-wrap: nowrap;
 }
 a.link-out.light {
   font-weight: 600;
@@ -1040,6 +1090,14 @@ figure > img {
   background-position: 50%;
   background-size: 15%;
   background-image: url("/public/assets/img/volume-blue.svg") !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover-green:hover {
+  color: greenyellow;
 }
 
 .slider-panel {

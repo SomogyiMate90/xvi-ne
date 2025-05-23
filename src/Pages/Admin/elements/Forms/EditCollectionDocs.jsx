@@ -20,6 +20,8 @@ const EditCollectionDocs = ({eventModify,collectionName,docs}) =>{
         break;
         case 'szerzodott_iskolak' : component = <FormView key='G' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
         break;
+        case 'gdpr' : component = <FormView key='G' eventModify={eventModify} collectionName={collectionName} docs={docs}/>
+        break;
         default: <h3>Valami hiba keletkezett</h3>
     }
 

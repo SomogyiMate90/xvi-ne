@@ -100,12 +100,6 @@ body, html{
         margin-bottom: 2rem;
     }
 
-    p{
-        text-align: justify;
-        text-indent: 1rem;
-    }
-
-
     display: grid;
     grid-template-rows: min-content auto min-content;
     min-height: 100vh;
@@ -129,6 +123,24 @@ body, html{
         padding: 1rem;
         
         overflow: hidden; // a sliderPanel efektjei miatt "nem ugrál fel" x-tengely csuszka
+
+        
+        p{
+            text-indent: 1rem;
+            text-align: justify;
+            hyphens: auto; 
+            text-align-last: left;
+        }
+
+        li{
+            text-align: start;
+        }
+
+        @include mix.toAfterMaxwidth(600px){
+            li{
+                text-align: justify;
+            }
+        }
         
         @include mix.toAfterMaxwidth(800px){
             
