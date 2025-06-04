@@ -25,6 +25,11 @@ const ClothDonations = () => {
                 családnak. Amikor már nem férünk el, hátrányos helyzetű településekre
                 juttatjuk el a ruhákat, játékokat, és kezdjük elölről az adománygyűjtést.{" "}
               </p>
+              <p>
+                <b>
+                  Kedves Adományozóink! </b> Köszönjük szépen a nagylelkű ruhaadományokat! Sajnos a raktárhelyünk szűkössége miatt csak olyan ruhákat tudunk fogadni, amit pár héten belül a rászorulók el is visznek. <u><strong>Így kérjük, hogy csak jó minőségű, tiszta, és a szezonnak megfelelő ruhákat hozzanak.</strong></u> A ruhákat átvételkor az önkénteseink átnézik, hogy tényleg megfelelnek-e a fenti kérésnek. Sajnos a többi ruhát nem áll módunkban átvenni. Köszönjük a megértést! 
+               
+              </p>
           </div>
           <figure>
             <img src="/assets/img/donations/ruha-adomany.webp" alt="Használt ruhák egy karoton dobozban és mellette" />

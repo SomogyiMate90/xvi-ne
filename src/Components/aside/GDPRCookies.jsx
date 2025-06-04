@@ -24,13 +24,18 @@ const GDPRCookies = ({ showGDPRBox, setShowGDPRBox }) => {
         removeStatementCookie();
         setShowGDPRBox(true)
     }
+    // törlöm ha mégis valamiért benne maradott volna
+    else{  
+        removeStatementCookie();
+        setShowGDPRBox(true)
+    }
 
   }, [elfogadoNyilatkozat, runAnalizing, setShowGDPRBox]);
 
   // ✅ Analitika naplózása, ha már hozzájárult és van új oldalmegtekintés
   useEffect(() => {
     if (runAnalizing) {
-      logEvent(runAnalytics(), "megtekintett_oldal", {
+      logEvent(runAnalytics(), "page_view", {
         page_path: location.pathname + location.search,
         page_title: document.title,
         page_location: window.location.href,

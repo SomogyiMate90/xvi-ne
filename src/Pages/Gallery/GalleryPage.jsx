@@ -26,7 +26,7 @@ const GalleryPage = () => {
           <p className="w-100 position-absolute bottom-0 d-block mb-1 mx-1 mb-md-3 mb-xl-5 mx-xl-5 mx-3 fs-md-3  bg-my-light">
           Pillanatok, amik megmaradtak...
           <br/>
-          <span className="text-end pe-5 me-xl-5">...ne maradj le beszámolóinkról!</span>
+          <span className="text-end pe-5 me-xl-5 float-end">...ne maradj le beszámolóinkról!</span>
           </p>
         </div>
 

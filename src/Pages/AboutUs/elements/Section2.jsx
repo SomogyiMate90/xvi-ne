@@ -70,7 +70,7 @@ const Section2 = () => {
         <p>Az átadó ünnepségről videó is készült.</p>
         {/* <div className="my-4 d-flex justify-content-center"> */}
 
-        <video preload="none"
+        <video preload="metadata"
                id="celebration-video"  
                aria-label='ünnepség videója' 
                controls 

@@ -85,7 +85,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
 
           handleNewForm()
 
-        },2000)
+        },4000)
 
         }
         else{
@@ -103,8 +103,8 @@ const FormView = ({ eventModify, collectionName, docs }) => {
     finally{
       setTimeout(()=>{
         setUploading(false);
-      },2500)
-      toNavigateTop({behavior : 'smooth'});
+        toNavigateTop({behavior : 'smooth'});
+      },4500)
     }
 
   };
