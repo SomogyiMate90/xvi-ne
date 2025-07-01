@@ -21,7 +21,7 @@ const CardFolder = ({docId,data}) => {
   let honap;
 
   if(dayLeft > 35){
-    honap = `Szerkesztve: ${Math.floor(napok / 30)} hónapja`
+    honap = `Szerkesztve: ${Math.floor(dayLeft / 30)} hónapja`
   }
 
   return (
