@@ -105,13 +105,15 @@ const SuccessComp = ({picList}) =>{
             <button className="btn btn-primary rounded-end-pill" onClick={()=>setShowCarousel(true)}>Képek, videók megnyitása</button>
           </div>
             <h2 className="text-center">Képek</h2>
-            <div className="w-100 d-flex gap-3 justify-content-evenly flex-wrap">
+            <div className="lower-photo-book">
                 {minPictures.map((url,n)=>{
                     return(
-                        <img style={{maxWidth:'400px'}} className="w-100 border border-2" key={n} src={url} alt={`Kép: ${n}`} />
+                        <img className="lower-photo-book-pic"  key={n} src={url} alt={`Kép: ${n}`} />
                     )
                 })}
+                {/* <div className="flex-grow-1"></div> */}
             </div>
+
         </section>
         </>
     )

@@ -42,8 +42,8 @@ const GalleryEventArticle = ({article}) =>{
             <h1>{title}</h1>
             <div className="d-flex d-lg-block flex-column aling-items-center">
                 { base64Url === '' ? <></> : 
-                <figure style={{maxWidth: '450px', width: '100%'}} className="border border-3  pb-1 rounded-2  my-2 mx-auto ms-lg-4 float-end">
-                    <ImgHTML src={lowPicture?.url} picAlt={picAlt} />
+                <figure style={{maxWidth: '450px', width: '100%'}} className="  mx-auto ms-lg-4 float-end">
+                    <ImgHTML style="galery-article-hero-img" src={lowPicture?.url} picAlt={picAlt} />
                     <figcaption className="text-center fst-italic">{picAlt}</figcaption>
                 </figure>
                 }
