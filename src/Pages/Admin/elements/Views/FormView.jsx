@@ -23,7 +23,7 @@ const FormView = ({ eventModify, collectionName, docs }) => {
   const { changedEvent, setChangedEvent } = eventModify; // adat ujra lekérdezése a "Submit" esemény után
   const [defaultValues, setDefaultValues] = useImmer({}); // korábban felöltött elem kiválasztása
   const [pictureBase64Url, setPictureBase64Url] = useState(null); // Átalakított kép src tárolása
-  const [englishUrl, setEnglishUrl] = useState(null); // helyes URL elkészítéséhez, hogy ne legyen tele "%" és szám karakterekkel a link
+  const [englishUrl, setEnglishUrl] = useState(null); // helyes URL elkészítéséhez, hogy ne legyen tele "%" és ékezetes betűkkel a link
   const [defFotoWidth, setPhotoWidth] = useState(600);
   const [uploading, setUploading] = useState(null)
 

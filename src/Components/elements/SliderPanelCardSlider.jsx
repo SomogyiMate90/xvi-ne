@@ -4,6 +4,7 @@ import LinkBTN from "../../shared/LinkBTN";
 
 const SliderPanelCardSlider = ({receivedArray}) =>{
 
+
     if(!(Array.isArray(receivedArray))) return;
 
     return(
@@ -35,7 +36,7 @@ const SliderPanelCardSlider = ({receivedArray}) =>{
                         }
                         </div>
                     </section>
-                    <LinkBTN anStyle="text-end me-4" classStyle="btn btn-info" text="Tovább a cikkhez" url={`programok/${data?.titleUrl}`}/> 
+                    <LinkBTN anStyle="text-end me-4" classStyle="btn btn-info" text="Tovább a cikkhez" url={data?.href || `programok/${data?.titleUrl}`}/> 
                 </div>
                 )
             })

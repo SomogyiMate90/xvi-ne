@@ -4,9 +4,23 @@ import animateSliderPanel from "../Functions/animateSliderPanel";
 import FireStoreContext from "../Functions/contexts/fireSroreContext";
 import SliderPanelCardSlider from "./elements/SliderPanelCardSlider";
 
-const SliderPanel = ({ classStyle, displayList }) => {
+const SliderPanel = ({ classStyle, displaysListArray = [] }) => {
   const fireBaseContent = useContext(FireStoreContext);
-  const elements = fireBaseContent[displayList];
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  let elements = [];
+
+  displaysListArray.forEach(list=>{
+
+    const targetArray = fireBaseContent?.[list];
+
+    if (Array.isArray(targetArray)) {
+      elements.push(...targetArray);
+    }
+
+  })
+
+  // const elements = fireBaseContent[displaysListArray];
 
   useEffect(() => {
     if (elements && elements.length > 0) {

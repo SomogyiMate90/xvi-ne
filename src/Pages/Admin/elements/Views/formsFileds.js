@@ -253,7 +253,33 @@ const gdpr = {
   }
 }
 
-export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria, szerzodott_iskolak,gdpr };
+const fali_ujsag = {
+    title: {
+    id: "title",
+    labelText: 'Faliújság címe',
+    placeholder: "Milyen szöveg szerepeljen a falijságon?",
+    className: "form-control text-success",
+    required: true,
+  },
+  href:{
+    id: "href",
+    labelText: "Milyen linkre mutasson a falújság?",
+    placeholder: "pl.: https://xvi-ne.hu/adomanyok# vagy külső"
+  },
+
+  mainPic,
+
+  description: {
+    id: "description",
+    labelText: 'Esemény leírás a faliújságra',
+    placeholder: "Enter billentyűvel válaszd el a bekedéseket egymástól...\n\nMax 240 karaktert jelenít meg a faliújság",
+    className: "form-control text-success",
+    required: true,
+  }
+
+}
+
+export { docId, dinamicUrl, kedvezmenyek, programok, partnerek,elnokseg, galeria, szerzodott_iskolak,gdpr, fali_ujsag };
 
 
 

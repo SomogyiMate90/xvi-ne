@@ -11,7 +11,7 @@ export default function getEnglishUrl(text){
 
     const formatedText = spltedText.reduce((acc,item,index)=>{
 
-        if (!/[a-záéíóöőúüű\s]/.test(item)) return acc;
+        if (!/[a-záéíóöőúüű0123456789\s]/.test(item)) return acc;
         if(acc[index-1] === '-' && item === ' ' ) return acc;
 
 

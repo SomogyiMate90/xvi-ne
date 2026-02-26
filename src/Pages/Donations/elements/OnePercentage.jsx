@@ -9,7 +9,7 @@ const OnePercentage = () => {
   
 
   return (
-    <section>
+    <section id="ado-1-szazalek">
       <h2>1% felajánlás</h2>
       <div className="content">
           <div>

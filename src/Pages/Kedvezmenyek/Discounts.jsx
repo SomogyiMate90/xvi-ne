@@ -19,7 +19,7 @@ const Discounts = () => {
       <section>
         <h2>Nagycsaládosok Országos Egyesületének kedvezményei</h2>
         <p>A XVI. kerületen kívül az ország számos helyén található kedvezmény, melyeket honlapunk nem tart nyilván.</p>
-        <p><LinkOutTargetBlank link={{href : 'https://noe.hu/kedvezmenyek/' , text : 'A kedvezmények itt megtalálhatóak'}}/></p>
+        <p><LinkOutTargetBlank link={{href : 'https://noe.hu/kedvezmenyek/kedvezmenyt-keresek' , text : 'A kedvezmények itt megtalálhatóak'}}/></p>
       </section>
 
     <XVIKeruletiKedv/>
