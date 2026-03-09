@@ -47,11 +47,17 @@ const GalleryPage = () => {
 export default GalleryPage;
 
 const AlternativComp = () => {
-  const [timeOut, setTimeOut] = useState(false);
+  const [showError, setShowError] = useState(false);
 
-  setTimeout(() => {
-    setTimeOut(true);
-  }, 6000);
+  useEffect(() => {
+    // Csak a komponens betöltődése után indul el az időzítő
+    const timer = setTimeout(() => {
+      setShowError(true);
+    }, 6000);
 
-  return timeOut === false ? <LoadingTime /> : <ErrorElement />;
+    // Ha közben megjön az adat és a komponens megszűnik, leállítjuk az időzítőt
+    return () => clearTimeout(timer);
+  }, []);
+
+  return showError === false ? <LoadingTime /> : <ErrorElement />;
 };
