@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import metaAndOpengraphTag from "../Functions/helm/metaAndOpengraphTag";
 import { useLocation } from "react-router-dom";
 
