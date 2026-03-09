@@ -5,6 +5,7 @@ import route from './Routes/routes';
 import './Css/entry.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/collapse.js';
+import { HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,7 +18,9 @@ console.log(
 root.render(
     
    <React.StrictMode>
-      <RouterProvider router={route}/>
+      <HelmetProvider>
+         <RouterProvider router={route}/>
+      </HelmetProvider>
    </React.StrictMode> 
 
 );

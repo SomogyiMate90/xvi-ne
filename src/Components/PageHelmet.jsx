@@ -23,7 +23,6 @@ const PageHelmet = ({ helmetObj }) => {
     const canonicalUrl = `https://xvi-ne.hu${location.pathname}`;
 
   return (
-    <HelmetProvider>
       <Helmet>
         <title>{metaNameObj?.title || titleStart}</title>
         <meta name="description" content={metaNameObj?.description || ""} />
@@ -33,7 +32,6 @@ const PageHelmet = ({ helmetObj }) => {
           metaNameObj.title === "404 - az oldal nem található" ? (()=>{})() :  <link rel="canonical" href={canonicalUrl} data-rh="true"/>
         }
       </Helmet>
-    </HelmetProvider>
   );
 };
 

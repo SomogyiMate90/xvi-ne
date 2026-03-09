@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import InlineLink from "../../../shared/InlineLink";
+import MapBtn from "../../../shared/MapBtn";
+
 const ClothDonations = () => {
   return (
     <section id="cloth-donations">
@@ -12,7 +16,10 @@ const ClothDonations = () => {
                 <strong>
                   Amennyiben olyan az állapota, amit te is szívesen hazavinnél, hozd el
                   nekünk.
-                </strong>
+                </strong> Minden héten kedden van lehetőség <time dateTime="16:00">16:00</time> - <time dateTime="18:30">18:30</time> között adomány leadására központukban.<MapBtn className='d-inline mx-2' address='1165 Budapest, Veres Péter út 157' />
+                <br />
+                <i>Az átvétel esetleges szüneteléséről a főoldalunk tetején található hírek között tájékozódhat.
+                </i>
               </p>
               <p>
                 <u>Mi történik a leadott tárgyakkal?</u>
@@ -21,7 +28,7 @@ const ClothDonations = () => {
                 Az önkénteseink kiválogatják, szortírozzák, és szépen összehajtogatva
                 polcokra kerül. A tagcsaládok - akik igénylik - heti rendszerességgel
                 eljönnek, és kiválogatják amit használni tudnak. Évente minimum 3x
-                meghirdetjük az "Öltözz ingyen" programunkat minden XVI. kerületi
+                meghirdetjük az <InlineLink to="/programok/oltozz-ingyen">"Öltözz ingyen"</InlineLink> programunkat minden XVI. kerületi
                 családnak. Amikor már nem férünk el, hátrányos helyzetű településekre
                 juttatjuk el a ruhákat, játékokat, és kezdjük elölről az adománygyűjtést.{" "}
               </p>
