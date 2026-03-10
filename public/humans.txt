@@ -1,0 +1,38 @@
+/* CSAPAT / TEAM */
+
+Fejlesztő / Developer: Somogyi Máté
+Kapcsolat / Contact: somogyimate713@gmail.com
+Weboldal / Website: https://xvi-ne.hu
+Hely / Location: Hungary
+
+/* OLDAL / SITE */
+
+Oldal / Site: XVI. kerületi Nagycsaládos Egyesület
+URL: https://xvi-ne.hu
+Típus / Type: React Single Page Application
+Hosting: Firebase Hosting
+Build: React
+
+/* TECHNOLÓGIA / TECHNOLOGY */
+
+Keretrendszer / Framework: React
+Animációk / Animations: Animate.css
+Hosting platform: Firebase
+
+/* KÖSZÖNET / THANKS */
+
+Az animációk az Animate.css jóvoltából / The animations on this site are used courtesy of Animate.css
+https://animate.style/
+
+Licenc / License: Hippocratic License
+https://firstdonoharm.dev/
+
+/* MEGJEGYZÉS / NOTE */
+
+Ez a weboldal statikus React alkalmazás / This website is a static React application.
+Nincs PHP, nincs WordPress, nincs szerveroldali script / No PHP, no WordPress, no server-side scripts.
+
+/* HUMANSTXT */
+
+Emberek vagyunk, nem gépek / We are humans, not machines
+https://humanstxt.org
