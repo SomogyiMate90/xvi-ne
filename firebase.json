@@ -8,6 +8,30 @@
       "src/**"
     ],
     "rewrites": [
+{
+        "source": "**/*.{php,asp,aspx,jsp,cgi,env,sql,bak,log,ini,config,git}",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/@(wp-admin|wp-content|wp-includes|wp-login|wp-config|wordpress){,/**}",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/@(phpmyadmin|pma|mysql|dbadmin){,/**}",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/@(admin|administrator|controlpanel|cpanel|webadmin|panel){,/**}",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/@(setup|install|installer|vendor){,/**}",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/@(xmlrpc|.env|.git|.svn){,/**}",
+        "destination": "/404.html"
+      },
       {
         "source": "**",
         "destination": "/index.html"

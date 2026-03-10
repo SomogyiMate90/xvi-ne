@@ -53,7 +53,7 @@ const AlternativComp = () => {
     // Csak a komponens betöltődése után indul el az időzítő
     const timer = setTimeout(() => {
       setShowError(true);
-    }, 6000);
+    }, 15000);
 
     // Ha közben megjön az adat és a komponens megszűnik, leállítjuk az időzítőt
     return () => clearTimeout(timer);
