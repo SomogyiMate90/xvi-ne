@@ -94,10 +94,10 @@ body, html {
   line-height: 2.2;
 }
 .page-defalult-layout.akadaly h1:nth-of-type(even), .page-defalult-layout.akadaly h2:nth-of-type(even), .page-defalult-layout.akadaly h3:nth-of-type(even), .page-defalult-layout.akadaly h4:nth-of-type(even), .page-defalult-layout.akadaly h5:nth-of-type(even), .page-defalult-layout.akadaly h6:nth-of-type(even), .page-defalult-layout.akadaly p:nth-of-type(even), .page-defalult-layout.akadaly strong:nth-of-type(even), .page-defalult-layout.akadaly mark:nth-of-type(even), .page-defalult-layout.akadaly li:nth-of-type(even), .page-defalult-layout.akadaly figcaption:nth-of-type(even), .page-defalult-layout.akadaly blockquote:nth-of-type(even), .page-defalult-layout.akadaly cite:nth-of-type(even), .page-defalult-layout.akadaly table tr td:nth-of-type(even), .page-defalult-layout.akadaly table tr th:nth-of-type(even) {
-  color: rgb(230, 155, 25);
+  color: rgb(255, 166, 0);
 }
 .page-defalult-layout.akadaly h1:nth-of-type(even) *, .page-defalult-layout.akadaly h2:nth-of-type(even) *, .page-defalult-layout.akadaly h3:nth-of-type(even) *, .page-defalult-layout.akadaly h4:nth-of-type(even) *, .page-defalult-layout.akadaly h5:nth-of-type(even) *, .page-defalult-layout.akadaly h6:nth-of-type(even) *, .page-defalult-layout.akadaly p:nth-of-type(even) *, .page-defalult-layout.akadaly strong:nth-of-type(even) *, .page-defalult-layout.akadaly mark:nth-of-type(even) *, .page-defalult-layout.akadaly li:nth-of-type(even) *, .page-defalult-layout.akadaly figcaption:nth-of-type(even) *, .page-defalult-layout.akadaly blockquote:nth-of-type(even) *, .page-defalult-layout.akadaly cite:nth-of-type(even) *, .page-defalult-layout.akadaly table tr td:nth-of-type(even) *, .page-defalult-layout.akadaly table tr th:nth-of-type(even) * {
-  color: rgb(230, 155, 25);
+  color: rgb(255, 166, 0);
 }
 .page-defalult-layout.akadaly h1:nth-of-type(even) button, .page-defalult-layout.akadaly h2:nth-of-type(even) button, .page-defalult-layout.akadaly h3:nth-of-type(even) button, .page-defalult-layout.akadaly h4:nth-of-type(even) button, .page-defalult-layout.akadaly h5:nth-of-type(even) button, .page-defalult-layout.akadaly h6:nth-of-type(even) button, .page-defalult-layout.akadaly p:nth-of-type(even) button, .page-defalult-layout.akadaly strong:nth-of-type(even) button, .page-defalult-layout.akadaly mark:nth-of-type(even) button, .page-defalult-layout.akadaly li:nth-of-type(even) button, .page-defalult-layout.akadaly figcaption:nth-of-type(even) button, .page-defalult-layout.akadaly blockquote:nth-of-type(even) button, .page-defalult-layout.akadaly cite:nth-of-type(even) button, .page-defalult-layout.akadaly table tr td:nth-of-type(even) button, .page-defalult-layout.akadaly table tr th:nth-of-type(even) button {
   color: initial;
@@ -358,6 +358,7 @@ header .sun-svg {
 }
 .page-footer.akadaly {
   color: rgb(255, 255, 0);
+  background-color: hsla(190, 89.898989899%, 49.5%, 0.151);
 }
 .page-footer footer {
   padding-top: 1rem;
@@ -595,11 +596,7 @@ header .sun-svg {
   border-radius: 0.8rem;
 }
 
-.lower-photo-book img.lower-photo-book-pic:last-child {
-  margin-right: auto;
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 620px) {
   .lower-photo-book {
     flex-direction: column;
     gap: 1rem;
@@ -989,9 +986,6 @@ ul li, ol li {
   }
   .partnerek-aside #partnerek-lists li.animate__animated:nth-of-type(n+4):last-of-type {
     margin: 0 auto 0 1.8rem;
-  }
-  .partnerek-aside.akadaly {
-    background-color: rgb(60, 60, 60);
   }
   .partnerek-aside.dark {
     background-color: rgb(48, 48, 48);

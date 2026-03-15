@@ -29,10 +29,10 @@
 
 
     .lower-photo-book img.lower-photo-book-pic:last-child {
-        margin-right: auto;
+        // margin-right: auto;
     }
     
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:620px) {
         .lower-photo-book{
 
             flex-direction: column;
