@@ -19,7 +19,7 @@
 .env.test.local
 .env.production.local
 
-#Fejleszői környezte
+#Fejleszői környezet
 .firebase
 .vscode
 
