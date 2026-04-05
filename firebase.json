@@ -9,12 +9,12 @@
     ],
     "rewrites": [
       {
-        "source": "**/*.{php,asp,aspx,jsp,cgi,env,sql,bak,log,ini,config,git}",
+        "source": "**/*.{php*,PhP*,asp*,aspx*,jsp*,cgi*,env*,sql*,bak*,log*,ini*,config*,git*}",
         "function": "blockRobots",
         "region": "europe-central2"
       },
       {
-        "source": "/@(wp-admin|wp-content|wp-includes|wp-login|wp-config|wordpress){,/**}",
+        "source": "/@(wp|wordpress)*{,/**}",
         "function": "blockRobots",
         "region": "europe-central2"
       },
@@ -24,7 +24,7 @@
         "region": "europe-central2"
       },
       {
-        "source": "/@(admin|administrator|controlpanel|cpanel|webadmin|panel){,/**}",
+        "source": "/@(admin|administrator|register|login|controlpanel|cpanel|webadmin|panel){,/**}",
         "function": "blockRobots",
         "region": "europe-central2"
       },
@@ -39,7 +39,7 @@
         "region": "europe-central2"
       },
       {
-        "source": "/@(oldal|Home|home|hireink|ado-1){,/**}",
+        "source": "/@(oldal|esemeny|Home|home|hireink|ado-1){,/**}",
         "function": "blockRobots",
         "region": "europe-central2"
       },

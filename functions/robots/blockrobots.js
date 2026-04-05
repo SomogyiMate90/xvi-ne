@@ -27,7 +27,7 @@ export const blockRobots = onRequest(
     {
       region: "europe-central2",
       invoker: "public",
-      memory: "128MiB",
+      memory: "256MiB",
       timeoutSeconds: 30,
     },
     async (req, res) => {
